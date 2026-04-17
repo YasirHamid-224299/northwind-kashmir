@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "tailwindcss -i ./assets/css/input.css -o ./dist/output.css",
+    "build": "tailwindcss -i ./assets/css/input.css -o ./dist/output.css && node -e \"const fs = require('fs'); const files = fs.readdirSync('.').filter(f => f.endsWith('.html')); files.forEach(f => fs.copyFileSync(f, './dist/' + f))\"",
     "watch": "tailwindcss -i ./assets/css/input.css -o ./dist/output.css --watch",
     "dev": "tailwindcss -i ./assets/css/input.css -o ./dist/output.css --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
