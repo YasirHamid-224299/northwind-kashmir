@@ -1,3 +1,17 @@
+// Sticky Navbar on Scroll
+window.addEventListener("scroll", () => {
+    const navbar = document.querySelector("nav");
+    const heroSection = document.querySelector("section");
+
+    if (window.scrollY > heroSection.offsetHeight - 80) {
+        navbar.classList.remove("absolute", "top-0", "bg-gradient-to-b", "from-black/60", "to-transparent");
+        navbar.classList.add("fixed", "top-0", "bg-[#0B1F3A]", "shadow-lg");
+    } else {
+        navbar.classList.remove("fixed", "top-0", "bg-[#0B1F3A]", "shadow-lg");
+        navbar.classList.add("absolute", "top-0", "bg-gradient-to-b", "from-black/60", "to-transparent");
+    }
+});
+
 const menuBtn = document.getElementById("menu-btn");
 const mobileMenu = document.getElementById("mobile-menu");
 const mobileLinks = document.querySelectorAll(".mobile-link");

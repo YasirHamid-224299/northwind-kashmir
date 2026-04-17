@@ -40,69 +40,71 @@
 <body class="bg-white text-gray-900 font-sans">
 
     <div id="app" class="min-h-screen">
-        <nav class="w-full bg-[#0B1F3A] text-white shadow-lg sticky top-0 z-40">
-            <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-12">
-                <div class="flex justify-between items-center h-16 sm:h-20">
-
-                    <!-- Logo Section -->
-                    <div class="flex items-center gap-2 sm:gap-3">
-                        <img src="assets/images/logo/logo.png" alt="Northwind Kashmir Logo"
-                            class="h-10 sm:h-12 w-10 sm:w-12 object-contain">
-                        <span class="text-lg sm:text-2xl font-bold tracking-wide text-[#D4AF37] font-display">
-                            Northwind Kashmir
-                        </span>
-                    </div>
-
-                    <!-- Nav Links -->
-                    <div class="hidden md:flex items-center gap-8 text-sm font-medium font-sans">
-                        <a href="index.html" class="hover:text-[#D4AF37] transition">Home</a>
-                        <a href="about.html" class="hover:text-[#D4AF37] transition">About</a>
-                        <a href="packages.html" class="hover:text-[#D4AF37] transition">Packages</a>
-                        <a href="gallery.html" class="hover:text-[#D4AF37] transition">Gallery</a>
-                        <a href="contact.html" class="hover:text-[#D4AF37] transition">Contact</a>
-
-                        <a href="packages.html"
-                            class="bg-[#D4AF37] text-[#0B1F3A] px-5 py-2 rounded-full font-semibold hover:bg-yellow-400 transition duration-300">
-                            Explore Packages
-                        </a>
-
-
-                    </div>
-                    <!-- Mobile Menu Button -->
-                    <div class="md:hidden">
-                        <button id="menu-btn" class="text-white focus:outline-none text-2xl">
-                            <i class="fas fa-bars"></i>
-                        </button>
-                    </div>
-
-                </div>
-
-            </div>
-            <!-- Mobile Menu -->
-            <div id="mobile-menu"
-                class="md:hidden bg-[#0B1F3A] text-white px-4 overflow-hidden max-h-0 opacity-0 transition-all duration-500 ease-in-out border-t border-gray-700">
-
-                <div class="py-6 space-y-3">
-                    <a href="index.html" class="block hover:text-[#D4AF37] transition py-2 text-sm mobile-link">Home</a>
-                    <a href="about.html"
-                        class="block hover:text-[#D4AF37] transition py-2 text-sm mobile-link">About</a>
-                    <a href="packages.html"
-                        class="block hover:text-[#D4AF37] transition py-2 text-sm mobile-link">Packages</a>
-                    <a href="gallery.html"
-                        class="block hover:text-[#D4AF37] transition py-2 text-sm mobile-link">Gallery</a>
-                    <a href="contact.html"
-                        class="block hover:text-[#D4AF37] transition py-2 text-sm mobile-link">Contact</a>
-
-                    <a href="packages.html"
-                        class="block text-center bg-[#D4AF37] text-[#0B1F3A] py-3 rounded-full font-semibold font-accent mt-4 hover:bg-yellow-400 transition text-sm mobile-link">
-                        Explore Packages
-                    </a>
-                </div>
-
-            </div>
-        </nav>
         <!--hero section-->
         <section class="relative h-screen flex items-center justify-center text-white overflow-hidden">
+            <!-- Navbar Overlay on Hero -->
+            <nav class="absolute top-0 w-full bg-gradient-to-b from-black/60 to-transparent text-white shadow-lg z-40">
+                <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-12">
+                    <div class="flex justify-between items-center h-16 sm:h-20">
+
+                        <!-- Logo Section -->
+                        <div class="flex items-center gap-2 sm:gap-3">
+                            <img src="assets/images/logo/logo.png" alt="Northwind Kashmir Logo"
+                                class="h-10 sm:h-12 w-10 sm:w-12 object-contain">
+                            <span class="text-lg sm:text-2xl font-bold tracking-wide text-[#D4AF37] font-display">
+                                Northwind Kashmir
+                            </span>
+                        </div>
+
+                        <!-- Nav Links -->
+                        <div class="hidden md:flex items-center gap-8 text-sm font-medium font-sans">
+                            <a href="index.html" class="hover:text-[#D4AF37] transition">Home</a>
+                            <a href="about.html" class="hover:text-[#D4AF37] transition">About</a>
+                            <a href="packages.html" class="hover:text-[#D4AF37] transition">Packages</a>
+                            <a href="gallery.html" class="hover:text-[#D4AF37] transition">Gallery</a>
+                            <a href="contact.html" class="hover:text-[#D4AF37] transition">Contact</a>
+
+                            <a href="packages.html"
+                                class="bg-[#D4AF37] text-[#0B1F3A] px-5 py-2 rounded-full font-semibold hover:bg-yellow-400 transition duration-300">
+                                Explore Packages
+                            </a>
+
+
+                        </div>
+                        <!-- Mobile Menu Button -->
+                        <div class="md:hidden">
+                            <button id="menu-btn" class="text-white focus:outline-none text-2xl">
+                                <i class="fas fa-bars"></i>
+                            </button>
+                        </div>
+
+                    </div>
+
+                </div>
+                <!-- Mobile Menu -->
+                <div id="mobile-menu"
+                    class="md:hidden bg-black/80 text-white px-4 overflow-hidden max-h-0 opacity-0 transition-all duration-500 ease-in-out border-t border-gray-700">
+
+                    <div class="py-6 space-y-3">
+                        <a href="index.html"
+                            class="block hover:text-[#D4AF37] transition py-2 text-sm mobile-link">Home</a>
+                        <a href="about.html"
+                            class="block hover:text-[#D4AF37] transition py-2 text-sm mobile-link">About</a>
+                        <a href="packages.html"
+                            class="block hover:text-[#D4AF37] transition py-2 text-sm mobile-link">Packages</a>
+                        <a href="gallery.html"
+                            class="block hover:text-[#D4AF37] transition py-2 text-sm mobile-link">Gallery</a>
+                        <a href="contact.html"
+                            class="block hover:text-[#D4AF37] transition py-2 text-sm mobile-link">Contact</a>
+
+                        <a href="packages.html"
+                            class="block text-center bg-[#D4AF37] text-[#0B1F3A] py-3 rounded-full font-semibold font-accent mt-4 hover:bg-yellow-400 transition text-sm mobile-link">
+                            Explore Packages
+                        </a>
+                    </div>
+
+                </div>
+            </nav>
 
             <!-- Slideshow Background -->
             <div id="hero-slider" class="absolute inset-0">
