@@ -6,6 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Packages - Northwind Kashmir</title>
 
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
     <link rel="stylesheet" href="dist/output.css">
 
     <!-- Font Awesome -->
@@ -40,24 +47,24 @@
     </style>
 </head>
 
-<body class="bg-gradient-to-br from-gray-50 via-white to-blue-50 text-gray-900 min-h-screen">
+<body class="bg-gradient-to-br from-gray-50 via-white to-blue-50 text-gray-900 min-h-screen font-sans">
 
     <!-- Navbar (copy from index.html) -->
-    <nav class="w-full bg-[#0B1F3A] text-white shadow-lg">
-        <div class="max-w-7xl mx-auto px-6 lg:px-12">
-            <div class="flex justify-between items-center h-20">
+    <nav class="w-full bg-[#0B1F3A] text-white shadow-lg sticky top-0 z-40">
+        <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-12">
+            <div class="flex justify-between items-center h-16 sm:h-20">
 
                 <!-- Logo Section -->
-                <div class="flex items-center gap-3">
+                <div class="flex items-center gap-2 sm:gap-3">
                     <img src="assets/images/logo/logo.png" alt="Northwind Kashmir Logo"
-                        class="h-12 w-12 object-contain">
-                    <span class="text-2xl font-bold tracking-wide text-[#D4AF37]">
+                        class="h-10 sm:h-12 w-10 sm:w-12 object-contain">
+                    <span class="text-lg sm:text-2xl font-bold tracking-wide text-[#D4AF37] font-display">
                         Northwind Kashmir
                     </span>
                 </div>
 
                 <!-- Nav Links -->
-                <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+                <div class="hidden md:flex items-center gap-8 text-sm font-medium font-sans">
                     <a href="index.html" class="hover:text-[#D4AF37] transition">Home</a>
                     <a href="about.html" class="hover:text-[#D4AF37] transition">About</a>
                     <a href="packages.html" class="hover:text-[#D4AF37] transition">Packages</a>
@@ -69,12 +76,11 @@
                         Explore Packages
                     </a>
 
-
                 </div>
                 <!-- Mobile Menu Button -->
                 <div class="md:hidden">
-                    <button id="menu-btn" class="text-white focus:outline-none">
-                        ☰
+                    <button id="menu-btn" class="text-white focus:outline-none text-2xl">
+                        <i class="fas fa-bars"></i>
                     </button>
                 </div>
 
@@ -83,20 +89,24 @@
         </div>
         <!-- Mobile Menu -->
         <div id="mobile-menu"
-            class="md:hidden bg-[#0B1F3A] text-white px-6 overflow-hidden max-h-0 opacity-0 transition-all duration-500 ease-in-out">
+            class="md:hidden bg-[#0B1F3A] text-white px-4 overflow-hidden max-h-0 opacity-0 transition-all duration-500 ease-in-out border-t border-gray-700">
 
-            <div class="py-4 space-y-4">
-                <a href="index.html" class="block">Home</a>
-                <a href="about.html" class="block">About</a>
-                <a href="packages.html" class="block">Packages</a>
-                <a href="gallery.html" class="block">Gallery</a>
-                <a href="contact.html" class="block">Contact</a>
+            <div class="py-6 space-y-3">
+                <a href="index.html" class="block hover:text-[#D4AF37] transition py-2 text-sm mobile-link">Home</a>
+                <a href="about.html" class="block hover:text-[#D4AF37] transition py-2 text-sm mobile-link">About</a>
+                <a href="packages.html"
+                    class="block hover:text-[#D4AF37] transition py-2 text-sm mobile-link">Packages</a>
+                <a href="gallery.html"
+                    class="block hover:text-[#D4AF37] transition py-2 text-sm mobile-link">Gallery</a>
+                <a href="contact.html"
+                    class="block hover:text-[#D4AF37] transition py-2 text-sm mobile-link">Contact</a>
 
                 <a href="packages.html"
-                    class="block text-center bg-[#D4AF37] text-[#0B1F3A] py-2 rounded-full font-semibold">
+                    class="block text-center bg-[#D4AF37] text-[#0B1F3A] py-3 rounded-full font-semibold font-accent mt-4 hover:bg-yellow-400 transition text-sm mobile-link">
                     Explore Packages
                 </a>
             </div>
+
 
         </div>
     </nav>
@@ -149,41 +159,41 @@
         <div class="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent">
         </div>
     </section>
-    <div class="max-w-7xl mx-auto px-6 lg:px-12 py-8">
-        <div class="flex flex-wrap justify-center gap-4 mb-10">
+    <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-12 py-6 sm:py-8">
+        <div class="flex flex-wrap justify-center gap-2 sm:gap-4 mb-8 sm:mb-10">
 
             <button
-                class="filter-btn px-5 py-2 bg-[#0B1F3A] text-white rounded-full font-semibold transition hover:shadow-md"
+                class="filter-btn px-3 sm:px-5 py-1.5 sm:py-2 text-xs sm:text-sm bg-[#0B1F3A] text-white rounded-full font-semibold transition hover:shadow-md"
                 data-filter="all">
                 All
             </button>
 
             <button
-                class="filter-btn px-5 py-2 bg-gray-200 text-gray-800 rounded-full font-semibold transition hover:bg-[#0B1F3A] hover:text-white"
+                class="filter-btn px-3 sm:px-5 py-1.5 sm:py-2 text-xs sm:text-sm bg-gray-200 text-gray-800 rounded-full font-semibold transition hover:bg-[#0B1F3A] hover:text-white"
                 data-filter="honeymoon">
                 Honeymoon
             </button>
 
             <button
-                class="filter-btn px-5 py-2 bg-gray-200 text-gray-800 rounded-full font-semibold transition hover:bg-[#0B1F3A] hover:text-white"
+                class="filter-btn px-3 sm:px-5 py-1.5 sm:py-2 text-xs sm:text-sm bg-gray-200 text-gray-800 rounded-full font-semibold transition hover:bg-[#0B1F3A] hover:text-white"
                 data-filter="family">
                 Family
             </button>
 
             <button
-                class="filter-btn px-5 py-2 bg-gray-200 text-gray-800 rounded-full font-semibold transition hover:bg-[#0B1F3A] hover:text-white"
+                class="filter-btn px-3 sm:px-5 py-1.5 sm:py-2 text-xs sm:text-sm bg-gray-200 text-gray-800 rounded-full font-semibold transition hover:bg-[#0B1F3A] hover:text-white"
                 data-filter="adventure">
                 Adventure
             </button>
 
             <button
-                class="filter-btn px-5 py-2 bg-gray-200 text-gray-800 rounded-full font-semibold transition hover:bg-[#0B1F3A] hover:text-white"
+                class="filter-btn px-3 sm:px-5 py-1.5 sm:py-2 text-xs sm:text-sm bg-gray-200 text-gray-800 rounded-full font-semibold transition hover:bg-[#0B1F3A] hover:text-white"
                 data-filter="winter">
                 Winter
             </button>
 
             <button
-                class="filter-btn px-5 py-2 bg-gray-200 text-gray-800 rounded-full font-semibold transition hover:bg-[#0B1F3A] hover:text-white"
+                class="filter-btn px-3 sm:px-5 py-1.5 sm:py-2 text-xs sm:text-sm bg-gray-200 text-gray-800 rounded-full font-semibold transition hover:bg-[#0B1F3A] hover:text-white"
                 data-filter="luxury">
                 Luxury
             </button>
@@ -191,10 +201,10 @@
         </div>
     </div>
     <!-- Packages will go here -->
-    <section class="py-20 bg-gradient-to-b from-gray-50 via-white to-gray-50">
-        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+    <section class="py-12 sm:py-20 bg-gradient-to-b from-gray-50 via-white to-gray-50">
+        <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-12">
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
 
                 <!-- Package Card -->
                 <div class="package-card bg-white rounded-2xl shadow-lg overflow-hidden transition duration-500 hover:shadow-2xl hover:-translate-y-2"
@@ -388,6 +398,36 @@
             const filterBtns = document.querySelectorAll('.filter-btn');
             const packageCards = document.querySelectorAll('.package-card');
 
+            // Function to apply filter
+            const applyFilter = (filterValue, isInitial = false) => {
+                packageCards.forEach(card => {
+                    const category = card.getAttribute('data-category');
+                    if (filterValue === 'all' || category === filterValue) {
+                        card.style.display = 'block';
+                        if (!isInitial) {
+                            setTimeout(() => {
+                                card.style.opacity = '1';
+                                card.style.transform = 'scale(1)';
+                            }, 10);
+                        } else {
+                            card.style.opacity = '1';
+                            card.style.transform = 'scale(1)';
+                        }
+                    } else {
+                        card.style.opacity = '0';
+                        card.style.transform = 'scale(0.95)';
+                        setTimeout(() => {
+                            card.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            };
+
+            // Initialize with "All" filter
+            applyFilter('all', true);
+            filterBtns[0].classList.add('bg-[#0B1F3A]', 'text-white');
+            filterBtns[0].classList.remove('bg-gray-200', 'text-gray-800');
+
             filterBtns.forEach(btn => {
                 btn.addEventListener('click', () => {
                     // Remove active class from all buttons
@@ -401,24 +441,7 @@
                     btn.classList.add('bg-[#0B1F3A]', 'text-white');
 
                     const filterValue = btn.getAttribute('data-filter');
-
-                    // Filter package cards with smooth transition
-                    packageCards.forEach(card => {
-                        const category = card.getAttribute('data-category');
-                        if (filterValue === 'all' || category === filterValue) {
-                            card.style.display = 'block';
-                            setTimeout(() => {
-                                card.style.opacity = '1';
-                                card.style.transform = 'scale(1)';
-                            }, 10);
-                        } else {
-                            card.style.opacity = '0';
-                            card.style.transform = 'scale(0.95)';
-                            setTimeout(() => {
-                                card.style.display = 'none';
-                            }, 300);
-                        }
-                    });
+                    applyFilter(filterValue);
                 });
             });
         });

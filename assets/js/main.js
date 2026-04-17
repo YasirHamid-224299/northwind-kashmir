@@ -1,5 +1,6 @@
 const menuBtn = document.getElementById("menu-btn");
 const mobileMenu = document.getElementById("mobile-menu");
+const mobileLinks = document.querySelectorAll(".mobile-link");
 
 let isOpen = false;
 
@@ -13,6 +14,16 @@ menuBtn.addEventListener("click", () => {
     }
     isOpen = !isOpen;
 });
+
+// Close mobile menu when a link is clicked
+mobileLinks.forEach(link => {
+    link.addEventListener("click", () => {
+        mobileMenu.classList.remove("max-h-96", "opacity-100");
+        mobileMenu.classList.add("max-h-0", "opacity-0");
+        isOpen = false;
+    });
+});
+
 // Lightbox functionality
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -133,8 +144,8 @@ document.addEventListener("DOMContentLoaded", () => {
             const date = inputs[3].value;
             const message = inputs[4].value;
 
-            const text = 
-`Hello, I want to book a Kashmir tour.
+            const text =
+                `Hello, I want to book a Kashmir tour.
 
 Name: ${name}
 Phone: ${phone}
