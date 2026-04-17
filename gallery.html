@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Northwind Kashmir</title>
+
+    <link rel="stylesheet" href="dist/output.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+    <!-- Custom Animations -->
+    <style>
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+    </style>
+</head>
+
+<body class="bg-gradient-to-br from-gray-50 via-white to-blue-50 text-gray-900 min-h-screen">
+
+    <!-- Navbar (copy from index.html) -->
+    <nav class="w-full bg-[#0B1F3A] text-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="flex justify-between items-center h-20">
+
+                <!-- Logo Section -->
+                <div class="flex items-center gap-3">
+                    <img src="assets/images/logo/logo.png" alt="Northwind Kashmir Logo"
+                        class="h-12 w-12 object-contain">
+                    <span class="text-2xl font-bold tracking-wide text-[#D4AF37]">
+                        Northwind Kashmir
+                    </span>
+                </div>
+
+                <!-- Nav Links -->
+                <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+                    <a href="index.html" class="hover:text-[#D4AF37] transition">Home</a>
+                    <a href="about.html" class="hover:text-[#D4AF37] transition">About</a>
+                    <a href="packages.html" class="hover:text-[#D4AF37] transition">Packages</a>
+                    <a href="gallery.html" class="hover:text-[#D4AF37] transition">Gallery</a>
+                    <a href="contact.html" class="hover:text-[#D4AF37] transition">Contact</a>
+
+                    <a href="packages.html"
+                        class="bg-[#D4AF37] text-[#0B1F3A] px-5 py-2 rounded-full font-semibold hover:bg-yellow-400 transition duration-300">
+                        Explore Packages
+                    </a>
+
+
+                </div>
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="menu-btn" class="text-white focus:outline-none">
+                        ☰
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+            class="md:hidden bg-[#0B1F3A] text-white px-6 overflow-hidden max-h-0 opacity-0 transition-all duration-500 ease-in-out">
+
+            <div class="py-4 space-y-4">
+                <a href="index.html" class="block">Home</a>
+                <a href="about.html" class="block">About</a>
+                <a href="packages.html" class="block">Packages</a>
+                <a href="gallery.html" class="block">Gallery</a>
+                <a href="contact.html" class="block">Contact</a>
+
+                <a href="packages.html"
+                    class="block text-center bg-[#D4AF37] text-[#0B1F3A] py-2 rounded-full font-semibold">
+                    Explore Packages
+                </a>
+            </div>
+
+        </div>
+    </nav>
+    <div class="min-h-screen">
+
+
+
+        <!-- HERO SLIDER (FULL WIDTH) -->
+        <div class="bg-gray-100 pt-4">
+
+            <section class="relative h-[70vh] md:h-[85vh] overflow-hidden rounded-b-3xl mx-4 animate-fade-in-up">
+
+                <!-- Slides -->
+                <div id="slider" class="absolute inset-0">
+
+                    <img src="assets/images/gallery/gallery1.jpg" data-title="Dal Lake"
+                        data-desc="Famous for shikara rides and houseboats"
+                        class="slide absolute w-full h-full object-cover opacity-100 transition-opacity duration-1000">
+
+                    <img src="assets/images/gallery/gallery2.jpg" data-title="Gulmarg"
+                        data-desc="Snow-covered hills and gondola rides"
+                        class="slide absolute w-full h-full object-cover opacity-0 transition-opacity duration-1000">
+
+                    <img src="assets/images/gallery/gallery3.jpg" data-title="Pahalgam"
+                        data-desc="Valleys, rivers and peaceful landscapes"
+                        class="slide absolute w-full h-full object-cover opacity-0 transition-opacity duration-1000">
+
+                </div>
+
+                <!-- Overlay -->
+                <div class="absolute inset-0 bg-black/50"></div>
+
+                <!-- Content -->
+                <div class="relative z-10 flex flex-col items-center justify-center h-full text-center px-6 text-white">
+
+                    <h1
+                        class="text-4xl md:text-6xl font-bold mb-4 tracking-wide drop-shadow-lg opacity-90 bg-white/10 backdrop-blur-sm px-8 py-4 rounded-2xl">
+                        Explore Kashmir Gallery
+                    </h1>
+
+                    <p class="text-gray-200 max-w-2xl mb-6">
+                        Discover breathtaking destinations through our curated travel experiences.
+                    </p>
+
+                    <div class="bg-black/40 px-6 py-3 rounded-lg">
+                        <h2 id="slide-title" class="text-xl md:text-2xl font-semibold"></h2>
+                        <p id="slide-desc" class="text-sm text-gray-200"></p>
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+        <!-- Gallery Grid Section -->
+        <section class="py-16 bg-gradient-to-b from-gray-50 via-white to-gray-50">
+            <div class="max-w-7xl mx-auto px-6 lg:px-12">
+
+                <!-- Section Title -->
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                        Our Gallery
+                    </h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto">
+                        Discover the stunning landscapes and iconic destinations of Kashmir through our curated
+                        collection
+                    </p>
+                </div>
+
+                <!-- Grid Layout -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                    <div class="relative" data-aos="zoom-in">
+
+                        <img src="assets/images/gallery/gallery1.jpg" data-title="Dal Lake"
+                            data-desc="Iconic lake of Srinagar famous for shikara rides, floating markets, and traditional houseboats."
+                            class="gallery-img w-full h-64 object-cover rounded-xl shadow-md cursor-pointer">
+                        <div
+                            class="absolute bottom-0 left-0 w-full bg-black/70 text-white text-sm font-medium text-center py-2 rounded-b-xl">
+                            Dal Lake
+                        </div>
+
+                    </div>
+
+                    <div class="relative" data-aos="zoom-in">
+
+                        <img src="assets/images/gallery/gallery2.jpg" data-title="Srinagar"
+                            data-desc="The heart of Kashmir known for Mughal gardens, lakes, and rich cultural heritage."
+                            class="gallery-img w-full h-64 object-cover rounded-xl shadow-md cursor-pointer">
+                        <div
+                            class="absolute bottom-0 left-0 w-full bg-black/70 text-white text-sm font-medium text-center py-2 rounded-b-xl">
+                            Srinagar
+                        </div>
+
+                    </div>
+
+                    <div class="relative" data-aos="zoom-in">
+
+                        <img src="assets/images/gallery/gallery3.jpg" data-title="Gulmarg"
+                            data-desc="A beautiful hill station famous for lush meadows, pine forests, and breathtaking landscapes"
+                            class="gallery-img w-full h-64 object-cover rounded-xl shadow-md cursor-pointer">
+                        <div
+                            class="absolute bottom-0 left-0 w-full bg-black/70 text-white text-sm font-medium text-center py-2 rounded-b-xl">
+                            Gulmarg
+                        </div>
+
+                    </div>
+                    <div class="relative" data-aos="zoom-in">
+
+                        <img src="assets/images/gallery/gallery4.jpg" data-title="Gulmarg Gondola"
+                            data-desc="One of the world’s highest cable cars offering stunning views of snow-covered peaks."
+                            class="gallery-img w-full h-64 object-cover rounded-xl shadow-md cursor-pointer">
+                        <div
+                            class="absolute bottom-0 left-0 w-full bg-black/70 text-white text-sm font-medium text-center py-2 rounded-b-xl">
+                            Gulmarg Gondola
+                        </div>
+
+                    </div>
+
+                    <div class="relative" data-aos="zoom-in">
+
+                        <img src="assets/images/gallery/gallery5.jpg" data-title="Gulmarg Ski Adventure"
+                            data-desc="Experience thrilling skiing and snowboarding on the pristine slopes of Gulmarg."
+                            class="gallery-img w-full h-64 object-cover rounded-xl shadow-md cursor-pointer">
+                        <div
+                            class="absolute bottom-0 left-0 w-full bg-black/70 text-white text-sm font-medium text-center py-2 rounded-b-xl">
+                            Gulmarg Ski Adventure
+                        </div>
+
+                    </div>
+
+                    <div class="relative" data-aos="zoom-in">
+
+                        <img src="assets/images/gallery/gallery6.jpg" data-title="Pahalgam"
+                            data-desc="A peaceful valley with flowing rivers, pine forests, and scenic mountain views."
+                            class="gallery-img w-full h-64 object-cover rounded-xl shadow-md cursor-pointer">
+                        <div
+                            class="absolute bottom-0 left-0 w-full bg-black/70 text-white text-sm font-medium text-center py-2 rounded-b-xl">
+                            pahalgam
+                        </div>
+
+                    </div>
+                    <div class="relative" data-aos="zoom-in">
+
+                        <img src="assets/images/gallery/gallery7.jpg" data-title="Betaab Valley"
+                            data-desc="A lush green valley surrounded by mountains, known for its natural beauty and film locations."
+                            class="gallery-img w-full h-64 object-cover rounded-xl shadow-md cursor-pointer">
+                        <div
+                            class="absolute bottom-0 left-0 w-full bg-black/70 text-white text-sm font-medium text-center py-2 rounded-b-xl">
+                            Betaab Valley
+                        </div>
+
+                    </div>
+                    <div class="relative" data-aos="zoom-in">
+
+                        <img src="assets/images/gallery/gallery8.jpg" data-title="Sonmarg"
+                            data-desc="Known as the “Meadow of Gold,” surrounded by glaciers and majestic snow-covered peaks."
+                            class="gallery-img w-full h-64 object-cover rounded-xl shadow-md cursor-pointer">
+                        <div
+                            class="absolute bottom-0 left-0 w-full bg-black/70 text-white text-sm font-medium text-center py-2 rounded-b-xl">
+                            Sonmarg
+                        </div>
+
+                    </div>
+                    <div class="relative" data-aos="zoom-in">
+
+                        <img src="assets/images/gallery/gallery9.jpg" data-title="Apherwat Peak"
+                            data-desc="A high-altitude snow-covered peak offering panoramic views and year-round snow experiences."
+                            class="gallery-img w-full h-64 object-cover rounded-xl shadow-md cursor-pointer">
+                        <div
+                            class="absolute bottom-0 left-0 w-full bg-black/70 text-white text-sm font-medium text-center py-2 rounded-b-xl">
+                            Apharwat Peak
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="fixed inset-0 bg-black bg-opacity-90 hidden items-center justify-center z-50">
+
+        <span id="close-lightbox" class="absolute top-5 right-8 text-white text-4xl cursor-pointer">
+            &times;
+        </span>
+
+        <div class="relative">
+            <img id="lightbox-img" class="max-w-[90%] max-h-[85vh] rounded-lg shadow-lg object-contain">
+
+            <!-- Caption -->
+            <div id="lightbox-caption"
+                class="absolute bottom-0 left-0 w-full bg-black/50 text-white px-4 py-3 rounded-b-lg">
+
+                <h3 id="lightbox-title" class="text-lg font-semibold"></h3>
+                <p id="lightbox-desc" class="text-sm text-gray-200"></p>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-[#0B1F3A] text-white py-12">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="grid md:grid-cols-4 gap-10">
+                <div>
+                    <h3 class="text-2xl font-bold text-[#D4AF37] mb-4">Northwind Kashmir</h3>
+                    <p class="text-gray-300">Your premium travel partner in Kashmir offering unforgettable luxury
+                        journeys and curated travel experiences.</p>
+                </div>
+                <div>
+                    <h4 class="text-xl font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="index.html" class="hover:text-[#D4AF37] transition">Home</a></li>
+                        <li><a href="about.html" class="hover:text-[#D4AF37] transition">About</a></li>
+                        <li><a href="packages.html" class="hover:text-[#D4AF37] transition">Packages</a></li>
+                        <li><a href="gallery.html" class="hover:text-[#D4AF37] transition">Gallery</a></li>
+                        <li><a href="contact.html" class="hover:text-[#D4AF37] transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xl font-semibold mb-4">Contact Info</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li>+91 9541615419</li>
+                        <li>northwindkashmir@gmail.com</li>
+                        <li>Chandilora, Kashmir</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xl font-semibold mb-4">Follow Us</h4>
+                    <div class="flex gap-4 text-2xl">
+                        <a href="https://www.instagram.com/northwindkashmiradventure/" target="_blank"
+                            class="hover:text-[#D4AF37] transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.facebook.com/p/North-Wind-100076957834119" target="_blank"
+                            class="hover:text-[#D4AF37] transition">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@northwindkashmir5419" target="_blank"
+                            class="hover:text-[#D4AF37] transition">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="https://wa.me/919541615419" target="_blank" class="hover:text-green-500 transition">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-10 pt-6 text-center text-gray-400">
+                © 2026 Northwind Kashmir. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <!-- Enhanced Gallery Slideshow Animation -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            let slides = document.querySelectorAll("#slider .slide");
+            let currentIndex = 0;
+
+            const slideTitle = document.getElementById("slide-title");
+            const slideDesc = document.getElementById("slide-desc");
+
+            if (slides.length === 0) return;
+
+            // Set initial caption
+            slideTitle.textContent = slides[0].getAttribute("data-title");
+            slideDesc.textContent = slides[0].getAttribute("data-desc");
+
+            function showNextSlide() {
+                slides[currentIndex].classList.remove("opacity-100");
+                slides[currentIndex].classList.add("opacity-0");
+
+                currentIndex = (currentIndex + 1) % slides.length;
+
+                slides[currentIndex].classList.remove("opacity-0");
+                slides[currentIndex].classList.add("opacity-100");
+
+                // update caption
+                slideTitle.textContent = slides[currentIndex].getAttribute("data-title");
+                slideDesc.textContent = slides[currentIndex].getAttribute("data-desc");
+            }
+
+            setInterval(showNextSlide, 5000);
+        });
+
+        // AOS Animation Init
+        AOS.init({
+            duration: 1000,
+            once: false,
+            easing: 'ease-in-out',
+            mirror: true
+        });
+    </script>
+</body>
+
+</html>

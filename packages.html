@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Packages - Northwind Kashmir</title>
+
+    <link rel="stylesheet" href="dist/output.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+    <!-- Custom Animations -->
+    <style>
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .package-card {
+            opacity: 1;
+            transform: scale(1);
+            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+    </style>
+</head>
+
+<body class="bg-gradient-to-br from-gray-50 via-white to-blue-50 text-gray-900 min-h-screen">
+
+    <!-- Navbar (copy from index.html) -->
+    <nav class="w-full bg-[#0B1F3A] text-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="flex justify-between items-center h-20">
+
+                <!-- Logo Section -->
+                <div class="flex items-center gap-3">
+                    <img src="assets/images/logo/logo.png" alt="Northwind Kashmir Logo"
+                        class="h-12 w-12 object-contain">
+                    <span class="text-2xl font-bold tracking-wide text-[#D4AF37]">
+                        Northwind Kashmir
+                    </span>
+                </div>
+
+                <!-- Nav Links -->
+                <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+                    <a href="index.html" class="hover:text-[#D4AF37] transition">Home</a>
+                    <a href="about.html" class="hover:text-[#D4AF37] transition">About</a>
+                    <a href="packages.html" class="hover:text-[#D4AF37] transition">Packages</a>
+                    <a href="gallery.html" class="hover:text-[#D4AF37] transition">Gallery</a>
+                    <a href="contact.html" class="hover:text-[#D4AF37] transition">Contact</a>
+
+                    <a href="packages.html"
+                        class="bg-[#D4AF37] text-[#0B1F3A] px-5 py-2 rounded-full font-semibold hover:bg-yellow-400 transition duration-300">
+                        Explore Packages
+                    </a>
+
+
+                </div>
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="menu-btn" class="text-white focus:outline-none">
+                        ☰
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+            class="md:hidden bg-[#0B1F3A] text-white px-6 overflow-hidden max-h-0 opacity-0 transition-all duration-500 ease-in-out">
+
+            <div class="py-4 space-y-4">
+                <a href="index.html" class="block">Home</a>
+                <a href="about.html" class="block">About</a>
+                <a href="packages.html" class="block">Packages</a>
+                <a href="gallery.html" class="block">Gallery</a>
+                <a href="contact.html" class="block">Contact</a>
+
+                <a href="packages.html"
+                    class="block text-center bg-[#D4AF37] text-[#0B1F3A] py-2 rounded-full font-semibold">
+                    Explore Packages
+                </a>
+            </div>
+
+        </div>
+    </nav>
+    <!-- HERO -->
+    <section
+        class="relative bg-gradient-to-br from-[#0B1F3A] via-[#1a3a52] to-[#051a2b] text-white py-32 text-center animate-fade-in-up overflow-hidden">
+
+        <!-- Decorative background elements -->
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-10 left-10 w-40 h-40 bg-[#D4AF37] rounded-full blur-3xl"></div>
+            <div class="absolute bottom-10 right-10 w-40 h-40 bg-[#D4AF37] rounded-full blur-3xl"></div>
+        </div>
+
+        <!-- Content -->
+        <div class="relative z-10">
+            <!-- Premium Icon/Badge -->
+            <div class="inline-block mb-6">
+                <span class="bg-[#D4AF37] text-[#0B1F3A] px-6 py-2 rounded-full text-sm font-bold tracking-wide">
+                    ✨ PREMIUM PACKAGES
+                </span>
+            </div>
+
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 tracking-tight drop-shadow-lg">
+                Our Travel Packages
+            </h1>
+
+            <p class="text-lg md:text-xl text-gray-200 mb-8 max-w-3xl mx-auto leading-relaxed">
+                Discover curated luxury experiences designed to create unforgettable memories in Kashmir's most
+                enchanting destinations.
+            </p>
+
+            <!-- Stats/Features Row -->
+            <div class="grid grid-cols-3 gap-6 max-w-2xl mx-auto mt-12">
+                <div>
+                    <p class="text-3xl font-bold text-[#D4AF37]">6+</p>
+                    <p class="text-gray-300 text-sm">Premium Packages</p>
+                </div>
+                <div>
+                    <p class="text-3xl font-bold text-[#D4AF37]">∞</p>
+                    <p class="text-gray-300 text-sm">Custom Options</p>
+                </div>
+                <div>
+                    <p class="text-3xl font-bold text-[#D4AF37]">5★</p>
+                    <p class="text-gray-300 text-sm">Quality Assured</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom accent line -->
+        <div class="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent">
+        </div>
+    </section>
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 py-8">
+        <div class="flex flex-wrap justify-center gap-4 mb-10">
+
+            <button
+                class="filter-btn px-5 py-2 bg-[#0B1F3A] text-white rounded-full font-semibold transition hover:shadow-md"
+                data-filter="all">
+                All
+            </button>
+
+            <button
+                class="filter-btn px-5 py-2 bg-gray-200 text-gray-800 rounded-full font-semibold transition hover:bg-[#0B1F3A] hover:text-white"
+                data-filter="honeymoon">
+                Honeymoon
+            </button>
+
+            <button
+                class="filter-btn px-5 py-2 bg-gray-200 text-gray-800 rounded-full font-semibold transition hover:bg-[#0B1F3A] hover:text-white"
+                data-filter="family">
+                Family
+            </button>
+
+            <button
+                class="filter-btn px-5 py-2 bg-gray-200 text-gray-800 rounded-full font-semibold transition hover:bg-[#0B1F3A] hover:text-white"
+                data-filter="adventure">
+                Adventure
+            </button>
+
+            <button
+                class="filter-btn px-5 py-2 bg-gray-200 text-gray-800 rounded-full font-semibold transition hover:bg-[#0B1F3A] hover:text-white"
+                data-filter="winter">
+                Winter
+            </button>
+
+            <button
+                class="filter-btn px-5 py-2 bg-gray-200 text-gray-800 rounded-full font-semibold transition hover:bg-[#0B1F3A] hover:text-white"
+                data-filter="luxury">
+                Luxury
+            </button>
+
+        </div>
+    </div>
+    <!-- Packages will go here -->
+    <section class="py-20 bg-gradient-to-b from-gray-50 via-white to-gray-50">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Package Card -->
+                <div class="package-card bg-white rounded-2xl shadow-lg overflow-hidden transition duration-500 hover:shadow-2xl hover:-translate-y-2"
+                    data-aos="fade-up" data-category="honeymoon">
+
+                    <img src="assets/images/packages/package1.jpg" class="w-full h-56 object-cover">
+
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-[#0B1F3A] mb-2">
+                            Honeymoon Package
+                        </h3>
+
+                        <p class="text-gray-600 mb-3">
+                            Romantic getaway covering Srinagar, Gulmarg, and Pahalgam.
+                        </p>
+
+                        <p class="text-sm text-gray-500 mb-1">
+                            Duration: 5 Days / 4 Nights
+                        </p>
+
+                        <p class="text-sm text-gray-500 mb-3">
+                            Starting From: ₹15,000
+                        </p>
+
+                        <a href="https://wa.me/919541615419?text=Hello!%20I'm%20interested%20in%20the%20Honeymoon%20Package.%20Duration:%205%20Days%20/%204%20Nights,%20Price:%20Starting%20From%20%E2%82%B915,000"
+                            class="block text-center bg-[#D4AF37] text-[#0B1F3A] py-2 rounded-full font-semibold hover:bg-yellow-400 transition">
+                            Enquire Now
+                        </a>
+                    </div>
+
+                </div>
+
+
+                <div class="package-card bg-white rounded-2xl shadow-lg overflow-hidden transition duration-500 hover:shadow-2xl hover:-translate-y-2"
+                    data-aos="fade-up" data-category="family">
+                    <img src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944"
+                        class="w-full h-56 object-cover">
+
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-[#0B1F3A] mb-2">Family Tour</h3>
+                        <p class="text-gray-600 mb-3">
+                            Perfect family trip covering Srinagar, Gulmarg, and Pahalgam with comfort and safety.
+                        </p>
+                        <p class="text-sm text-gray-500">Duration: 6 Days / 5 Nights</p>
+                        <p class="text-sm text-gray-500 mb-3">Starting From: ₹18,000</p>
+
+                        <a href="https://wa.me/919541615419?text=Hello!%20I'm%20interested%20in%20the%20Family%20Tour.%20Duration:%206%20Days%20/%205%20Nights,%20Price:%20Starting%20From%20%E2%82%B918,000"
+                            class="block text-center bg-[#D4AF37] text-[#0B1F3A] py-2 rounded-full font-semibold hover:bg-yellow-400 transition">
+                            Enquire Now
+                        </a>
+                    </div>
+                </div>
+                <div class="package-card bg-white rounded-2xl shadow-lg overflow-hidden transition duration-500 hover:shadow-2xl hover:-translate-y-2"
+                    data-aos="fade-up" data-category="adventure">
+                    <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470"
+                        class="w-full h-56 object-cover">
+
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-[#0B1F3A] mb-2">Adventure Tour</h3>
+                        <p class="text-gray-600 mb-3">
+                            Thrilling adventure including trekking, river rafting, and mountain exploration.
+                        </p>
+                        <p class="text-sm text-gray-500">Duration: 5 Days / 4 Nights</p>
+                        <p class="text-sm text-gray-500 mb-3">Starting From: ₹14,000</p>
+
+                        <a href="https://wa.me/919541615419?text=Hello!%20I'm%20interested%20in%20the%20Adventure%20Tour.%20Duration:%205%20Days%20/%204%20Nights,%20Price:%20Starting%20From%20%E2%82%B914,000"
+                            class="block text-center bg-[#D4AF37] text-[#0B1F3A] py-2 rounded-full font-semibold hover:bg-yellow-400 transition">
+                            Enquire Now
+                        </a>
+                    </div>
+                </div>
+                <div class="package-card bg-white rounded-2xl shadow-lg overflow-hidden transition duration-500 hover:shadow-2xl hover:-translate-y-2"
+                    data-aos="fade-up" data-category="winter">
+                    <img src="https://images.unsplash.com/photo-1483664852095-d6cc6870702d"
+                        class="w-full h-56 object-cover">
+
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-[#0B1F3A] mb-2">Winter Package</h3>
+                        <p class="text-gray-600 mb-3">
+                            Enjoy snowfall, skiing, and winter landscapes in Gulmarg and Sonmarg.
+                        </p>
+                        <p class="text-sm text-gray-500">Duration: 4 Days / 3 Nights</p>
+                        <p class="text-sm text-gray-500 mb-3">Starting From: ₹16,000</p>
+
+                        <a href="https://wa.me/919541615419?text=Hello!%20I'm%20interested%20in%20the%20Winter%20Package.%20Duration:%204%20Days%20/%203%20Nights,%20Price:%20Starting%20From%20%E2%82%B916,000"
+                            class="block text-center bg-[#D4AF37] text-[#0B1F3A] py-2 rounded-full font-semibold hover:bg-yellow-400 transition">
+                            Enquire Now
+                        </a>
+                    </div>
+                </div>
+                <div class="package-card bg-white rounded-2xl shadow-lg overflow-hidden transition duration-500 hover:shadow-2xl hover:-translate-y-2"
+                    data-aos="fade-up" data-category="luxury">
+                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945"
+                        class="w-full h-56 object-cover">
+
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-[#0B1F3A] mb-2">Luxury Retreat</h3>
+                        <p class="text-gray-600 mb-3">
+                            Premium experience with luxury hotels, private transport, and curated tours.
+                        </p>
+                        <p class="text-sm text-gray-500">Duration: 5 Days / 4 Nights</p>
+                        <p class="text-sm text-gray-500 mb-3">Starting From: ₹25,000</p>
+
+                        <a href="https://wa.me/919541615419?text=Hello!%20I'm%20interested%20in%20the%20Luxury%20Retreat.%20Duration:%205%20Days%20/%204%20Nights,%20Price:%20Starting%20From%20%E2%82%B925,000"
+                            class="block text-center bg-[#D4AF37] text-[#0B1F3A] py-2 rounded-full font-semibold hover:bg-yellow-400 transition">
+                            Enquire Now
+                        </a>
+                    </div>
+                </div>
+                <div class="package-card bg-white rounded-2xl shadow-lg overflow-hidden transition duration-500 hover:shadow-2xl hover:-translate-y-2"
+                    data-aos="fade-up" data-category="luxury">
+                    <img src="https://images.pexels.com/photos/21014/pexels-photo.jpg" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-[#0B1F3A] mb-2">Custom Tour</h3>
+                        <p class="text-gray-600 mb-3">
+                            Design your own itinerary with personalized travel planning and flexible options.
+                        </p>
+                        <p class="text-sm text-gray-500">Duration: Flexible</p>
+                        <p class="text-sm text-gray-500 mb-3">Price: On Request</p>
+
+                        <a href="https://wa.me/919541615419?text=Hello!%20I'm%20interested%20in%20the%20Custom%20Tour.%20I%20would%20like%20to%20design%20my%20own%20itinerary%20with%20personalized%20travel%20planning."
+                            class="block text-center bg-[#D4AF37] text-[#0B1F3A] py-2 rounded-full font-semibold hover:bg-yellow-400 transition">
+                            Enquire Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#0B1F3A] text-white py-12">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="grid md:grid-cols-4 gap-10">
+                <div>
+                    <h3 class="text-2xl font-bold text-[#D4AF37] mb-4">Northwind Kashmir</h3>
+                    <p class="text-gray-300">Your premium travel partner in Kashmir offering unforgettable luxury
+                        journeys and curated travel experiences.</p>
+                </div>
+                <div>
+                    <h4 class="text-xl font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="index.html" class="hover:text-[#D4AF37] transition">Home</a></li>
+                        <li><a href="about.html" class="hover:text-[#D4AF37] transition">About</a></li>
+                        <li><a href="packages.html" class="hover:text-[#D4AF37] transition">Packages</a></li>
+                        <li><a href="gallery.html" class="hover:text-[#D4AF37] transition">Gallery</a></li>
+                        <li><a href="contact.html" class="hover:text-[#D4AF37] transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xl font-semibold mb-4">Contact Info</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li>+91 9541615419</li>
+                        <li>northwindkashmir@gmail.com</li>
+                        <li>Chandilora, Kashmir</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xl font-semibold mb-4">Follow Us</h4>
+                    <div class="flex gap-4 text-2xl">
+                        <a href="https://www.instagram.com/northwindkashmiradventure/" target="_blank"
+                            class="hover:text-[#D4AF37] transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.facebook.com/p/North-Wind-100076957834119" target="_blank"
+                            class="hover:text-[#D4AF37] transition">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@northwindkashmir5419" target="_blank"
+                            class="hover:text-[#D4AF37] transition">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="https://wa.me/919541615419" target="_blank" class="hover:text-green-500 transition">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-10 pt-6 text-center text-gray-400">
+                © 2026 Northwind Kashmir. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Package Filter Functionality
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const packageCards = document.querySelectorAll('.package-card');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    filterBtns.forEach(b => {
+                        b.classList.remove('bg-[#0B1F3A]', 'text-white');
+                        b.classList.add('bg-gray-200', 'text-gray-800');
+                    });
+
+                    // Add active class to clicked button
+                    btn.classList.remove('bg-gray-200', 'text-gray-800');
+                    btn.classList.add('bg-[#0B1F3A]', 'text-white');
+
+                    const filterValue = btn.getAttribute('data-filter');
+
+                    // Filter package cards with smooth transition
+                    packageCards.forEach(card => {
+                        const category = card.getAttribute('data-category');
+                        if (filterValue === 'all' || category === filterValue) {
+                            card.style.display = 'block';
+                            setTimeout(() => {
+                                card.style.opacity = '1';
+                                card.style.transform = 'scale(1)';
+                            }, 10);
+                        } else {
+                            card.style.opacity = '0';
+                            card.style.transform = 'scale(0.95)';
+                            setTimeout(() => {
+                                card.style.display = 'none';
+                            }, 300);
+                        }
+                    });
+                });
+            });
+        });
+
+        AOS.init({
+            duration: 1000,
+            once: false,
+            easing: 'ease-in-out',
+            mirror: true
+        });
+    </script>
+</body>
+
+</html>
