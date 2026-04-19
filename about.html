@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About - Northwind Kashmir</title>
 
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -14,164 +13,301 @@
         rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="dist/output.css">
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="output.css">
 </head>
 
-<body class="bg-white text-gray-900 font-sans">
-
-    <!-- Navbar (copy from other pages) -->
-    <nav class="w-full bg-[#0B1F3A] text-white shadow-lg z-40">
-        <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-12">
-            <div class="flex justify-between items-center h-16 sm:h-20">
-
-                <!-- Logo Section -->
-                <div class="flex items-center gap-3 sm:gap-4">
+<body class="bg-[#f8f5ee] text-gray-900 font-sans">
+    <nav class="site-nav backdrop-blur-md bg-white/10 border-b border-white/20 shadow-lg">
+        <div class="site-nav-shell">
+            <div class="site-nav-row">
+                <div class="site-brand">
                     <img src="assets/images/logo/logo.png" alt="Northwind Kashmir Logo"
-                        class="h-16 sm:h-18 w-16 sm:w-18 object-contain">
-                    <span class="text-xl sm:text-3xl font-bold tracking-wide font-display">
-                        <span class="text-[#D4AF37]">Northwind</span>
-                        <span class="text-white">Kashmir</span>
+                        class="site-logo-image">
+                    <span class="site-brand-copy site-logo-text">
+                        <span class="site-logo-line text-[#D4AF37]">Northwind</span>
+                        <span class="site-logo-line text-white">Kashmir</span>
                     </span>
                 </div>
 
-                <!-- Nav Links -->
                 <div class="hidden md:flex items-center gap-8 text-sm font-medium font-sans">
                     <a href="index.html" class="hover:text-[#D4AF37] transition">Home</a>
                     <a href="about.html" class="hover:text-[#D4AF37] transition">About</a>
                     <a href="packages.html" class="hover:text-[#D4AF37] transition">Packages</a>
                     <a href="gallery.html" class="hover:text-[#D4AF37] transition">Gallery</a>
                     <a href="contact.html" class="hover:text-[#D4AF37] transition">Contact</a>
-
                     <a href="packages.html"
                         class="bg-[#D4AF37] text-[#0B1F3A] px-5 py-2 rounded-full font-semibold hover:bg-yellow-400 transition duration-300">
                         Explore Packages
                     </a>
-
                 </div>
-                <!-- Mobile Menu Button -->
+
                 <div class="md:hidden">
-                    <button id="menu-btn" class="text-white focus:outline-none text-2xl">
+                    <button id="menu-btn" class="site-menu-button" aria-label="Open menu">
                         <i class="fas fa-bars"></i>
                     </button>
                 </div>
-
             </div>
-
         </div>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu"
-            class="md:hidden bg-black/80 text-white px-4 overflow-hidden max-h-0 opacity-0 transition-all duration-500 ease-in-out border-t border-gray-700">
 
+        <div id="mobile-menu" class="mobile-drawer">
             <div class="py-6 space-y-3">
                 <a href="index.html" class="block hover:text-[#D4AF37] transition py-2 text-sm mobile-link">Home</a>
                 <a href="about.html" class="block hover:text-[#D4AF37] transition py-2 text-sm mobile-link">About</a>
-                <a href="packages.html"
-                    class="block hover:text-[#D4AF37] transition py-2 text-sm mobile-link">Packages</a>
-                <a href="gallery.html"
-                    class="block hover:text-[#D4AF37] transition py-2 text-sm mobile-link">Gallery</a>
-                <a href="contact.html"
-                    class="block hover:text-[#D4AF37] transition py-2 text-sm mobile-link">Contact</a>
-
+                <a href="packages.html" class="block hover:text-[#D4AF37] transition py-2 text-sm mobile-link">Packages</a>
+                <a href="gallery.html" class="block hover:text-[#D4AF37] transition py-2 text-sm mobile-link">Gallery</a>
+                <a href="contact.html" class="block hover:text-[#D4AF37] transition py-2 text-sm mobile-link">Contact</a>
                 <a href="packages.html"
                     class="block text-center bg-[#D4AF37] text-[#0B1F3A] py-3 rounded-full font-semibold font-accent mt-4 hover:bg-yellow-400 transition text-sm mobile-link">
                     Explore Packages
                 </a>
             </div>
-
         </div>
     </nav>
-    <!-- HERO -->
-    <section class="bg-[#0B1F3A] text-white py-20 text-center">
-        <h1 class="text-4xl md:text-5xl font-bold mb-4">
-            About Northwind Kashmir
-        </h1>
-        <p class="text-gray-300">
-            Your premium travel partner in Kashmir
-        </p>
+
+    <section class="page-top-offset relative overflow-hidden bg-[#0B1F3A] text-white">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(212,175,55,0.22),_transparent_30%),radial-gradient(circle_at_bottom_right,_rgba(255,255,255,0.08),_transparent_28%)]">
+        </div>
+        <div class="section-shell relative grid gap-8 py-14 sm:py-20 md:grid-cols-[1.1fr_0.9fr] md:items-center md:py-28">
+            <div data-aos="fade-up">
+                <span class="section-eyebrow">Our Story</span>
+                <h1 class="mt-5 font-display text-3xl font-bold leading-tight sm:text-5xl md:text-6xl">
+                    We design Kashmir journeys that feel personal, polished, and unforgettable.
+                </h1>
+                <p class="mt-5 max-w-2xl text-sm leading-relaxed text-slate-200 sm:text-lg">
+                    Northwind Kashmir was built for travelers who want more than a checklist. We blend local knowledge,
+                    warm hospitality, and premium planning to create trips that feel effortless from arrival to return.
+                </p>
+                <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+                    <a href="packages.html" class="premium-button">View Packages</a>
+                    <a href="contact.html" class="premium-button-outline">Talk To Us</a>
+                </div>
+            </div>
+
+            <div class="relative" data-aos="zoom-in">
+                <div class="absolute -left-6 top-10 hidden h-32 w-32 rounded-full bg-[#D4AF37]/20 blur-3xl md:block"></div>
+                <div class="premium-card overflow-hidden rounded-[2rem] border-white/10 bg-white/10">
+                    <img src="assets/images/about/about1.jpg" alt="Northwind Kashmir travel experience"
+                        class="h-[260px] w-full object-cover sm:h-[380px] md:h-[420px]">
+                </div>
+                <div class="premium-card mt-4 p-5 sm:p-6 md:absolute md:-bottom-8 md:left-auto md:right-6 md:mt-0 md:w-64">
+                    <p class="text-xs font-semibold uppercase tracking-[0.28em] text-[#D4AF37]">Promise</p>
+                    <p class="mt-3 text-sm leading-relaxed text-gray-700">
+                        Curated routes, responsive support, and a travel experience that still feels deeply local.
+                    </p>
+                </div>
+            </div>
+        </div>
+    
+
+    <section class="py-16 sm:py-20">
+        <div class="section-shell">
+            <div class="grid gap-5 md:grid-cols-3">
+                <div class="premium-card p-7" data-aos="fade-up">
+                    <p class="text-xs font-semibold uppercase tracking-[0.26em] text-[#D4AF37]">Experience</p>
+                    <p class="mt-4 font-display text-4xl text-[#0B1F3A]">10+</p>
+                    <p class="mt-2 section-copy">Years of helping travelers discover Kashmir with confidence.</p>
+                </div>
+                <div class="premium-card p-7" data-aos="fade-up" data-aos-delay="80">
+                    <p class="text-xs font-semibold uppercase tracking-[0.26em] text-[#D4AF37]">Coverage</p>
+                    <p class="mt-4 font-display text-4xl text-[#0B1F3A]">50+</p>
+                    <p class="mt-2 section-copy">Packages and customizable routes for couples, families, and explorers.</p>
+                </div>
+                <div class="premium-card p-7" data-aos="fade-up" data-aos-delay="160">
+                    <p class="text-xs font-semibold uppercase tracking-[0.26em] text-[#D4AF37]">Trust</p>
+                    <p class="mt-4 font-display text-4xl text-[#0B1F3A]">500+</p>
+                    <p class="mt-2 section-copy">Happy travelers who chose us for seamless planning and local expertise.</p>
+                </div>
+            </div>
+        </div>
     </section>
-    <section class="py-20">
-        <div class="max-w-6xl mx-auto px-6 lg:px-12 grid md:grid-cols-2 gap-10 items-center">
 
-            <!-- Image -->
-            <img src="assets/images/about/about1.jpg" class="rounded-2xl shadow-lg object-cover">
-
-            <!-- Content -->
-            <div>
-                <h2 class="text-3xl font-bold text-[#0B1F3A] mb-4">
-                    Who We Are
+    <section class="py-10 sm:py-12">
+        <div class="section-shell grid gap-12 md:grid-cols-[0.95fr_1.05fr] md:items-start">
+            <div data-aos="fade-right">
+                <span class="section-eyebrow">Who We Are</span>
+                <h2 class="section-title mt-5">
+                    A travel team that values comfort, trust, and detail.
                 </h2>
-
-                <p class="text-gray-600 mb-4">
-                    Northwind Kashmir is a premium travel company dedicated to creating unforgettable travel experiences
-                    across the breathtaking landscapes of Kashmir.
+                <p class="section-copy mt-5">
+                    We created Northwind Kashmir to make premium travel in the region feel approachable and dependable.
+                    Our planning style is hands-on, our recommendations are rooted in local understanding, and our goal is
+                    simple: remove stress so travelers can fully enjoy the place.
                 </p>
-
-                <p class="text-gray-600">
-                    From serene lakes to snow-covered mountains, we design personalized journeys that combine comfort,
-                    adventure, and authenticity.
+                <p class="section-copy mt-4">
+                    From romantic escapes and family holidays to active outdoor adventures, we shape each itinerary around
+                    pace, preferences, and season. That means better stays, smarter routes, and more meaningful experiences.
                 </p>
             </div>
 
-        </div>
-    </section>
-    <section class="py-20 bg-gray-100">
-        <div class="max-w-7xl mx-auto px-6 lg:px-12 text-center">
-
-            <h2 class="text-3xl font-bold text-[#0B1F3A] mb-10">
-                Why Choose Us
-            </h2>
-
-            <div class="grid md:grid-cols-3 gap-8">
-
-                <div class="bg-white p-6 rounded-xl shadow-md">
-                    <h3 class="font-bold text-lg mb-2">Local Expertise</h3>
-                    <p class="text-gray-600">Deep knowledge of Kashmir ensures authentic experiences.</p>
+            <div class="grid gap-5 sm:grid-cols-2" data-aos="fade-left">
+                <div class="premium-card p-6">
+                    <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#0B1F3A] text-[#D4AF37]">
+                        <i class="fas fa-map-location-dot"></i>
+                    </div>
+                    <h3 class="mt-5 text-xl font-bold text-[#0B1F3A]">Local Expertise</h3>
+                    <p class="section-copy mt-3">
+                        Real insight into routes, seasons, hidden viewpoints, and practical trip planning.
+                    </p>
                 </div>
-
-                <div class="bg-white p-6 rounded-xl shadow-md">
-                    <h3 class="font-bold text-lg mb-2">Customized Tours</h3>
-                    <p class="text-gray-600">Tailor-made packages based on your needs and preferences.</p>
+                <div class="premium-card p-6">
+                    <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#0B1F3A] text-[#D4AF37]">
+                        <i class="fas fa-sliders"></i>
+                    </div>
+                    <h3 class="mt-5 text-xl font-bold text-[#0B1F3A]">Tailored Itineraries</h3>
+                    <p class="section-copy mt-3">
+                        Trips built around your comfort level, travel style, and the moments you want most.
+                    </p>
                 </div>
-
-                <div class="bg-white p-6 rounded-xl shadow-md">
-                    <h3 class="font-bold text-lg mb-2">24/7 Support</h3>
-                    <p class="text-gray-600">We are always available to assist you during your journey.</p>
+                <div class="premium-card p-6">
+                    <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#0B1F3A] text-[#D4AF37]">
+                        <i class="fas fa-hotel"></i>
+                    </div>
+                    <h3 class="mt-5 text-xl font-bold text-[#0B1F3A]">Premium Coordination</h3>
+                    <p class="section-copy mt-3">
+                        Clean logistics, trusted stays, and thoughtful arrangements from start to finish.
+                    </p>
                 </div>
-
+                <div class="premium-card p-6">
+                    <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#0B1F3A] text-[#D4AF37]">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3 class="mt-5 text-xl font-bold text-[#0B1F3A]">Responsive Support</h3>
+                    <p class="section-copy mt-3">
+                        Quick communication before the trip and reliable support while you are on the road.
+                    </p>
+                </div>
             </div>
-
         </div>
     </section>
-    <section class="py-20">
-        <div class="max-w-4xl mx-auto text-center px-6">
-
-            <h2 class="text-3xl font-bold text-[#0B1F3A] mb-6">
-                Our Vision
-            </h2>
-
-            <p class="text-gray-600">
-                To become the most trusted travel partner in Kashmir by delivering premium, safe, and memorable travel
-                experiences for every traveler.
-            </p>
-
+</section>
+    <section class="py-16 sm:py-20">
+        <div class="section-shell">
+            <div class="premium-card overflow-hidden">
+                <div class="grid md:grid-cols-[1fr_1.1fr]">
+                    <div class="bg-gradient-to-br from-[#0B1F3A] via-[#12324f] to-[#0B1F3A] p-8 text-white sm:p-10" data-aos="fade-right">
+                        <span class="section-eyebrow border-white/20 bg-white/10 text-[#f5d77f]">Our Vision</span>
+                        <h2 class="mt-5 font-display text-3xl font-bold sm:text-4xl">
+                            To become the most trusted premium travel partner in Kashmir.
+                        </h2>
+                        <p class="mt-5 text-sm leading-relaxed text-slate-200 sm:text-base">
+                            We want every guest to feel that their trip was not only beautiful, but also thoughtfully
+                            guided, well-paced, and genuinely cared for. That is the standard we build around.
+                        </p>
+                    </div>
+                    <div class="bg-[#fffaf1] p-8 sm:p-10" data-aos="fade-left">
+                        <div class="grid gap-5 sm:grid-cols-2">
+                            <div>
+                                <p class="text-xs font-semibold uppercase tracking-[0.24em] text-[#D4AF37]">Care</p>
+                                <p class="mt-3 section-copy">
+                                    We believe hospitality matters as much as the destination itself.
+                                </p>
+                            </div>
+                            <div>
+                                <p class="text-xs font-semibold uppercase tracking-[0.24em] text-[#D4AF37]">Clarity</p>
+                                <p class="mt-3 section-copy">
+                                    Honest planning and transparent communication create better trips.
+                                </p>
+                            </div>
+                            <div>
+                                <p class="text-xs font-semibold uppercase tracking-[0.24em] text-[#D4AF37]">Quality</p>
+                                <p class="mt-3 section-copy">
+                                    We choose stays, routes, and experiences that hold up in real travel conditions.
+                                </p>
+                            </div>
+                            <div>
+                                <p class="text-xs font-semibold uppercase tracking-[0.24em] text-[#D4AF37]">Memory</p>
+                                <p class="mt-3 section-copy">
+                                    The goal is a trip people still talk about long after they return home.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
-    <section class="py-20 bg-[#0B1F3A] text-white text-center">
-        <h2 class="text-3xl font-bold mb-4">
-            Plan Your Kashmir Journey Today
-        </h2>
 
-        <p class="mb-6 text-gray-300">
-            Let us craft your perfect trip with comfort and care.
-        </p>
-
-        <a href="contact.html" class="bg-[#D4AF37] text-[#0B1F3A] px-6 py-3 rounded-full font-semibold">
-            Contact Us
-        </a>
+    <section class="pb-24 pt-8">
+        <div class="section-shell">
+            <div class="overflow-hidden rounded-[2rem] bg-gradient-to-r from-[#0B1F3A] via-[#173755] to-[#0B1F3A] px-5 py-12 text-center text-white shadow-[0_24px_80px_rgba(11,31,58,0.25)] sm:px-10 sm:py-16">
+                <span class="section-eyebrow border-white/20 bg-white/10 text-[#f5d77f]">Let&apos;s Plan</span>
+                <h2 class="mt-6 font-display text-2xl font-bold sm:text-4xl md:text-5xl">
+                    Ready to turn your Kashmir trip into something exceptional?
+                </h2>
+                <p class="mx-auto mt-5 max-w-2xl text-sm leading-relaxed text-slate-200 sm:text-base">
+                    Tell us what kind of journey you want, and we&apos;ll help shape the route, pace, and experience around it.
+                </p>
+                <div class="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+                    <a href="contact.html" class="premium-button">Start Your Inquiry</a>
+                    <a href="packages.html" class="premium-button-outline">Browse Packages</a>
+                </div>
+            </div>
+        </div>
     </section>
 
+    <footer class="bg-[#0B1F3A] py-12 text-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="grid gap-10 md:grid-cols-4">
+                <div>
+                    <h3 class="mb-4 text-2xl font-bold text-[#D4AF37]">Northwind Kashmir</h3>
+                    <p class="text-gray-300">
+                        Your premium travel partner in Kashmir offering unforgettable luxury journeys and curated travel experiences.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="mb-4 text-xl font-semibold">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="index.html" class="transition hover:text-[#D4AF37]">Home</a></li>
+                        <li><a href="about.html" class="transition hover:text-[#D4AF37]">About</a></li>
+                        <li><a href="packages.html" class="transition hover:text-[#D4AF37]">Packages</a></li>
+                        <li><a href="gallery.html" class="transition hover:text-[#D4AF37]">Gallery</a></li>
+                        <li><a href="contact.html" class="transition hover:text-[#D4AF37]">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="mb-4 text-xl font-semibold">Contact Info</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li>+91 9541615419</li>
+                        <li>northwindkashmir@gmail.com</li>
+                        <li>Chandilora, Kashmir</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="mb-4 text-xl font-semibold">Follow Us</h4>
+                    <div class="flex gap-4 text-2xl">
+                        <a href="https://www.instagram.com/northwindkashmiradventure/" target="_blank" rel="noopener noreferrer"
+                            class="text-gray-300 transition hover:text-[#D4AF37]">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.facebook.com/p/North-Wind-100076957834119" target="_blank" rel="noopener noreferrer"
+                            class="text-gray-300 transition hover:text-[#D4AF37]">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@northwindkashmir5419" target="_blank" rel="noopener noreferrer"
+                            class="transition hover:text-[#D4AF37]">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="https://wa.me/919541615419" target="_blank" rel="noopener noreferrer"
+                            class="transition hover:text-green-500">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-10 border-t border-gray-700 pt-6 text-center text-gray-400">
+                &copy; 2026 Northwind Kashmir. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/919541615419" target="_blank" rel="noopener noreferrer"
+        class="floating-whatsapp md:bottom-10">
+        <i class="fab fa-whatsapp text-xl sm:text-2xl"></i>
+    </a>
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <script src="assets/js/main.js"></script>
-
 </body>
 
 </html>

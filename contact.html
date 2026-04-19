@@ -6,237 +6,245 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - Northwind Kashmir</title>
 
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap"
         rel="stylesheet">
 
-    <link rel="stylesheet" href="dist/output.css">
-
-    <!-- Font Awesome -->
+    <link rel="stylesheet" href="output.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-    <!-- AOS -->
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-
-    <!-- Custom Animations -->
-    <style>
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .animate-fade-in-up {
-            animation: fadeInUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-    </style>
 </head>
 
-<body class="bg-gradient-to-br from-gray-50 via-white to-blue-50 text-gray-900 font-sans">
-
-    <!-- Navbar (copy same as other pages) -->
-    <nav class="w-full bg-[#0B1F3A] text-white shadow-lg z-40">
-        <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-12">
-            <div class="flex justify-between items-center h-16 sm:h-20">
-
-                <!-- Logo Section -->
-                <div class="flex items-center gap-3 sm:gap-4">
+<body class="bg-[#f7f4ec] pb-16 text-gray-900 font-sans md:pb-0">
+    <nav class="site-nav backdrop-blur-md bg-white/10 border-b border-white/20 shadow-lg">
+        <div class="site-nav-shell">
+            <div class="site-nav-row">
+                <div class="site-brand">
                     <img src="assets/images/logo/logo.png" alt="Northwind Kashmir Logo"
-                        class="h-16 sm:h-18 w-16 sm:w-18 object-contain">
-                    <span class="text-xl sm:text-3xl font-bold tracking-wide font-display">
-                        <span class="text-[#D4AF37]">Northwind</span>
-                        <span class="text-white">Kashmir</span>
+                        class="site-logo-image">
+                    <span class="site-brand-copy site-logo-text">
+                        <span class="site-logo-line text-[#D4AF37]">Northwind</span>
+                        <span class="site-logo-line text-white">Kashmir</span>
                     </span>
                 </div>
 
-                <!-- Nav Links -->
                 <div class="hidden md:flex items-center gap-8 text-sm font-medium font-sans">
                     <a href="index.html" class="hover:text-[#D4AF37] transition">Home</a>
                     <a href="about.html" class="hover:text-[#D4AF37] transition">About</a>
                     <a href="packages.html" class="hover:text-[#D4AF37] transition">Packages</a>
                     <a href="gallery.html" class="hover:text-[#D4AF37] transition">Gallery</a>
                     <a href="contact.html" class="hover:text-[#D4AF37] transition">Contact</a>
-
                     <a href="packages.html"
                         class="bg-[#D4AF37] text-[#0B1F3A] px-5 py-2 rounded-full font-semibold hover:bg-yellow-400 transition duration-300">
                         Explore Packages
                     </a>
-
                 </div>
-                <!-- Mobile Menu Button -->
+
                 <div class="md:hidden">
-                    <button id="menu-btn" class="text-white focus:outline-none text-2xl">
+                    <button id="menu-btn" class="site-menu-button" aria-label="Open menu">
                         <i class="fas fa-bars"></i>
                     </button>
                 </div>
-
             </div>
-
         </div>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu"
-            class="md:hidden bg-black/80 text-white px-4 overflow-hidden max-h-0 opacity-0 transition-all duration-500 ease-in-out border-t border-gray-700">
 
+        <div id="mobile-menu" class="mobile-drawer">
             <div class="py-6 space-y-3">
                 <a href="index.html" class="block hover:text-[#D4AF37] transition py-2 text-sm mobile-link">Home</a>
                 <a href="about.html" class="block hover:text-[#D4AF37] transition py-2 text-sm mobile-link">About</a>
-                <a href="packages.html"
-                    class="block hover:text-[#D4AF37] transition py-2 text-sm mobile-link">Packages</a>
-                <a href="gallery.html"
-                    class="block hover:text-[#D4AF37] transition py-2 text-sm mobile-link">Gallery</a>
-                <a href="contact.html"
-                    class="block hover:text-[#D4AF37] transition py-2 text-sm mobile-link">Contact</a>
-
+                <a href="packages.html" class="block hover:text-[#D4AF37] transition py-2 text-sm mobile-link">Packages</a>
+                <a href="gallery.html" class="block hover:text-[#D4AF37] transition py-2 text-sm mobile-link">Gallery</a>
+                <a href="contact.html" class="block hover:text-[#D4AF37] transition py-2 text-sm mobile-link">Contact</a>
                 <a href="packages.html"
                     class="block text-center bg-[#D4AF37] text-[#0B1F3A] py-3 rounded-full font-semibold font-accent mt-4 hover:bg-yellow-400 transition text-sm mobile-link">
                     Explore Packages
                 </a>
             </div>
-
         </div>
     </nav>
 
-    <!-- HERO -->
-    <section
-        class="relative bg-gradient-to-br from-[#0B1F3A] via-[#1a3a52] to-[#051a2b] text-white py-32 text-center animate-fade-in-up overflow-hidden">
-
-        <!-- Decorative background elements -->
-        <div class="absolute inset-0 opacity-10">
-            <div class="absolute top-10 left-10 w-40 h-40 bg-[#D4AF37] rounded-full blur-3xl"></div>
-            <div class="absolute bottom-10 right-10 w-40 h-40 bg-[#D4AF37] rounded-full blur-3xl"></div>
+    <section class="page-top-offset relative overflow-hidden bg-[#0B1F3A] text-white">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(212,175,55,0.22),_transparent_28%),radial-gradient(circle_at_bottom_right,_rgba(255,255,255,0.08),_transparent_28%)]">
         </div>
-
-        <!-- Content -->
-        <div class="relative z-10">
-            <h1 class="text-5xl md:text-6xl font-bold mb-4 tracking-tight drop-shadow-lg">
-                Contact Us
-            </h1>
-            <p class="text-lg text-gray-200 max-w-2xl mx-auto">
-                Plan your Kashmir journey with us. Get a customized quote instantly.
-            </p>
-        </div>
-
-        <!-- Bottom accent line -->
-        <div class="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent">
-        </div>
-    </section>
-
-    <!-- CONTACT FORM -->
-    <section class="py-20">
-        <div class="max-w-4xl mx-auto px-6 lg:px-12">
-
-            <div class="grid md:grid-cols-3 gap-8 mb-12">
-                <!-- Contact Info Cards -->
-                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition" data-aos="fade-up">
-                    <div class="text-[#D4AF37] text-4xl mb-4">
-                        <i class="fas fa-phone"></i>
+        <div class="section-shell relative grid gap-8 py-14 sm:py-20 md:grid-cols-[1fr_0.85fr] md:items-center md:py-24">
+            <div data-aos="fade-up">
+                <span class="section-eyebrow">Get In Touch</span>
+                <h1 class="mt-5 font-display text-3xl font-bold leading-tight sm:text-5xl md:text-6xl">
+                    Tell us the kind of Kashmir trip you want, and we&apos;ll help shape it with you.
+                </h1>
+                <p class="mt-5 max-w-2xl text-sm leading-relaxed text-slate-200 sm:text-lg">
+                    Reach out for a quick itinerary discussion, package recommendations, or a customized travel plan.
+                    The easiest way to start is right here.
+                </p>
+                <div class="mt-8 grid gap-4 md:grid-cols-3">
+                    <div class="soft-panel bg-white/10 p-5">
+                        <p class="text-xs uppercase tracking-[0.24em] text-[#f5d77f]">Response</p>
+                        <p class="mt-3 text-sm text-slate-200">Fast replies on WhatsApp for trip planning questions.</p>
                     </div>
-                    <h3 class="text-xl font-bold text-[#0B1F3A] mb-2">Call Us</h3>
-                    <p class="text-gray-600"><a href="tel:+919541615419" class="hover:text-[#D4AF37] transition">+91
-                            9541615419</a></p>
-                </div>
-
-                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition" data-aos="fade-up">
-                    <div class="text-[#D4AF37] text-4xl mb-4">
-                        <i class="fas fa-envelope"></i>
+                    <div class="soft-panel bg-white/10 p-5">
+                        <p class="text-xs uppercase tracking-[0.24em] text-[#f5d77f]">Support</p>
+                        <p class="mt-3 text-sm text-slate-200">Guidance before booking and support during the journey.</p>
                     </div>
-                    <h3 class="text-xl font-bold text-[#0B1F3A] mb-2">Email Us</h3>
-                    <p class="text-gray-600"><a href="mailto:northwindkashmir@gmail.com"
-                            class="hover:text-[#D4AF37] transition">northwindkashmir@gmail.com</a></p>
-                </div>
-
-                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition" data-aos="fade-up">
-                    <div class="text-[#D4AF37] text-4xl mb-4">
-                        <i class="fas fa-map-marker-alt"></i>
+                    <div class="soft-panel bg-white/10 p-5">
+                        <p class="text-xs uppercase tracking-[0.24em] text-[#f5d77f]">Planning</p>
+                        <p class="mt-3 text-sm text-slate-200">Packages, custom routes, and practical local advice.</p>
                     </div>
-                    <h3 class="text-xl font-bold text-[#0B1F3A] mb-2">Address</h3>
-                    <p class="text-gray-600">Chandilora, Kashmir</p>
                 </div>
             </div>
 
-            <!-- Contact Form Card -->
-            <div class="bg-white p-10 rounded-2xl shadow-lg" data-aos="fade-up">
-
-                <h2 class="text-3xl font-bold mb-8 text-[#0B1F3A] text-center">
-                    Send Your Inquiry
-                </h2>
-
-                <form id="contact-form" class="space-y-5">
-
-                    <div class="grid md:grid-cols-2 gap-5">
-                        <input type="text" id="name" placeholder="Your Name"
-                            class="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D4AF37] transition"
-                            required>
-
-                        <input type="tel" id="phone" placeholder="Phone Number"
-                            class="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D4AF37] transition"
-                            required>
+            <div class="soft-panel p-5 sm:p-8" data-aos="zoom-in">
+                <div class="grid gap-4">
+                    <div class="flex items-start gap-4 rounded-3xl bg-[#f8f5ee] p-4">
+                        <div class="icon-badge shrink-0">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs font-semibold uppercase tracking-[0.24em] text-[#D4AF37]">Call</p>
+                            <a href="tel:+919541615419" class="mt-2 block text-lg font-semibold text-[#0B1F3A] transition hover:text-[#D4AF37]">
+                                +91 9541615419
+                            </a>
+                        </div>
                     </div>
-
-                    <div class="grid md:grid-cols-2 gap-5">
-                        <select id="package"
-                            class="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D4AF37] transition"
-                            required>
-                            <option value="">Select Package</option>
-                            <option value="Honeymoon">Honeymoon</option>
-                            <option value="Family">Family</option>
-                            <option value="Adventure">Adventure</option>
-                            <option value="Winter">Winter</option>
-                            <option value="Luxury">Luxury</option>
-                            <option value="Custom Tour">Custom Tour</option>
-                        </select>
-
-                        <input type="date" id="travel-date"
-                            class="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D4AF37] transition"
-                            required>
+                    <div class="flex items-start gap-4 rounded-3xl bg-[#f8f5ee] p-4">
+                        <div class="icon-badge shrink-0">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs font-semibold uppercase tracking-[0.24em] text-[#D4AF37]">Email</p>
+                            <a href="mailto:northwindkashmir@gmail.com" class="mt-2 block break-all text-base font-semibold text-[#0B1F3A] transition hover:text-[#D4AF37] sm:text-lg">
+                                northwindkashmir@gmail.com
+                            </a>
+                        </div>
                     </div>
-
-                    <textarea id="details" placeholder="Tell us more about your preferences and any special requests..."
-                        rows="5"
-                        class="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D4AF37] transition resize-none"></textarea>
-
-                    <button type="submit"
-                        class="w-full bg-[#D4AF37] text-[#0B1F3A] py-4 rounded-lg font-bold text-lg hover:bg-yellow-400 transition duration-300 flex items-center justify-center gap-2">
-                        <i class="fab fa-whatsapp"></i> Send via WhatsApp
-                    </button>
-
-                </form>
-
+                    <div class="flex items-start gap-4 rounded-3xl bg-[#f8f5ee] p-4">
+                        <div class="icon-badge shrink-0">
+                            <i class="fas fa-location-dot"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs font-semibold uppercase tracking-[0.24em] text-[#D4AF37]">Base</p>
+                            <p class="mt-2 text-lg font-semibold text-[#0B1F3A]">Chandilora, Kashmir</p>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </div>
+    
 
+    <section class="py-16 sm:py-20">
+        <div class="section-shell">
+            <div class="grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
+                <div class="soft-panel p-6 sm:p-8" data-aos="fade-right">
+                    <span class="section-eyebrow">Why Inquire</span>
+                    <h2 class="mt-5 section-title">
+                        A simple planning conversation can save a lot of travel stress later.
+                    </h2>
+                    <div class="mt-6 grid gap-5">
+                        <div class="rounded-3xl bg-[#fffaf1] p-5">
+                            <p class="text-sm font-semibold text-[#0B1F3A]">Package Guidance</p>
+                            <p class="mt-2 section-copy">We can help you pick the right route instead of guessing from a list.</p>
+                        </div>
+                        <div class="rounded-3xl bg-[#fffaf1] p-5">
+                            <p class="text-sm font-semibold text-[#0B1F3A]">Custom Planning</p>
+                            <p class="mt-2 section-copy">Need different dates, pace, or destinations? We can adapt the itinerary.</p>
+                        </div>
+                        <div class="rounded-3xl bg-[#fffaf1] p-5">
+                            <p class="text-sm font-semibold text-[#0B1F3A]">Clear Communication</p>
+                            <p class="mt-2 section-copy">We use a direct WhatsApp flow so the inquiry stays easy and quick to follow up.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="soft-panel p-5 sm:p-10" data-aos="fade-left">
+                    <div class="flex items-center justify-between gap-4">
+                        <div>
+                            <p class="text-xs font-semibold uppercase tracking-[0.24em] text-[#D4AF37]">Inquiry Form</p>
+                            <h2 class="mt-3 text-3xl font-bold text-[#0B1F3A]">Send Your Inquiry</h2>
+                        </div>
+                        <div class="hidden h-14 w-14 items-center justify-center rounded-2xl bg-[#0B1F3A] text-[#D4AF37] sm:flex">
+                            <i class="fas fa-paper-plane"></i>
+                        </div>
+                    </div>
+
+                    <form id="contact-form" class="mt-8 space-y-4 sm:space-y-5">
+                        <div class="grid gap-5 md:grid-cols-2">
+                            <input type="text" id="name" placeholder="Your Name" class="form-field" required>
+                            <input type="tel" id="phone" placeholder="Phone Number" class="form-field" required>
+                        </div>
+
+                        <div class="grid gap-5 md:grid-cols-2">
+                            <select id="package" class="form-field" required>
+                                <option value="">Select Package</option>
+                                <option value="Honeymoon">Honeymoon</option>
+                                <option value="Family">Family</option>
+                                <option value="Adventure">Adventure</option>
+                                <option value="Winter">Winter</option>
+                                <option value="Luxury">Luxury</option>
+                                <option value="Custom Tour">Custom Tour</option>
+                            </select>
+                            <input type="date" id="travel-date" class="form-field" required>
+                        </div>
+
+                        <textarea id="details" rows="6"
+                            placeholder="Tell us your travel style, preferred locations, group size, and any special requests..."
+                            class="form-field resize-none"></textarea>
+
+                        <button type="submit" class="premium-button w-full gap-2 rounded-2xl py-4 text-base sm:text-lg">
+                            <i class="fab fa-whatsapp"></i>
+                            Send via WhatsApp
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
+    <section class="pb-32 sm:pb-20">
+        <div class="section-shell">
+            <div class="rounded-[2rem] bg-gradient-to-r from-[#0B1F3A] via-[#173755] to-[#0B1F3A] px-6 py-12 text-white shadow-[0_24px_80px_rgba(11,31,58,0.25)] sm:px-10 sm:py-14">
+                <div class="grid gap-8 md:grid-cols-[1fr_0.9fr] md:items-center">
+                    <div>
+                        <span class="section-eyebrow border-white/20 bg-white/10 text-[#f5d77f]">Direct Access</span>
+                        <h2 class="mt-5 font-display text-3xl font-bold sm:text-4xl">
+                            Prefer a direct conversation instead of filling the form?
+                        </h2>
+                        <p class="mt-4 max-w-2xl text-sm leading-relaxed text-slate-200 sm:text-base">
+                            Call or message us directly and we&apos;ll help you narrow down the best package or build a custom route.
+                        </p>
+                    </div>
+                    <div class="flex flex-col gap-3 sm:flex-row md:justify-end">
+                        <a href="tel:+919541615419" class="premium-button">Call Now</a>
+                        <a href="https://wa.me/919541615419" target="_blank" rel="noopener noreferrer" class="premium-button-outline">
+                            WhatsApp Chat
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-[#0B1F3A] text-white py-12">
+    <footer class="bg-[#0B1F3A] py-12 text-white">
         <div class="max-w-7xl mx-auto px-6 lg:px-12">
-            <div class="grid md:grid-cols-4 gap-10">
+            <div class="grid gap-10 md:grid-cols-4">
                 <div>
-                    <h3 class="text-2xl font-bold text-[#D4AF37] mb-4">Northwind Kashmir</h3>
-                    <p class="text-gray-300">Your premium travel partner in Kashmir offering unforgettable luxury
-                        journeys and curated travel experiences.</p>
+                    <h3 class="mb-4 text-2xl font-bold text-[#D4AF37]">Northwind Kashmir</h3>
+                    <p class="text-gray-300">
+                        Your premium travel partner in Kashmir offering unforgettable luxury journeys and curated travel experiences.
+                    </p>
                 </div>
                 <div>
-                    <h4 class="text-xl font-semibold mb-4">Quick Links</h4>
+                    <h4 class="mb-4 text-xl font-semibold">Quick Links</h4>
                     <ul class="space-y-2 text-gray-300">
-                        <li><a href="index.html" class="hover:text-[#D4AF37] transition">Home</a></li>
-                        <li><a href="about.html" class="hover:text-[#D4AF37] transition">About</a></li>
-                        <li><a href="packages.html" class="hover:text-[#D4AF37] transition">Packages</a></li>
-                        <li><a href="gallery.html" class="hover:text-[#D4AF37] transition">Gallery</a></li>
-                        <li><a href="contact.html" class="hover:text-[#D4AF37] transition">Contact</a></li>
+                        <li><a href="index.html" class="transition hover:text-[#D4AF37]">Home</a></li>
+                        <li><a href="about.html" class="transition hover:text-[#D4AF37]">About</a></li>
+                        <li><a href="packages.html" class="transition hover:text-[#D4AF37]">Packages</a></li>
+                        <li><a href="gallery.html" class="transition hover:text-[#D4AF37]">Gallery</a></li>
+                        <li><a href="contact.html" class="transition hover:text-[#D4AF37]">Contact</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-xl font-semibold mb-4">Contact Info</h4>
+                    <h4 class="mb-4 text-xl font-semibold">Contact Info</h4>
                     <ul class="space-y-2 text-gray-300">
                         <li>+91 9541615419</li>
                         <li>northwindkashmir@gmail.com</li>
@@ -244,84 +252,56 @@
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-xl font-semibold mb-4">Follow Us</h4>
+                    <h4 class="mb-4 text-xl font-semibold">Follow Us</h4>
                     <div class="flex gap-4 text-2xl">
-                        <a href="https://www.instagram.com/northwindkashmiradventure/" target="_blank"
-                            class="text-gray-300 hover:text-[#D4AF37] transition">
+                        <a href="https://www.instagram.com/northwindkashmiradventure/" target="_blank" rel="noopener noreferrer"
+                            class="text-gray-300 transition hover:text-[#D4AF37]">
                             <i class="fab fa-instagram"></i>
                         </a>
-                        <a href="https://www.facebook.com/p/North-Wind-100076957834119" target="_blank"
-                            class="text-gray-300 hover:text-[#D4AF37] transition">
+                        <a href="https://www.facebook.com/p/North-Wind-100076957834119" target="_blank" rel="noopener noreferrer"
+                            class="text-gray-300 transition hover:text-[#D4AF37]">
                             <i class="fab fa-facebook"></i>
                         </a>
-                        <a href="https://www.youtube.com/@northwindkashmir5419" target="_blank"
-                            class="hover:text-[#D4AF37] transition">
+                        <a href="https://www.youtube.com/@northwindkashmir5419" target="_blank" rel="noopener noreferrer"
+                            class="transition hover:text-[#D4AF37]">
                             <i class="fab fa-youtube"></i>
                         </a>
-                        <a href="https://wa.me/919541615419" target="_blank" class="hover:text-green-500 transition">
+                        <a href="https://wa.me/919541615419" target="_blank" rel="noopener noreferrer"
+                            class="transition hover:text-green-500">
                             <i class="fab fa-whatsapp"></i>
                         </a>
                     </div>
                 </div>
             </div>
-            <div class="border-t border-gray-700 mt-10 pt-6 text-center text-gray-400">
-                © 2026 Northwind Kashmir. All Rights Reserved.
+            <div class="mt-10 border-t border-gray-700 pt-6 text-center text-gray-400">
+                &copy; 2026 Northwind Kashmir. All Rights Reserved.
             </div>
         </div>
     </footer>
 
-    <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/919541615419" target="_blank"
-        class="fixed bottom-20 right-5 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg z-50 transition duration-300 flex items-center justify-center">
+    <a href="https://wa.me/919541615419" target="_blank" rel="noopener noreferrer"
+        class="floating-whatsapp">
         <i class="fab fa-whatsapp text-2xl"></i>
     </a>
 
-    <!-- Mobile Sticky Action Bar -->
-    <div class="fixed bottom-0 left-0 w-full bg-white shadow-lg md:hidden flex justify-around items-center py-3 z-40">
-        <a href="tel:+919541615419" class="flex flex-col items-center text-sm text-[#0B1F3A]">
-            📞 <span>Call</span>
+    <div class="fixed bottom-0 left-0 z-40 flex w-full items-center justify-around bg-white/95 py-3 shadow-lg backdrop-blur md:hidden">
+        <a href="tel:+919541615419" class="flex min-w-[72px] flex-col items-center text-sm text-[#0B1F3A]">
+            <i class="fas fa-phone text-lg"></i>
+            <span>Call</span>
         </a>
-        <a href="https://wa.me/919541615419" target="_blank" class="flex flex-col items-center text-sm text-green-600">
-            💬 <span>WhatsApp</span>
+        <a href="https://wa.me/919541615419" target="_blank" rel="noopener noreferrer"
+            class="flex min-w-[72px] flex-col items-center text-sm text-green-600">
+            <i class="fab fa-whatsapp text-lg"></i>
+            <span>WhatsApp</span>
         </a>
-        <a href="packages.html" class="flex flex-col items-center text-sm text-[#D4AF37]">
-            ✈️ <span>Packages</span>
+        <a href="packages.html" class="flex min-w-[72px] flex-col items-center text-sm text-[#D4AF37]">
+            <i class="fas fa-plane text-lg"></i>
+            <span>Packages</span>
         </a>
     </div>
 
-    <script src="assets/js/main.js"></script>
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-    <script>
-        // Contact Form WhatsApp Integration
-        document.getElementById('contact-form').addEventListener('submit', function (e) {
-            e.preventDefault();
-
-            const name = document.getElementById('name').value;
-            const phone = document.getElementById('phone').value;
-            const package_name = document.getElementById('package').value;
-            const travel_date = document.getElementById('travel-date').value;
-            const details = document.getElementById('details').value;
-
-            if (name && phone && package_name && travel_date) {
-                const message = `Hello! My name is ${name}. I'm interested in the ${package_name} package. Phone: ${phone}, Travel Date: ${travel_date}. ${details}`;
-                const encodedMessage = encodeURIComponent(message);
-                window.open(`https://wa.me/919541615419?text=${encodedMessage}`, '_blank');
-
-                // Reset form
-                this.reset();
-            } else {
-                alert('Please fill in all required fields.');
-            }
-        });
-
-        // AOS Animation Init
-        AOS.init({
-            duration: 1000,
-            once: false,
-            easing: 'ease-in-out',
-            mirror: true
-        });
-    </script>
+    <script src="assets/js/main.js"></script>
 </body>
 
 </html>

@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Northwind Kashmir</title>
 
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -15,9 +14,8 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="dist/output.css">
+    <link rel="stylesheet" href="output.css">
 
-    <!-- Custom Smooth Animations -->
     <style>
         @keyframes fadeInUp {
             from {
@@ -37,531 +35,399 @@
     </style>
 </head>
 
-<body class="bg-white text-gray-900 font-sans">
-
+<body class="bg-[#f7f4ec] text-gray-900 font-sans">
     <div id="app" class="min-h-screen">
-        <!--hero section-->
-        <section class="relative h-screen flex items-center justify-center text-white overflow-hidden">
-            <!-- Navbar Overlay on Hero -->
-            <nav class="absolute top-0 w-full bg-gradient-to-b from-black/60 to-transparent text-white shadow-lg z-40">
-                <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-12">
-                    <div class="flex justify-between items-center h-16 sm:h-20">
-<!-- Logo Section -->
-<div class="flex items-center gap-3 sm:gap-4">
-    <img src="assets/images/logo/logo.png" alt="Northwind Kashmir Logo"
-        class="h-16 sm:h-18 w-16 sm:w-18 object-contain">
-    <span class="text-xl sm:text-3xl font-bold tracking-wide font-display">
-        <span class="text-[#D4AF37]">Northwind</span> 
-        <span class="text-white">Kashmir</span>
-    </span>
-</div>
+        <section class="relative overflow-hidden text-white">
+            <nav class="site-nav backdrop-blur-md bg-white/10 border-b border-white/20 shadow-lg">
+                <div class="mx-auto max-w-7xl px-3 sm:px-6 lg:px-12">
+                    <div class="flex h-16 items-center justify-between sm:h-20">
+                        <div class="flex items-center gap-3 sm:gap-4">
+                            <img src="assets/images/logo/logo.png" alt="Northwind Kashmir Logo"
+                                class="site-logo-image">
+                            <span class="site-logo-text">
+                                <span class="text-[#D4AF37]">Northwind</span>
+                                <span class="text-white">Kashmir</span>
+                            </span>
+                        </div>
 
-                        <!-- Nav Links -->
-                        <div class="hidden md:flex items-center gap-8 text-sm font-medium font-sans">
-                            <a href="index.html" class="hover:text-[#D4AF37] transition">Home</a>
-                            <a href="about.html" class="hover:text-[#D4AF37] transition">About</a>
-                            <a href="packages.html" class="hover:text-[#D4AF37] transition">Packages</a>
-                            <a href="gallery.html" class="hover:text-[#D4AF37] transition">Gallery</a>
-                            <a href="contact.html" class="hover:text-[#D4AF37] transition">Contact</a>
-
+                        <div class="hidden items-center gap-8 text-sm font-medium md:flex">
+                            <a href="index.html" class="transition hover:text-[#D4AF37]">Home</a>
+                            <a href="about.html" class="transition hover:text-[#D4AF37]">About</a>
+                            <a href="packages.html" class="transition hover:text-[#D4AF37]">Packages</a>
+                            <a href="gallery.html" class="transition hover:text-[#D4AF37]">Gallery</a>
+                            <a href="contact.html" class="transition hover:text-[#D4AF37]">Contact</a>
                             <a href="packages.html"
-                                class="bg-[#D4AF37] text-[#0B1F3A] px-5 py-2 rounded-full font-semibold hover:bg-yellow-400 transition duration-300">
+                                class="rounded-full bg-[#D4AF37] px-5 py-2 font-semibold text-[#0B1F3A] transition duration-300 hover:bg-yellow-400">
                                 Explore Packages
                             </a>
-
-
                         </div>
-                        <!-- Mobile Menu Button -->
+
                         <div class="md:hidden">
-                            <button id="menu-btn" class="text-white focus:outline-none text-2xl">
-                                <i class="fas fa-bars"></i>
-                            </button>
+                           <button id="menu-btn" class="site-menu-button" aria-label="Open menu">
+                        <i class="fas fa-bars"></i>
+                    </button>
                         </div>
-
                     </div>
-
                 </div>
-                <!-- Mobile Menu -->
-                <div id="mobile-menu"
-                    class="md:hidden bg-black/80 text-white px-4 overflow-hidden max-h-0 opacity-0 transition-all duration-500 ease-in-out border-t border-gray-700">
 
+                <div id="mobile-menu" class="mobile-drawer">
                     <div class="py-6 space-y-3">
-                        <a href="index.html"
-                            class="block hover:text-[#D4AF37] transition py-2 text-sm mobile-link">Home</a>
-                        <a href="about.html"
-                            class="block hover:text-[#D4AF37] transition py-2 text-sm mobile-link">About</a>
+                        <a href="index.html" class="mobile-link block py-2 text-sm transition hover:text-[#D4AF37]">Home</a>
+                        <a href="about.html" class="mobile-link block py-2 text-sm transition hover:text-[#D4AF37]">About</a>
+                        <a href="packages.html" class="mobile-link block py-2 text-sm transition hover:text-[#D4AF37]">Packages</a>
+                        <a href="gallery.html" class="mobile-link block py-2 text-sm transition hover:text-[#D4AF37]">Gallery</a>
+                        <a href="contact.html" class="mobile-link block py-2 text-sm transition hover:text-[#D4AF37]">Contact</a>
                         <a href="packages.html"
-                            class="block hover:text-[#D4AF37] transition py-2 text-sm mobile-link">Packages</a>
-                        <a href="gallery.html"
-                            class="block hover:text-[#D4AF37] transition py-2 text-sm mobile-link">Gallery</a>
-                        <a href="contact.html"
-                            class="block hover:text-[#D4AF37] transition py-2 text-sm mobile-link">Contact</a>
-
-                        <a href="packages.html"
-                            class="block text-center bg-[#D4AF37] text-[#0B1F3A] py-3 rounded-full font-semibold font-accent mt-4 hover:bg-yellow-400 transition text-sm mobile-link">
+                            class="mobile-link mt-4 block rounded-full bg-[#D4AF37] py-3 text-center text-sm font-semibold text-[#0B1F3A] transition hover:bg-yellow-400">
                             Explore Packages
                         </a>
                     </div>
-
                 </div>
             </nav>
 
-            <!-- Slideshow Background -->
             <div id="hero-slider" class="absolute inset-0">
-                <div class="slide absolute w-full h-full opacity-100 transition-opacity duration-1000"
-                    style="background-image: url('assets/images/hero/hero1.jpg'); background-size: cover; background-position: center;">
+                <div class="slide absolute h-full w-full opacity-100 transition-opacity duration-1000"
+                    style="background-image: url('assets/images/hero/hero1.jpg'); background-position: center; background-size: cover;">
                 </div>
-                <div class="slide absolute w-full h-full opacity-0 transition-opacity duration-1000"
-                    style="background-image: url('assets/images/gallery/gallery1.jpg'); background-size: cover; background-position: center;">
+                <div class="slide absolute h-full w-full opacity-0 transition-opacity duration-1000"
+                    style="background-image: url('assets/images/gallery/gallery1.jpg'); background-position: center; background-size: cover;">
                 </div>
-                <div class="slide absolute w-full h-full opacity-0 transition-opacity duration-1000"
-                    style="background-image: url('assets/images/gallery/gallery2.jpg'); background-size: cover; background-position: center;">
+                <div class="slide absolute h-full w-full opacity-0 transition-opacity duration-1000"
+                    style="background-image: url('assets/images/gallery/gallery2.jpg'); background-position: center; background-size: cover;">
                 </div>
-                <div class="slide absolute w-full h-full opacity-0 transition-opacity duration-1000"
-                    style="background-image: url('assets/images/gallery/gallery4.jpg'); background-size: cover; background-position: center;">
+                <div class="slide absolute h-full w-full opacity-0 transition-opacity duration-1000"
+                    style="background-image: url('assets/images/gallery/gallery4.jpg'); background-position: center; background-size: cover;">
                 </div>
-                <div class="slide absolute w-full h-full opacity-0 transition-opacity duration-1000"
-                    style="background-image: url('assets/images/gallery/gallery5.jpg'); background-size: cover; background-position: center;">
+                <div class="slide absolute h-full w-full opacity-0 transition-opacity duration-1000"
+                    style="background-image: url('assets/images/gallery/gallery5.jpg'); background-position: center; background-size: cover;">
                 </div>
-                <div class="slide absolute w-full h-full opacity-0 transition-opacity duration-1000"
-                    style="background-image: url('assets/images/gallery/gallery6.jpg'); background-size: cover; background-position: center;">
-                </div>
-                <div class="slide absolute w-full h-full opacity-0 transition-opacity duration-1000"
-                    style="background-image: url('assets/images/gallery/gallery7.jpg'); background-size: cover; background-position: center;">
-                </div>
-
-            </div>
-
-            <div class="absolute inset-0 bg-gradient-to-r from-black/75 via-[#0B1F3A]/60 to-black/75"></div>
-
-            <div class="relative z-10 text-center px-4 sm:px-6 max-w-4xl" data-aos="fade-up">
-                <!-- Premium Badge -->
-                <div class="inline-block mb-4 sm:mb-6">
-                    <span
-                        class="bg-[#D4AF37]/20 border border-[#D4AF37] text-[#FFD700] px-4 py-2 rounded-full text-xs sm:text-sm font-semibold tracking-wide">✨
-                       LUXURY PREMIUM  TOURS</span>
-                </div>
-                <h1
-                    class="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-tight mb-4 sm:mb-6 tracking-wide font-display text-white drop-shadow-lg">
-                    Your Premium Travel Partner in Kashmir
-                </h1>
-
-                <p
-                    class="text-base sm:text-lg md:text-xl mb-6 sm:mb-8 text-[#E8DCC8] leading-relaxed max-w-3xl mx-auto font-medium drop-shadow">
-                    Crafting unforgettable luxury journeys through the breathtaking landscapes of Kashmir.
-                </p>
-
-                <div class="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
-                    <a href="packages.html"
-                        class="bg-[#D4AF37] text-[#0B1F3A] px-6 sm:px-8 py-3 rounded-full font-semibold font-accent hover:bg-yellow-400 transition duration-300 transform hover:-translate-y-1 shadow-lg">
-                        Explore Packages
-                    </a>
-
-                    <a href="contact.html"
-                        class="border-2 border-white text-white px-6 sm:px-8 py-3 rounded-full font-semibold font-accent hover:bg-white hover:text-[#0B1F3A] transition duration-300 transform hover:-translate-y-1">
-                        Contact Us
-                    </a>
+                <div class="slide absolute h-full w-full opacity-0 transition-opacity duration-1000"
+                    style="background-image: url('assets/images/gallery/gallery6.jpg'); background-position: center; background-size: cover;">
                 </div>
             </div>
 
-        </section>
-        <!--about section-->
-        <section class="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-gray-50 via-white to-[#F5F1E8]">
-            <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-12">
+            <div class="absolute inset-0 bg-gradient-to-br from-black/80 via-[#0B1F3A]/58 to-black/70"></div>
 
-                <div class="text-center mb-10 sm:mb-12 md:mb-14">
-                    <div class="inline-block mb-4">
-                        <span class="text-[#D4AF37] font-semibold text-sm tracking-widest uppercase">WHY CHOOSE
-                            US</span>
-                    </div>
-                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-[#0B1F3A] mb-3 sm:mb-4 font-display">
-                        Why Choose Northwind Kashmir
-                    </h2>
-                    <p class="text-gray-700 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed font-medium">
-                        We provide exceptional travel experiences with personalized planning, expert local guidance, and
-                        premium services designed for unforgettable journeys.
-                    </p>
-                </div>
-
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
-
-                    <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-2xl transition duration-300 border-2 border-[#D4AF37]/20 hover:border-[#D4AF37] hover:-translate-y-2"
-                        data-aos="fade-up">
-                        <div class="w-14 h-14 bg-[#D4AF37]/10 rounded-full flex items-center justify-center mb-4">
-                            <i class="fas fa-map-location-dot text-2xl text-[#D4AF37]"></i>
-                        </div>
-                        <h3 class="text-xl sm:text-2xl font-bold text-[#0B1F3A] mb-3 font-display">
-                            Experienced Local Guides
-                        </h3>
-                        <p class="text-gray-700 leading-relaxed">
-                            Explore Kashmir with knowledgeable local experts who know every hidden gem and scenic
-                            destination.
+            <div class="section-shell relative flex min-h-[100svh] items-center pb-24 pt-28 sm:pt-32 md:min-h-screen md:pb-16">
+                <div class="grid w-full gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-end">
+                    <div class="max-w-3xl" data-aos="fade-up">
+                        <span class="section-eyebrow border-white/20 bg-white/10 text-[#f5d77f]">Luxury Premium Tours</span>
+                        <h1 class="mt-6 font-display text-4xl font-bold leading-[1.05] text-white sm:text-5xl md:text-6xl lg:text-7xl">
+                            Travel Kashmir with a team that makes every detail feel effortless.
+                        </h1>
+                        <p class="mt-6 max-w-2xl text-base leading-relaxed text-[#E8DCC8] sm:text-lg md:text-xl">
+                            Premium itineraries, local guidance, beautiful stays, and a smoother way to experience Kashmir
+                            whether you are planning romance, family time, or adventure.
                         </p>
-                    </div>
-
-                    <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-2xl transition duration-300 border-2 border-[#D4AF37]/20 hover:border-[#D4AF37] hover:-translate-y-2"
-                        data-aos="fade-up">
-                        <div class="w-14 h-14 bg-[#D4AF37]/10 rounded-full flex items-center justify-center mb-4">
-                            <i class="fas fa-crown text-2xl text-[#D4AF37]"></i>
-                        </div>
-                        <h3 class="text-xl sm:text-2xl font-bold text-[#0B1F3A] mb-3 font-display">
-                            Luxury Travel Services
-                        </h3>
-                        <p class="text-gray-700 leading-relaxed">
-                            Premium accommodations, transport, and curated experiences built around comfort and
-                            elegance.
-                        </p>
-                    </div>
-
-                    <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-2xl transition duration-300 border-2 border-[#D4AF37]/20 hover:border-[#D4AF37] hover:-translate-y-2"
-                        data-aos="fade-up">
-                        <div class="w-14 h-14 bg-[#D4AF37]/10 rounded-full flex items-center justify-center mb-4">
-                            <i class="fas fa-palette text-2xl text-[#D4AF37]"></i>
-                        </div>
-                        <h3 class="text-xl sm:text-2xl font-bold text-[#0B1F3A] mb-3 font-display">
-                            Customized Packages
-                        </h3>
-                        <p class="text-gray-700 leading-relaxed">
-                            Tailored travel itineraries built to match your dream vacation and preferences.
-                        </p>
-                    </div>
-
-                </div>
-
-            </div>
-        </section>
-        <!--packages section-->
-        <section class="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-[#0B1F3A] via-[#1a3a52] to-[#051a2b]">
-            <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-12">
-
-                <div class="text-center mb-12 sm:mb-16">
-                    <div class="inline-block mb-4">
-                        <span class="text-[#D4AF37] font-semibold text-sm tracking-widest uppercase">PREMIUM
-                            EXPERIENCES</span>
-                    </div>
-                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 font-display">
-                        Featured Travel Packages
-                    </h2>
-                    <p class="text-gray-300 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">
-                        Discover our handpicked premium experiences crafted for every kind of traveler.
-                    </p>
-                </div>
-
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
-
-                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition duration-300 border border-[#D4AF37]/30 hover:border-[#D4AF37] group hover:-translate-y-2"
-                        data-aos="zoom-in">
-                        <div class="relative overflow-hidden h-64">
-                            <img src="assets/images/packages/package1.jpg"
-                                class="w-full h-full object-cover group-hover:scale-110 transition duration-300" alt="">
-                            <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition"></div>
-                            <div
-                                class="absolute top-4 right-4 bg-[#D4AF37] text-[#0B1F3A] px-4 py-2 rounded-full text-sm font-bold">
-                                Romantic</div>
-                        </div>
-                        <div class="p-6 sm:p-8 bg-gradient-to-b from-white/5 to-white/10">
-                            <h3 class="text-2xl font-bold text-white mb-2 font-display">Honeymoon Escape</h3>
-                            <p class="text-gray-300 leading-relaxed">Romantic luxury experiences in Kashmir's most
-                                scenic destinations.</p>
-                            <a href="packages.html"
-                                class="inline-block mt-4 text-[#D4AF37] font-semibold hover:text-white transition">Explore
-                                →</a>
+                        <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+                            <a href="packages.html" class="premium-button">Explore Packages</a>
+                            <a href="contact.html" class="premium-button-outline">Plan My Trip</a>
                         </div>
                     </div>
 
-                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition duration-300 border border-[#D4AF37]/30 hover:border-[#D4AF37] group hover:-translate-y-2"
-                        data-aos="zoom-in">
-                        <div class="relative overflow-hidden h-64">
-                            <img src="assets/images/packages/package2.jpg"
-                                class="w-full h-full object-cover group-hover:scale-110 transition duration-300" alt="">
-                            <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition"></div>
-                            <div
-                                class="absolute top-4 right-4 bg-[#D4AF37] text-[#0B1F3A] px-4 py-2 rounded-full text-sm font-bold">
-                                Thrilling</div>
-                        </div>
-                        <div class="p-6 sm:p-8 bg-gradient-to-b from-white/5 to-white/10">
-                            <h3 class="text-2xl font-bold text-white mb-2 font-display">Adventure Tour</h3>
-                            <p class="text-gray-300 leading-relaxed">Thrilling outdoor adventures including trekking,
-                                skiing, and exploration.</p>
-                            <a href="packages.html"
-                                class="inline-block mt-4 text-[#D4AF37] font-semibold hover:text-white transition">Explore
-                                →</a>
-                        </div>
-                    </div>
-
-                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition duration-300 border border-[#D4AF37]/30 hover:border-[#D4AF37] group hover:-translate-y-2"
-                        data-aos="zoom-in">
-                        <div class="relative overflow-hidden h-64">
-                            <img src="assets/images/packages/package3.jpg"
-                                class="w-full h-full object-cover group-hover:scale-110 transition duration-300" alt="">
-                            <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition"></div>
-                            <div
-                                class="absolute top-4 right-4 bg-[#D4AF37] text-[#0B1F3A] px-4 py-2 rounded-full text-sm font-bold">
-                                Premium</div>
-                        </div>
-                        <div class="p-6 sm:p-8 bg-gradient-to-b from-white/5 to-white/10">
-                            <h3 class="text-2xl font-bold text-white mb-2 font-display">Luxury Retreat</h3>
-                            <p class="text-gray-300 leading-relaxed">Relax in elegance with premium stays and private
-                                curated travel.</p>
-                            <a href="packages.html"
-                                class="inline-block mt-4 text-[#D4AF37] font-semibold hover:text-white transition">Explore
-                                →</a>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="text-center mt-10 sm:mt-14">
-                    <a href="packages.html"
-                        class="inline-block bg-[#D4AF37] text-[#0B1F3A] px-8 sm:px-10 py-3 rounded-full font-bold font-accent hover:bg-yellow-400 transition duration-300 transform hover:-translate-y-1">
-                        View All Packages
-                    </a>
-                </div>
-                <section class="py-12 sm:py-16 md:py-20 bg-[#0B1F3A] text-white">
-                    <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-12">
-
-                        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 text-center">
-
-                            <div>
-                                <h3 class="text-3xl sm:text-4xl md:text-5xl font-bold text-[#D4AF37] font-display">500+
-                                </h3>
-                                <p class="mt-2 text-gray-300 text-sm sm:text-base">Happy Travelers</p>
-                            </div>
-
-                            <div>
-                                <h3 class="text-3xl sm:text-4xl md:text-5xl font-bold text-[#D4AF37] font-display">50+
-                                </h3>
-                                <p class="mt-2 text-gray-300 text-sm sm:text-base">Premium Packages</p>
-                            </div>
-
-                            <div>
-                                <h3 class="text-3xl sm:text-4xl md:text-5xl font-bold text-[#D4AF37] font-display">10+
-                                </h3>
-                                <p class="mt-2 text-gray-300 text-sm sm:text-base">Years Experience</p>
-                            </div>
-
-                            <div>
-                                <h3 class="text-3xl sm:text-4xl md:text-5xl font-bold text-[#D4AF37] font-display">24/7
-                                </h3>
-                                <p class="mt-2 text-gray-300 text-sm sm:text-base">Customer Support</p>
-                            </div>
-
-                        </div>
-
-                    </div>
-                </section>
-                <!--Testimonials Section-->
-                <section class="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-gray-50 via-white to-[#F5F1E8]">
-                    <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-12">
-
-                        <div class="text-center mb-10 sm:mb-12 md:mb-14">
-                            <div class="inline-block mb-4">
-                                <span
-                                    class="text-[#D4AF37] font-semibold text-sm tracking-widest uppercase">TESTIMONIALS</span>
-                            </div>
-                            <h2
-                                class="text-3xl sm:text-4xl md:text-5xl font-bold text-[#0B1F3A] mb-3 sm:mb-4 font-display">
-                                What Our Travelers Say
-                            </h2>
-                            <p class="text-gray-700 text-sm sm:text-base leading-relaxed font-medium">
-                                Trusted by travelers from across the country for unforgettable Kashmir experiences.
+                    <div class="grid gap-4 sm:grid-cols-3 lg:grid-cols-1" data-aos="fade-left">
+                        <div class="soft-panel bg-white/10 p-5 text-white">
+                            <p class="text-xs uppercase tracking-[0.24em] text-[#f5d77f]">Local Insight</p>
+                            <p class="mt-3 text-sm leading-relaxed text-slate-200">
+                                Routes and recommendations shaped by real on-ground knowledge.
                             </p>
                         </div>
-
-                        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
-
-                            <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-2xl transition duration-300 border-2 border-[#D4AF37]/20 hover:border-[#D4AF37] hover:-translate-y-2 relative"
-                                data-aos="fade-up">
-                                <div
-                                    class="absolute -top-4 -left-4 w-8 h-8 bg-[#D4AF37] rounded-full flex items-center justify-center">
-                                    <i class="fas fa-quote-left text-white text-xs"></i>
-                                </div>
-                                <div class="flex items-center gap-1 mb-4">
-                                    <span class="text-[#D4AF37] text-lg">★★★★★</span>
-                                </div>
-                                <p class="text-gray-700 mb-6 text-sm sm:text-base leading-relaxed font-medium">
-                                    "An absolutely unforgettable trip. Everything was handled professionally from pickup
-                                    to
-                                    hotel stay."
-                                </p>
-                                <div class="border-t border-gray-200 pt-4">
-                                    <h4 class="font-bold text-[#0B1F3A] text-sm">Aamir Khan</h4>
-                                    <p class="text-[#D4AF37] text-xs">Verified Traveler</p>
-                                </div>
-                            </div>
-
-                            <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-2xl transition duration-300 border-2 border-[#D4AF37]/20 hover:border-[#D4AF37] hover:-translate-y-2 relative"
-                                data-aos="fade-up">
-                                <div
-                                    class="absolute -top-4 -left-4 w-8 h-8 bg-[#D4AF37] rounded-full flex items-center justify-center">
-                                    <i class="fas fa-quote-left text-white text-xs"></i>
-                                </div>
-                                <div class="flex items-center gap-1 mb-4">
-                                    <span class="text-[#D4AF37] text-lg">★★★★★</span>
-                                </div>
-                                <p class="text-gray-700 mb-6 text-sm sm:text-base leading-relaxed font-medium">
-                                    "Best travel experience we had in Kashmir. The guides were amazing and very
-                                    helpful."
-                                </p>
-                                <div class="border-t border-gray-200 pt-4">
-                                    <h4 class="font-bold text-[#0B1F3A] text-sm">Sarah Ali</h4>
-                                    <p class="text-[#D4AF37] text-xs">Verified Traveler</p>
-                                </div>
-                            </div>
-
-                            <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-2xl transition duration-300 border-2 border-[#D4AF37]/20 hover:border-[#D4AF37] hover:-translate-y-2 relative"
-                                data-aos="fade-up">
-                                <div
-                                    class="absolute -top-4 -left-4 w-8 h-8 bg-[#D4AF37] rounded-full flex items-center justify-center">
-                                    <i class="fas fa-quote-left text-white text-xs"></i>
-                                </div>
-                                <div class="flex items-center gap-1 mb-4">
-                                    <span class="text-[#D4AF37] text-lg">★★★★★</span>
-                                </div>
-                                <p class="text-gray-700 mb-6 text-sm sm:text-base leading-relaxed font-medium">
-                                    "Highly professional service and premium arrangements. Strongly recommended."
-                                </p>
-                                <div class="border-t border-gray-200 pt-4">
-                                    <h4 class="font-bold text-[#0B1F3A] text-sm">Imran Malik</h4>
-                                    <p class="text-[#D4AF37] text-xs">Verified Traveler</p>
-                                </div>
-                            </div>
-
+                        <div class="soft-panel bg-white/10 p-5 text-white">
+                            <p class="text-xs uppercase tracking-[0.24em] text-[#f5d77f]">Premium Planning</p>
+                            <p class="mt-3 text-sm leading-relaxed text-slate-200">
+                                Better stays, smoother coordination, and less guesswork.
+                            </p>
                         </div>
-
+                        <div class="soft-panel bg-white/10 p-5 text-white">
+                            <p class="text-xs uppercase tracking-[0.24em] text-[#f5d77f]">Fast Support</p>
+                            <p class="mt-3 text-sm leading-relaxed text-slate-200">
+                                Easy WhatsApp-first communication from inquiry to travel day.
+                            </p>
+                        </div>
                     </div>
-                </section>
-                <!--footer Section-->
-                <footer class=\"bg-[#0B1F3A] text-white py-12 sm:py-16 md:py-20\">
-                    <div class=\"max-w-7xl mx-auto px-3 sm:px-6 lg:px-12\">
+                </div>
+            </div>
+        </section>
 
-                        <div class=\"grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 md:gap-10\">
+        <section class="py-16 sm:py-20">
+            <div class="section-shell">
+                <div class="mb-12 text-center sm:mb-14">
+                    <span class="section-eyebrow">Why Choose Us</span>
+                    <h2 class="section-title mt-5">Comfort, clarity, and memorable Kashmir experiences.</h2>
+                    <p class="section-copy mx-auto mt-4 max-w-2xl">
+                        We combine premium travel coordination with the kind of local understanding that helps a trip feel more personal and more seamless.
+                    </p>
+                </div>
 
-                            <div>
-                                <h3 class=\"text-xl sm:text-2xl font-bold text-[#D4AF37] mb-4 font-display\">
-                                    Northwind Kashmir
-                                </h3>
-                                <p class="text-gray-300">
-                                    Your premium travel partner in Kashmir offering unforgettable luxury journeys and
-                                    curated
-                                    travel experiences.
+                <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+                    <div class="premium-card p-6 sm:p-8" data-aos="fade-up">
+                        <div class="icon-badge">
+                            <i class="fas fa-map-location-dot"></i>
+                        </div>
+                        <h3 class="mt-5 font-display text-2xl font-bold text-[#0B1F3A]">Experienced Local Guides</h3>
+                        <p class="mt-3 section-copy">
+                            Explore Kashmir with people who know the scenic highlights, practical routes, and hidden gems that make the journey special.
+                        </p>
+                    </div>
+
+                    <div class="premium-card p-6 sm:p-8" data-aos="fade-up" data-aos-delay="80">
+                        <div class="icon-badge">
+                            <i class="fas fa-crown"></i>
+                        </div>
+                        <h3 class="mt-5 font-display text-2xl font-bold text-[#0B1F3A]">Luxury Travel Services</h3>
+                        <p class="mt-3 section-copy">
+                            Premium stays, comfortable transport, and thoughtful arrangements that help the trip feel calm and polished.
+                        </p>
+                    </div>
+
+                    <div class="premium-card p-6 sm:p-8" data-aos="fade-up" data-aos-delay="160">
+                        <div class="icon-badge">
+                            <i class="fas fa-sliders"></i>
+                        </div>
+                        <h3 class="mt-5 font-display text-2xl font-bold text-[#0B1F3A]">Customized Packages</h3>
+                        <p class="mt-3 section-copy">
+                            We tailor pacing, trip style, and destinations so the itinerary feels built for you rather than pulled from a template.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="pb-16 sm:pb-20">
+            <div class="section-shell">
+                <div class="soft-panel overflow-hidden">
+                    <div class="grid gap-8 bg-gradient-to-br from-[#0B1F3A] via-[#173755] to-[#0B1F3A] px-6 py-10 text-white sm:px-8 sm:py-12 lg:grid-cols-[0.9fr_1.1fr]">
+                        <div data-aos="fade-right">
+                            <span class="section-eyebrow border-white/20 bg-white/10 text-[#f5d77f]">Signature Packages</span>
+                            <h2 class="mt-5 font-display text-3xl font-bold sm:text-4xl md:text-5xl">
+                                Packages designed for the way different travelers actually move.
+                            </h2>
+                            <p class="mt-4 max-w-xl text-sm leading-relaxed text-slate-200 sm:text-base">
+                                Start with a curated package and then personalize the details around your travel dates, pace, and comfort level.
+                            </p>
+                            <a href="packages.html" class="premium-button mt-8">View All Packages</a>
+                        </div>
+
+                        <div class="grid gap-5 sm:grid-cols-2 xl:grid-cols-3" data-aos="fade-left">
+                            <div class="rounded-[1.6rem] border border-white/10 bg-white/10 p-5 backdrop-blur-sm">
+                                <p class="meta-pill border-white/20 bg-white/10 text-white">Romantic</p>
+                                <h3 class="mt-4 text-xl font-bold">Honeymoon Escape</h3>
+                                <p class="mt-3 text-sm leading-relaxed text-slate-200">
+                                    Scenic stays, soft pacing, and memorable moments for couples.
                                 </p>
                             </div>
-
-                            <div>
-                                <h4 class="text-xl font-semibold mb-4">Quick Links</h4>
-                                <ul class="space-y-2 text-gray-300">
-                                    <li><a href="index.html" class="hover:text-[#D4AF37] transition">Home</a></li>
-                                    <li><a href="about.html" class="hover:text-[#D4AF37] transition">About</a></li>
-                                    <li><a href="packages.html" class="hover:text-[#D4AF37] transition">Packages</a>
-                                    </li>
-                                    <li><a href="gallery.html" class="hover:text-[#D4AF37] transition">Gallery</a></li>
-                                    <li><a href="contact.html" class="hover:text-[#D4AF37] transition">Contact</a></li>
-                                </ul>
+                            <div class="rounded-[1.6rem] border border-white/10 bg-white/10 p-5 backdrop-blur-sm">
+                                <p class="meta-pill border-white/20 bg-white/10 text-white">Adventure</p>
+                                <h3 class="mt-4 text-xl font-bold">Adventure Tour</h3>
+                                <p class="mt-3 text-sm leading-relaxed text-slate-200">
+                                    Trekking, mountain views, and a more active way to see Kashmir.
+                                </p>
                             </div>
-
-                            <div>
-                                <h4 class="text-xl font-semibold mb-4">Contact Info</h4>
-                                <ul class="space-y-2 text-gray-300">
-                                    <li>+91 9541615419</li>
-                                    <li>northwindkashmir@gmail.com</li>
-                                    <li>Chandilora, Kashmir</li>
-                                </ul>
+                            <div class="rounded-[1.6rem] border border-white/10 bg-white/10 p-5 backdrop-blur-sm sm:col-span-2 xl:col-span-1">
+                                <p class="meta-pill border-white/20 bg-white/10 text-white">Luxury</p>
+                                <h3 class="mt-4 text-xl font-bold">Luxury Retreat</h3>
+                                <p class="mt-3 text-sm leading-relaxed text-slate-200">
+                                    Elevated comfort, curated arrangements, and a more refined pace.
+                                </p>
                             </div>
-
-                            <div>
-                                <h4 class="text-xl font-semibold mb-4">Follow Us</h4>
-                                <div class="flex gap-4 text-2xl">
-                                    <a href="https://www.instagram.com/northwindkashmiradventure/" target="_blank"
-                                        class="text-gray-300 hover:text-[#D4AF37] transition">
-                                        <i class="fab fa-instagram"></i>
-                                    </a>
-                                    <a href="https://www.facebook.com/p/North-Wind-100076957834119" target="_blank"
-                                        class="text-gray-300 hover:text-[#D4AF37] transition">
-                                        <i class="fab fa-facebook"></i>
-                                    </a>
-                                    <a href="https://www.youtube.com/@northwindkashmir5419" target="_blank"
-                                        class="text-gray-300 hover:text-[#D4AF37] transition">
-                                        <i class="fab fa-youtube"></i>
-                                    </a>
-                                    <a href="https://wa.me/919541615419" target="_blank"
-                                        class="text-green-300 hover:text-green-500 transition">
-                                        <i class="fab fa-whatsapp"></i>
-                                    </a>
-                                </div>
-                            </div>
-
                         </div>
-
-                        <div class="border-t border-gray-700 mt-10 pt-6 text-center text-gray-400">
-                            © 2026 Northwind Kashmir. All Rights Reserved.
-                        </div>
-
                     </div>
-                </footer>
+                </div>
             </div>
-            <!-- Floating WhatsApp Button -->
-            <a href="https://wa.me/919541615419" target="_blank"
-                class="fixed bottom-24 sm:bottom-28 md:bottom-32 right-4 sm:right-5 bg-green-500 hover:bg-green-600 text-white p-3 sm:p-4 rounded-full shadow-lg z-50 transition duration-300 flex items-center justify-center transform hover:scale-110">
-                <i class="fab fa-whatsapp text-xl sm:text-2xl"></i>
-            </a>
+        </section>
 
-            <!-- Mobile Sticky Action Bar -->
-            <div
-                class="fixed bottom-0 left-0 w-full bg-white shadow-lg md:hidden flex justify-around items-center py-2 px-2 z-40 border-t border-gray-200">
-                <a href="tel:+919541615419"
-                    class="flex flex-col items-center text-xs gap-1 text-[#0B1F3A] py-1 px-2 hover:text-[#D4AF37] transition">
-                    <i class="fas fa-phone text-lg"></i>
-                    <span>Call</span>
-                </a>
-
-                <a href="https://wa.me/919541615419" target="_blank"
-                    class="flex flex-col items-center text-xs gap-1 text-green-600 py-1 px-2 hover:text-green-700 transition">
-                    <i class="fab fa-whatsapp text-lg"></i>
-                    <span>Chat</span>
-                </a>
-
-                <a href="packages.html"
-                    class="flex flex-col items-center text-xs gap-1 text-[#D4AF37] py-1 px-2 hover:text-yellow-400 transition">
-                    <i class="fas fa-plane text-lg"></i>
-                    <span>Packages</span>
-                </a>
+        <section class="py-16 sm:py-20">
+            <div class="section-shell">
+                <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+                    <div class="soft-panel p-6 text-center" data-aos="fade-up">
+                        <p class="font-display text-4xl font-bold text-[#0B1F3A]">500+</p>
+                        <p class="mt-2 text-sm text-gray-600">Happy Travelers</p>
+                    </div>
+                    <div class="soft-panel p-6 text-center" data-aos="fade-up" data-aos-delay="80">
+                        <p class="font-display text-4xl font-bold text-[#0B1F3A]">50+</p>
+                        <p class="mt-2 text-sm text-gray-600">Premium Packages</p>
+                    </div>
+                    <div class="soft-panel p-6 text-center" data-aos="fade-up" data-aos-delay="160">
+                        <p class="font-display text-4xl font-bold text-[#0B1F3A]">10+</p>
+                        <p class="mt-2 text-sm text-gray-600">Years Experience</p>
+                    </div>
+                    <div class="soft-panel p-6 text-center" data-aos="fade-up" data-aos-delay="240">
+                        <p class="font-display text-4xl font-bold text-[#0B1F3A]">24/7</p>
+                        <p class="mt-2 text-sm text-gray-600">Customer Support</p>
+                    </div>
+                </div>
             </div>
+        </section>
 
+        <section class="pb-16 sm:pb-20">
+            <div class="section-shell">
+                <div class="mb-12 text-center sm:mb-14">
+                    <span class="section-eyebrow">Testimonials</span>
+                    <h2 class="section-title mt-5">What Our Travelers Say</h2>
+                    <p class="section-copy mx-auto mt-4 max-w-2xl">
+                        Trusted by travelers across the country for premium planning, local guidance, and memorable Kashmir experiences.
+                    </p>
+                </div>
 
+                <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3">
+                    <div class="premium-card relative p-6 sm:p-8" data-aos="fade-up">
+                        <div class="absolute -left-3 top-6 flex h-10 w-10 items-center justify-center rounded-full bg-[#D4AF37] text-white">
+                            <i class="fas fa-quote-left text-sm"></i>
+                        </div>
+                        <div class="pl-4">
+                            <div class="text-lg text-[#D4AF37]">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                            <p class="mt-4 text-sm font-medium leading-relaxed text-gray-700 sm:text-base">
+                                "An absolutely unforgettable trip. Everything was handled professionally from pickup to hotel stay."
+                            </p>
+                            <div class="mt-6 border-t border-gray-200 pt-4">
+                                <h4 class="text-sm font-bold text-[#0B1F3A]">Aamir Khan</h4>
+                                <p class="text-xs text-[#D4AF37]">Verified Traveler</p>
+                            </div>
+                        </div>
+                    </div>
 
+                    <div class="premium-card relative p-6 sm:p-8" data-aos="fade-up" data-aos-delay="80">
+                        <div class="absolute -left-3 top-6 flex h-10 w-10 items-center justify-center rounded-full bg-[#D4AF37] text-white">
+                            <i class="fas fa-quote-left text-sm"></i>
+                        </div>
+                        <div class="pl-4">
+                            <div class="text-lg text-[#D4AF37]">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                            <p class="mt-4 text-sm font-medium leading-relaxed text-gray-700 sm:text-base">
+                                "Best travel experience we had in Kashmir. The guides were amazing and very helpful."
+                            </p>
+                            <div class="mt-6 border-t border-gray-200 pt-4">
+                                <h4 class="text-sm font-bold text-[#0B1F3A]">Sarah Ali</h4>
+                                <p class="text-xs text-[#D4AF37]">Verified Traveler</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="premium-card relative p-6 sm:p-8 sm:col-span-2 xl:col-span-1" data-aos="fade-up" data-aos-delay="160">
+                        <div class="absolute -left-3 top-6 flex h-10 w-10 items-center justify-center rounded-full bg-[#D4AF37] text-white">
+                            <i class="fas fa-quote-left text-sm"></i>
+                        </div>
+                        <div class="pl-4">
+                            <div class="text-lg text-[#D4AF37]">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                            <p class="mt-4 text-sm font-medium leading-relaxed text-gray-700 sm:text-base">
+                                "Highly professional service and premium arrangements. Strongly recommended."
+                            </p>
+                            <div class="mt-6 border-t border-gray-200 pt-4">
+                                <h4 class="text-sm font-bold text-[#0B1F3A]">Imran Malik</h4>
+                                <p class="text-xs text-[#D4AF37]">Verified Traveler</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="pb-24 pt-2 sm:pb-20">
+            <div class="section-shell">
+                <div class="rounded-[2rem] bg-gradient-to-r from-[#0B1F3A] via-[#173755] to-[#0B1F3A] px-6 py-12 text-center text-white shadow-[0_24px_80px_rgba(11,31,58,0.25)] sm:px-10 sm:py-16">
+                    <span class="section-eyebrow border-white/20 bg-white/10 text-[#f5d77f]">Start Here</span>
+                    <h2 class="mt-6 font-display text-3xl font-bold sm:text-4xl md:text-5xl">
+                        Ready to plan your Kashmir journey with more confidence and less stress?
+                    </h2>
+                    <p class="mx-auto mt-5 max-w-2xl text-sm leading-relaxed text-slate-200 sm:text-base">
+                        Browse the packages or send us a quick inquiry and we&apos;ll help shape the route, timing, and style that fit you best.
+                    </p>
+                    <div class="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+                        <a href="contact.html" class="premium-button">Start Your Inquiry</a>
+                        <a href="packages.html" class="premium-button-outline">Browse Packages</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="bg-[#0B1F3A] py-12 text-white sm:py-16 md:py-20">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-12">
+                <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-4">
+                    <div>
+                        <h3 class="font-display text-xl font-bold text-[#D4AF37] sm:text-2xl">Northwind Kashmir</h3>
+                        <p class="mt-4 text-sm leading-relaxed text-gray-300 sm:text-base">
+                            Your premium travel partner in Kashmir offering unforgettable luxury journeys and curated travel experiences.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h4 class="mb-4 text-lg font-semibold sm:text-xl">Quick Links</h4>
+                        <ul class="space-y-2 text-sm text-gray-300 sm:text-base">
+                            <li><a href="index.html" class="transition hover:text-[#D4AF37]">Home</a></li>
+                            <li><a href="about.html" class="transition hover:text-[#D4AF37]">About</a></li>
+                            <li><a href="packages.html" class="transition hover:text-[#D4AF37]">Packages</a></li>
+                            <li><a href="gallery.html" class="transition hover:text-[#D4AF37]">Gallery</a></li>
+                            <li><a href="contact.html" class="transition hover:text-[#D4AF37]">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="mb-4 text-lg font-semibold sm:text-xl">Contact Info</h4>
+                        <ul class="space-y-2 text-sm text-gray-300 sm:text-base">
+                            <li>+91 9541615419</li>
+                            <li>northwindkashmir@gmail.com</li>
+                            <li>Chandilora, Kashmir</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="mb-4 text-lg font-semibold sm:text-xl">Follow Us</h4>
+                        <div class="flex gap-4 text-2xl">
+                            <a href="https://www.instagram.com/northwindkashmiradventure/" target="_blank" rel="noopener noreferrer"
+                                class="text-gray-300 transition hover:text-[#D4AF37]">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://www.facebook.com/p/North-Wind-100076957834119" target="_blank" rel="noopener noreferrer"
+                                class="text-gray-300 transition hover:text-[#D4AF37]">
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                            <a href="https://www.youtube.com/@northwindkashmir5419" target="_blank" rel="noopener noreferrer"
+                                class="text-gray-300 transition hover:text-[#D4AF37]">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                            <a href="https://wa.me/919541615419" target="_blank" rel="noopener noreferrer"
+                                class="text-green-300 transition hover:text-green-500">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-10 border-t border-gray-700 pt-6 text-center text-sm text-gray-400 sm:text-base">
+                    &copy; 2026 Northwind Kashmir. All Rights Reserved.
+                </div>
+            </div>
+        </footer>
     </div>
-    <script src="assets/js/main.js"></script>
+
+    <a href="https://wa.me/919541615419" target="_blank" rel="noopener noreferrer"
+        class="floating-whatsapp md:bottom-10">
+        <i class="fab fa-whatsapp text-xl sm:text-2xl"></i>
+    </a>
+
+    <div 
+        class="fixed bottom-0 left-0 z-40 flex w-full items-center justify-around 
+border-t border-white/20 
+bg-white/10 backdrop-blur-lg 
+px-2 py-2 shadow-xl md:hidden">
+        <a href="tel:+919541615419"
+            class="flex min-w-[72px] flex-col items-center gap-1 px-2 py-1 text-xs text-[#0B1F3A] transition hover:text-[#D4AF37]">
+            <i class="fas fa-phone text-lg"></i>
+            <span>Call</span>
+        </a>
+        <a href="https://wa.me/919541615419" target="_blank" rel="noopener noreferrer"
+            class="flex min-w-[72px] flex-col items-center gap-1 px-2 py-1 text-xs text-green-600 transition hover:text-green-700">
+            <i class="fab fa-whatsapp text-lg"></i>
+            <span>Chat</span>
+        </a>
+        <a href="packages.html"
+            class="flex min-w-[72px] flex-col items-center gap-1 px-2 py-1 text-xs text-[#D4AF37] transition hover:text-yellow-500">
+            <i class="fas fa-plane text-lg"></i>
+            <span>Packages</span>
+        </a>
+    </div>
+
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-    <!-- Hero Slideshow -->
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            let heroSlides = document.querySelectorAll("#hero-slider .slide");
-            let currentIndex = 0;
-
-            if (heroSlides.length === 0) return;
-
-            function showNextHeroSlide() {
-                heroSlides[currentIndex].classList.remove("opacity-100");
-                heroSlides[currentIndex].classList.add("opacity-0");
-
-                currentIndex = (currentIndex + 1) % heroSlides.length;
-
-                heroSlides[currentIndex].classList.remove("opacity-0");
-                heroSlides[currentIndex].classList.add("opacity-100");
-            }
-
-            setInterval(showNextHeroSlide, 5000);
-        });
-    </script>
-    <script>
-        AOS.init({
-            duration: 1000,
-            once: false,
-            easing: 'ease-in-out',
-            mirror: true
-        });
-    </script>
+    <script src="assets/js/main.js"></script>
 </body>
 
 </html>

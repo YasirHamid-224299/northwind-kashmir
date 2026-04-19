@@ -1,3 +1,97 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .section-shell {
+        @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-12;
+    }
+
+    .section-eyebrow {
+        @apply inline-flex items-center rounded-full border border-[#D4AF37]/30 bg-[#D4AF37]/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.28em] text-[#D4AF37];
+    }
+
+    .section-title {
+        @apply font-display text-3xl font-bold text-[#0B1F3A] sm:text-4xl md:text-5xl;
+    }
+
+    .section-copy {
+        @apply text-sm leading-relaxed text-gray-600 sm:text-base;
+    }
+
+    .premium-card {
+        @apply rounded-3xl border border-[#D4AF37]/15 bg-white/90 shadow-[0_20px_60px_rgba(11,31,58,0.10)] backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:shadow-[0_24px_70px_rgba(11,31,58,0.14)];
+    }
+
+    .premium-button {
+        @apply inline-flex items-center justify-center rounded-full bg-[#D4AF37] px-6 py-3 font-accent font-semibold text-[#0B1F3A] transition duration-300 hover:-translate-y-0.5 hover:bg-yellow-400;
+    }
+
+    .premium-button-outline {
+        @apply inline-flex items-center justify-center rounded-full border border-white/70 px-6 py-3 font-accent font-semibold text-white transition duration-300 hover:bg-white hover:text-[#0B1F3A];
+    }
+
+    .soft-panel {
+        @apply rounded-[2rem] border border-white/60 bg-white/80 shadow-[0_20px_65px_rgba(11,31,58,0.08)] backdrop-blur-sm;
+    }
+
+    .icon-badge {
+        @apply flex h-12 w-12 items-center justify-center rounded-2xl bg-[#0B1F3A] text-[#D4AF37];
+    }
+
+    .form-field {
+        @apply w-full rounded-2xl border border-[#0B1F3A]/10 bg-white px-4 py-4 text-sm text-[#0B1F3A] outline-none transition placeholder:text-gray-400 focus:border-[#D4AF37] focus:ring-4 focus:ring-[#D4AF37]/15;
+    }
+
+    .meta-pill {
+        @apply inline-flex items-center rounded-full border border-[#0B1F3A]/10 bg-[#f8f5ee] px-3 py-1 text-xs font-medium text-[#0B1F3A];
+    }
+
+    .site-nav {
+        @apply fixed top-0 z-50 w-full border-b border-white/10 bg-[#081523] text-white shadow-lg backdrop-blur-md;
+    }
+
+    .page-top-offset {
+        @apply pt-24 sm:pt-24;
+    }
+
+    .site-logo-image {
+        @apply h-10 w-10 shrink-0 object-contain sm:h-20 sm:w-20;
+    }
+
+    .site-logo-text {
+        @apply min-w-0 font-display text-[0.72rem] font-bold leading-[0.92] tracking-[0.08em] sm:text-3xl sm:leading-tight sm:tracking-tight;
+    }
+
+    .site-brand {
+        @apply flex min-w-0 max-w-[calc(100%-3.5rem)] items-center gap-2 sm:max-w-none sm:gap-4;
+    }
+
+    .site-brand-copy {
+        @apply flex min-w-0 flex-col justify-center whitespace-nowrap;
+    }
+
+    .site-logo-line {
+        @apply block;
+    }
+
+    .site-nav-shell {
+        @apply mx-auto max-w-7xl px-3 sm:px-6 lg:px-12;
+    }
+
+    .site-nav-row {
+        @apply flex h-16 items-center justify-between gap-2 sm:h-20 sm:gap-3;
+    }
+
+    .site-menu-button {
+        @apply flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/15 bg-white/5 text-lg text-white focus:outline-none focus:ring-2 focus:ring-[#D4AF37]/60 sm:h-11 sm:w-11 sm:text-2xl;
+    }
+
+    .mobile-drawer {
+        @apply fixed left-0 right-0 top-16 z-40 max-h-0 overflow-y-auto border-t border-white/10 bg-[#081523]/95 px-4 text-white opacity-0 shadow-2xl transition-all duration-500 ease-in-out sm:top-20 md:hidden;
+    }
+
+    .floating-whatsapp {
+        @apply fixed bottom-24 right-3 z-40 flex items-center justify-center rounded-full bg-green-500 p-3 text-white shadow-lg transition duration-300 hover:scale-110 hover:bg-green-600 sm:bottom-20 sm:right-5 sm:p-4;
+    }
+}
