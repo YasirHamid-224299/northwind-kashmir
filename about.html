@@ -18,52 +18,52 @@
 </head>
 
 <body class="bg-[#f8f5ee] text-gray-900 font-sans">
-    <nav class="site-nav backdrop-blur-md bg-white/10 border-b border-white/20 shadow-lg">
-        <div class="site-nav-shell">
-            <div class="site-nav-row">
-                <div class="site-brand">
-                    <img src="assets/images/logo/logo.png" alt="Northwind Kashmir Logo"
-                        class="site-logo-image">
-                    <span class="site-brand-copy site-logo-text">
-                        <span class="site-logo-line text-[#D4AF37]">Northwind</span>
-                        <span class="site-logo-line text-white">Kashmir</span>
-                    </span>
-                </div>
+ <nav class="site-nav backdrop-blur-md bg-white/10 border-b border-white/20 shadow-lg">
+                <div class="mx-auto max-w-7xl px-3 sm:px-6 lg:px-12">
+                    <div class="flex h-16 items-center justify-between sm:h-20">
+                        <div class="flex items-center gap-3 sm:gap-4">
+                            <img src="assets/images/logo/logo.png" alt="Northwind Kashmir Logo"
+                                class="h-12 sm:h-20 md:h-16 w-auto object-contain">
+                            <span class="site-logo-text">
+                                <span class="text-[#D4AF37]">Northwind</span>
+                                <span class="text-white">Kashmir</span>
+                            </span>
+                        </div>
 
-                <div class="hidden md:flex items-center gap-8 text-sm font-medium font-sans">
-                    <a href="index.html" class="hover:text-[#D4AF37] transition">Home</a>
-                    <a href="about.html" class="hover:text-[#D4AF37] transition">About</a>
-                    <a href="packages.html" class="hover:text-[#D4AF37] transition">Packages</a>
-                    <a href="gallery.html" class="hover:text-[#D4AF37] transition">Gallery</a>
-                    <a href="contact.html" class="hover:text-[#D4AF37] transition">Contact</a>
-                    <a href="packages.html"
-                        class="bg-[#D4AF37] text-[#0B1F3A] px-5 py-2 rounded-full font-semibold hover:bg-yellow-400 transition duration-300">
-                        Explore Packages
-                    </a>
-                </div>
+                        <div class="hidden items-center gap-8 text-sm font-medium md:flex">
+                            <a href="index.html" class="transition hover:text-[#D4AF37]">Home</a>
+                            <a href="about.html" class="transition hover:text-[#D4AF37]">About</a>
+                            <a href="packages.html" class="transition hover:text-[#D4AF37]">Packages</a>
+                            <a href="gallery.html" class="transition hover:text-[#D4AF37]">Gallery</a>
+                            <a href="contact.html" class="transition hover:text-[#D4AF37]">Contact</a>
+                            <a href="packages.html"
+                                class="rounded-full bg-[#D4AF37] px-5 py-2 font-semibold text-[#0B1F3A] transition duration-300 hover:bg-yellow-400">
+                                Explore Packages
+                            </a>
+                        </div>
 
-                <div class="md:hidden">
-                    <button id="menu-btn" class="site-menu-button" aria-label="Open menu">
+                        <div class="md:hidden">
+                           <button id="menu-btn" class="site-menu-button" aria-label="Open menu">
                         <i class="fas fa-bars"></i>
                     </button>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
 
-        <div id="mobile-menu" class="mobile-drawer">
-            <div class="py-6 space-y-3">
-                <a href="index.html" class="block hover:text-[#D4AF37] transition py-2 text-sm mobile-link">Home</a>
-                <a href="about.html" class="block hover:text-[#D4AF37] transition py-2 text-sm mobile-link">About</a>
-                <a href="packages.html" class="block hover:text-[#D4AF37] transition py-2 text-sm mobile-link">Packages</a>
-                <a href="gallery.html" class="block hover:text-[#D4AF37] transition py-2 text-sm mobile-link">Gallery</a>
-                <a href="contact.html" class="block hover:text-[#D4AF37] transition py-2 text-sm mobile-link">Contact</a>
-                <a href="packages.html"
-                    class="block text-center bg-[#D4AF37] text-[#0B1F3A] py-3 rounded-full font-semibold font-accent mt-4 hover:bg-yellow-400 transition text-sm mobile-link">
-                    Explore Packages
-                </a>
-            </div>
-        </div>
-    </nav>
+                <div id="mobile-menu" class="mobile-drawer">
+                    <div class="py-6 space-y-3">
+                        <a href="index.html" class="mobile-link block py-2 text-sm transition hover:text-[#D4AF37]">Home</a>
+                        <a href="about.html" class="mobile-link block py-2 text-sm transition hover:text-[#D4AF37]">About</a>
+                        <a href="packages.html" class="mobile-link block py-2 text-sm transition hover:text-[#D4AF37]">Packages</a>
+                        <a href="gallery.html" class="mobile-link block py-2 text-sm transition hover:text-[#D4AF37]">Gallery</a>
+                        <a href="contact.html" class="mobile-link block py-2 text-sm transition hover:text-[#D4AF37]">Contact</a>
+                        <a href="packages.html"
+                            class="mobile-link mt-4 block rounded-full bg-[#D4AF37] py-3 text-center text-sm font-semibold text-[#0B1F3A] transition hover:bg-yellow-400">
+                            Explore Packages
+                        </a>
+                    </div>
+                </div>
+            </nav>
 
     <section class="page-top-offset relative overflow-hidden bg-[#0B1F3A] text-white">
         <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(212,175,55,0.22),_transparent_30%),radial-gradient(circle_at_bottom_right,_rgba(255,255,255,0.08),_transparent_28%)]">
@@ -305,7 +305,27 @@
         class="floating-whatsapp md:bottom-10">
         <i class="fab fa-whatsapp text-xl sm:text-2xl"></i>
     </a>
-
+     <div 
+        class="fixed bottom-0 left-0 z-40 flex w-full items-center justify-around 
+border-t border-white/20 
+bg-white/10 backdrop-blur-lg 
+px-2 py-2 shadow-xl md:hidden">
+        <a href="tel:+919541615419"
+            class="flex min-w-[72px] flex-col items-center gap-1 px-2 py-1 text-xs text-[#0B1F3A] transition hover:text-[#D4AF37]">
+            <i class="fas fa-phone text-lg"></i>
+            <span>Call</span>
+        </a>
+        <a href="https://wa.me/919541615419" target="_blank" rel="noopener noreferrer"
+            class="flex min-w-[72px] flex-col items-center gap-1 px-2 py-1 text-xs text-green-600 transition hover:text-green-700">
+            <i class="fab fa-whatsapp text-lg"></i>
+            <span>Chat</span>
+        </a>
+        <a href="packages.html"
+            class="flex min-w-[72px] flex-col items-center gap-1 px-2 py-1 text-xs text-[#D4AF37] transition hover:text-yellow-500">
+            <i class="fas fa-plane text-lg"></i>
+            <span>Packages</span>
+        </a>
+    </div>
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <script src="assets/js/main.js"></script>
 </body>
