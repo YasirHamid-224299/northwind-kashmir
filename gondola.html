@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": ["TravelAgency", "LocalBusiness"],
+          "@id": "https://www.northwindkashmir.com/#business",
+          "name": "Northwind Kashmir",
+          "url": "https://www.northwindkashmir.com",
+          "logo": "https://www.northwindkashmir.com/assets/images/logo/logo.png",
+          "telephone": "+91 9541615419",
+          "email": "northwindkashmir@gmail.com",
+          "sameAs": [
+            "https://www.instagram.com/northwindkashmiradventure/",
+            "https://www.facebook.com/p/North-Wind-100076957834119",
+            "https://www.youtube.com/@northwindkashmir5419",
+            "https://wa.me/919541615419"
+          ],
+          "areaServed": "Kashmir",
+          "description": "Premium Kashmir tour packages, hotel bookings, Gulmarg Gondola ticket bookings, and local guidance."
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://www.northwindkashmir.com/#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://www.northwindkashmir.com"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Gondola Tickets",
+              "item": "https://www.northwindkashmir.com/gondola.html"
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <title>Gulmarg Gondola Ticket Booking | Northwind Kashmir</title>
+    <meta name="description"
+        content="Book your Gulmarg Gondola cable car ride tickets online. Fast ticket booking assistance for Phase 1, Phase 2, or both phases with Northwind Kashmir travel agency.">
+    <link rel="canonical" href="https://www.northwindkashmir.com/gondola.html">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+    <style>
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+    </style>
+</head>
+
+<body class="min-h-screen bg-[#f7f4ec] font-sans text-gray-900">
+    <div id="app" class="min-h-screen">
+    <section class="relative overflow-hidden text-white">
+       <nav class="site-nav backdrop-blur-md bg-[#0B1F3A]/90 border-b border-[#D4AF37]/20 shadow-lg">
+                <div class="mx-auto max-w-7xl px-3 sm:px-6 lg:px-12">
+                    <div class="flex h-16 items-center justify-between sm:h-20">
+                        <div class="flex items-center gap-3 sm:gap-4">
+                            <img src="assets/images/logo/logo.png" alt="Northwind Kashmir Logo"
+                                class="h-12 sm:h-20 md:h-16 w-auto object-contain">
+                            <span class="site-logo-text">
+                                <span class="text-[#D4AF37]">Northwind</span>
+                                <span class="text-white">Kashmir</span>
+                            </span>
+                        </div>
+
+                        <div class="hidden items-center gap-8 text-sm font-medium md:flex">
+                            <a href="index.html" class="transition hover:text-[#D4AF37]">Home</a>
+                            <a href="about.html" class="transition hover:text-[#D4AF37]">About</a>
+                            <a href="packages.html" class="transition hover:text-[#D4AF37]">Packages</a>
+                            <a href="hotels.html" class="transition hover:text-[#D4AF37]">Hotels</a>
+                            <a href="gondola.html" class="transition hover:text-[#D4AF37]">Gondola</a>
+                            <a href="gallery.html" class="transition hover:text-[#D4AF37]">Gallery</a>
+                            <a href="contact.html" class="transition hover:text-[#D4AF37]">Contact</a>
+                            <a href="packages.html"
+                                class="rounded-full bg-[#D4AF37] px-5 py-2 font-semibold text-[#0B1F3A] transition duration-300 hover:bg-yellow-400">
+                                Explore Packages
+                            </a>
+                        </div>
+
+                        <div class="md:hidden">
+                            <button id="menu-btn" class="site-menu-button" aria-label="Open menu">
+                                <i class="fas fa-bars"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="mobile-menu" class="mobile-drawer">
+                    <div class="py-6 space-y-3">
+                        <a href="index.html"
+                            class="mobile-link block py-2 text-sm transition hover:text-[#D4AF37]">Home</a>
+                        <a href="about.html"
+                            class="mobile-link block py-2 text-sm transition hover:text-[#D4AF37]">About</a>
+                        <a href="packages.html"
+                            class="mobile-link block py-2 text-sm transition hover:text-[#D4AF37]">Packages</a>
+                        <a href="hotels.html"
+                            class="mobile-link block py-2 text-sm transition hover:text-[#D4AF37]">Hotels</a>
+                        <a href="gondola.html"
+                            class="mobile-link block py-2 text-sm transition hover:text-[#D4AF37]">Gondola</a>
+                        <a href="gallery.html"
+                            class="mobile-link block py-2 text-sm transition hover:text-[#D4AF37]">Gallery</a>
+                        <a href="contact.html"
+                            class="mobile-link block py-2 text-sm transition hover:text-[#D4AF37]">Contact</a>
+                        <a href="packages.html"
+                            class="mobile-link mt-4 block rounded-full bg-[#D4AF37] py-3 text-center text-sm font-semibold text-[#0B1F3A] transition hover:bg-yellow-400">
+                            Explore Packages
+                        </a>
+                    </div>
+                </div>
+            </nav>
+
+        <section class="page-top-offset relative overflow-hidden bg-[#0B1F3A] text-white">
+            <div
+                class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(212,175,55,0.20),_transparent_26%),radial-gradient(circle_at_bottom_left,_rgba(255,255,255,0.08),_transparent_24%)]">
+            </div>
+            <div class="section-shell relative py-20 sm:py-24 md:py-28">
+                <div class="mx-auto max-w-4xl text-center">
+                    <span class="section-eyebrow">Hassle-Free Experience</span>
+                    <h1 class="mt-6 font-display text-4xl font-bold leading-tight sm:text-5xl md:text-6xl">
+                        Gulmarg Gondola Ride Booking
+                    </h1>
+                    <p class="mx-auto mt-6 max-w-3xl text-base leading-relaxed text-slate-200 sm:text-lg">
+                        Skip the long queues and secure your spots on Asia's highest and longest cable car. Fill in the
+                        traveler details below to book Phase I, Phase II, or both rides instantly via WhatsApp.
+                    </p>
+                </div>
+            </div>
+        </section>
+   
+        <!-- Main Content Area -->
+        <section class="py-16 sm:py-24">
+            <div class="section-shell">
+                <div class="grid grid-cols-1 gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
+                    <!-- Gondola ticket booking form -->
+                    <div class="soft-panel p-6 sm:p-10 bg-white shadow-xl" data-aos="fade-right">
+                        <h2 class="font-display text-2xl font-bold text-[#0B1F3A] sm:text-3xl">Ticket Booking Request
+                        </h2>
+                        <p class="mt-2 text-sm text-gray-500">Please provide verified guest names as written on
+                            government
+                            IDs.</p>
+
+                        <form id="gondola-form" class="mt-8 space-y-6">
+                            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                                <div>
+                                    <label for="lead-name"
+                                        class="block text-xs font-semibold uppercase tracking-wider text-gray-600">Lead
+                                        Contact Name</label>
+                                    <input type="text" id="lead-name" required
+                                        class="mt-2 block w-full rounded-xl border border-gray-200 bg-[#f7f4ec]/50 px-4 py-3 text-sm focus:border-[#D4AF37] focus:bg-white focus:outline-none transition duration-300"
+                                        placeholder="e.g. Yasir Hamid">
+                                </div>
+                                <div>
+                                    <label for="lead-phone"
+                                        class="block text-xs font-semibold uppercase tracking-wider text-gray-600">WhatsApp
+                                        Phone Number</label>
+                                    <input type="tel" id="lead-phone" required
+                                        class="mt-2 block w-full rounded-xl border border-gray-200 bg-[#f7f4ec]/50 px-4 py-3 text-sm focus:border-[#D4AF37] focus:bg-white focus:outline-none transition duration-300"
+                                        placeholder="e.g. +91 95416 15419">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                                <div>
+                                    <label for="travel-date"
+                                        class="block text-xs font-semibold uppercase tracking-wider text-gray-600">Date
+                                        of
+                                        Travel</label>
+                                    <input type="date" id="travel-date" required
+                                        class="mt-2 block w-full rounded-xl border border-gray-200 bg-[#f7f4ec]/50 px-4 py-3 text-sm focus:border-[#D4AF37] focus:bg-white focus:outline-none transition duration-300">
+                                </div>
+                                <div>
+                                    <label for="gondola-phase"
+                                        class="block text-xs font-semibold uppercase tracking-wider text-gray-600">Preferred
+                                        Phase</label>
+                                    <select id="gondola-phase" required
+                                        class="mt-2 block w-full rounded-xl border border-gray-200 bg-[#f7f4ec]/50 px-4 py-3.5 text-sm focus:border-[#D4AF37] focus:bg-white focus:outline-none transition duration-300">
+                                        <option value="Phase 1 only (Gulmarg to Kongdoori)">Phase 1 Only (Gulmarg to
+                                            Kongdoori)</option>
+                                        <option value="Phase 2 only (Kongdoori to Apharwat)">Phase 2 Only (Kongdoori to
+                                            Apharwat)</option>
+                                        <option value="Both Phase 1 and Phase 2 (Full Experience)">Both Phase 1 and
+                                            Phase 2
+                                            (Recommended)</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="num-guests"
+                                    class="block text-xs font-semibold uppercase tracking-wider text-gray-600">Number of
+                                    Guests</label>
+                                <select id="num-guests" required
+                                    class="mt-2 block w-full rounded-xl border border-gray-200 bg-[#f7f4ec]/50 px-4 py-3.5 text-sm focus:border-[#D4AF37] focus:bg-white focus:outline-none transition duration-300">
+                                    <option value="1">1 Guest</option>
+                                    <option value="2">2 Guests</option>
+                                    <option value="3">3 Guests</option>
+                                    <option value="4">4 Guests</option>
+                                    <option value="5">5 Guests</option>
+                                    <option value="6">6 Guests</option>
+                                    <option value="7">7 Guests</option>
+                                    <option value="8">8 Guests</option>
+                                    <option value="9">9 Guests</option>
+                                    <option value="10">10 Guests</option>
+                                </select>
+                            </div>
+
+                            <!-- Dynamic Numbered Guest Names Section -->
+                            <div class="border-t border-gray-150 pt-6">
+                                <label class="block text-xs font-semibold uppercase tracking-wider text-gray-600">Guest
+                                    Names (Government ID Required)</label>
+                                <div id="guest-names-container" class="mt-4 space-y-4">
+                                    <!-- Dynamically populated list of inputs -->
+                                    <div class="flex items-center gap-3">
+                                        <span class="text-sm font-bold text-[#0B1F3A] w-6">1.</span>
+                                        <input type="text" required
+                                            class="guest-name-input block w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm focus:border-[#D4AF37] focus:outline-none transition"
+                                            placeholder="Full Name of Guest 1">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="pt-2">
+                                <button type="submit"
+                                    class="w-full rounded-full bg-[#D4AF37] py-4 text-center text-sm font-bold text-[#0B1F3A] transition duration-300 hover:bg-yellow-400 shadow-md flex items-center justify-center gap-2">
+                                    <i class="fab fa-whatsapp text-lg"></i> Book via WhatsApp
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Gondola Info Sidebar -->
+                    <div class="space-y-8" data-aos="fade-left">
+                        <div class="soft-panel p-6 sm:p-8 bg-[#0B1F3A] text-white">
+                            <span class="section-eyebrow border-white/20 bg-white/10 text-[#f5d77f]">Quick Guide</span>
+                            <h3 class="mt-4 font-display text-2xl font-bold">Gondola Ride Phases</h3>
+
+                            <div class="mt-6 space-y-6">
+                                <div class="flex items-start gap-4">
+                                    <div
+                                        class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/10 text-[#D4AF37] font-bold">
+                                        I</div>
+                                    <div>
+                                        <h4 class="text-base font-bold text-[#f5d77f]">Phase I: Gulmarg to Kongdoori
+                                        </h4>
+                                        <p class="mt-1 text-sm text-slate-300 leading-relaxed">
+                                            Takes you through scenic pine forests up to 10,050 ft (3,050 m). Journey
+                                            takes
+                                            about 9 minutes. Perfect for beginners and families.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start gap-4">
+                                    <div
+                                        class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/10 text-[#D4AF37] font-bold">
+                                        II</div>
+                                    <div>
+                                        <h4 class="text-base font-bold text-[#f5d77f]">Phase II: Kongdoori to Apharwat
+                                            Peak
+                                        </h4>
+                                        <p class="mt-1 text-sm text-slate-300 leading-relaxed">
+                                            Ascends up to Apharwat peak at a high altitude of 13,780 ft (4,200 m).
+                                            Features
+                                            dramatic snow vistas and panoramic views of K2.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Important Information Checklist -->
+                        <div class="soft-panel p-6 sm:p-8">
+                            <h3 class="font-display text-xl font-bold text-[#0B1F3A]">Important Instructions</h3>
+                            <ul class="mt-4 space-y-3 text-sm text-gray-600">
+                                <li class="flex items-start gap-3">
+                                    <i class="fas fa-circle-check text-[#D4AF37] mt-1 shrink-0"></i>
+                                    <span><strong>Valid ID Proof:</strong> Booking names must exactly match your
+                                        Aadhaar,
+                                        Passport, or Election card.</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="fas fa-circle-check text-[#D4AF37] mt-1 shrink-0"></i>
+                                    <span><strong>High Altitude:</strong> Phase II reaches over 13,000 ft. Please travel
+                                        with caution if you have history of breathing issues.</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="fas fa-circle-check text-[#D4AF37] mt-1 shrink-0"></i>
+                                    <span><strong>Weather Conditions:</strong> Rides are subject to sudden atmospheric
+                                        changes or maintenance slots. Secure booking assistance ensures quick
+                                        updates.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-[#0B1F3A] py-12 text-white sm:py-16 md:py-20">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-12">
+                <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-4">
+                    <div>
+                        <h3 class="font-display text-xl font-bold text-[#D4AF37] sm:text-2xl">Northwind Kashmir</h3>
+                        <p class="mt-4 text-sm leading-relaxed text-gray-300 sm:text-base">
+                            Your premium travel partner in Kashmir offering unforgettable luxury journeys and curated
+                            travel experiences.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h4 class="mb-4 text-lg font-semibold sm:text-xl">Quick Links</h4>
+                        <ul class="space-y-2 text-sm text-gray-300 sm:text-base">
+                            <li><a href="index.html" class="transition hover:text-[#D4AF37]">Home</a></li>
+                            <li><a href="about.html" class="transition hover:text-[#D4AF37]">About</a></li>
+                            <li><a href="packages.html" class="transition hover:text-[#D4AF37]">Packages</a></li>
+                            <li><a href="hotels.html" class="transition hover:text-[#D4AF37]">Hotels</a></li>
+                            <li><a href="gondola.html" class="transition hover:text-[#D4AF37]">Gondola</a></li>
+                            <li><a href="gallery.html" class="transition hover:text-[#D4AF37]">Gallery</a></li>
+                            <li><a href="contact.html" class="transition hover:text-[#D4AF37]">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="mb-4 text-lg font-semibold sm:text-xl">Contact Info</h4>
+                        <ul class="space-y-2 text-sm text-gray-300 sm:text-base">
+                            <li>+91 9541615419</li>
+                            <li>northwindkashmir@gmail.com</li>
+                            <li>Chandilora, Kashmir</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="mb-4 text-lg font-semibold sm:text-xl">Follow Us</h4>
+                        <div class="flex gap-4 text-2xl">
+                            <a href="https://www.instagram.com/northwindkashmiradventure/" target="_blank"
+                                rel="noopener noreferrer" class="text-gray-300 transition hover:text-[#D4AF37]">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://www.facebook.com/p/North-Wind-100076957834119" target="_blank"
+                                rel="noopener noreferrer" class="text-gray-300 transition hover:text-[#D4AF37]">
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                            <a href="https://www.youtube.com/@northwindkashmir5419" target="_blank"
+                                rel="noopener noreferrer" class="text-gray-300 transition hover:text-[#D4AF37]">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                            <a href="https://wa.me/919541615419" target="_blank" rel="noopener noreferrer"
+                                class="text-green-300 transition hover:text-green-500">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-10 border-t border-gray-700 pt-6 text-center text-sm text-gray-400 sm:text-base">
+                    &copy; 2026 Northwind Kashmir. All Rights Reserved.
+                </div>
+            </div>
+        </footer>
+        </div>
+
+        <!-- WhatsApp and Navigation Bottom Action Bars -->
+        <a href="https://wa.me/919541615419" target="_blank" rel="noopener noreferrer"
+            class="floating-whatsapp md:bottom-10">
+            <i class="fab fa-whatsapp text-xl sm:text-2xl"></i>
+        </a>
+
+        <div class="fixed bottom-0 left-0 z-40 flex w-full items-center justify-around 
+    border-t border-white/20 
+    bg-white/10 backdrop-blur-lg 
+    px-2 py-2 shadow-xl md:hidden">
+            <a href="tel:+919541615419"
+                class="flex min-w-[72px] flex-col items-center gap-1 px-2 py-1 text-xs text-[#0B1F3A] transition hover:text-[#D4AF37]">
+                <i class="fas fa-phone text-lg"></i>
+                <span>Call</span>
+            </a>
+            <a href="https://wa.me/919541615419" target="_blank" rel="noopener noreferrer"
+                class="flex min-w-[72px] flex-col items-center gap-1 px-2 py-1 text-xs text-green-600 transition hover:text-green-700">
+                <i class="fab fa-whatsapp text-lg"></i>
+                <span>Chat</span>
+            </a>
+            <a href="packages.html"
+                class="flex min-w-[72px] flex-col items-center gap-1 px-2 py-1 text-xs text-[#D4AF37] transition hover:text-yellow-500">
+                <i class="fas fa-plane text-lg"></i>
+                <span>Packages</span>
+            </a>
+        </div>
+
+        <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+        <script>
+            // Dynamic Guest Inputs Logic
+            const numGuestsSelect = document.getElementById('num-guests');
+            const container = document.getElementById('guest-names-container');
+
+            numGuestsSelect.addEventListener('change', (e) => {
+                const count = parseInt(e.target.value) || 1;
+                container.innerHTML = ''; // Clear container
+
+                for (let i = 1; i <= count; i++) {
+                    const row = document.createElement('div');
+                    row.className = 'flex items-center gap-3 animate-fade-in-up';
+                    row.style.animationDelay = `${(i - 1) * 30}ms`;
+                    row.innerHTML = `
+                    <span class="text-sm font-bold text-[#0B1F3A] w-6">${i}.</span>
+                    <input type="text" required class="guest-name-input block w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm focus:border-[#D4AF37] focus:outline-none transition"
+                        placeholder="Full Name of Guest ${i}">
+                `;
+                    container.appendChild(row);
+                }
+            });
+
+            // Form Submit formatting for WhatsApp
+            document.getElementById('gondola-form').addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                const leadName = document.getElementById('lead-name').value.trim();
+                const leadPhone = document.getElementById('lead-phone').value.trim();
+                const travelDate = document.getElementById('travel-date').value;
+                const phase = document.getElementById('gondola-phase').value;
+                const numGuests = document.getElementById('num-guests').value;
+
+                // Date styling (DD/MM/YYYY)
+                const dateObj = new Date(travelDate);
+                const formattedDate = !isNaN(dateObj)
+                    ? `${String(dateObj.getDate()).padStart(2, '0')}/${String(dateObj.getMonth() + 1).padStart(2, '0')}/${dateObj.getFullYear()}`
+                    : travelDate;
+
+                // Extract all dynamic guest inputs
+                const nameInputs = document.querySelectorAll('.guest-name-input');
+                let guestListStr = '';
+
+                nameInputs.forEach((input, index) => {
+                    const name = input.value.trim();
+                    guestListStr += `\n${index + 1}. ${name}`;
+                });
+
+                // Clean number formatted for WhatsApp message
+                const message = `*GULMARG GONDOLA TICKET BOOKING*
+---------------------------------
+*Lead Contact:* ${leadName}
+*WhatsApp:* ${leadPhone}
+*Travel Date:* ${formattedDate}
+*Total Guests:* ${numGuests}
+*Preferred Phase:* ${phase}
+
+*Guest List:*${guestListStr}
+
+Please check ticket availability and confirm booking details. Thank you!`;
+
+                // Open WhatsApp API window
+                const encodedText = encodeURIComponent(message);
+                const whatsappUrl = `https://wa.me/919541615419?text=${encodedText}`;
+                window.open(whatsappUrl, '_blank');
+            });
+
+        </script>
+        <script src="assets/js/main.js"></script>
+</body>
+
+</html>

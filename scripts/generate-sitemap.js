@@ -5,7 +5,7 @@ const siteUrl = 'https://www.northwindkashmir.com';
 const rootDir = path.join(__dirname, '..');
 
 function getHtmlFiles(directory, basePath = '') {
-    const items = fs.readdirSync(directory).filter((name) => !name.startsWith('.'));
+    const items = fs.readdirSync(directory).filter((name) => !name.startsWith('.') && name !== 'node_modules' && name !== 'dist');
     return items.flatMap((name) => {
         const fullPath = path.join(directory, name);
         const relativePath = basePath ? `${basePath}/${name}` : name;

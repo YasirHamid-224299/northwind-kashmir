@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": ["TravelAgency", "LocalBusiness"],
+          "@id": "https://www.northwindkashmir.com/#business",
+          "name": "Northwind Kashmir",
+          "url": "https://www.northwindkashmir.com",
+          "logo": "https://www.northwindkashmir.com/assets/images/logo/logo.png",
+          "telephone": "+91 9541615419",
+          "email": "northwindkashmir@gmail.com",
+          "sameAs": [
+            "https://www.instagram.com/northwindkashmiradventure/",
+            "https://www.facebook.com/p/North-Wind-100076957834119",
+            "https://www.youtube.com/@northwindkashmir5419",
+            "https://wa.me/919541615419"
+          ],
+          "areaServed": "Kashmir",
+          "description": "Premium Kashmir tour packages, hotel bookings, luxury stays, and local guidance."
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://www.northwindkashmir.com/#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://www.northwindkashmir.com"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Hotels",
+              "item": "https://www.northwindkashmir.com/hotels.html"
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <title>Luxury & Budget Hotels in Kashmir | Northwind Kashmir</title>
+    <meta name="description" content="Discover and book the best hotels in Srinagar, Gulmarg, Pahalgam, and Sonmarg. Explore premium 5-star resorts, cozy mid-range stays, and budget hotels in Kashmir.">
+    <link rel="canonical" href="https://www.northwindkashmir.com/hotels.html">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+    <style>
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .package-card {
+            opacity: 1;
+            transform: scale(1);
+            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen bg-[#f7f4ec] font-sans text-gray-900">
+    <nav class="site-nav backdrop-blur-md bg-[#0B1F3A]/90 border-b border-[#D4AF37]/20 shadow-lg">
+        <div class="mx-auto max-w-7xl px-3 sm:px-6 lg:px-12">
+            <div class="flex h-16 items-center justify-between sm:h-20">
+                <div class="flex items-center gap-3 sm:gap-4">
+                    <img src="assets/images/logo/logo.png" alt="Northwind Kashmir Logo"
+                        class="h-12 sm:h-20 md:h-16 w-auto object-contain">
+                    <span class="site-logo-text">
+                        <span class="text-[#D4AF37]">Northwind</span>
+                        <span class="text-white">Kashmir</span>
+                    </span>
+                </div>
+
+                <div class="hidden items-center gap-8 text-sm font-medium md:flex">
+                    <a href="index.html" class="transition hover:text-[#D4AF37]">Home</a>
+                    <a href="about.html" class="transition hover:text-[#D4AF37]">About</a>
+                    <a href="packages.html" class="transition hover:text-[#D4AF37]">Packages</a>
+                    <a href="hotels.html" class="transition hover:text-[#D4AF37] text-[#D4AF37]">Hotels</a>
+                    <a href="gondola.html" class="transition hover:text-[#D4AF37]">Gondola</a>
+                    <a href="gallery.html" class="transition hover:text-[#D4AF37]">Gallery</a>
+                    <a href="contact.html" class="transition hover:text-[#D4AF37]">Contact</a>
+                    <a href="packages.html"
+                         class="rounded-full bg-[#D4AF37] px-5 py-2 font-semibold text-[#0B1F3A] transition duration-300 hover:bg-yellow-400">
+                        Explore Packages
+                    </a>
+                </div>
+
+                <div class="md:hidden">
+                    <button id="menu-btn" class="site-menu-button" aria-label="Open menu">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="mobile-drawer">
+            <div class="py-6 space-y-3">
+                <a href="index.html" class="mobile-link block py-2 text-sm transition hover:text-[#D4AF37]">Home</a>
+                <a href="about.html" class="mobile-link block py-2 text-sm transition hover:text-[#D4AF37]">About</a>
+                <a href="packages.html" class="mobile-link block py-2 text-sm transition hover:text-[#D4AF37]">Packages</a>
+                <a href="hotels.html" class="mobile-link block py-2 text-sm transition hover:text-[#D4AF37] text-[#D4AF37]">Hotels</a>
+                <a href="gondola.html" class="mobile-link block py-2 text-sm transition hover:text-[#D4AF37]">Gondola</a>
+                <a href="gallery.html" class="mobile-link block py-2 text-sm transition hover:text-[#D4AF37]">Gallery</a>
+                <a href="contact.html" class="mobile-link block py-2 text-sm transition hover:text-[#D4AF37]">Contact</a>
+                <a href="packages.html"
+                    class="mobile-link mt-4 block rounded-full bg-[#D4AF37] py-3 text-center text-sm font-semibold text-[#0B1F3A] transition hover:bg-yellow-400">
+                    Explore Packages
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-top-offset relative overflow-hidden bg-[#0B1F3A] text-white">
+        <div
+            class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(212,175,55,0.20),_transparent_26%),radial-gradient(circle_at_bottom_left,_rgba(255,255,255,0.08),_transparent_24%)]">
+        </div>
+        <div class="section-shell relative py-20 sm:py-24 md:py-28">
+            <div class="mx-auto max-w-4xl text-center">
+                <span class="section-eyebrow">Luxury & Comfort Stays</span>
+                <h1 class="mt-6 font-display text-4xl font-bold leading-tight sm:text-5xl md:text-6xl">
+                    Premium Hotel Stays Across Scenic Kashmir
+                </h1>
+                <p class="mx-auto mt-6 max-w-3xl text-base leading-relaxed text-slate-200 sm:text-lg">
+                    Handpicked accommodations ranging from stunning 5-star heritage resorts to cozy, budget-friendly cottages in Srinagar, Gulmarg, Pahalgam, Sonmarg, and beyond.
+                </p>
+            </div>
+
+            <div class="mt-12 grid gap-5 sm:grid-cols-3">
+                <div class="soft-panel bg-white/10 p-6 text-center" data-aos="fade-up">
+                    <p class="text-3xl font-bold text-[#D4AF37]">5 Star</p>
+                    <p class="mt-2 text-sm text-slate-200">Heritage palaces, luxury retreats, and fine dining.</p>
+                </div>
+                <div class="soft-panel bg-white/10 p-6 text-center" data-aos="fade-up" data-aos-delay="80">
+                    <p class="text-3xl font-bold text-[#D4AF37]">3-4 Star</p>
+                    <p class="mt-2 text-sm text-slate-200">Excellent locations, top service, and great views.</p>
+                </div>
+                <div class="soft-panel bg-white/10 p-6 text-center" data-aos="fade-up" data-aos-delay="160">
+                    <p class="text-3xl font-bold text-[#D4AF37]">Budget</p>
+                    <p class="mt-2 text-sm text-slate-200">Clean, heated, and pocket-friendly stays.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-10 sm:py-14">
+        <div class="section-shell">
+            <div class="soft-panel p-4 sm:p-5">
+                <div class="flex flex-wrap justify-center gap-2 sm:gap-4">
+                    <button
+                        class="filter-btn rounded-full bg-[#0B1F3A] px-4 py-2 text-xs font-semibold text-white transition hover:shadow-md sm:px-5 sm:text-sm"
+                        data-filter="all">
+                        All Stays
+                    </button>
+                    <button
+                        class="filter-btn rounded-full bg-gray-200 px-4 py-2 text-xs font-semibold text-gray-800 transition hover:bg-[#0B1F3A] hover:text-white sm:px-5 sm:text-sm"
+                        data-filter="srinagar">
+                        Srinagar
+                    </button>
+                    <button
+                        class="filter-btn rounded-full bg-gray-200 px-4 py-2 text-xs font-semibold text-gray-800 transition hover:bg-[#0B1F3A] hover:text-white sm:px-5 sm:text-sm"
+                        data-filter="gulmarg">
+                        Gulmarg
+                    </button>
+                    <button
+                        class="filter-btn rounded-full bg-gray-200 px-4 py-2 text-xs font-semibold text-gray-800 transition hover:bg-[#0B1F3A] hover:text-white sm:px-5 sm:text-sm"
+                        data-filter="pahalgam">
+                        Pahalgam
+                    </button>
+                    <button
+                        class="filter-btn rounded-full bg-gray-200 px-4 py-2 text-xs font-semibold text-gray-800 transition hover:bg-[#0B1F3A] hover:text-white sm:px-5 sm:text-sm"
+                        data-filter="sonmarg">
+                        Sonmarg
+                    </button>
+                    <button
+                        class="filter-btn rounded-full bg-gray-200 px-4 py-2 text-xs font-semibold text-gray-800 transition hover:bg-[#0B1F3A] hover:text-white sm:px-5 sm:text-sm"
+                        data-filter="offbeat">
+                        Offbeat Stays
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pb-12 sm:pb-20">
+        <div class="section-shell">
+            <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+                <!-- Hotel 1: Lalit Srinagar -->
+                <div class="package-card soft-panel overflow-hidden" data-aos="fade-up" data-category="srinagar">
+                    <div class="relative h-60 overflow-hidden">
+                        <img src="assets/images/hotels/lalit_srinagar.png" alt="The Lalit Grand Palace Srinagar"
+                            class="h-full w-full object-cover transition duration-500 hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent"></div>
+                        <div class="absolute left-5 top-5 meta-pill border-white/20 bg-white/15 text-white">5-Star Heritage</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex flex-wrap gap-2">
+                            <span class="meta-pill"><i class="fas fa-location-dot mr-1"></i> Srinagar (Gupkar Road)</span>
+                            <span class="meta-pill">Luxury Palace</span>
+                        </div>
+                        <h3 class="mt-4 text-2xl font-bold text-[#0B1F3A]">The Lalit Grand Palace</h3>
+                        <p class="mt-3 text-sm leading-relaxed text-gray-600 sm:text-base">
+                            Experience majestic royalty in this iconic heritage palace, once home to Maharaja Pratap Singh. Sprawling lawns with panoramic views of Dal Lake.
+                        </p>
+                        <div class="mt-4 grid gap-2 text-sm text-gray-600">
+                            <p><i class="fas fa-check mr-2 text-[#D4AF37]"></i> Splendid heritage rooms & royal suites</p>
+                            <p><i class="fas fa-check mr-2 text-[#D4AF37]"></i> Central heating, luxury spa & indoor pool</p>
+                        </div>
+                        <div class="mt-6 flex items-center justify-between">
+                            <div>
+                                <p class="text-xs uppercase tracking-[0.22em] text-[#D4AF37]">Starting From</p>
+                                <p class="mt-1 text-2xl font-bold text-[#0B1F3A]">&#8377;25,000<span class="text-sm font-normal text-gray-500">/night</span></p>
+                            </div>
+                            <a href="https://wa.me/919541615419?text=Hello!%20I%27m%20interested%20in%20booking%20The%20Lalit%20Grand%20Palace%20Srinagar.%20Starting%20Price:%20%E2%82%B925,000/night"
+                                target="_blank" rel="noopener noreferrer" class="premium-button">
+                                Book Stay
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hotel 2: Taj Srinagar -->
+                <div class="package-card soft-panel overflow-hidden" data-aos="fade-up" data-category="srinagar">
+                    <div class="relative h-60 overflow-hidden">
+                        <img src="assets/images/hotels/taj_srinagar.png" alt="Taj Dal View Srinagar"
+                            class="h-full w-full object-cover transition duration-500 hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent"></div>
+                        <div class="absolute left-5 top-5 meta-pill border-white/20 bg-white/15 text-white">5-Star Luxury</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex flex-wrap gap-2">
+                            <span class="meta-pill"><i class="fas fa-location-dot mr-1"></i> Srinagar (Boulevard Road)</span>
+                            <span class="meta-pill">Valley View</span>
+                        </div>
+                        <h3 class="mt-4 text-2xl font-bold text-[#0B1F3A]">Taj Dal View</h3>
+                        <p class="mt-3 text-sm leading-relaxed text-gray-600 sm:text-base">
+                            Perched high on Kralsangri hill, Taj offers dramatic, unobstructed vistas of Dal Lake and the snow-capped Zabarwan mountain range.
+                        </p>
+                        <div class="mt-4 grid gap-2 text-sm text-gray-600">
+                            <p><i class="fas fa-check mr-2 text-[#D4AF37]"></i> Breathtaking valley-view rooms & villas</p>
+                            <p><i class="fas fa-check mr-2 text-[#D4AF37]"></i> Legendary Taj hospitality & fine dining</p>
+                        </div>
+                        <div class="mt-6 flex items-center justify-between">
+                            <div>
+                                <p class="text-xs uppercase tracking-[0.22em] text-[#D4AF37]">Starting From</p>
+                                <p class="mt-1 text-2xl font-bold text-[#0B1F3A]">&#8377;24,000<span class="text-sm font-normal text-gray-500">/night</span></p>
+                            </div>
+                            <a href="https://wa.me/919541615419?text=Hello!%20I%27m%20interested%20in%20booking%20Taj%20Dal%20View%20Srinagar.%20Starting%20Price:%20%E2%82%B924,000/night"
+                                target="_blank" rel="noopener noreferrer" class="premium-button">
+                                Book Stay
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hotel 3: Khyber Gulmarg -->
+                <div class="package-card soft-panel overflow-hidden" data-aos="fade-up" data-category="gulmarg">
+                    <div class="relative h-60 overflow-hidden">
+                        <img src="assets/images/hotels/khyber_gulmarg.png" alt="The Khyber Himalayan Resort & Spa Gulmarg"
+                            class="h-full w-full object-cover transition duration-500 hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent"></div>
+                        <div class="absolute left-5 top-5 meta-pill border-white/20 bg-white/15 text-white">5-Star Luxury</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex flex-wrap gap-2">
+                            <span class="meta-pill"><i class="fas fa-location-dot mr-1"></i> Gulmarg (Near Gondola)</span>
+                            <span class="meta-pill">Alpine Resort</span>
+                        </div>
+                        <h3 class="mt-4 text-2xl font-bold text-[#0B1F3A]">The Khyber Himalayan Resort</h3>
+                        <p class="mt-3 text-sm leading-relaxed text-gray-600 sm:text-base">
+                            Kashmir's crown jewel. A world-class ski resort with premium pine interiors, cozy warm fire pits, and unmatched access to the Gondola ski lifts.
+                        </p>
+                        <div class="mt-4 grid gap-2 text-sm text-gray-600">
+                            <p><i class="fas fa-check mr-2 text-[#D4AF37]"></i> Heated glass-enclosed indoor pool</p>
+                            <p><i class="fas fa-check mr-2 text-[#D4AF37]"></i> L'Occitane Spa, fine cigars & dining</p>
+                        </div>
+                        <div class="mt-6 flex items-center justify-between">
+                            <div>
+                                <p class="text-xs uppercase tracking-[0.22em] text-[#D4AF37]">Starting From</p>
+                                <p class="mt-1 text-2xl font-bold text-[#0B1F3A]">&#8377;28,000<span class="text-sm font-normal text-gray-500">/night</span></p>
+                            </div>
+                            <a href="https://wa.me/919541615419?text=Hello!%20I%27m%20interested%20in%20booking%20The%20Khyber%20Himalayan%20Resort%20Gulmarg.%20Starting%20Price:%20%E2%82%B928,000/night"
+                                target="_blank" rel="noopener noreferrer" class="premium-button">
+                                Book Stay
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hotel 4: Pine N Peak Pahalgam -->
+                <div class="package-card soft-panel overflow-hidden" data-aos="fade-up" data-category="pahalgam">
+                    <div class="relative h-60 overflow-hidden">
+                        <img src="assets/images/hotels/pine_peak_pahalgam.png" alt="Welcomhotel Pine N Peak Pahalgam"
+                            class="h-full w-full object-cover transition duration-500 hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent"></div>
+                        <div class="absolute left-5 top-5 meta-pill border-white/20 bg-white/15 text-white">5-Star Premium</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex flex-wrap gap-2">
+                            <span class="meta-pill"><i class="fas fa-location-dot mr-1"></i> Pahalgam (Lidder River)</span>
+                            <span class="meta-pill">Riverside</span>
+                        </div>
+                        <h3 class="mt-4 text-2xl font-bold text-[#0B1F3A]">Welcomhotel Pine N Peak</h3>
+                        <p class="mt-3 text-sm leading-relaxed text-gray-600 sm:text-base">
+                            Nestled in quiet pines near the Lidder River, offering pure tranquility, dynamic mountain vistas, and impeccable boutique rooms and cottages.
+                        </p>
+                        <div class="mt-4 grid gap-2 text-sm text-gray-600">
+                            <p><i class="fas fa-check mr-2 text-[#D4AF37]"></i> Luxury cottages & heated riverside lawns</p>
+                            <p><i class="fas fa-check mr-2 text-[#D4AF37]"></i> Scenic walks & bespoke Kashmiri dining</p>
+                        </div>
+                        <div class="mt-6 flex items-center justify-between">
+                            <div>
+                                <p class="text-xs uppercase tracking-[0.22em] text-[#D4AF37]">Starting From</p>
+                                <p class="mt-1 text-2xl font-bold text-[#0B1F3A]">&#8377;26,000<span class="text-sm font-normal text-gray-500">/night</span></p>
+                            </div>
+                            <a href="https://wa.me/919541615419?text=Hello!%20I%27m%20interested%20in%20booking%20Welcomhotel%20Pine%20N%20Peak%20Pahalgam.%20Starting%20Price:%20%E2%82%B926,000/night"
+                                target="_blank" rel="noopener noreferrer" class="premium-button">
+                                Book Stay
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hotel 5: Four Points Srinagar -->
+                <div class="package-card soft-panel overflow-hidden" data-aos="fade-up" data-category="srinagar">
+                    <div class="relative h-60 overflow-hidden">
+                        <img src="assets/images/hotels/four_points_srinagar.png" alt="Four Points by Sheraton Srinagar"
+                            class="h-full w-full object-cover transition duration-500 hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent"></div>
+                        <div class="absolute left-5 top-5 meta-pill border-white/20 bg-white/15 text-white">4-Star Deluxe</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex flex-wrap gap-2">
+                            <span class="meta-pill"><i class="fas fa-location-dot mr-1"></i> Srinagar (Sonwar Bagh)</span>
+                            <span class="meta-pill">Modern Stay</span>
+                        </div>
+                        <h3 class="mt-4 text-2xl font-bold text-[#0B1F3A]">Four Points by Sheraton</h3>
+                        <p class="mt-3 text-sm leading-relaxed text-gray-600 sm:text-base">
+                            Superb modern comforts and excellent business/family facilities. Conveniently situated close to shopping markets and city tourist landmarks.
+                        </p>
+                        <div class="mt-4 grid gap-2 text-sm text-gray-600">
+                            <p><i class="fas fa-check mr-2 text-[#D4AF37]"></i> Stylish contemporary rooms & signatures</p>
+                            <p><i class="fas fa-check mr-2 text-[#D4AF37]"></i> Centralized heating, Wi-Fi & global café</p>
+                        </div>
+                        <div class="mt-6 flex items-center justify-between">
+                            <div>
+                                <p class="text-xs uppercase tracking-[0.22em] text-[#D4AF37]">Starting From</p>
+                                <p class="mt-1 text-2xl font-bold text-[#0B1F3A]">&#8377;10,000<span class="text-sm font-normal text-gray-500">/night</span></p>
+                            </div>
+                            <a href="https://wa.me/919541615419?text=Hello!%20I%27m%20interested%20in%20booking%20Four%20Points%20by%20Sheraton%20Srinagar.%20Starting%20Price:%20%E2%82%B910,000/night"
+                                target="_blank" rel="noopener noreferrer" class="premium-button">
+                                Book Stay
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hotel 6: Vintage Gulmarg -->
+                <div class="package-card soft-panel overflow-hidden" data-aos="fade-up" data-category="gulmarg">
+                    <div class="relative h-60 overflow-hidden">
+                        <img src="assets/images/hotels/vintage_gulmarg.png" alt="The Vintage Gulmarg"
+                            class="h-full w-full object-cover transition duration-500 hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent"></div>
+                        <div class="absolute left-5 top-5 meta-pill border-white/20 bg-white/15 text-white">4-Star Boutique</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex flex-wrap gap-2">
+                            <span class="meta-pill"><i class="fas fa-location-dot mr-1"></i> Gulmarg (Central)</span>
+                            <span class="meta-pill">Stylishly Warm</span>
+                        </div>
+                        <h3 class="mt-4 text-2xl font-bold text-[#0B1F3A]">The Vintage Gulmarg</h3>
+                        <p class="mt-3 text-sm leading-relaxed text-gray-600 sm:text-base">
+                            Redefining alpine chic with modern architecture, heated oak paneling, three unique dining venues, and stellar meadows views.
+                        </p>
+                        <div class="mt-4 grid gap-2 text-sm text-gray-600">
+                            <p><i class="fas fa-check mr-2 text-[#D4AF37]"></i> Luxury heated blankets & premium amenities</p>
+                            <p><i class="fas fa-check mr-2 text-[#D4AF37]"></i> Steps away from Gulmarg Golf Course</p>
+                        </div>
+                        <div class="mt-6 flex items-center justify-between">
+                            <div>
+                                <p class="text-xs uppercase tracking-[0.22em] text-[#D4AF37]">Starting From</p>
+                                <p class="mt-1 text-2xl font-bold text-[#0B1F3A]">&#8377;14,000<span class="text-sm font-normal text-gray-500">/night</span></p>
+                            </div>
+                            <a href="https://wa.me/919541615419?text=Hello!%20I%27m%20interested%20in%20booking%20The%20Vintage%20Gulmarg.%20Starting%20Price:%20%E2%82%B914,000/night"
+                                target="_blank" rel="noopener noreferrer" class="premium-button">
+                                Book Stay
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hotel 7: Radisson Golf Resort Pahalgam -->
+                <div class="package-card soft-panel overflow-hidden" data-aos="fade-up" data-category="pahalgam">
+                    <div class="relative h-60 overflow-hidden">
+                        <img src="assets/images/hotels/radisson_pahalgam.png" alt="Radisson Golf Resort Pahalgam"
+                            class="h-full w-full object-cover transition duration-500 hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent"></div>
+                        <div class="absolute left-5 top-5 meta-pill border-white/20 bg-white/15 text-white">5-Star Luxury</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex flex-wrap gap-2">
+                            <span class="meta-pill"><i class="fas fa-location-dot mr-1"></i> Pahalgam (Golf Course)</span>
+                            <span class="meta-pill">Resort & Spa</span>
+                        </div>
+                        <h3 class="mt-4 text-2xl font-bold text-[#0B1F3A]">Radisson Golf Resort</h3>
+                        <p class="mt-3 text-sm leading-relaxed text-gray-600 sm:text-base">
+                            A scenic retreat offering breathtaking mountain lookouts. Unbeatable comfort, perfect golf setups, and dynamic wellness spa treatments.
+                        </p>
+                        <div class="mt-4 grid gap-2 text-sm text-gray-600">
+                            <p><i class="fas fa-check mr-2 text-[#D4AF37]"></i> Premier suites overlooking the fairways</p>
+                            <p><i class="fas fa-check mr-2 text-[#D4AF37]"></i> Indoor game lounge & kids play room</p>
+                        </div>
+                        <div class="mt-6 flex items-center justify-between">
+                            <div>
+                                <p class="text-xs uppercase tracking-[0.22em] text-[#D4AF37]">Starting From</p>
+                                <p class="mt-1 text-2xl font-bold text-[#0B1F3A]">&#8377;18,000<span class="text-sm font-normal text-gray-500">/night</span></p>
+                            </div>
+                            <a href="https://wa.me/919541615419?text=Hello!%20I%27m%20interested%20in%20booking%20Radisson%20Golf%20Resort%20Pahalgam.%20Starting%20Price:%20%E2%82%B918,000/night"
+                                target="_blank" rel="noopener noreferrer" class="premium-button">
+                                Book Stay
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hotel 8: Radisson Sonamarg -->
+                <div class="package-card soft-panel overflow-hidden" data-aos="fade-up" data-category="sonmarg">
+                    <div class="relative h-60 overflow-hidden">
+                        <img src="assets/images/hotels/radisson_sonamarg.png" alt="Radisson Hotel Sonamarg"
+                            class="h-full w-full object-cover transition duration-500 hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent"></div>
+                        <div class="absolute left-5 top-5 meta-pill border-white/20 bg-white/15 text-white">5-Star Luxury</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex flex-wrap gap-2">
+                            <span class="meta-pill"><i class="fas fa-location-dot mr-1"></i> Sonmarg (Glacier View)</span>
+                            <span class="meta-pill">Glacier Peaks</span>
+                        </div>
+                        <h3 class="mt-4 text-2xl font-bold text-[#0B1F3A]">Radisson Hotel Sonamarg</h3>
+                        <p class="mt-3 text-sm leading-relaxed text-gray-600 sm:text-base">
+                            Surrounded by pristine glaciers and stunning meadows. Offering absolute five-star pampering in the wilderness of the Golden Meadows.
+                        </p>
+                        <div class="mt-4 grid gap-2 text-sm text-gray-600">
+                            <p><i class="fas fa-check mr-2 text-[#D4AF37]"></i> Centrally heated with premium comforts</p>
+                            <p><i class="fas fa-check mr-2 text-[#D4AF37]"></i> Quick access to Thajiwas glacier trails</p>
+                        </div>
+                        <div class="mt-6 flex items-center justify-between">
+                            <div>
+                                <p class="text-xs uppercase tracking-[0.22em] text-[#D4AF37]">Starting From</p>
+                                <p class="mt-1 text-2xl font-bold text-[#0B1F3A]">&#8377;12,000<span class="text-sm font-normal text-gray-500">/night</span></p>
+                            </div>
+                            <a href="https://wa.me/919541615419?text=Hello!%20I%27m%20interested%20in%20booking%20Radisson%20Hotel%20Sonamarg.%20Starting%20Price:%20%E2%82%B912,000/night"
+                                target="_blank" rel="noopener noreferrer" class="premium-button">
+                                Book Stay
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hotel 9: Lemon Tree Sonamarg -->
+                <div class="package-card soft-panel overflow-hidden" data-aos="fade-up" data-category="sonmarg">
+                    <div class="relative h-60 overflow-hidden">
+                        <img src="assets/images/hotels/lemon_tree_sonamarg.png" alt="Lemon Tree Hotel Sonamarg"
+                            class="h-full w-full object-cover transition duration-500 hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent"></div>
+                        <div class="absolute left-5 top-5 meta-pill border-white/20 bg-white/15 text-white">4-Star Deluxe</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex flex-wrap gap-2">
+                            <span class="meta-pill"><i class="fas fa-location-dot mr-1"></i> Sonmarg (Riverside)</span>
+                            <span class="meta-pill">Sindh View</span>
+                        </div>
+                        <h3 class="mt-4 text-2xl font-bold text-[#0B1F3A]">Lemon Tree Hotel</h3>
+                        <p class="mt-3 text-sm leading-relaxed text-gray-600 sm:text-base">
+                            Sit on the balcony and listen to the murmurs of the Sindh River. Known for friendly, crisp service and lively, vibrant color-themed interiors.
+                        </p>
+                        <div class="mt-4 grid gap-2 text-sm text-gray-600">
+                            <p><i class="fas fa-check mr-2 text-[#D4AF37]"></i> Gorgeous riverfront balconies</p>
+                            <p><i class="fas fa-check mr-2 text-[#D4AF37]"></i> Premium cafe & central room heaters</p>
+                        </div>
+                        <div class="mt-6 flex items-center justify-between">
+                            <div>
+                                <p class="text-xs uppercase tracking-[0.22em] text-[#D4AF37]">Starting From</p>
+                                <p class="mt-1 text-2xl font-bold text-[#0B1F3A]">&#8377;8,000<span class="text-sm font-normal text-gray-500">/night</span></p>
+                            </div>
+                            <a href="https://wa.me/919541615419?text=Hello!%20I%27m%20interested%20in%20booking%20Lemon%20Tree%20Hotel%20Sonamarg.%20Starting%20Price:%20%E2%82%B98,000/night"
+                                target="_blank" rel="noopener noreferrer" class="premium-button">
+                                Book Stay
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hotel 10: Golden Sands Srinagar -->
+                <div class="package-card soft-panel overflow-hidden" data-aos="fade-up" data-category="srinagar">
+                    <div class="relative h-60 overflow-hidden">
+                        <img src="assets/images/hotels/golden_sands_srinagar.png" alt="Hotel Golden Sands Srinagar"
+                            class="h-full w-full object-cover transition duration-500 hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent"></div>
+                        <div class="absolute left-5 top-5 meta-pill border-white/20 bg-white/15 text-white">3-Star Comfort</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex flex-wrap gap-2">
+                            <span class="meta-pill"><i class="fas fa-location-dot mr-1"></i> Srinagar (Boulevard Road)</span>
+                            <span class="meta-pill">Dal Lake Proximity</span>
+                        </div>
+                        <h3 class="mt-4 text-2xl font-bold text-[#0B1F3A]">Hotel Golden Sands</h3>
+                        <p class="mt-3 text-sm leading-relaxed text-gray-600 sm:text-base">
+                            A highly-rated mid-range option located steps away from Dal Lake. Combines warm Kashmiri hospitality with extremely clean, well-heated rooms.
+                        </p>
+                        <div class="mt-4 grid gap-2 text-sm text-gray-600">
+                            <p><i class="fas fa-check mr-2 text-[#D4AF37]"></i> Central, walkable location on Boulevard</p>
+                            <p><i class="fas fa-check mr-2 text-[#D4AF37]"></i> Ideal for families seeking budget comfort</p>
+                        </div>
+                        <div class="mt-6 flex items-center justify-between">
+                            <div>
+                                <p class="text-xs uppercase tracking-[0.22em] text-[#D4AF37]">Starting From</p>
+                                <p class="mt-1 text-2xl font-bold text-[#0B1F3A]">&#8377;3,500<span class="text-sm font-normal text-gray-500">/night</span></p>
+                            </div>
+                            <a href="https://wa.me/919541615419?text=Hello!%20I%27m%20interested%20in%20booking%20Hotel%20Golden%20Sands%20Srinagar.%20Starting%20Price:%20%E2%82%B93,500/night"
+                                target="_blank" rel="noopener noreferrer" class="premium-button">
+                                Book Stay
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hotel 11: Hotel Affarwat Gulmarg -->
+                <div class="package-card soft-panel overflow-hidden" data-aos="fade-up" data-category="gulmarg">
+                    <div class="relative h-60 overflow-hidden">
+                        <img src="assets/images/hotels/affarwat_gulmarg.png" alt="Hotel Affarwat Gulmarg"
+                            class="h-full w-full object-cover transition duration-500 hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent"></div>
+                        <div class="absolute left-5 top-5 meta-pill border-white/20 bg-white/15 text-white">3-Star Standard</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex flex-wrap gap-2">
+                            <span class="meta-pill"><i class="fas fa-location-dot mr-1"></i> Gulmarg (Market Area)</span>
+                            <span class="meta-pill">Value Central</span>
+                        </div>
+                        <h3 class="mt-4 text-2xl font-bold text-[#0B1F3A]">Hotel Affarwat</h3>
+                        <p class="mt-3 text-sm leading-relaxed text-gray-600 sm:text-base">
+                            A legendary mid-range choice in Gulmarg. Highly recommended for travelers who prioritize stellar central locations and prompt, friendly service.
+                        </p>
+                        <div class="mt-4 grid gap-2 text-sm text-gray-600">
+                            <p><i class="fas fa-check mr-2 text-[#D4AF37]"></i> Fully carpeted rooms with running hot water</p>
+                            <p><i class="fas fa-check mr-2 text-[#D4AF37]"></i> Cozy wood-fired traditional Bukhari heaters</p>
+                        </div>
+                        <div class="mt-6 flex items-center justify-between">
+                            <div>
+                                <p class="text-xs uppercase tracking-[0.22em] text-[#D4AF37]">Starting From</p>
+                                <p class="mt-1 text-2xl font-bold text-[#0B1F3A]">&#8377;6,000<span class="text-sm font-normal text-gray-500">/night</span></p>
+                            </div>
+                            <a href="https://wa.me/919541615419?text=Hello!%20I%27m%20interested%20in%20booking%20Hotel%20Affarwat%20Gulmarg.%20Starting%20Price:%20%E2%82%B96,000/night"
+                                target="_blank" rel="noopener noreferrer" class="premium-button">
+                                Book Stay
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hotel 12: JKTDC Huts Doodhpathri -->
+                <div class="package-card soft-panel overflow-hidden" data-aos="fade-up" data-category="offbeat">
+                    <div class="relative h-60 overflow-hidden">
+                        <img src="assets/images/hotels/jktdc_doodhpathri.png" alt="JKTDC Huts Doodhpathri"
+                            class="h-full w-full object-cover transition duration-500 hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent"></div>
+                        <div class="absolute left-5 top-5 meta-pill border-white/20 bg-white/15 text-white">Govt Eco Lodge</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex flex-wrap gap-2">
+                            <span class="meta-pill"><i class="fas fa-location-dot mr-1"></i> Doodhpathri Meadows</span>
+                            <span class="meta-pill">Offbeat Glades</span>
+                        </div>
+                        <h3 class="mt-4 text-2xl font-bold text-[#0B1F3A]">JKTDC Government Huts</h3>
+                        <p class="mt-3 text-sm leading-relaxed text-gray-600 sm:text-base">
+                            Stay right in the middle of nature at Doodhpathri. Scenic wooden government huts surrounded entirely by pristine alpine pine forests and running streams.
+                        </p>
+                        <div class="mt-4 grid gap-2 text-sm text-gray-600">
+                            <p><i class="fas fa-check mr-2 text-[#D4AF37]"></i> Authentic wooden cottages with absolute privacy</p>
+                            <p><i class="fas fa-check mr-2 text-[#D4AF37]"></i> Perfect for stargazing & quiet hikers</p>
+                        </div>
+                        <div class="mt-6 flex items-center justify-between">
+                            <div>
+                                <p class="text-xs uppercase tracking-[0.22em] text-[#D4AF37]">Starting From</p>
+                                <p class="mt-1 text-2xl font-bold text-[#0B1F3A]">&#8377;4,000<span class="text-sm font-normal text-gray-500">/night</span></p>
+                            </div>
+                            <a href="https://wa.me/919541615419?text=Hello!%20I%27m%20interested%20in%20booking%20JKTDC%20Government%20Huts%20Doodhpathri.%20Starting%20Price:%20%E2%82%B94,000/night"
+                                target="_blank" rel="noopener noreferrer" class="premium-button">
+                                Book Stay
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pb-20">
+        <div class="section-shell">
+            <div class="soft-panel overflow-hidden">
+                <div
+                    class="grid gap-8 bg-gradient-to-r from-[#0B1F3A] via-[#173755] to-[#0B1F3A] px-6 py-10 text-white sm:px-10 md:grid-cols-[1fr_0.9fr]">
+                    <div>
+                        <span class="section-eyebrow border-white/20 bg-white/10 text-[#f5d77f]">Hassle-Free Booking</span>
+                        <h2 class="mt-5 font-display text-3xl font-bold sm:text-4xl">
+                            We coordinate your stays directly so you pay less and experience more.
+                        </h2>
+                    </div>
+                    <div class="grid gap-4 text-sm text-slate-200 sm:text-base">
+                        <p><i class="fas fa-check mr-2 text-[#D4AF37]"></i> Guaranteed best dynamic corporate rates</p>
+                        <p><i class="fas fa-check mr-2 text-[#D4AF37]"></i> Heating & meal inclusions checked in advance</p>
+                        <p><i class="fas fa-check mr-2 text-[#D4AF37]"></i> Free shikara rides on premium Srinagar package stays</p>
+                        <p><i class="fas fa-check mr-2 text-[#D4AF37]"></i> Easy planning directly over WhatsApp</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-[#0B1F3A] py-12 text-white sm:py-16 md:py-20">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-12">
+            <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-4">
+                <div>
+                    <h3 class="font-display text-xl font-bold text-[#D4AF37] sm:text-2xl">Northwind Kashmir</h3>
+                    <p class="mt-4 text-sm leading-relaxed text-gray-300 sm:text-base">
+                        Your premium travel partner in Kashmir offering unforgettable luxury journeys and curated travel experiences.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="mb-4 text-lg font-semibold sm:text-xl">Quick Links</h4>
+                    <ul class="space-y-2 text-sm text-gray-300 sm:text-base">
+                        <li><a href="index.html" class="transition hover:text-[#D4AF37]">Home</a></li>
+                        <li><a href="about.html" class="transition hover:text-[#D4AF37]">About</a></li>
+                        <li><a href="packages.html" class="transition hover:text-[#D4AF37]">Packages</a></li>
+                        <li><a href="hotels.html" class="transition hover:text-[#D4AF37]">Hotels</a></li>
+                        <li><a href="gondola.html" class="transition hover:text-[#D4AF37]">Gondola</a></li>
+                        <li><a href="gallery.html" class="transition hover:text-[#D4AF37]">Gallery</a></li>
+                        <li><a href="contact.html" class="transition hover:text-[#D4AF37]">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="mb-4 text-lg font-semibold sm:text-xl">Contact Info</h4>
+                    <ul class="space-y-2 text-sm text-gray-300 sm:text-base">
+                        <li>+91 9541615419</li>
+                        <li>northwindkashmir@gmail.com</li>
+                        <li>Chandilora, Kashmir</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="mb-4 text-lg font-semibold sm:text-xl">Follow Us</h4>
+                    <div class="flex gap-4 text-2xl">
+                        <a href="https://www.instagram.com/northwindkashmiradventure/" target="_blank"
+                            rel="noopener noreferrer" class="text-gray-300 transition hover:text-[#D4AF37]">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.facebook.com/p/North-Wind-100076957834119" target="_blank"
+                            rel="noopener noreferrer" class="text-gray-300 transition hover:text-[#D4AF37]">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@northwindkashmir5419" target="_blank"
+                            rel="noopener noreferrer" class="text-gray-300 transition hover:text-[#D4AF37]">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="https://wa.me/919541615419" target="_blank" rel="noopener noreferrer"
+                            class="text-green-300 transition hover:text-green-500">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-10 border-t border-gray-700 pt-6 text-center text-sm text-gray-400 sm:text-base">
+                &copy; 2026 Northwind Kashmir. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Fixed Floating WhatsApp FAB for mobile/desktop -->
+    <a href="https://wa.me/919541615419" target="_blank" rel="noopener noreferrer"
+        class="floating-whatsapp md:bottom-10">
+        <i class="fab fa-whatsapp text-xl sm:text-2xl"></i>
+    </a>
+
+    <!-- Fixed Mobile bottom call bar -->
+    <div class="fixed bottom-0 left-0 z-40 flex w-full items-center justify-around 
+border-t border-white/20 
+bg-white/10 backdrop-blur-lg 
+px-2 py-2 shadow-xl md:hidden">
+        <a href="tel:+919541615419"
+            class="flex min-w-[72px] flex-col items-center gap-1 px-2 py-1 text-xs text-[#0B1F3A] transition hover:text-[#D4AF37]">
+            <i class="fas fa-phone text-lg"></i>
+            <span>Call</span>
+        </a>
+        <a href="https://wa.me/919541615419" target="_blank" rel="noopener noreferrer"
+            class="flex min-w-[72px] flex-col items-center gap-1 px-2 py-1 text-xs text-green-600 transition hover:text-green-700">
+            <i class="fab fa-whatsapp text-lg"></i>
+            <span>Chat</span>
+        </a>
+        <a href="packages.html"
+            class="flex min-w-[72px] flex-col items-center gap-1 px-2 py-1 text-xs text-[#D4AF37] transition hover:text-yellow-500">
+            <i class="fas fa-plane text-lg"></i>
+            <span>Packages</span>
+        </a>
+    </div>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
