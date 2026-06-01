@@ -40,7 +40,7 @@
     }
 
     .form-field {
-        @apply w-full rounded-2xl border border-[#0B1F3A]/10 bg-white px-4 py-4 text-sm text-[#0B1F3A] outline-none transition placeholder:text-gray-400 focus:border-[#D4AF37] focus:ring-4 focus:ring-[#D4AF37]/15;
+        @apply w-full rounded-2xl border border-[#0B1F3A]/10 bg-white px-4 py-4 text-sm text-black outline-none transition placeholder:text-gray-400 focus:border-[#D4AF37] focus:ring-4 focus:ring-[#D4AF37]/15;
     }
 
     .meta-pill {
@@ -93,5 +93,10 @@
 
     .floating-whatsapp {
         @apply fixed bottom-24 right-3 z-40 flex items-center justify-center rounded-full bg-green-500 p-3 text-white shadow-lg transition duration-300 hover:scale-110 hover:bg-green-600 sm:bottom-20 sm:right-5 sm:p-4;
+    }
+
+    select option {
+        color: #000000 !important;
+        background-color: #ffffff !important;
     }
 }
