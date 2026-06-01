@@ -1,0 +1,11 @@
+# robots.txt for Northwind Kashmir
+# Allow all major search engines and block only internal system paths.
+User-agent: *
+Allow: /
+Disallow: /.git/
+Disallow: /.github/
+Disallow: /node_modules/
+Disallow: /package.json
+Disallow: /package-lock.json
+Disallow: /yarn.lock
+Sitemap: https://www.northwindkashmir.com/sitemap.xml
