@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+    html, body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+}
+
+
 @layer components {
     .section-shell {
         @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-12;
@@ -98,5 +107,24 @@
     select option {
         color: #000000 !important;
         background-color: #ffffff !important;
+    }
+}
+
+/* Prevent AOS fade-left and fade-right from causing horizontal overflow on mobile/tablet viewports */
+@media (max-width: 1023px) {
+    [data-aos="fade-left"] {
+        transform: translate3d(0, 20px, 0) !important;
+        opacity: 0;
+        transition-property: transform, opacity;
+    }
+    [data-aos="fade-right"] {
+        transform: translate3d(0, 20px, 0) !important;
+        opacity: 0;
+        transition-property: transform, opacity;
+    }
+    [data-aos="fade-left"].aos-animate,
+    [data-aos="fade-right"].aos-animate {
+        transform: translate3d(0, 0, 0) !important;
+        opacity: 1;
     }
 }

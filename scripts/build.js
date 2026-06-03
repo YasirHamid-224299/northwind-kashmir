@@ -18,7 +18,7 @@ const copy = (src, dest) => {
         }
         fs.readdirSync(src).forEach(f => {
             // Avoid copying dist or node_modules
-            if (f === 'dist' || f === 'node_modules') return;
+            if (f.toLowerCase() === 'dist' || f.toLowerCase() === 'node_modules' || f.includes('_to_delete')) return;
             copy(path.join(src, f), path.join(dest, f));
         });
     } else {
@@ -32,7 +32,7 @@ copy('./assets', './dist/assets');
 console.log('Copying HTML files and packages...');
 fs.readdirSync(root).forEach((file) => {
     // Skip dist, node_modules, dotfiles
-    if (file === 'dist' || file === 'node_modules' || file.startsWith('.')) return;
+    if (file.toLowerCase() === 'dist' || file.toLowerCase() === 'node_modules' || file.startsWith('.') || file.includes('_to_delete')) return;
     
     const fullPath = path.join(root, file);
     if (fs.statSync(fullPath).isFile() && file.endsWith('.html')) {
@@ -47,6 +47,9 @@ console.log('Copying robots.txt and sitemap.xml...');
 copy('./robots.txt', './dist/robots.txt');
 copy('./sitemap.xml', './dist/sitemap.xml');
 
+console.log('Syncing dist/output.css back to root output.css...');
+fs.copyFileSync('./dist/output.css', './output.css');
+
 console.log('Fixing output.css links in dist html files...');
 const files = fs.readdirSync('.').filter(f => f.endsWith('.html'));
 files.forEach(f => {
@@ -56,3 +59,4 @@ files.forEach(f => {
 });
 
 console.log('Build completed successfully!');
+
