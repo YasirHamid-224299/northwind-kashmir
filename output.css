@@ -1214,6 +1214,10 @@ select option {
   min-height: 100svh;
 }
 
+.min-h-\[350px\] {
+  min-height: 350px;
+}
+
 .min-h-screen {
   min-height: 100vh;
 }
@@ -1272,6 +1276,10 @@ select option {
 
 .max-w-7xl {
   max-width: 80rem;
+}
+
+.flex-1 {
+  flex: 1 1 0%;
 }
 
 .shrink-0 {
@@ -1445,6 +1453,10 @@ select option {
   border-width: 1px;
 }
 
+.border-0 {
+  border-width: 0px;
+}
+
 .border-b {
   border-bottom-width: 1px;
 }
@@ -1465,6 +1477,11 @@ select option {
 .border-gray-200 {
   --tw-border-opacity: 1;
   border-color: rgb(229 231 235 / var(--tw-border-opacity));
+}
+
+.border-gray-300 {
+  --tw-border-opacity: 1;
+  border-color: rgb(209 213 219 / var(--tw-border-opacity));
 }
 
 .border-gray-700 {
@@ -1525,6 +1542,11 @@ select option {
   background-color: rgb(0 0 0 / 0.9);
 }
 
+.bg-blue-600 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(37 99 235 / var(--tw-bg-opacity));
+}
+
 .bg-gray-200 {
   --tw-bg-opacity: 1;
   background-color: rgb(229 231 235 / var(--tw-bg-opacity));
@@ -1540,6 +1562,11 @@ select option {
   background-color: rgb(22 163 74 / var(--tw-bg-opacity));
 }
 
+.bg-slate-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(241 245 249 / var(--tw-bg-opacity));
+}
+
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -1551,6 +1578,11 @@ select option {
 
 .bg-white\/15 {
   background-color: rgb(255 255 255 / 0.15);
+}
+
+.bg-yellow-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(234 179 8 / var(--tw-bg-opacity));
 }
 
 .bg-\[radial-gradient\(circle_at_top_left\2c _rgba\(212\2c 175\2c 55\2c 0\.20\)\2c _transparent_28\%\)\2c radial-gradient\(circle_at_bottom_right\2c _rgba\(255\2c 255\2c 255\2c 0\.10\)\2c _transparent_28\%\)\] {
@@ -1594,6 +1626,12 @@ select option {
 .from-\[\#f7f4ec\] {
   --tw-gradient-from: #f7f4ec var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(247 244 236 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.from-\[\#f8f5ee\] {
+  --tw-gradient-from: #f8f5ee var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(248 245 238 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
@@ -1907,6 +1945,10 @@ select option {
   font-weight: 700;
 }
 
+.font-extrabold {
+  font-weight: 800;
+}
+
 .font-medium {
   font-weight: 500;
 }
@@ -1984,6 +2026,11 @@ select option {
   color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
+.text-blue-600 {
+  --tw-text-opacity: 1;
+  color: rgb(37 99 235 / var(--tw-text-opacity));
+}
+
 .text-gray-200 {
   --tw-text-opacity: 1;
   color: rgb(229 231 235 / var(--tw-text-opacity));
@@ -2047,6 +2094,16 @@ select option {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.text-yellow-400 {
+  --tw-text-opacity: 1;
+  color: rgb(250 204 21 / var(--tw-text-opacity));
+}
+
+.text-yellow-500 {
+  --tw-text-opacity: 1;
+  color: rgb(234 179 8 / var(--tw-text-opacity));
 }
 
 .underline {
@@ -2186,6 +2243,11 @@ select option {
   border-color: rgb(212 175 55 / var(--tw-border-opacity));
 }
 
+.hover\:border-gray-400:hover {
+  --tw-border-opacity: 1;
+  border-color: rgb(156 163 175 / var(--tw-border-opacity));
+}
+
 .hover\:bg-\[\#0B1F3A\]:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(11 31 58 / var(--tw-bg-opacity));
@@ -2194,6 +2256,11 @@ select option {
 .hover\:bg-\[\#D4AF37\]:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(212 175 55 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-gray-50:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(249 250 251 / var(--tw-bg-opacity));
 }
 
 .hover\:bg-green-600:hover {
@@ -2213,6 +2280,11 @@ select option {
 .hover\:bg-yellow-400:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(250 204 21 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-yellow-600:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(202 138 4 / var(--tw-bg-opacity));
 }
 
 .hover\:text-\[\#0B1F3A\]:hover {
@@ -2615,6 +2687,10 @@ select option {
 }
 
 @media (min-width: 1024px) {
+  .lg\:min-h-\[450px\] {
+    min-height: 450px;
+  }
+
   .lg\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -2637,6 +2713,10 @@ select option {
 
   .lg\:items-center {
     align-items: center;
+  }
+
+  .lg\:items-stretch {
+    align-items: stretch;
   }
 
   .lg\:gap-16 {
