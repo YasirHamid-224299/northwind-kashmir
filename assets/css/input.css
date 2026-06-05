@@ -128,3 +128,29 @@
         opacity: 1;
     }
 }
+
+/* Exit Intent Popup */
+.exit-intent-overlay {
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+.exit-intent-modal {
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+}
+
+/* Premium gradient backgrounds */
+.bg-gradient-premium {
+    background: linear-gradient(135deg, #0B1F3A 0%, #173755 100%);
+}
+
+.text-gold {
+    color: #D4AF37;
+}
+
+.border-gold {
+    border-color: rgba(212, 175, 85, 0.3);
+}
+
+.bg-gold {
+    background-color: #D4AF37;
+}
+

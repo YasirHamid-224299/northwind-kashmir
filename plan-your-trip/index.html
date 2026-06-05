@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kashmir Trip Planner & Calculator | Northwind Kashmir</title>
+    <meta name="description" content="Use our interactive Kashmir travel tools: calculate custom trip costs, build dynamic day-by-day itineraries, and subscribe to Gondola ticket slot alerts.">
+    <link rel="canonical" href="https://www.northwindkashmir.com/plan-your-trip/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.northwindkashmir.com/plan-your-trip/">
+    <meta property="og:title" content="Kashmir Trip Planner & Calculator | Northwind Kashmir">
+    <meta property="og:description" content="Use our interactive Kashmir travel tools: calculate custom trip costs, build dynamic day-by-day itineraries, and subscribe to Gondola ticket slot alerts.">
+    <meta property="og:image" content="https://www.northwindkashmir.com/assets/images/hero/hero1.jpg">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kashmir Trip Planner & Calculator | Northwind Kashmir">
+    <meta name="twitter:description" content="Use our interactive Kashmir travel tools: calculate custom trip costs, build dynamic day-by-day itineraries, and subscribe to Gondola ticket slot alerts.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS and Icons -->
+    <link rel="stylesheet" href="/output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": "https://www.northwindkashmir.com/plan-your-trip/#webpage",
+          "url": "https://www.northwindkashmir.com/plan-your-trip/",
+          "name": "Kashmir Trip Planner & Cost Calculator"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://www.northwindkashmir.com/plan-your-trip/#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://www.northwindkashmir.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Trip Planner",
+              "item": "https://www.northwindkashmir.com/plan-your-trip/"
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+</head>
+
+<body class="bg-[#f7f4ec] text-gray-900 font-sans">
+    <div id="app" class="min-h-screen flex flex-col justify-between">
+        <nav class="site-nav backdrop-blur-md bg-[#0B1F3A]/90 border-b border-[#D4AF37]/20 shadow-lg">
+                <div class="mx-auto max-w-7xl px-3 sm:px-6 lg:px-12">
+                    <div class="flex h-16 items-center justify-between sm:h-20">
+                        <div class="flex items-center gap-3 sm:gap-4">
+                            <a href="/" class="flex items-center gap-2 sm:gap-3">
+                                <img src="/assets/images/logo/logo.png" alt="Northwind Kashmir Logo"
+                                    class="h-10 sm:h-20 md:h-16 w-auto object-contain">
+                                <span class="site-logo-text">
+                                    <span class="text-[#D4AF37]">Northwind</span>
+                                    <span class="text-white">Kashmir</span>
+                                </span>
+                            </a>
+                        </div>
+
+                        <div class="hidden items-center gap-8 text-sm font-medium md:flex">
+                            <a href="/" class="transition hover:text-[#D4AF37]">Home</a>
+                            <a href="/about.html" class="transition hover:text-[#D4AF37]">About</a>
+                            <a href="/packages.html" class="transition hover:text-[#D4AF37]">Packages</a>
+                            <a href="/hotels.html" class="transition hover:text-[#D4AF37]">Hotels</a>
+                            <a href="/gulmarg-gondola-booking/" class="transition hover:text-[#D4AF37]">Gondola</a>
+                            <a href="/plan-your-trip/" class="transition hover:text-[#D4AF37]">Planner</a>
+                            <a href="/contact.html" class="transition hover:text-[#D4AF37]">Contact</a>
+                            <a href="/packages.html"
+                                class="rounded-full bg-[#D4AF37] px-5 py-2 font-semibold text-[#0B1F3A] transition duration-300 hover:bg-yellow-400">
+                                Explore Packages
+                            </a>
+                        </div>
+ 
+                        <div class="md:hidden">
+                            <button id="menu-btn" class="site-menu-button" aria-label="Open menu">
+                                <i class="fas fa-bars"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+ 
+                <div id="mobile-menu" class="mobile-drawer">
+                    <div class="py-6 space-y-3">
+                        <a href="/"
+                            class="mobile-link block py-2 text-sm transition hover:text-[#D4AF37]">Home</a>
+                        <a href="/about.html"
+                            class="mobile-link block py-2 text-sm transition hover:text-[#D4AF37]">About</a>
+                        <a href="/packages.html"
+                            class="mobile-link block py-2 text-sm transition hover:text-[#D4AF37]">Packages</a>
+                        <a href="/hotels.html"
+                            class="mobile-link block py-2 text-sm transition hover:text-[#D4AF37]">Hotels</a>
+                        <a href="/gulmarg-gondola-booking/"
+                            class="mobile-link block py-2 text-sm transition hover:text-[#D4AF37]">Gondola</a>
+                        <a href="/plan-your-trip/"
+                            class="mobile-link block py-2 text-sm transition hover:text-[#D4AF37]">Planner</a>
+                        <a href="/trip-stories/"
+                            class="mobile-link block py-2 text-sm transition hover:text-[#D4AF37]">Trip Stories</a>
+                        <a href="/gallery.html"
+                            class="mobile-link block py-2 text-sm transition hover:text-[#D4AF37]">Gallery</a>
+                        <a href="/contact.html"
+                            class="mobile-link block py-2 text-sm transition hover:text-[#D4AF37]">Contact</a>
+                        <a href="/packages.html"
+                            class="mobile-link mt-4 block rounded-full bg-[#D4AF37] py-3 text-center text-sm font-semibold text-[#0B1F3A] transition hover:bg-yellow-400">
+                            Explore Packages
+                        </a>
+                    </div>
+                </div>
+</nav>
+
+        <!-- Tool Hub Hero -->
+        <section class="page-top-offset relative overflow-hidden bg-[#0B1F3A] text-white">
+            <div class="absolute inset-0 bg-cover bg-center opacity-40" style="background-image: url('/assets/images/hero/hero1.jpg');"></div>
+            <div class="absolute inset-0 bg-gradient-to-br from-black/80 via-[#0B1F3A]/80 to-black/70"></div>
+            <div class="section-shell relative py-16 sm:py-20 md:py-24">
+                <div class="mx-auto max-w-4xl text-center" data-aos="fade-up">
+                    <span class="section-eyebrow border-white/20 bg-white/10 text-[#f5d77f]">interactive planning tools</span>
+                    <h1 class="mt-6 font-display text-4xl font-bold leading-tight sm:text-5xl md:text-6xl">
+                        Kashmir Travel Planner
+                    </h1>
+                    <p class="mx-auto mt-6 max-w-3xl text-base leading-relaxed text-slate-200 sm:text-lg">
+                        Calculate estimated tour budgets, build custom dynamic itineraries, and activate live Gulmarg Gondola slot notifications.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Tabs and Dashboard -->
+        <section class="py-12 sm:py-16 bg-white flex-grow">
+            <div class="section-shell">
+                <!-- Tab Headers -->
+                <div class="flex flex-wrap justify-center gap-2 border-b border-gray-200 pb-4 max-w-7xl mx-auto mb-8 sm:mb-12">
+                    <button id="tab-btn-calc" class="flex items-center gap-2 px-5 py-3 rounded-xl font-accent font-semibold text-sm transition-all duration-200 bg-[#0B1F3A] text-white shadow-md">
+                        <i class="fas fa-calculator text-base"></i>
+                        <span>Cost Calculator</span>
+                    </button>
+                    <button id="tab-btn-ai" class="flex items-center gap-2 px-5 py-3 rounded-xl font-accent font-semibold text-sm transition-all duration-200 bg-gray-100 text-gray-700 hover:bg-gray-200">
+                        <i class="fas fa-magic text-base"></i>
+                        <span>AI Itinerary Builder</span>
+                    </button>
+                    <button id="tab-btn-alert" class="flex items-center gap-2 px-5 py-3 rounded-xl font-accent font-semibold text-sm transition-all duration-200 bg-gray-100 text-gray-700 hover:bg-gray-200">
+                        <i class="fas fa-bell text-base"></i>
+                        <span>Gondola Slot Alert</span>
+                    </button>
+                </div>
+
+                <!-- Tab Body Content -->
+                <div class="max-w-7xl mx-auto">
+                    <!-- Tab 1: Cost Calculator -->
+                    <div id="tab-content-calc" class="tab-pane space-y-8 animate-fade-in-up">
+                        <div class="grid gap-8 lg:grid-cols-12">
+                            <!-- Inputs Form -->
+                            <div class="lg:col-span-7 soft-panel p-6 sm:p-8 bg-[#f7f4ec]/50 border border-[#D4AF37]/20">
+                                <h3 class="font-display text-2xl font-bold text-[#0B1F3A] mb-6">Customize Your Itinerary</h3>
+                                <div class="space-y-6">
+                                    <!-- Number of Travelers -->
+                                    <div>
+                                        <div class="flex justify-between items-center mb-2">
+                                            <label class="text-sm font-semibold text-[#0B1F3A]">Number of Travelers</label>
+                                            <span id="calc-val-travelers" class="text-sm font-bold text-[#D4AF37] bg-[#0B1F3A] px-2.5 py-0.5 rounded-full">2</span>
+                                        </div>
+                                        <input type="range" id="calc-in-travelers" min="1" max="20" value="2" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-[#D4AF37]">
+                                    </div>
+
+                                    <!-- Number of Days -->
+                                    <div>
+                                        <div class="flex justify-between items-center mb-2">
+                                            <label class="text-sm font-semibold text-[#0B1F3A]">Stays Duration (Days)</label>
+                                            <span id="calc-val-days" class="text-sm font-bold text-[#D4AF37] bg-[#0B1F3A] px-2.5 py-0.5 rounded-full">6</span>
+                                        </div>
+                                        <input type="range" id="calc-in-days" min="3" max="15" value="6" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-[#D4AF37]">
+                                    </div>
+
+                                    <!-- Hotel Category -->
+                                    <div>
+                                        <label class="block text-sm font-semibold text-[#0B1F3A] mb-2">Hotel Accommodation Tier</label>
+                                        <select id="calc-in-hotels" class="form-field w-full bg-white">
+                                            <option value="budget">Standard / Budget (3-Star & Standard Houseboat)</option>
+                                            <option value="deluxe" selected>Deluxe / Premium (4-Star & Luxury Houseboat)</option>
+                                            <option value="luxury">Luxury / VIP (5-Star Retreats & Heritage Houseboats)</option>
+                                        </select>
+                                    </div>
+
+                                    <!-- Vehicle Type -->
+                                    <div>
+                                        <label class="block text-sm font-semibold text-[#0B1F3A] mb-2">Private Vehicle Mode</label>
+                                        <select id="calc-in-vehicle" class="form-field w-full bg-white">
+                                            <option value="sedan">Sedan (Etios / Dzire - Max 4 Pax)</option>
+                                            <option value="muv" selected>MUV (Ertiga / Tavera - Max 6 Pax)</option>
+                                            <option value="suv">Premium SUV (Innova Crysta - Max 6 Pax)</option>
+                                        </select>
+                                    </div>
+
+                                    <!-- Season -->
+                                    <div>
+                                        <label class="block text-sm font-semibold text-[#0B1F3A] mb-2">Travel Season</label>
+                                        <select id="calc-in-season" class="form-field w-full bg-white">
+                                            <option value="summer" selected>Peak Summer (May - July)</option>
+                                            <option value="winter">Winter Snow (December - February)</option>
+                                            <option value="spring">Spring Tulip Blossoms (March - April)</option>
+                                            <option value="autumn">Autumn Foliage (September - November)</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Live Outputs -->
+                            <div class="lg:col-span-5 flex flex-col justify-between soft-panel p-6 sm:p-8 bg-[#0B1F3A] text-white">
+                                <div>
+                                    <span class="text-xs uppercase tracking-widest font-semibold text-[#D4AF37]">LIVE ESTIMATE</span>
+                                    <h3 class="font-display text-2xl font-bold mt-2 mb-6">Estimated Cost Breakdown</h3>
+                                    
+                                    <div class="space-y-4 text-sm text-slate-200">
+                                        <div class="flex justify-between border-b border-white/10 pb-2">
+                                            <span>Hotels & Houseboats:</span>
+                                            <span id="calc-out-hotels" class="font-semibold text-white">₹0</span>
+                                        </div>
+                                        <div class="flex justify-between border-b border-white/10 pb-2">
+                                            <span>Private Transport & Driver:</span>
+                                            <span id="calc-out-transport" class="font-semibold text-white">₹0</span>
+                                        </div>
+                                        <div class="flex justify-between border-b border-white/10 pb-2">
+                                            <span>Sightseeing & Permits:</span>
+                                            <span id="calc-out-permits" class="font-semibold text-white">₹0</span>
+                                        </div>
+                                        <div class="flex justify-between border-b border-white/10 pb-2">
+                                            <span>Daily Meals (Lunch):</span>
+                                            <span id="calc-out-meals" class="font-semibold text-white">₹0</span>
+                                        </div>
+                                        <div class="flex justify-between text-base font-bold text-[#D4AF37] pt-4">
+                                            <span>Estimated Total:</span>
+                                            <span id="calc-out-total" class="text-lg">₹0</span>
+                                        </div>
+                                        <p class="text-xs text-slate-400 mt-4 leading-relaxed">
+                                            *Prices are estimates based on standard local union fares and seasonal tariff updates. Tax (GST) and flight tickets are excluded.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <!-- Lead Form Integration -->
+                                <div class="mt-8 border-t border-white/10 pt-6">
+                                    <h4 class="text-sm font-semibold text-[#D4AF37] mb-3">Lock in this quote:</h4>
+                                    <form id="calc-lead-form" class="space-y-3 text-gray-900">
+                                        <input type="text" id="calc-lead-name" placeholder="Your Name" class="w-full rounded-xl border border-white/10 px-4 py-2.5 text-xs bg-white focus:outline-none" required>
+                                        <input type="tel" id="calc-lead-phone" placeholder="WhatsApp Number" class="w-full rounded-xl border border-white/10 px-4 py-2.5 text-xs bg-white focus:outline-none" required>
+                                        <button type="submit" class="w-full rounded-xl bg-green-500 py-3 text-xs font-semibold text-white transition hover:bg-green-600 flex items-center justify-center gap-2">
+                                            <i class="fab fa-whatsapp text-sm"></i> WhatsApp Custom Quote Details
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab 2: AI Itinerary Builder -->
+                    <div id="tab-content-ai" class="tab-pane space-y-8 hidden animate-fade-in-up">
+                        <div class="soft-panel p-6 sm:p-8 bg-[#f7f4ec]/50 border border-[#D4AF37]/20">
+                            <h3 class="font-display text-2xl font-bold text-[#0B1F3A] mb-6">Build a Custom AI Itinerary</h3>
+                            <div class="grid gap-6 sm:grid-cols-3 mb-6">
+                                <div>
+                                    <label class="block text-xs font-semibold uppercase text-gray-500 mb-2">Duration (Days)</label>
+                                    <select id="ai-in-duration" class="form-field w-full bg-white text-sm">
+                                        <option value="4">4 Days (Quick Highlights)</option>
+                                        <option value="5">5 Days (Popular Loop)</option>
+                                        <option value="6" selected>6 Days (Recommended Package)</option>
+                                        <option value="7">7 Days (Full Explorer)</option>
+                                        <option value="8">8 Days (Offbeat Add-ons)</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold uppercase text-gray-500 mb-2">Travel Style</label>
+                                    <select id="ai-in-style" class="form-field w-full bg-white text-sm">
+                                        <option value="honeymoon" selected>Honeymoon & Romantic</option>
+                                        <option value="family">Family-Friendly Paced</option>
+                                        <option value="adventure">Adventure & Trekking</option>
+                                        <option value="leisure">Leisure & Heritage</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold uppercase text-gray-500 mb-2">Budget Tier</label>
+                                    <select id="ai-in-budget" class="form-field w-full bg-white text-sm">
+                                        <option value="budget">Budget / Standard</option>
+                                        <option value="deluxe" selected>Deluxe / Premium</option>
+                                        <option value="luxury">Luxury / VIP</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <button id="ai-btn-generate" class="w-full sm:w-auto rounded-full bg-[#D4AF37] px-8 py-3.5 text-sm font-semibold text-[#0B1F3A] transition duration-300 hover:bg-yellow-400 shadow-md">
+                                <i class="fas fa-cog fa-spin mr-2 hidden" id="ai-spinner"></i> Generate Itinerary
+                            </button>
+                        </div>
+
+                        <!-- Itinerary Display Container -->
+                        <div id="ai-itinerary-result" class="hidden space-y-6">
+                            <div class="border-l-2 border-[#D4AF37] pl-6 space-y-8" id="ai-timeline-container">
+                                <!-- Populated dynamically by main.js -->
+                            </div>
+
+                            <div class="rounded-2xl bg-gradient-to-r from-[#0B1F3A] to-[#173755] p-6 text-white text-center mt-8">
+                                <h4 class="font-display text-xl font-bold text-[#D4AF37] mb-2">Like this planned route?</h4>
+                                <p class="text-xs text-slate-200 mb-4 max-w-xl mx-auto">Get in touch with Northwind Kashmir's destination experts. We will fine-tune the schedule, accommodate flight timings, and secure bookings for you.</p>
+                                <button id="ai-whatsapp-cta" class="inline-flex items-center justify-center rounded-full bg-green-500 px-6 py-2.5 text-xs font-semibold text-white transition hover:bg-green-600">
+                                    <i class="fab fa-whatsapp mr-2 text-base"></i> Discuss Itinerary on WhatsApp
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab 3: Gondola Alert System -->
+                    <div id="tab-content-alert" class="tab-pane space-y-8 hidden animate-fade-in-up">
+                        <div class="grid gap-8 lg:grid-cols-12">
+                            <!-- Explanation & Instructions & Live Activity -->
+                            <div class="lg:col-span-6 space-y-6">
+                                <h3 class="font-display text-3xl font-bold text-[#0B1F3A]">Never Miss a Gondola Booking Slot</h3>
+                                <p class="text-sm text-gray-700 leading-relaxed">
+                                    Gulmarg Gondola tickets are highly seasonal and sell out weeks in advance. The J&K Cable Car Corporation portal releases ticket slots in blocks, often without fixed schedules. 
+                                </p>
+                                <div class="space-y-4">
+                                    <div class="flex gap-4">
+                                        <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#D4AF37]/20 text-xs font-bold text-[#D4AF37]">1</span>
+                                        <div>
+                                            <h4 class="text-sm font-semibold text-[#0B1F3A]">Register Alert Details</h4>
+                                            <p class="text-xs text-gray-500 mt-1">Specify travel dates, tourist count, and direct WhatsApp contact details.</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex gap-4">
+                                        <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#D4AF37]/20 text-xs font-bold text-[#D4AF37]">2</span>
+                                        <div>
+                                            <h4 class="text-sm font-semibold text-[#0B1F3A]">Automated Queue Check</h4>
+                                            <p class="text-xs text-gray-500 mt-1">Our system monitors availability updates for your designated travel dates.</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex gap-4">
+                                        <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#D4AF37]/20 text-xs font-bold text-[#D4AF37]">3</span>
+                                        <div>
+                                            <h4 class="text-sm font-semibold text-[#0B1F3A]">Instant WhatsApp Alert</h4>
+                                            <p class="text-xs text-gray-500 mt-1">Receive direct notifications the moment slots become bookable.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Live Activity Feed (EEAT & Trust Badge) -->
+                                <div class="rounded-2xl bg-[#0B1F3A]/5 border border-[#0B1F3A]/10 p-6 space-y-4">
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-xs uppercase tracking-widest font-semibold text-[#0B1F3A]">Alert System Status</span>
+                                        <div class="flex items-center gap-2">
+                                            <span class="relative flex h-2.5 w-2.5">
+                                                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                                                <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
+                                            </span>
+                                            <span class="text-xs font-bold text-green-700">ONLINE</span>
+                                        </div>
+                                    </div>
+                                    <h4 class="font-display text-sm font-bold text-[#0B1F3A]">Recent Alert Dispatches</h4>
+                                    <div class="space-y-3 text-xs">
+                                        <div class="flex justify-between items-start gap-4 border-b border-[#0B1F3A]/10 pb-2">
+                                            <div>
+                                                <p class="font-semibold text-gray-800">Dec 15 - Dec 28 Booking Slots</p>
+                                                <p class="text-gray-500 mt-0.5">High-demand winter snow season block</p>
+                                            </div>
+                                            <span class="text-[0.7rem] bg-green-100 text-green-800 px-2 py-0.5 rounded font-mono">Dispatched 3h ago</span>
+                                        </div>
+                                        <div class="flex justify-between items-start gap-4 border-b border-[#0B1F3A]/10 pb-2">
+                                            <div>
+                                                <p class="font-semibold text-gray-800">Oct 05 - Oct 20 Autumn Slots</p>
+                                                <p class="text-gray-500 mt-0.5">Chinar festival and holiday foliage block</p>
+                                            </div>
+                                            <span class="text-[0.7rem] bg-green-100 text-green-800 px-2 py-0.5 rounded font-mono">Dispatched 1d ago</span>
+                                        </div>
+                                        <div class="flex justify-between items-start gap-4">
+                                            <div>
+                                                <p class="font-semibold text-gray-800">July Phase II Ride Openings</p>
+                                                <p class="text-gray-500 mt-0.5">Summer sightseeing weekend expansion</p>
+                                            </div>
+                                            <span class="text-[0.7rem] bg-green-100 text-green-800 px-2 py-0.5 rounded font-mono">Dispatched 3d ago</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Subscription Form -->
+                            <div class="lg:col-span-6 soft-panel p-6 sm:p-8 bg-[#f7f4ec]/50 border border-[#D4AF37]/20 flex flex-col justify-between">
+                                <div>
+                                    <h4 class="font-display text-xl font-bold text-[#0B1F3A] mb-2">Subscribe to Live Slot Alerts</h4>
+                                    <p class="text-xs text-gray-500 mb-6">Enter details to get automatic slot notifications directly on WhatsApp.</p>
+                                    
+                                    <form id="alert-form" class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-gray-900 text-sm">
+                                        <div class="sm:col-span-2">
+                                            <label for="alert-name" class="block text-xs font-semibold text-gray-600 mb-1">Full Name</label>
+                                            <input type="text" id="alert-name" placeholder="Enter your full name" class="form-field w-full bg-white" required>
+                                        </div>
+                                        <div>
+                                            <label for="alert-email" class="block text-xs font-semibold text-gray-600 mb-1">Email Address</label>
+                                            <input type="email" id="alert-email" placeholder="name@domain.com" class="form-field w-full bg-white" required>
+                                        </div>
+                                        <div>
+                                            <label for="alert-phone" class="block text-xs font-semibold text-gray-600 mb-1">WhatsApp Number</label>
+                                            <input type="tel" id="alert-phone" placeholder="e.g. +91 95416..." class="form-field w-full bg-white" required>
+                                        </div>
+                                        <div>
+                                            <label for="alert-date" class="block text-xs font-semibold text-gray-600 mb-1">Gondola Date</label>
+                                            <input type="date" id="alert-date" class="form-field w-full bg-white text-xs" required>
+                                        </div>
+                                        <div>
+                                            <label for="alert-guests" class="block text-xs font-semibold text-gray-600 mb-1">Guests Count</label>
+                                            <input type="number" id="alert-guests" min="1" max="15" value="2" class="form-field w-full bg-white text-xs" required>
+                                        </div>
+                                        <div class="sm:col-span-2 pt-2">
+                                            <button type="submit" class="w-full rounded-2xl bg-[#0B1F3A] py-3.5 font-accent font-semibold text-white transition hover:bg-slate-800 flex items-center justify-center gap-2">
+                                                <i class="fas fa-bell"></i> Activate Live Alerts
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+
+                                <!-- Active Alert Registry status (Local Storage view) -->
+                                <div id="alert-registry-status" class="hidden mt-6 p-4 rounded-xl border border-green-200 bg-green-50 text-green-800 text-xs">
+                                    <div class="flex items-center gap-2 font-bold mb-1">
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>Alert Active</span>
+                                    </div>
+                                    <p id="alert-registry-msg">We are monitoring availability for Yasir on 15/12/2026.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-[#0B1F3A] py-12 text-white sm:py-16 md:py-20">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-12">
+                <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-4">
+                    <div>
+                        <h3 class="font-display text-xl font-bold text-[#D4AF37] sm:text-2xl">Northwind Kashmir</h3>
+                        <p class="mt-4 text-sm leading-relaxed text-gray-300 sm:text-base">
+                            Your premium travel partner in Kashmir offering premium journeys and curated travel experiences.
+                        </p>
+                        <ul class="mt-6 space-y-2 text-sm text-gray-400">
+                            <li><i class="fas fa-phone mr-2 text-[#D4AF37]"></i> +91 9541615419</li>
+                            <li><i class="fas fa-envelope mr-2 text-[#D4AF37]"></i> northwindkashmir@gmail.com</li>
+                            <li><i class="fas fa-map-marker-alt mr-2 text-[#D4AF37]"></i> Chandilora, Tangmarg, Kashmir</li>
+                        </ul>
+                    </div>
+ 
+                    <div>
+                        <h4 class="mb-4 text-lg font-semibold sm:text-xl">Quick Links</h4>
+                        <ul class="space-y-2 text-sm text-gray-300 sm:text-base">
+                            <li><a href="/" class="transition hover:text-[#D4AF37]">Home</a></li>
+                            <li><a href="/about.html" class="transition hover:text-[#D4AF37]">About</a></li>
+                            <li><a href="/gallery.html" class="transition hover:text-[#D4AF37]">Gallery</a></li>
+                            <li><a href="/trip-stories/" class="transition hover:text-[#D4AF37]">Trip Stories</a></li>
+                            <li><a href="/plan-your-trip/" class="transition hover:text-[#D4AF37]">Trip Planner</a></li>
+                            <li><a href="/contact.html" class="transition hover:text-[#D4AF37]">Contact</a></li>
+                        </ul>
+                        <h4 class="mt-6 mb-4 text-lg font-semibold sm:text-xl">Follow Us</h4>
+                        <div class="flex gap-4 text-2xl">
+                            <a href="https://www.instagram.com/northwindkashmiradventure/" target="_blank"
+                                rel="noopener noreferrer" class="text-gray-300 transition hover:text-[#D4AF37]">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://www.facebook.com/p/North-Wind-100076957834119" target="_blank"
+                                rel="noopener noreferrer" class="text-gray-300 transition hover:text-[#D4AF37]">
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                            <a href="https://www.youtube.com/@northwindkashmir5419" target="_blank"
+                                rel="noopener noreferrer" class="text-gray-300 transition hover:text-[#D4AF37]">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                            <a href="https://wa.me/919541615419" target="_blank" rel="noopener noreferrer"
+                                class="text-green-300 transition hover:text-green-500">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+ 
+                    <div>
+                        <h4 class="mb-4 text-lg font-semibold sm:text-xl">Destinations</h4>
+                        <ul class="space-y-2 text-sm text-gray-300 sm:text-base">
+                            <li><a href="/srinagar-tourism/" class="transition hover:text-[#D4AF37]">Srinagar Guide</a></li>
+                            <li><a href="/gulmarg-tourism/" class="transition hover:text-[#D4AF37]">Gulmarg Guide</a></li>
+                            <li><a href="/pahalgam-tourism/" class="transition hover:text-[#D4AF37]">Pahalgam Guide</a></li>
+                            <li><a href="/sonmarg-tourism/" class="transition hover:text-[#D4AF37]">Sonmarg Guide</a></li>
+                            <li><a href="/gurez-tourism/" class="transition hover:text-[#D4AF37]">Gurez Valley Guide</a></li>
+                            <li><a href="/doodhpathri-tourism/" class="transition hover:text-[#D4AF37]">Doodhpathri Guide</a></li>
+                            <li><a href="/yusmarg-tourism/" class="transition hover:text-[#D4AF37]">Yusmarg Guide</a></li>
+                        </ul>
+                    </div>
+ 
+                    <div>
+                        <h4 class="mb-4 text-lg font-semibold sm:text-xl">Theme Packages</h4>
+                        <ul class="space-y-2 text-sm text-gray-300 sm:text-base">
+                            <li><a href="/kashmir-honeymoon-package/" class="transition hover:text-[#D4AF37]">Honeymoon Package</a></li>
+                            <li><a href="/kashmir-family-package/" class="transition hover:text-[#D4AF37]">Family Tour</a></li>
+                            <li><a href="/kashmir-luxury-package/" class="transition hover:text-[#D4AF37]">Luxury Retreat</a></li>
+                            <li><a href="/kashmir-winter-package/" class="transition hover:text-[#D4AF37]">Winter Package</a></li>
+                            <li><a href="/kashmir-adventure-package/" class="transition hover:text-[#D4AF37]">Adventure Tour</a></li>
+                            <li><a href="/gulmarg-gondola-booking/" class="transition hover:text-[#D4AF37]">Gondola Booking</a></li>
+                            <li><a href="/hotels.html" class="transition hover:text-[#D4AF37]">Hotels Directory</a></li>
+                        </ul>
+                    </div>
+                </div>
+ 
+                <div class="mt-10 border-t border-gray-700 pt-6 text-center text-xs text-gray-400 sm:text-sm space-y-2">
+                    <p>&copy; 2026 Northwind Kashmir. All Rights Reserved.</p>
+                    <p class="text-gray-500 font-sans">Registered Office: Chandilora, Tangmarg, J&K. Proprietor: Ajaz Ahmad Mir | GSTIN: 01DUSPA3710C3ZA</p>
+                </div>
+            </div>
+</footer>
+    </div>
+
+    <!-- Script references -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>
