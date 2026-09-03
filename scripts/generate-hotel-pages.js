@@ -299,6 +299,8 @@ const HTML_TEMPLATE = (page) => {
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="${page.title}">
     <meta name="twitter:description" content="${page.description}">
+    <meta name="twitter:image" content="https://www.northwindkashmir.com/assets/images/hero/hero1.jpg">
+    <link rel="icon" type="image/png" href="/assets/images/logo/logo.png">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">

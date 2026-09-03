@@ -67,7 +67,7 @@ const MASTER_NAV_CONTENT = `
                     </div>
                 </div>
 `;
- 
+
 const MASTER_FOOTER_CONTENT = `
             <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-12">
                 <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-4">
@@ -91,6 +91,8 @@ const MASTER_FOOTER_CONTENT = `
                             <li><a href="/gallery.html" class="transition hover:text-[#D4AF37]">Gallery</a></li>
                             <li><a href="/trip-stories/" class="transition hover:text-[#D4AF37]">Trip Stories</a></li>
                             <li><a href="/plan-your-trip/" class="transition hover:text-[#D4AF37]">Trip Planner</a></li>
+                            <li><a href="/kashmir-tour-cost/" class="transition hover:text-[#D4AF37]">Kashmir Tour Cost</a></li>
+                            <li><a href="/kashmir-7-day-itinerary/" class="transition hover:text-[#D4AF37]">7-Day Kashmir Itinerary</a></li>
                             <li><a href="/contact.html" class="transition hover:text-[#D4AF37]">Contact</a></li>
                         </ul>
                         <h4 class="mt-6 mb-4 text-lg font-semibold sm:text-xl">Follow Us</h4>
@@ -222,6 +224,12 @@ htmlFiles.forEach(file => {
             content = content.replace('src="assets/images/logo/logo.png"', 'src="/assets/images/logo/logo.png"');
             changed = true;
         }
+    }
+
+    // Ensure every page exposes the brand icon in browser and search results.
+    if (!content.includes('rel="icon"')) {
+        content = content.replace('</head>', '    <link rel="icon" type="image/png" href="/assets/images/logo/logo.png">\n</head>');
+        changed = true;
     }
 
     if (changed) {
