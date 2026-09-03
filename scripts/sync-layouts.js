@@ -178,10 +178,12 @@ console.log(`Found ${htmlFiles.length} HTML files to sync layouts.`);
 htmlFiles.forEach(file => {
     let content = fs.readFileSync(file, 'utf8');
     let changed = false;
+    const relativePath = path.relative(root, file);
+    const isAdminBuilder = relativePath === path.join('Itanary-bulder', 'index.html');
 
     // Replace Navbar
     const navRegex = /<nav class="site-nav[^>]*>([\s\S]*?)<\/nav>/;
-    if (content.match(navRegex)) {
+    if (!isAdminBuilder && content.match(navRegex)) {
         content = content.replace(navRegex, (match) => {
             // Retain classes but replace content
             const openingTag = match.match(/<nav class="site-nav[^>]*>/)[0];
@@ -202,10 +204,9 @@ htmlFiles.forEach(file => {
 
     // Adjust scripts output.css paths for nested files vs root files
     // (If the file is in a nested folder, the output.css path should be /output.css)
-    const relativePath = path.relative(root, file);
     const isNested = relativePath.includes(path.sep);
 
-    if (isNested) {
+    if (isNested && !isAdminBuilder) {
         // Enforce root-relative path for output.css and main.js in nested files
         if (content.includes('href="output.css"')) {
             content = content.replace('href="output.css"', 'href="/output.css"');
