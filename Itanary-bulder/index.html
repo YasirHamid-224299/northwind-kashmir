@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NorthWind Kashmir - Package Creator</title>
+  <link rel="icon" type="image/png" href="assets/images/logo/logo.png" />
+  <link rel="stylesheet" href="index.css" />
+  <link rel="stylesheet" href="../output.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+  <nav class="site-nav backdrop-blur-md bg-[#0B1F3A]/90 border-b border-[#D4AF37]/20 shadow-lg">
+    <div class="mx-auto max-w-7xl px-3 sm:px-6 lg:px-12">
+      <div class="flex h-16 items-center justify-between sm:h-20">
+        <div class="flex items-center gap-3 sm:gap-4">
+          <div class="flex items-center gap-2 sm:gap-3">
+            <img src="../assets/images/logo/logo.png" alt="Northwind Kashmir Logo"
+              class="h-10 sm:h-20 md:h-16 w-auto object-contain">
+            <span class="site-logo-text">
+              <span class="text-[#D4AF37]">Northwind</span>
+              <span class="text-white">Kashmir</span>
+            </span>
+          </div>
+        </div>
+
+        <div class="hidden items-center gap-6 text-sm font-medium md:flex">
+          <a href="/" class="transition hover:text-[#D4AF37]">Home</a>
+          <a href="./index.html" class="transition text-[#D4AF37]" aria-current="page">Itinerary Builder</a>
+          <button class="admin-site-logout" id="btnTopLogout" type="button">Logout</button>
+        </div>
+
+        <div class="md:hidden">
+          <button id="menu-btn" class="site-menu-button" aria-label="Open menu" aria-expanded="false" type="button">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="mobile-drawer max-h-0 opacity-0">
+      <div class="py-6 space-y-3">
+        <a href="/" class="mobile-link block py-2 text-sm transition hover:text-[#D4AF37]">Home</a>
+        <a href="./index.html" class="mobile-link block py-2 text-sm text-[#D4AF37]" aria-current="page">Itinerary
+          Builder</a>
+        <button class="mobile-link block py-2 text-left text-sm transition hover:text-[#D4AF37]" id="btnTopLogoutMobile"
+          type="button">Logout</button>
+      </div>
+    </div>
+  </nav>
+
+  <section class="login-screen" id="loginScreen" aria-labelledby="loginTitle">
+    <div class="login-card">
+      <div class="login-brand">
+        <img src="../assets/images/logo/logo.png" alt="NorthWind Kashmir" class="login-logo" />
+        <span>NORTH WIND KASHMIR</span>
+      </div>
+      <p class="login-eyebrow">Private workspace</p>
+      <h1 id="loginTitle">Admin sign in</h1>
+      <p class="login-copy">Sign in to access the package creator and hotel database.</p>
+      <form id="loginForm" class="login-form" novalidate>
+        <label for="loginUsername">Username</label>
+        <input id="loginUsername" name="username" type="text" autocomplete="username" required />
+        <label for="loginPassword">Password</label>
+        <input id="loginPassword" name="password" type="password" autocomplete="current-password" required />
+        <p class="login-error" id="loginError" role="alert" aria-live="polite"></p>
+        <button class="btn btn-primary login-submit" type="submit">Sign in</button>
+      </form>
+    </div>
+  </section>
+
+  <header class="header">
+    <div class="header-inner">
+
+      <div class="header-tagline">EXPLORE. TRAVEL. REPEAT</div>
+      <div class="header-actions">
+        <button class="btn btn-outline-light advanced-only" id="btnHotelDB">Hotels</button>
+        <button class="btn btn-outline-light" id="btnToggleSimpleMode">Simple Mode: ON</button>
+        <button class="btn btn-primary" id="btnNewPackage">+ New Package</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <section class="form-section" id="formSection" style="display:none">
+      <div class="section-header">
+        <h2 id="formTitle">Create New Package</h2>
+        <button class="btn btn-ghost" id="btnCancelForm">X Cancel</button>
+      </div>
+
+      <form id="packageForm" novalidate>
+
+        <div class="card">
+          <div class="card-header">Basic Information</div>
+          <div class="form-grid">
+            <div class="form-group">
+              <label>Package ID</label>
+              <input type="text" id="pkgId" placeholder="Auto-generated" readonly class="readonly" />
+            </div>
+            <div class="form-group">
+              <label>Package Name *</label>
+              <input type="text" id="pkgName" placeholder="e.g. Magical Kashmir Honeymoon" />
+            </div>
+            <div class="form-group">
+              <label>Package Type *</label>
+              <select id="pkgType">
+                <option value="">Select Type</option>
+                <option>Honeymoon</option>
+                <option>Couple</option>
+                <option>Family</option>
+                <option>Group</option>
+                <option>Solo</option>
+                <option>Premium</option>
+                <option>Luxury</option>
+                <option>Budget</option>
+                <option>Adventure</option>
+                <option>Custom</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Travel Season</label>
+              <select id="pkgSeason">
+                <option>Spring</option>
+                <option>Summer</option>
+                <option>Autumn</option>
+                <option>Winter</option>
+                <option>Peak Holiday</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Status</label>
+              <select id="pkgStatus">
+                <option>Draft</option>
+                <option>Sent</option>
+                <option>Negotiation</option>
+                <option>Confirmed</option>
+                <option>Cancelled</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Start Date *</label>
+              <input type="date" id="pkgStartDate" />
+            </div>
+            <div class="form-group">
+              <label>End Date *</label>
+              <input type="date" id="pkgEndDate" />
+            </div>
+            <div class="form-group">
+              <label>Duration</label>
+              <input type="text" id="pkgDuration" placeholder="Auto-calculated" readonly class="readonly" />
+            </div>
+            <div class="form-group">
+              <label>Adults *</label>
+              <input type="number" id="pkgAdults" min="1" value="2" />
+            </div>
+            <div class="form-group">
+              <label>Children</label>
+              <input type="number" id="pkgChildren" min="0" value="0" />
+            </div>
+            <div class="form-group">
+              <label>Room Type</label>
+              <select id="pkgRoomType">
+                <option>Single</option>
+                <option>Single with Extra Bed</option>
+                <option>Double</option>
+                <option>Double with Extra Bed</option>
+                <option>Triple</option>
+                <option>Family Room</option>
+                <option>Suite</option>
+                <option>Houseboat</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Vehicle Type</label>
+              <select id="pkgVehicleType">
+                <option>Sedan</option>
+                <option>SUV</option>
+                <option>Innova / Crysta</option>
+                <option>Tempo Traveller (12 Seater)</option>
+                <option>Tempo Traveller (17 Seater)</option>
+                <option>Mini Bus</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Meal Plan</label>
+              <select id="pkgMeal">
+                <option>CP (Breakfast Only)</option>
+                <option>MAP (Breakfast + Dinner)</option>
+                <option>AP (All Meals)</option>
+                <option>EP (No Meals)</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">Quotation Theme &amp; Background</div>
+          <div class="form-group" style="margin-bottom:12px">
+            <label>Choose Quotation Visual Style (used in PDF &amp; WhatsApp quotation)</label>
+          </div>
+          <div class="theme-picker-grid" id="themePickerGrid">
+            <label class="theme-card active" data-theme="classic">
+              <input type="radio" name="pkgTheme" value="classic" checked />
+              <div class="theme-preview theme-preview-classic">
+                <span class="theme-preview-badge">Classic</span>
+              </div>
+              <div class="theme-card-info">
+                <div class="theme-card-title">Classic Navy</div>
+                <div class="theme-card-sub">Timeless executive design</div>
+              </div>
+            </label>
+
+            <label class="theme-card" data-theme="snow">
+              <input type="radio" name="pkgTheme" value="snow" />
+              <div class="theme-preview theme-preview-snow">
+                <span class="theme-preview-badge">Snow</span>
+              </div>
+              <div class="theme-card-info">
+                <div class="theme-card-title">Gulmarg Snow</div>
+                <div class="theme-card-sub">Frosty alpine peak vibes</div>
+              </div>
+            </label>
+
+            <label class="theme-card" data-theme="sunset">
+              <input type="radio" name="pkgTheme" value="sunset" />
+              <div class="theme-preview theme-preview-sunset">
+                <span class="theme-preview-badge">Sunset</span>
+              </div>
+              <div class="theme-card-info">
+                <div class="theme-card-title">Dal Lake Sunset</div>
+                <div class="theme-card-sub">Golden hour shikara warmth</div>
+              </div>
+            </label>
+
+            <label class="theme-card" data-theme="pine">
+              <input type="radio" name="pkgTheme" value="pine" />
+              <div class="theme-preview theme-preview-pine">
+                <span class="theme-preview-badge">Pine</span>
+              </div>
+              <div class="theme-card-info">
+                <div class="theme-card-title">Pahalgam Pines</div>
+                <div class="theme-card-sub">Lush emerald valley style</div>
+              </div>
+            </label>
+
+            <label class="theme-card" data-theme="autumn">
+              <input type="radio" name="pkgTheme" value="autumn" />
+              <div class="theme-preview theme-preview-autumn">
+                <span class="theme-preview-badge">Autumn</span>
+              </div>
+              <div class="theme-card-info">
+                <div class="theme-card-title">Autumn Chinar</div>
+                <div class="theme-card-sub">Terracotta &amp; golden foliage</div>
+              </div>
+            </label>
+
+            <label class="theme-card" data-theme="honeymoon">
+              <input type="radio" name="pkgTheme" value="honeymoon" />
+              <div class="theme-preview theme-preview-honeymoon">
+                <span class="theme-preview-badge">Romance</span>
+              </div>
+              <div class="theme-card-info">
+                <div class="theme-card-title">Honeymoon Rose</div>
+                <div class="theme-card-sub">Rose gold &amp; royal burgundy</div>
+              </div>
+            </label>
+
+            <label class="theme-card" data-theme="luxury">
+              <input type="radio" name="pkgTheme" value="luxury" />
+              <div class="theme-preview theme-preview-luxury">
+                <span class="theme-preview-badge">Luxury</span>
+              </div>
+              <div class="theme-card-info">
+                <div class="theme-card-title">Royal Mughal</div>
+                <div class="theme-card-sub">Midnight sapphire &amp; gold leaf</div>
+              </div>
+            </label>
+
+            <label class="theme-card" data-theme="adventure">
+              <input type="radio" name="pkgTheme" value="adventure" />
+              <div class="theme-preview theme-preview-adventure">
+                <span class="theme-preview-badge">Adventure</span>
+              </div>
+              <div class="theme-card-info">
+                <div class="theme-card-title">Adventure Slate</div>
+                <div class="theme-card-sub">Rugged terrain &amp; solar orange</div>
+              </div>
+            </label>
+
+            <label class="theme-card" data-theme="custom">
+              <input type="radio" name="pkgTheme" value="custom" />
+              <div class="theme-preview theme-preview-custom">
+                <span class="theme-preview-badge">Custom</span>
+              </div>
+              <div class="theme-card-info">
+                <div class="theme-card-title">Custom Image</div>
+                <div class="theme-card-sub">Custom background URL</div>
+              </div>
+            </label>
+          </div>
+
+          <div class="form-group" id="customBgGroup" style="margin-top:14px;display:none">
+            <label>Custom Background Image URL</label>
+            <input type="url" id="pkgCustomBg" placeholder="https://example.com/kashmir-scenery.jpg" />
+            <span class="helper-text">Enter a direct image link to be used as watermark backdrop in
+              PDF/quotation.</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">Customer Information</div>
+          <div class="form-grid">
+            <div class="form-group">
+              <label>Customer Name *</label>
+              <input type="text" id="custName" placeholder="Full Name" />
+            </div>
+            <div class="form-group">
+              <label>WhatsApp Number *</label>
+              <input type="tel" id="custWhatsApp" placeholder="+91 XXXXX XXXXX" />
+            </div>
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" id="custEmail" placeholder="email@example.com" />
+            </div>
+            <div class="form-group">
+              <label>Country / City</label>
+              <input type="text" id="custCountry" placeholder="e.g. Delhi, India" />
+            </div>
+            <div class="form-group full-width">
+              <label>Special Requests</label>
+              <textarea id="custRequests" placeholder="Any special requirements..." rows="2"></textarea>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">Destinations Covered</div>
+          <div class="destinations-grid" id="destinationsGrid">
+            <label class="dest-chip"><input type="checkbox" value="Srinagar" /> Srinagar</label>
+            <label class="dest-chip"><input type="checkbox" value="Gulmarg" /> Gulmarg</label>
+            <label class="dest-chip"><input type="checkbox" value="Pahalgam" /> Pahalgam</label>
+            <label class="dest-chip"><input type="checkbox" value="Sonamarg" /> Sonamarg</label>
+            <label class="dest-chip"><input type="checkbox" value="Dal Lake" /> Dal Lake</label>
+            <label class="dest-chip"><input type="checkbox" value="Betaab Valley" /> Betaab Valley</label>
+            <label class="dest-chip"><input type="checkbox" value="Aru Valley" /> Aru Valley</label>
+            <label class="dest-chip"><input type="checkbox" value="Chandanwari" /> Chandanwari</label>
+            <label class="dest-chip"><input type="checkbox" value="Yusmarg" /> Yusmarg</label>
+            <label class="dest-chip"><input type="checkbox" value="Doodhpathri" /> Doodhpathri</label>
+            <label class="dest-chip"><input type="checkbox" value="Leh" /> Leh</label>
+            <label class="dest-chip"><input type="checkbox" value="Manali" /> Manali</label>
+          </div>
+          <div class="form-group" style="margin-top:12px">
+            <label>Other / Custom Destinations</label>
+            <input type="text" id="pkgOtherDest" placeholder="e.g. Wular Lake, Lolab Valley..." />
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header card-header-flex">
+            <span>Day-by-Day Itinerary</span>
+            <div class="itinerary-header-actions">
+              <button type="button" class="btn btn-sm btn-primary-gradient" id="btnAutoItinerary"
+                title="Auto-generate day-by-day itinerary based on dates &amp; destinations">
+                ✨ Auto-Generate Itinerary
+              </button>
+              <button type="button" class="btn btn-sm btn-outline advanced-only" id="btnToggleTemplates">
+                📋 Templates
+              </button>
+              <button type="button" class="btn btn-sm btn-outline" id="btnAddDay">+ Add Day</button>
+            </div>
+          </div>
+          <div class="itinerary-template-bar" id="itineraryTemplateBar" style="display:none">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;">
+              <span class="template-bar-label">⚡ Select a Popular Kashmir Itinerary Template:</span>
+              <button type="button" class="btn-text-close" id="btnCloseTemplates">✕</button>
+            </div>
+            <div class="template-chips" id="templateChips">
+              <button type="button" class="template-chip" data-tpl="5d_classic">🏔️ 5D/4N Classic Highlights (Srinagar -
+                Gulmarg - Pahalgam)</button>
+              <button type="button" class="template-chip" data-tpl="6d_honeymoon">💖 6D/5N Romantic Honeymoon (Houseboat
+                - Gulmarg - Pahalgam)</button>
+              <button type="button" class="template-chip" data-tpl="7d_grand">🌲 7D/6N Grand Kashmir Explorer (Sonamarg
+                - Gulmarg - Pahalgam - Doodhpathri)</button>
+              <button type="button" class="template-chip" data-tpl="4d_snow">❄️ 4D/3N Winter Snow &amp; Shikara (Gulmarg
+                Skiing &amp; Dal Lake)</button>
+              <button type="button" class="template-chip" data-tpl="6d_valleys">🏞️ 6D/5N Valleys &amp; Meadows
+                (Pahalgam - Gulmarg - Doodhpathri)</button>
+              <button type="button" class="template-chip" data-tpl="8d_complete">🌟 8D/7N Complete Kashmir Paradise (All
+                Major Valleys)</button>
+            </div>
+          </div>
+          <div id="itineraryContainer"></div>
+          <p class="helper-text" id="itineraryHint">Click <strong>✨ Auto-Generate Itinerary</strong>, select a
+            <strong>📋 Template</strong>, or click <strong>+ Add Day</strong> to build your itinerary.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-header card-header-flex">
+            <span>Hotels / Houseboats</span>
+            <button type="button" class="btn btn-sm btn-outline" id="btnAddHotel">+ Add Hotel</button>
+          </div>
+          <div id="hotelContainer"></div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">Inclusions &amp; Exclusions</div>
+          <div class="template-inline-bar">
+            <label for="incExcTemplate">Quick Template:</label>
+            <select id="incExcTemplate" class="template-inline-select">
+              <option value="">Select template...</option>
+              <option value="honeymoon">Honeymoon</option>
+              <option value="family">Family</option>
+              <option value="luxury">Luxury</option>
+              <option value="adventure">Adventure</option>
+            </select>
+            <button type="button" class="btn btn-sm btn-outline" id="btnApplyIncExcTemplate">Apply</button>
+          </div>
+          <div class="inc-exc-grid">
+            <div>
+              <label class="section-label">Inclusions</label>
+              <div class="check-list" id="inclusionsList">
+                <label><input type="checkbox" value="Airport Pickup and Drop" checked /> Airport Pickup &amp;
+                  Drop</label>
+                <label><input type="checkbox" value="Hotel Accommodation" checked /> Hotel Accommodation</label>
+                <label><input type="checkbox" value="Breakfast" checked /> Breakfast</label>
+                <label><input type="checkbox" value="Dinner" /> Dinner</label>
+                <label><input type="checkbox" value="All Meals" /> All Meals</label>
+                <label><input type="checkbox" value="Private Vehicle" checked /> Private Vehicle</label>
+                <label><input type="checkbox" value="Driver" checked /> Driver</label>
+                <label><input type="checkbox" value="Sightseeing" checked /> Sightseeing</label>
+                <label><input type="checkbox" value="Toll and Parking" /> Toll &amp; Parking</label>
+                <label><input type="checkbox" value="Welcome Flowers" /> Welcome Flowers</label>
+                <label><input type="checkbox" value="Shikara Ride" /> Shikara Ride</label>
+              </div>
+              <div class="add-custom-row">
+                <input type="text" id="customInclusion" placeholder="Add custom..." class="add-custom-input" />
+                <button type="button" class="btn btn-sm btn-outline" id="btnAddInclusion">+ Add</button>
+              </div>
+            </div>
+            <div>
+              <label class="section-label">Exclusions</label>
+              <div class="check-list" id="exclusionsList">
+                <label><input type="checkbox" value="Flight Tickets" checked /> Flight Tickets</label>
+                <label><input type="checkbox" value="Gondola Tickets" checked /> Gondola Tickets</label>
+                <label><input type="checkbox" value="Pony Rides" checked /> Pony Rides</label>
+                <label><input type="checkbox" value="Lunch" checked /> Lunch</label>
+                <label><input type="checkbox" value="Personal Expenses" checked /> Personal Expenses</label>
+                <label><input type="checkbox" value="Travel Insurance" checked /> Travel Insurance</label>
+                <label><input type="checkbox" value="Adventure Activities" /> Adventure Activities</label>
+                <label><input type="checkbox" value="Anything Not Mentioned" checked /> Anything Not Mentioned</label>
+              </div>
+              <div class="add-custom-row">
+                <input type="text" id="customExclusion" placeholder="Add custom..." class="add-custom-input" />
+                <button type="button" class="btn btn-sm btn-outline" id="btnAddExclusion">+ Add</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card pricing-card">
+          <div class="card-header">Package Pricing</div>
+          <div class="template-inline-bar advanced-only">
+            <label for="costPresetSelect">Cost Library:</label>
+            <select id="costPresetSelect" class="template-inline-select">
+              <option value="">Select preset...</option>
+            </select>
+            <button type="button" class="btn btn-sm btn-outline" id="btnApplyCostPreset">Apply Preset</button>
+            <button type="button" class="btn btn-sm btn-outline" id="btnSuggestCostPreset">Suggest</button>
+          </div>
+          <div class="form-grid">
+            <div class="form-group">
+              <label>Hotel Cost (Rs.)</label>
+              <input type="number" id="costHotel" min="0" value="0" class="price-input" />
+            </div>
+            <div class="form-group">
+              <label>Transport Cost (Rs.)</label>
+              <input type="number" id="costTransport" min="0" value="0" class="price-input" />
+            </div>
+            <div class="form-group">
+              <label>Activities Cost (Rs.)</label>
+              <input type="number" id="costActivities" min="0" value="0" class="price-input" />
+            </div>
+            <div class="form-group">
+              <label>Other Costs (Rs.)</label>
+              <input type="number" id="costOther" min="0" value="0" class="price-input" />
+            </div>
+            <div class="form-group">
+              <label>Markup (Rs.) - Internal only</label>
+              <input type="number" id="costMarkup" min="0" value="0" class="price-input" />
+            </div>
+            <div class="form-group">
+              <label>Discount (Rs.)</label>
+              <input type="number" id="costDiscount" min="0" value="0" class="price-input" />
+            </div>
+          </div>
+          <div class="price-summary">
+            <div class="price-row"><span>Total Cost</span><span id="calcTotalCost">Rs. 0</span></div>
+            <div class="price-row"><span>+ Markup</span><span id="calcMarkup">Rs. 0</span></div>
+            <div class="price-row"><span>- Discount</span><span id="calcDiscount">Rs. 0</span></div>
+            <div class="price-row highlight"><span>Final Selling Price</span><span id="calcFinal">Rs. 0</span></div>
+            <div class="price-row sub"><span>Price Per Person</span><span id="calcPerPerson">Rs. 0</span></div>
+          </div>
+          <div class="form-group" style="margin-top:16px">
+            <label>Pricing Note (shown in quotation)</label>
+            <textarea id="pkgPricingNote" placeholder="e.g. Price is for 2 adults. Gondola tickets are extra."
+              rows="2"></textarea>
+          </div>
+          <div class="preset-save-row advanced-only">
+            <input type="text" id="newCostPresetName" placeholder="Save current costing as preset name..."
+              class="add-custom-input" />
+            <button type="button" class="btn btn-sm btn-outline" id="btnSaveCostPreset">Save Preset</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">Terms, Validity &amp; Policies (PDF/Quotation)</div>
+          <div class="form-grid">
+            <div class="form-group">
+              <label>Quotation Valid Till</label>
+              <input type="date" id="pkgValidityDate" />
+            </div>
+            <div class="form-group">
+              <label>Include Signature Block</label>
+              <select id="pkgIncludeSignature">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Include Seal Area</label>
+              <select id="pkgIncludeSeal">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+              </select>
+            </div>
+            <div class="form-group full-width">
+              <label>Payment Schedule</label>
+              <textarea id="pkgPaymentSchedule" rows="2"
+                placeholder="e.g. 40% advance, 40% before check-in, 20% at arrival."></textarea>
+            </div>
+            <div class="form-group full-width">
+              <label>Cancellation Policy</label>
+              <textarea id="pkgCancellationPolicy" rows="2"
+                placeholder="e.g. 25% deduction before 15 days, non-refundable within 72 hours."></textarea>
+            </div>
+            <div class="form-group full-width">
+              <label>Additional Terms &amp; Conditions</label>
+              <textarea id="pkgTerms" rows="3"
+                placeholder="e.g. Rates subject to hotel availability and weather conditions."></textarea>
+            </div>
+          </div>
+        </div>
+
+        <div class="card advanced-only">
+          <div class="card-header">Internal Notes</div>
+          <div class="form-group">
+            <label>Notes (NOT shown to customer)</label>
+            <textarea id="pkgInternalNotes" placeholder="Your private notes..." rows="3"></textarea>
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button type="button" class="btn btn-ghost" id="btnCancelForm2">Cancel</button>
+          <button type="submit" class="btn btn-primary">Save Package</button>
+        </div>
+
+      </form>
+    </section>
+
+    <section class="list-section" id="listSection">
+      <div class="section-header">
+        <h2>Kashmir Packages <span class="count-badge" id="packageCount">0</span></h2>
+        <div class="list-controls">
+          <input type="text" id="searchInput" placeholder="Search packages..." class="search-input" />
+          <select id="filterStatus" class="filter-select">
+            <option value="">All Status</option>
+            <option>Draft</option>
+            <option>Sent</option>
+            <option>Negotiation</option>
+            <option>Confirmed</option>
+            <option>Cancelled</option>
+          </select>
+        </div>
+      </div>
+      <div id="packageGrid" class="package-grid"></div>
+      <div id="emptyState" class="empty-state">
+        <div class="empty-icon">&#127956;</div>
+        <h3>No packages yet</h3>
+        <p>Click <strong>+ New Package</strong> to create your first Kashmir travel package.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <div class="modal-overlay" id="quotationModal" style="display:none">
+    <div class="modal modal-lg">
+      <div class="modal-header">
+        <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+          <h3>Package Quotation</h3>
+          <div class="modal-theme-switcher">
+            <label for="modalThemeSelect">🎨 Theme:</label>
+            <select id="modalThemeSelect" class="theme-select-sm">
+              <option value="classic">Classic Navy</option>
+              <option value="snow">🏔️ Gulmarg Snow</option>
+              <option value="sunset">🛶 Dal Lake Sunset</option>
+              <option value="pine">🌲 Pahalgam Pines</option>
+              <option value="autumn">🍁 Autumn Chinar</option>
+              <option value="honeymoon">💖 Honeymoon Rose</option>
+              <option value="luxury">👑 Royal Mughal</option>
+              <option value="adventure">⚡ Adventure Slate</option>
+            </select>
+          </div>
+        </div>
+        <button class="btn btn-ghost" id="btnCloseModal">X</button>
+      </div>
+      <div class="modal-body" id="quotationContent"></div>
+      <div class="modal-footer">
+        <button class="btn btn-outline" id="btnPrint">&#128424; Print / Save as PDF</button>
+        <button class="btn btn-whatsapp" id="btnWhatsApp">&#128229; WhatsApp Message</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="waModal" style="display:none">
+    <div class="modal modal-sm">
+      <div class="modal-header">
+        <h3>WhatsApp Message</h3>
+        <button class="btn btn-ghost" id="btnCloseWa">X</button>
+      </div>
+      <div class="modal-body">
+        <textarea id="waText" rows="20" class="wa-textarea" readonly></textarea>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" id="btnCopyWa">Copy to Clipboard</button>
+        <button class="btn btn-whatsapp" id="btnOpenWa">Open in WhatsApp</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="deleteModal" style="display:none">
+    <div class="modal modal-xs">
+      <div class="modal-header">
+        <h3>Confirm Delete</h3>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure you want to delete this package? This cannot be undone.</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-ghost" id="btnCancelDelete">Cancel</button>
+        <button class="btn btn-danger" id="btnConfirmDelete">Yes, Delete</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <!-- ===== HOTEL DATABASE MODAL ===== -->
+  <div class="modal-overlay" id="hotelDBModal" style="display:none">
+    <div class="modal modal-lg">
+      <div class="modal-header">
+        <h3>🏨 Hotel Database</h3>
+        <button class="btn btn-ghost" id="btnCloseHotelDB">X</button>
+      </div>
+      <div class="modal-body">
+        <!-- Add/Edit Hotel Form -->
+        <div id="hotelDBForm" class="hotel-db-form" style="display:none">
+          <div class="card" style="margin-bottom:0">
+            <div class="card-header" id="hotelDBFormTitle">Add New Hotel</div>
+            <div class="form-grid" style="padding:16px">
+              <div class="form-group">
+                <label>Hotel Name *</label>
+                <input type="text" id="hdb_name" placeholder="e.g. Hotel Grand Palace" />
+              </div>
+              <div class="form-group">
+                <label>Location *</label>
+                <input type="text" id="hdb_location" placeholder="e.g. Srinagar" />
+              </div>
+              <div class="form-group">
+                <label>Category</label>
+                <select id="hdb_category">
+                  <option>3 Star</option>
+                  <option>4 Star</option>
+                  <option>5 Star</option>
+                  <option>Houseboat</option>
+                  <option>Resort</option>
+                  <option>Budget</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Room Type</label>
+                <select id="hdb_roomType">
+                  <option>Standard</option>
+                  <option>Deluxe</option>
+                  <option>Super Deluxe</option>
+                  <option>Suite</option>
+                  <option>Houseboat Premium</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Price Per Night (Rs.)</label>
+                <input type="number" id="hdb_price" min="0" placeholder="e.g. 8000" />
+              </div>
+              <div class="form-group">
+                <label>Contact</label>
+                <input type="text" id="hdb_contact" placeholder="Phone / WhatsApp" />
+              </div>
+              <div class="form-group">
+                <label>Contact Person</label>
+                <input type="text" id="hdb_contactPerson" placeholder="e.g. Mr. Aamir" />
+              </div>
+              <div class="form-group">
+                <label>Reliability Score (1-5)</label>
+                <input type="number" id="hdb_reliability" min="1" max="5" value="4" />
+              </div>
+              <div class="form-group">
+                <label>Last Rate Update</label>
+                <input type="date" id="hdb_rateUpdated" />
+              </div>
+              <div class="form-group full-width">
+                <label>Notes</label>
+                <textarea id="hdb_notes" rows="2" placeholder="Any notes about this hotel..."></textarea>
+              </div>
+            </div>
+            <div class="form-actions" style="padding:0 16px 16px">
+              <button type="button" class="btn btn-ghost" id="btnCancelHotelForm">Cancel</button>
+              <button type="button" class="btn btn-primary" id="btnSaveHotelDB">Save Hotel</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hotel List -->
+        <div id="hotelDBList">
+          <div style="display:flex;gap:10px;margin-bottom:16px;align-items:center;flex-wrap:wrap">
+            <input type="text" id="hotelDBSearch" placeholder="Search hotels..." class="search-input"
+              style="flex:1;min-width:180px" />
+            <button class="btn btn-primary btn-sm" id="btnAddHotelDB">+ Add Hotel</button>
+          </div>
+          <div id="hotelDBItems"></div>
+          <div id="hotelDBEmpty" class="empty-state" style="padding:40px 0;display:none">
+            <div class="empty-icon">🏨</div>
+            <h3>No hotels saved yet</h3>
+            <p>Click <strong>+ Add Hotel</strong> to build your hotel database.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+
+</html>
