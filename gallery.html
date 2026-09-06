@@ -1,25 +1,30 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kashmir Travel Gallery & Sightseeing Photos | Northwind Kashmir</title>
-    <meta name="description" content="Browse breathtaking travel photos of Srinagar, Gulmarg Gondola rides, Pahalgam valleys, and Sonmarg glaciers captured by Northwind Kashmir travelers.">
+    <meta name="description"
+        content="Browse breathtaking travel photos of Srinagar, Gulmarg Gondola rides, Pahalgam valleys, and Sonmarg glaciers captured by Northwind Kashmir travelers.">
     <link rel="canonical" href="https://www.northwindkashmir.com/gallery.html">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.northwindkashmir.com/gallery.html">
     <meta property="og:title" content="Kashmir Travel Gallery & Sightseeing Photos | Northwind Kashmir">
-    <meta property="og:description" content="A visual tour of paradise. See high-quality travel photographs of Dal Lake houseboats, ski slopes, and blooming meadows.">
-    <meta property="og:image" content="https://www.northwindkashmir.com/assets/images/gallery/gallery1.jpg">
+    <meta property="og:description"
+        content="A visual tour of paradise. See high-quality travel photographs of Dal Lake houseboats, ski slopes, and blooming meadows.">
+    <meta property="og:image"
+        content="https://www.northwindkashmir.com/assets/images/gallery/destinations/gallery1.jpg">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Kashmir Travel Gallery & Sightseeing Photos | Northwind Kashmir">
-    <meta name="twitter:description" content="See scenic photographs of Dal Lake houseboats, Gulmarg ski slopes, and Pahalgam river glades.">
-    <meta name="twitter:image" content="https://www.northwindkashmir.com/assets/images/gallery/gallery1.jpg">
+    <meta name="twitter:description"
+        content="See scenic photographs of Dal Lake houseboats, Gulmarg ski slopes, and Pahalgam river glades.">
+    <meta name="twitter:image"
+        content="https://www.northwindkashmir.com/assets/images/gallery/destinations/gallery1.jpg">
 
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
@@ -61,6 +66,76 @@
         rel="stylesheet">
 
     <link rel="stylesheet" href="output.css">
+    <style>
+        .gallery-hero {
+            background: #0B1F3A;
+        }
+
+        .gallery-feature-frame {
+            border: 1px solid rgba(212, 175, 55, 0.24);
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+            gap: 1.25rem;
+        }
+
+        .gallery-card {
+            border: 1px solid rgba(11, 31, 58, 0.08);
+            background: #ffffff;
+            box-shadow: 0 14px 35px rgba(11, 31, 58, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 22px 45px rgba(11, 31, 58, 0.14);
+        }
+
+        .gallery-card-image {
+            aspect-ratio: 4 / 3;
+        }
+
+        @media (min-width: 640px) {
+            .gallery-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 1.5rem;
+            }
+
+            .gallery-card:first-child {
+                grid-column: span 2;
+            }
+
+            .gallery-card:first-child .gallery-card-image {
+                aspect-ratio: 16 / 7;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .gallery-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                gap: 1.75rem;
+            }
+
+            .gallery-card:first-child {
+                grid-column: span 2;
+                grid-row: span 2;
+            }
+
+            .gallery-card:first-child .gallery-card-image {
+                aspect-ratio: 1 / 1;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .gallery-card {
+                transition: none;
+            }
+        }
+    </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <link rel="icon" type="image/png" href="/assets/images/logo/logo.png">
@@ -84,11 +159,9 @@
                         <div class="hidden items-center gap-8 text-sm font-medium md:flex">
                             <a href="/" class="transition hover:text-[#D4AF37]">Home</a>
                             <a href="/about.html" class="transition hover:text-[#D4AF37]">About</a>
-                            <a href="/packages.html" class="transition hover:text-[#D4AF37]">Packages</a>
+                            <a href="/gallery.html" class="transition hover:text-[#D4AF37]">Gallery</a>
                             <a href="/hotels.html" class="transition hover:text-[#D4AF37]">Hotels</a>
                             <a href="/gulmarg-gondola-booking/" class="transition hover:text-[#D4AF37]">Gondola</a>
-                            <a href="/plan-your-trip/" class="transition hover:text-[#D4AF37]">Planner</a>
-                            <a href="/Itanary-bulder/" class="transition hover:text-[#D4AF37]">Admin</a>
                             <a href="/contact.html" class="transition hover:text-[#D4AF37]">Contact</a>
                             <a href="/packages.html"
                                 class="rounded-full bg-[#D4AF37] px-5 py-2 font-semibold text-[#0B1F3A] transition duration-300 hover:bg-yellow-400">
@@ -110,20 +183,14 @@
                             class="mobile-link block py-2 text-sm transition hover:text-[#D4AF37]">Home</a>
                         <a href="/about.html"
                             class="mobile-link block py-2 text-sm transition hover:text-[#D4AF37]">About</a>
-                        <a href="/packages.html"
-                            class="mobile-link block py-2 text-sm transition hover:text-[#D4AF37]">Packages</a>
+                        <a href="/gallery.html"
+                            class="mobile-link block py-2 text-sm transition hover:text-[#D4AF37]">Gallery</a>
                         <a href="/hotels.html"
                             class="mobile-link block py-2 text-sm transition hover:text-[#D4AF37]">Hotels</a>
                         <a href="/gulmarg-gondola-booking/"
                             class="mobile-link block py-2 text-sm transition hover:text-[#D4AF37]">Gondola</a>
-                        <a href="/plan-your-trip/"
-                            class="mobile-link block py-2 text-sm transition hover:text-[#D4AF37]">Planner</a>
-                        <a href="/Itanary-bulder/"
-                            class="mobile-link block py-2 text-sm transition hover:text-[#D4AF37]">Admin</a>
                         <a href="/trip-stories/"
                             class="mobile-link block py-2 text-sm transition hover:text-[#D4AF37]">Trip Stories</a>
-                        <a href="/gallery.html"
-                            class="mobile-link block py-2 text-sm transition hover:text-[#D4AF37]">Gallery</a>
                         <a href="/contact.html"
                             class="mobile-link block py-2 text-sm transition hover:text-[#D4AF37]">Contact</a>
                         <a href="/packages.html"
@@ -134,9 +201,22 @@
                 </div>
 </nav>
 
-    <section class="page-top-offset relative overflow-hidden bg-[#0B1F3A] text-white">
+    <section class="gallery-hero page-top-offset relative overflow-hidden text-white">
+        <div id="hero-slider" class="absolute inset-0" aria-hidden="true">
+            <div class="slide absolute h-full w-full bg-cover bg-center opacity-100 transition-opacity duration-1000"
+                style="background-image: url('assets/images/gallery/destinations/gallery1.jpg');"></div>
+            <div class="slide absolute h-full w-full bg-cover bg-center opacity-0 transition-opacity duration-1000"
+                style="background-image: url('assets/images/gallery/destinations/gallery3.jpg');"></div>
+            <div class="slide absolute h-full w-full bg-cover bg-center opacity-0 transition-opacity duration-1000"
+                style="background-image: url('assets/images/gallery/adventures/gallery4.jpg');"></div>
+            <div class="slide absolute h-full w-full bg-cover bg-center opacity-0 transition-opacity duration-1000"
+                style="background-image: url('assets/images/gallery/destinations/gallery6.jpg');"></div>
+            <div class="slide absolute h-full w-full bg-cover bg-center opacity-0 transition-opacity duration-1000"
+                style="background-image: url('assets/images/gallery/stays/gallery18.jpg');"></div>
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-br from-black/85 via-[#0B1F3A]/65 to-black/80"></div>
         <div
-            class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(212,175,55,0.20),_transparent_28%),radial-gradient(circle_at_bottom_right,_rgba(255,255,255,0.10),_transparent_28%)]">
+            class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(212,175,55,0.20),_transparent_28%),radial-gradient(circle_at_bottom_right,_rgba(255,255,255,0.10),_transparent_28%)]">
         </div>
         <div class="section-shell relative py-16 sm:py-20 md:py-24">
             <div class="mx-auto max-w-4xl text-center">
@@ -150,38 +230,13 @@
                 </p>
             </div>
 
-            <div class="soft-panel mt-12 overflow-hidden bg-white/10 p-3 sm:p-4" data-aos="zoom-in">
-                <section class="relative h-[64vh] overflow-hidden rounded-[1.6rem] sm:h-[72vh] md:h-[80vh]">
-                    <div id="slider" class="absolute inset-0">
-                        <img src="assets/images/gallery/gallery1.jpg" alt="Dal Lake" data-title="Dal Lake"
-                            data-desc="Famous for shikara rides and houseboats"
-                            class="slide absolute h-full w-full object-cover opacity-100 transition-opacity duration-1000">
-                        <img src="assets/images/gallery/gallery2.jpg" alt="Srinagar" data-title="Srinagar"
-                            data-desc="A scenic city in the Kashmir Valley, known for Dal Lake, Mughal gardens, houseboats, and stunning mountain views"
-                            class="slide absolute h-full w-full object-cover opacity-0 transition-opacity duration-1000">
-                        <img src="assets/images/gallery/gallery3.jpg" alt="Gulmarg" data-title="Gulmarg"
-                            data-desc="A famous hill station known for snow-covered mountains, skiing, and the Gulmarg Gondola. A top destination for winter sports and scenic alpine beauty."
-                            class="slide absolute h-full w-full object-cover opacity-0 transition-opacity duration-1000">
-                        <img src="assets/images/gallery/gallery4.jpg" alt="Gulmarg Gondola" data-title="Gulmarg Gondola"
-                            data-desc="One of the world's highest cable cars offering stunning views of snow-covered peaks."
-                            class="slide absolute h-full w-full object-cover opacity-0 transition-opacity duration-1000">
-
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/25 to-black/20"></div>
-
-                        <div class="relative z-10 flex h-full flex-col items-start justify-end p-6 text-white sm:p-10">
-                            <span class="meta-pill border-white/20 bg-white/10 text-white">Featured View</span>
-                            <h2 id="slide-title" class="mt-5 text-3xl font-bold sm:text-4xl md:text-5xl"></h2>
-                            <p id="slide-desc"
-                                class="mt-3 max-w-2xl text-sm leading-relaxed text-gray-200 sm:text-base"></p>
-                        </div>
-                </section>
-            </div>
+            
         </div>
     </section>
 
-    <section class="py-16 sm:py-20">
+    <section class="bg-[#f8f5ee] py-16 sm:py-20">
         <div class="section-shell">
-            <div class="mb-12 text-center">
+            <div class="mb-10 max-w-2xl" data-aos="fade-up">
                 <span class="section-eyebrow">Gallery Collection</span>
                 <h2 class="section-title mt-5">Places our travelers keep coming back to</h2>
                 <p class="section-copy mx-auto mt-4 max-w-2xl">
@@ -189,12 +244,13 @@
                 </p>
             </div>
 
-            <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-                <div class="soft-panel group overflow-hidden p-3" data-aos="zoom-in">
-                    <div class="relative overflow-hidden rounded-[1.4rem]">
-                        <img src="assets/images/gallery/gallery1.jpg" alt="Dal Lake" data-title="Dal Lake"
+            <div class="gallery-grid">
+                <div class="gallery-card group overflow-hidden rounded-[1.5rem] p-2" data-aos="zoom-in">
+                    <div class="gallery-card-image relative overflow-hidden rounded-[1.2rem]">
+                        <img src="assets/images/gallery/destinations/gallery1.jpg" alt="Dal Lake" data-title="Dal Lake"
                             data-desc="Iconic lake of Srinagar famous for shikara rides, floating markets, and traditional houseboats."
-                            class="gallery-img h-72 w-full cursor-pointer object-cover transition duration-500 group-hover:scale-105">
+                            loading="lazy"
+                            class="gallery-img h-full w-full cursor-pointer object-cover transition duration-500 group-hover:scale-105">
                         <div
                             class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent px-5 py-5 text-white">
                             <p class="text-lg font-semibold">Dal Lake</p>
@@ -202,11 +258,12 @@
                     </div>
                 </div>
 
-                <div class="soft-panel group overflow-hidden p-3" data-aos="zoom-in">
-                    <div class="relative overflow-hidden rounded-[1.4rem]">
-                        <img src="assets/images/gallery/gallery2.jpg" alt="Srinagar" data-title="Srinagar"
+                <div class="gallery-card group overflow-hidden rounded-[1.5rem] p-2" data-aos="zoom-in">
+                    <div class="gallery-card-image relative overflow-hidden rounded-[1.2rem]">
+                        <img src="assets/images/gallery/destinations/gallery2.jpg" alt="Srinagar" data-title="Srinagar"
                             data-desc="The heart of Kashmir known for Mughal gardens, lakes, and rich cultural heritage."
-                            class="gallery-img h-72 w-full cursor-pointer object-cover transition duration-500 group-hover:scale-105">
+                            loading="lazy"
+                            class="gallery-img h-full w-full cursor-pointer object-cover transition duration-500 group-hover:scale-105">
                         <div
                             class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent px-5 py-5 text-white">
                             <p class="text-lg font-semibold">Srinagar</p>
@@ -214,11 +271,12 @@
                     </div>
                 </div>
 
-                <div class="soft-panel group overflow-hidden p-3" data-aos="zoom-in">
-                    <div class="relative overflow-hidden rounded-[1.4rem]">
-                        <img src="assets/images/gallery/gallery3.jpg" alt="Gulmarg" data-title="Gulmarg"
+                <div class="gallery-card group overflow-hidden rounded-[1.5rem] p-2" data-aos="zoom-in">
+                    <div class="gallery-card-image relative overflow-hidden rounded-[1.2rem]">
+                        <img src="assets/images/gallery/destinations/gallery3.jpg" alt="Gulmarg" data-title="Gulmarg"
                             data-desc="A beautiful hill station famous for lush meadows, pine forests, and breathtaking landscapes."
-                            class="gallery-img h-72 w-full cursor-pointer object-cover transition duration-500 group-hover:scale-105">
+                            loading="lazy"
+                            class="gallery-img h-full w-full cursor-pointer object-cover transition duration-500 group-hover:scale-105">
                         <div
                             class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent px-5 py-5 text-white">
                             <p class="text-lg font-semibold">Gulmarg</p>
@@ -226,11 +284,13 @@
                     </div>
                 </div>
 
-                <div class="soft-panel group overflow-hidden p-3" data-aos="zoom-in">
-                    <div class="relative overflow-hidden rounded-[1.4rem]">
-                        <img src="assets/images/gallery/gallery4.jpg" alt="Gulmarg Gondola" data-title="Gulmarg Gondola"
+                <div class="gallery-card group overflow-hidden rounded-[1.5rem] p-2" data-aos="zoom-in">
+                    <div class="gallery-card-image relative overflow-hidden rounded-[1.2rem]">
+                        <img src="assets/images/gallery/adventures/gallery4.jpg" alt="Gulmarg Gondola"
+                            data-title="Gulmarg Gondola"
                             data-desc="One of the world's highest cable cars offering stunning views of snow-covered peaks."
-                            class="gallery-img h-72 w-full cursor-pointer object-cover transition duration-500 group-hover:scale-105">
+                            loading="lazy"
+                            class="gallery-img h-full w-full cursor-pointer object-cover transition duration-500 group-hover:scale-105">
                         <div
                             class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent px-5 py-5 text-white">
                             <p class="text-lg font-semibold">Gulmarg Gondola</p>
@@ -238,12 +298,13 @@
                     </div>
                 </div>
 
-                <div class="soft-panel group overflow-hidden p-3" data-aos="zoom-in">
-                    <div class="relative overflow-hidden rounded-[1.4rem]">
-                        <img src="assets/images/gallery/gallery5.jpg" alt="Gulmarg Ski Adventure"
+                <div class="gallery-card group overflow-hidden rounded-[1.5rem] p-2" data-aos="zoom-in">
+                    <div class="gallery-card-image relative overflow-hidden rounded-[1.2rem]">
+                        <img src="assets/images/gallery/adventures/gallery5.jpg" alt="Gulmarg Ski Adventure"
                             data-title="Gulmarg Ski Adventure"
                             data-desc="Experience thrilling skiing and snowboarding on the pristine slopes of Gulmarg."
-                            class="gallery-img h-72 w-full cursor-pointer object-cover transition duration-500 group-hover:scale-105">
+                            loading="lazy"
+                            class="gallery-img h-full w-full cursor-pointer object-cover transition duration-500 group-hover:scale-105">
                         <div
                             class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent px-5 py-5 text-white">
                             <p class="text-lg font-semibold">Gulmarg Ski Adventure</p>
@@ -251,11 +312,12 @@
                     </div>
                 </div>
 
-                <div class="soft-panel group overflow-hidden p-3" data-aos="zoom-in">
-                    <div class="relative overflow-hidden rounded-[1.4rem]">
-                        <img src="assets/images/gallery/gallery6.jpg" alt="Pahalgam" data-title="Pahalgam"
+                <div class="gallery-card group overflow-hidden rounded-[1.5rem] p-2" data-aos="zoom-in">
+                    <div class="gallery-card-image relative overflow-hidden rounded-[1.2rem]">
+                        <img src="assets/images/gallery/destinations/gallery6.jpg" alt="Pahalgam" data-title="Pahalgam"
                             data-desc="A peaceful valley with flowing rivers, pine forests, and scenic mountain views."
-                            class="gallery-img h-72 w-full cursor-pointer object-cover transition duration-500 group-hover:scale-105">
+                            loading="lazy"
+                            class="gallery-img h-full w-full cursor-pointer object-cover transition duration-500 group-hover:scale-105">
                         <div
                             class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent px-5 py-5 text-white">
                             <p class="text-lg font-semibold">Pahalgam</p>
@@ -263,11 +325,13 @@
                     </div>
                 </div>
 
-                <div class="soft-panel group overflow-hidden p-3" data-aos="zoom-in">
-                    <div class="relative overflow-hidden rounded-[1.4rem]">
-                        <img src="assets/images/gallery/gallery7.jpg" alt="Betaab Valley" data-title="Betaab Valley"
+                <div class="gallery-card group overflow-hidden rounded-[1.5rem] p-2" data-aos="zoom-in">
+                    <div class="gallery-card-image relative overflow-hidden rounded-[1.2rem]">
+                        <img src="assets/images/gallery/destinations/gallery7.jpg" alt="Betaab Valley"
+                            data-title="Betaab Valley"
                             data-desc="A lush green valley surrounded by mountains, known for its natural beauty and film locations."
-                            class="gallery-img h-72 w-full cursor-pointer object-cover transition duration-500 group-hover:scale-105">
+                            loading="lazy"
+                            class="gallery-img h-full w-full cursor-pointer object-cover transition duration-500 group-hover:scale-105">
                         <div
                             class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent px-5 py-5 text-white">
                             <p class="text-lg font-semibold">Betaab Valley</p>
@@ -275,11 +339,12 @@
                     </div>
                 </div>
 
-                <div class="soft-panel group overflow-hidden p-3" data-aos="zoom-in">
-                    <div class="relative overflow-hidden rounded-[1.4rem]">
-                        <img src="assets/images/gallery/gallery8.jpg" alt="Sonmarg" data-title="Sonmarg"
+                <div class="gallery-card group overflow-hidden rounded-[1.5rem] p-2" data-aos="zoom-in">
+                    <div class="gallery-card-image relative overflow-hidden rounded-[1.2rem]">
+                        <img src="assets/images/gallery/destinations/gallery8.jpg" alt="Sonmarg" data-title="Sonmarg"
                             data-desc='Known as the "Meadow of Gold," surrounded by glaciers and majestic snow-covered peaks.'
-                            class="gallery-img h-72 w-full cursor-pointer object-cover transition duration-500 group-hover:scale-105">
+                            loading="lazy"
+                            class="gallery-img h-full w-full cursor-pointer object-cover transition duration-500 group-hover:scale-105">
                         <div
                             class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent px-5 py-5 text-white">
                             <p class="text-lg font-semibold">Sonmarg</p>
@@ -287,11 +352,13 @@
                     </div>
                 </div>
 
-                <div class="soft-panel group overflow-hidden p-3" data-aos="zoom-in">
-                    <div class="relative overflow-hidden rounded-[1.4rem]">
-                        <img src="assets/images/gallery/gallery9.jpg" alt="Apharwat Peak" data-title="Apharwat Peak"
+                <div class="gallery-card group overflow-hidden rounded-[1.5rem] p-2" data-aos="zoom-in">
+                    <div class="gallery-card-image relative overflow-hidden rounded-[1.2rem]">
+                        <img src="assets/images/gallery/adventures/gallery9.jpg" alt="Apharwat Peak"
+                            data-title="Apharwat Peak"
                             data-desc="A high-altitude snow-covered peak offering panoramic views and year-round snow experiences."
-                            class="gallery-img h-72 w-full cursor-pointer object-cover transition duration-500 group-hover:scale-105">
+                            loading="lazy"
+                            class="gallery-img h-full w-full cursor-pointer object-cover transition duration-500 group-hover:scale-105">
                         <div
                             class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent px-5 py-5 text-white">
                             <p class="text-lg font-semibold">Apharwat Peak</p>
@@ -299,11 +366,12 @@
                     </div>
                 </div>
 
-                <div class="soft-panel group overflow-hidden p-3" data-aos="zoom-in">
-                    <div class="relative overflow-hidden rounded-[1.4rem]">
-                        <img src="assets/images/gallery/gallery10.jpg" alt="Tarsar Lake" data-title="Tarsar Lake"
-                            data-desc="A calm alpine lake surrounded by dramatic mountain scenery."
-                            class="gallery-img h-72 w-full cursor-pointer object-cover transition duration-500 group-hover:scale-105">
+                <div class="gallery-card group overflow-hidden rounded-[1.5rem] p-2" data-aos="zoom-in">
+                    <div class="gallery-card-image relative overflow-hidden rounded-[1.2rem]">
+                        <img src="assets/images/gallery/destinations/gallery10.jpg" alt="Tarsar Lake"
+                            data-title="Tarsar Lake"
+                            data-desc="A calm alpine lake surrounded by dramatic mountain scenery." loading="lazy"
+                            class="gallery-img h-full w-full cursor-pointer object-cover transition duration-500 group-hover:scale-105">
                         <div
                             class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent px-5 py-5 text-white">
                             <p class="text-lg font-semibold">Tarsar Lake</p>
@@ -311,12 +379,13 @@
                     </div>
                 </div>
 
-                <div class="soft-panel group overflow-hidden p-3" data-aos="zoom-in">
-                    <div class="relative overflow-hidden rounded-[1.4rem]">
-                        <img src="assets/images/gallery/gallery16.jpg" alt="Trekking Adventure"
+                <div class="gallery-card group overflow-hidden rounded-[1.5rem] p-2" data-aos="zoom-in">
+                    <div class="gallery-card-image relative overflow-hidden rounded-[1.2rem]">
+                        <img src="assets/images/gallery/adventures/gallery16.jpg" alt="Trekking Adventure"
                             data-title="Trekking Adventure"
                             data-desc="Experience the energy and thrill of trekking through Kashmir's terrain."
-                            class="gallery-img h-72 w-full cursor-pointer object-cover transition duration-500 group-hover:scale-105">
+                            loading="lazy"
+                            class="gallery-img h-full w-full cursor-pointer object-cover transition duration-500 group-hover:scale-105">
                         <div
                             class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent px-5 py-5 text-white">
                             <p class="text-lg font-semibold">Trekking Adventure</p>
@@ -324,11 +393,12 @@
                     </div>
                 </div>
 
-                <div class="soft-panel group overflow-hidden p-3" data-aos="zoom-in">
-                    <div class="relative overflow-hidden rounded-[1.4rem]">
-                        <img src="assets/images/gallery/gallery11.jpg" alt="Snow Igloo" data-title="Snow Igloo"
+                <div class="gallery-card group overflow-hidden rounded-[1.5rem] p-2" data-aos="zoom-in">
+                    <div class="gallery-card-image relative overflow-hidden rounded-[1.2rem]">
+                        <img src="assets/images/gallery/stays/gallery11.jpg" alt="Snow Igloo" data-title="Snow Igloo"
                             data-desc="A unique winter attraction made entirely of snow, offering a cozy stay and unforgettable experience amidst the snowy landscapes of Gulmarg."
-                            class="gallery-img h-72 w-full cursor-pointer object-cover transition duration-500 group-hover:scale-105">
+                            loading="lazy"
+                            class="gallery-img h-full w-full cursor-pointer object-cover transition duration-500 group-hover:scale-105">
                         <div
                             class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent px-5 py-5 text-white">
                             <p class="text-lg font-semibold">Snow Igloo</p>
@@ -336,11 +406,12 @@
                     </div>
                 </div>
 
-                <div class="soft-panel group overflow-hidden p-3" data-aos="zoom-in">
-                    <div class="relative overflow-hidden rounded-[1.4rem]">
-                        <img src="assets/images/gallery/gallery18.jpg" alt="Houseboat" data-title="Houseboat"
+                <div class="gallery-card group overflow-hidden rounded-[1.5rem] p-2" data-aos="zoom-in">
+                    <div class="gallery-card-image relative overflow-hidden rounded-[1.2rem]">
+                        <img src="assets/images/gallery/stays/gallery18.jpg" alt="Houseboat" data-title="Houseboat"
                             data-desc="Classic Kashmir hospitality and serenity on a traditional houseboat stay."
-                            class="gallery-img h-72 w-full cursor-pointer object-cover transition duration-500 group-hover:scale-105">
+                            loading="lazy"
+                            class="gallery-img h-full w-full cursor-pointer object-cover transition duration-500 group-hover:scale-105">
                         <div
                             class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent px-5 py-5 text-white">
                             <p class="text-lg font-semibold">Houseboat</p>
@@ -348,11 +419,11 @@
                     </div>
                 </div>
 
-                <div class="soft-panel group overflow-hidden p-3" data-aos="zoom-in">
-                    <div class="relative overflow-hidden rounded-[1.4rem]">
-                        <img src="assets/images/gallery/gallery13.jpg" alt="The Khyber" data-title="The Khyber"
-                            data-desc="Classic Kashmir hospitality and serenity of Hotel Khyber Gulmarg."
-                            class="gallery-img h-72 w-full cursor-pointer object-cover transition duration-500 group-hover:scale-105">
+                <div class="gallery-card group overflow-hidden rounded-[1.5rem] p-2" data-aos="zoom-in">
+                    <div class="gallery-card-image relative overflow-hidden rounded-[1.2rem]">
+                        <img src="assets/images/gallery/stays/gallery13.jpg" alt="The Khyber" data-title="The Khyber"
+                            data-desc="Classic Kashmir hospitality and serenity of Hotel Khyber Gulmarg." loading="lazy"
+                            class="gallery-img h-full w-full cursor-pointer object-cover transition duration-500 group-hover:scale-105">
                         <div
                             class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent px-5 py-5 text-white">
                             <p class="text-lg font-semibold">The Khyber</p>
@@ -360,47 +431,159 @@
                     </div>
                 </div>
 
-                <div class="soft-panel group overflow-hidden p-3" data-aos="zoom-in">
-                    <div class="relative overflow-hidden rounded-[1.4rem]">
-                        <img src="assets/images/gallery/gallery15.jpg" alt="Gondolla Ist Phase"
-                            data-title=" Gondolla Ist Phase" data-desc="Snow activities at gulmarg Ist phase ."
-                            class="gallery-img h-72 w-full cursor-pointer object-cover transition duration-500 group-hover:scale-105">
+                <div class="gallery-card group overflow-hidden rounded-[1.5rem] p-2" data-aos="zoom-in">
+                    <div class="gallery-card-image relative overflow-hidden rounded-[1.2rem]">
+                        <img src="assets/images/gallery/adventures/gallery15.jpg" alt="Gondola Phase One"
+                            data-title="Gondola Phase One"
+                            data-desc="Snow activities around Gulmarg's first Gondola phase." loading="lazy"
+                            class="gallery-img h-full w-full cursor-pointer object-cover transition duration-500 group-hover:scale-105">
                         <div
                             class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent px-5 py-5 text-white">
-                            <p class="text-lg font-semibold">Gondolla Ist Phase</p>
+                            <p class="text-lg font-semibold">Gondola Phase One</p>
                         </div>
                     </div>
                 </div>
-                <div class="soft-panel group overflow-hidden p-3" data-aos="zoom-in">
-                    <div class="relative overflow-hidden rounded-[1.4rem]">
-                        <img src="assets/images/gallery/gallery19.jpg" alt="Gondolla Ist Phase" data-title=" "
-                            data-desc=""
-                            class="gallery-img h-72 w-full cursor-pointer object-cover transition duration-500 group-hover:scale-105">
+                <div class="gallery-card group overflow-hidden rounded-[1.5rem] p-2" data-aos="zoom-in">
+                    <div class="gallery-card-image relative overflow-hidden rounded-[1.2rem]">
+                        <img src="assets/images/gallery/adventures/gallery19.jpg" alt="Kashmir travel moment"
+                            data-title="Kashmir Moment" data-desc="A quiet moment from the Kashmir landscape."
+                            loading="lazy"
+                            class="gallery-img h-full w-full cursor-pointer object-cover transition duration-500 group-hover:scale-105">
                         <div
                             class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent px-5 py-5 text-white">
-                            <p class="text-lg font-semibold"></p>
+                            <p class="text-lg font-semibold">Kashmir Moment</p>
                         </div>
                     </div>
                 </div>
-                <div class="soft-panel group overflow-hidden p-3" data-aos="zoom-in">
-                    <div class="relative overflow-hidden rounded-[1.4rem]">
-                        <img src="assets/images/gallery/gallery20.jpeg" alt="Gondolla Ist Phase" data-title=" "
-                            data-desc=""
-                            class="gallery-img h-72 w-full cursor-pointer object-cover transition duration-500 group-hover:scale-105">
+                <div class="gallery-card group overflow-hidden rounded-[1.5rem] p-2" data-aos="zoom-in">
+                    <div class="gallery-card-image relative overflow-hidden rounded-[1.2rem]">
+                        <img src="assets/images/gallery/adventures/gallery22.JPG" alt="Kashmir travel moment"
+                            data-title="Kashmir Moment" data-desc="A quiet moment from the Kashmir landscape."
+                            loading="lazy"
+                            class="gallery-img h-full w-full cursor-pointer object-cover transition duration-500 group-hover:scale-105">
                         <div
                             class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent px-5 py-5 text-white">
-                            <p class="text-lg font-semibold"></p>
+                            <p class="text-lg font-semibold">Kashmir Moment</p>
                         </div>
                     </div>
                 </div>
-                <div class="soft-panel group overflow-hidden p-3" data-aos="zoom-in">
-                    <div class="relative overflow-hidden rounded-[1.4rem]">
-                        <img src="assets/images/gallery/gallery21.jpeg" alt="Gondolla Ist Phase" data-title=" "
-                            data-desc=""
-                            class="gallery-img h-72 w-full cursor-pointer object-cover transition duration-500 group-hover:scale-105">
+                <div class="gallery-card group overflow-hidden rounded-[1.5rem] p-2" data-aos="zoom-in">
+                    <div class="gallery-card-image relative overflow-hidden rounded-[1.2rem]">
+                        <img src="assets/images/gallery/adventures/gallery21.jpg" alt="Kashmir travel moment"
+                            data-title="Kashmir Moment" data-desc="A quiet moment from the Kashmir landscape."
+                            loading="lazy"
+                            class="gallery-img h-full w-full cursor-pointer object-cover transition duration-500 group-hover:scale-105">
                         <div
                             class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent px-5 py-5 text-white">
-                            <p class="text-lg font-semibold"></p>
+                            <p class="text-lg font-semibold">Kashmir Moment</p>
+                        </div>
+                    </div>
+                </div>
+                 <div class="gallery-card group overflow-hidden rounded-[1.5rem] p-2" data-aos="zoom-in">
+                    <div class="gallery-card-image relative overflow-hidden rounded-[1.2rem]">
+                        <img src="assets/images/gallery/adventures/IMG_0616.JPG" alt="Kashmir travel moment"
+                            data-title="Kashmir Moment" data-desc="A quiet moment from the Kashmir landscape."
+                            loading="lazy"
+                            class="gallery-img h-full w-full cursor-pointer object-cover transition duration-500 group-hover:scale-105">
+                        <div
+                            class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent px-5 py-5 text-white">
+                            <p class="text-lg font-semibold">Kashmir Moment</p>
+                        </div>
+                    </div>
+                </div>
+                 <div class="gallery-card group overflow-hidden rounded-[1.5rem] p-2" data-aos="zoom-in">
+                    <div class="gallery-card-image relative overflow-hidden rounded-[1.2rem]">
+                        <img src="assets/images/gallery/adventures/IMG_0618.JPG" alt="Kashmir travel moment"
+                            data-title="Kashmir Moment" data-desc="A quiet moment from the Kashmir landscape."
+                            loading="lazy"
+                            class="gallery-img h-full w-full cursor-pointer object-cover transition duration-500 group-hover:scale-105">
+                        <div
+                            class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent px-5 py-5 text-white">
+                            <p class="text-lg font-semibold">Kashmir Moment</p>
+                        </div>
+                    </div>
+                </div>
+                 <div class="gallery-card group overflow-hidden rounded-[1.5rem] p-2" data-aos="zoom-in">
+                    <div class="gallery-card-image relative overflow-hidden rounded-[1.2rem]">
+                        <img src="assets/images/gallery/adventures/IMG_0620.JPG" alt="Kashmir travel moment"
+                            data-title="Kashmir Moment" data-desc="A quiet moment from the Kashmir landscape."
+                            loading="lazy"
+                            class="gallery-img h-full w-full cursor-pointer object-cover transition duration-500 group-hover:scale-105">
+                        <div
+                            class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent px-5 py-5 text-white">
+                            <p class="text-lg font-semibold">Kashmir Moment</p>
+                        </div>
+                    </div>
+                </div>
+                 <div class="gallery-card group overflow-hidden rounded-[1.5rem] p-2" data-aos="zoom-in">
+                    <div class="gallery-card-image relative overflow-hidden rounded-[1.2rem]">
+                        <img src="assets/images/gallery/adventures/IMG_0621.JPG" alt="Kashmir travel moment"
+                            data-title="Kashmir Moment" data-desc="A quiet moment from the Kashmir landscape."
+                            loading="lazy"
+                            class="gallery-img h-full w-full cursor-pointer object-cover transition duration-500 group-hover:scale-105">
+                        <div
+                            class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent px-5 py-5 text-white">
+                            <p class="text-lg font-semibold">Kashmir Moment</p>
+                        </div>
+                    </div>
+                </div>
+                 <div class="gallery-card group overflow-hidden rounded-[1.5rem] p-2" data-aos="zoom-in">
+                    <div class="gallery-card-image relative overflow-hidden rounded-[1.2rem]">
+                        <img src="assets/images/gallery/adventures/IMG_0622.JPG" alt="Kashmir travel moment"
+                            data-title="Kashmir Moment" data-desc="A quiet moment from the Kashmir landscape."
+                            loading="lazy"
+                            class="gallery-img h-full w-full cursor-pointer object-cover transition duration-500 group-hover:scale-105">
+                        <div
+                            class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent px-5 py-5 text-white">
+                            <p class="text-lg font-semibold">Kashmir Moment</p>
+                        </div>
+                    </div>
+                </div>
+                 <div class="gallery-card group overflow-hidden rounded-[1.5rem] p-2" data-aos="zoom-in">
+                    <div class="gallery-card-image relative overflow-hidden rounded-[1.2rem]">
+                        <img src="assets/images/gallery/adventures/IMG_0623.JPG" alt="Kashmir travel moment"
+                            data-title="Kashmir Moment" data-desc="A quiet moment from the Kashmir landscape."
+                            loading="lazy"
+                            class="gallery-img h-full w-full cursor-pointer object-cover transition duration-500 group-hover:scale-105">
+                        <div
+                            class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent px-5 py-5 text-white">
+                            <p class="text-lg font-semibold">Kashmir Moment</p>
+                        </div>
+                    </div>
+                </div>
+                 <div class="gallery-card group overflow-hidden rounded-[1.5rem] p-2" data-aos="zoom-in">
+                    <div class="gallery-card-image relative overflow-hidden rounded-[1.2rem]">
+                        <img src="assets/images/gallery/adventures/IMG_0626.JPG" alt="Kashmir travel moment"
+                            data-title="Kashmir Moment" data-desc="A quiet moment from the Kashmir landscape."
+                            loading="lazy"
+                            class="gallery-img h-full w-full cursor-pointer object-cover transition duration-500 group-hover:scale-105">
+                        <div
+                            class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent px-5 py-5 text-white">
+                            <p class="text-lg font-semibold">Kashmir Moment</p>
+                        </div>
+                    </div>
+                </div>
+                 <div class="gallery-card group overflow-hidden rounded-[1.5rem] p-2" data-aos="zoom-in">
+                    <div class="gallery-card-image relative overflow-hidden rounded-[1.2rem]">
+                        <img src="assets/images/gallery/adventures/IMG_0625.JPG" alt="Kashmir travel moment"
+                            data-title="Kashmir Moment" data-desc="A quiet moment from the Kashmir landscape."
+                            loading="lazy"
+                            class="gallery-img h-full w-full cursor-pointer object-cover transition duration-500 group-hover:scale-105">
+                        <div
+                            class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent px-5 py-5 text-white">
+                            <p class="text-lg font-semibold">Kashmir Moment</p>
+                        </div>
+                    </div>
+                </div>
+                 <div class="gallery-card group overflow-hidden rounded-[1.5rem] p-2" data-aos="zoom-in">
+                    <div class="gallery-card-image relative overflow-hidden rounded-[1.2rem]">
+                        <img src="assets/images/gallery/adventures/IMG_0624.JPG" alt="Kashmir travel moment"
+                            data-title="Kashmir Moment" data-desc="A quiet moment from the Kashmir landscape."
+                            loading="lazy"
+                            class="gallery-img h-full w-full cursor-pointer object-cover transition duration-500 group-hover:scale-105">
+                        <div
+                            class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent px-5 py-5 text-white">
+                            <p class="text-lg font-semibold">Kashmir Moment</p>
                         </div>
                     </div>
                 </div>
@@ -444,9 +627,7 @@
                             <li><a href="/about.html" class="transition hover:text-[#D4AF37]">About</a></li>
                             <li><a href="/gallery.html" class="transition hover:text-[#D4AF37]">Gallery</a></li>
                             <li><a href="/trip-stories/" class="transition hover:text-[#D4AF37]">Trip Stories</a></li>
-                            <li><a href="/plan-your-trip/" class="transition hover:text-[#D4AF37]">Trip Planner</a></li>
                             <li><a href="/kashmir-tour-cost/" class="transition hover:text-[#D4AF37]">Kashmir Tour Cost</a></li>
-                            <li><a href="/kashmir-7-day-itinerary/" class="transition hover:text-[#D4AF37]">7-Day Kashmir Itinerary</a></li>
                             <li><a href="/contact.html" class="transition hover:text-[#D4AF37]">Contact</a></li>
                         </ul>
                         <h4 class="mt-6 mb-4 text-lg font-semibold sm:text-xl">Follow Us</h4>

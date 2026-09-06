@@ -21,11 +21,9 @@ const MASTER_NAV_CONTENT = `
                         <div class="hidden items-center gap-8 text-sm font-medium md:flex">
                             <a href="/" class="transition hover:text-[#D4AF37]">Home</a>
                             <a href="/about.html" class="transition hover:text-[#D4AF37]">About</a>
-                            <a href="/packages.html" class="transition hover:text-[#D4AF37]">Packages</a>
+                            <a href="/gallery.html" class="transition hover:text-[#D4AF37]">Gallery</a>
                             <a href="/hotels.html" class="transition hover:text-[#D4AF37]">Hotels</a>
                             <a href="/gulmarg-gondola-booking/" class="transition hover:text-[#D4AF37]">Gondola</a>
-                            <a href="/plan-your-trip/" class="transition hover:text-[#D4AF37]">Planner</a>
-                            <a href="/Itanary-bulder/" class="transition hover:text-[#D4AF37]">Admin</a>
                             <a href="/contact.html" class="transition hover:text-[#D4AF37]">Contact</a>
                             <a href="/packages.html"
                                 class="rounded-full bg-[#D4AF37] px-5 py-2 font-semibold text-[#0B1F3A] transition duration-300 hover:bg-yellow-400">
@@ -47,20 +45,14 @@ const MASTER_NAV_CONTENT = `
                             class="mobile-link block py-2 text-sm transition hover:text-[#D4AF37]">Home</a>
                         <a href="/about.html"
                             class="mobile-link block py-2 text-sm transition hover:text-[#D4AF37]">About</a>
-                        <a href="/packages.html"
-                            class="mobile-link block py-2 text-sm transition hover:text-[#D4AF37]">Packages</a>
+                        <a href="/gallery.html"
+                            class="mobile-link block py-2 text-sm transition hover:text-[#D4AF37]">Gallery</a>
                         <a href="/hotels.html"
                             class="mobile-link block py-2 text-sm transition hover:text-[#D4AF37]">Hotels</a>
                         <a href="/gulmarg-gondola-booking/"
                             class="mobile-link block py-2 text-sm transition hover:text-[#D4AF37]">Gondola</a>
-                        <a href="/plan-your-trip/"
-                            class="mobile-link block py-2 text-sm transition hover:text-[#D4AF37]">Planner</a>
-                        <a href="/Itanary-bulder/"
-                            class="mobile-link block py-2 text-sm transition hover:text-[#D4AF37]">Admin</a>
                         <a href="/trip-stories/"
                             class="mobile-link block py-2 text-sm transition hover:text-[#D4AF37]">Trip Stories</a>
-                        <a href="/gallery.html"
-                            class="mobile-link block py-2 text-sm transition hover:text-[#D4AF37]">Gallery</a>
                         <a href="/contact.html"
                             class="mobile-link block py-2 text-sm transition hover:text-[#D4AF37]">Contact</a>
                         <a href="/packages.html"
@@ -93,9 +85,7 @@ const MASTER_FOOTER_CONTENT = `
                             <li><a href="/about.html" class="transition hover:text-[#D4AF37]">About</a></li>
                             <li><a href="/gallery.html" class="transition hover:text-[#D4AF37]">Gallery</a></li>
                             <li><a href="/trip-stories/" class="transition hover:text-[#D4AF37]">Trip Stories</a></li>
-                            <li><a href="/plan-your-trip/" class="transition hover:text-[#D4AF37]">Trip Planner</a></li>
                             <li><a href="/kashmir-tour-cost/" class="transition hover:text-[#D4AF37]">Kashmir Tour Cost</a></li>
-                            <li><a href="/kashmir-7-day-itinerary/" class="transition hover:text-[#D4AF37]">7-Day Kashmir Itinerary</a></li>
                             <li><a href="/contact.html" class="transition hover:text-[#D4AF37]">Contact</a></li>
                         </ul>
                         <h4 class="mt-6 mb-4 text-lg font-semibold sm:text-xl">Follow Us</h4>
@@ -179,11 +169,9 @@ htmlFiles.forEach(file => {
     let content = fs.readFileSync(file, 'utf8');
     let changed = false;
     const relativePath = path.relative(root, file);
-    const isAdminBuilder = relativePath === path.join('Itanary-bulder', 'index.html');
-
     // Replace Navbar
     const navRegex = /<nav class="site-nav[^>]*>([\s\S]*?)<\/nav>/;
-    if (!isAdminBuilder && content.match(navRegex)) {
+    if (content.match(navRegex)) {
         content = content.replace(navRegex, (match) => {
             // Retain classes but replace content
             const openingTag = match.match(/<nav class="site-nav[^>]*>/)[0];
@@ -206,7 +194,7 @@ htmlFiles.forEach(file => {
     // (If the file is in a nested folder, the output.css path should be /output.css)
     const isNested = relativePath.includes(path.sep);
 
-    if (isNested && !isAdminBuilder) {
+    if (isNested) {
         // Enforce root-relative path for output.css and main.js in nested files
         if (content.includes('href="output.css"')) {
             content = content.replace('href="output.css"', 'href="/output.css"');

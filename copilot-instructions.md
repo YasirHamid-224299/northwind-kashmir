@@ -53,7 +53,7 @@ Nested SEO/content routes include:
 - Destination guides: `*-tourism/`.
 - Hotel directories: `*-hotels/`.
 - Gondola guides: `gondola-faq/`, `gondola-guide/`, `gondola-phase-1/`, `gondola-phase-2/`, `gondola-prices/`, `gulmarg-gondola-booking/`, and `gulmarg-gondola-tickets/`.
-- Supporting pages: `plan-your-trip/`, `trip-stories/`, and `author/yasir-hamid/`.
+- Supporting pages: `trip-stories/` and `author/yasir-hamid/`.
 
 Nested route pages normally use `index.html` and are published as directory URLs such as `/gulmarg-tourism/`.
 

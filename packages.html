@@ -5,20 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kashmir Tour Packages & Honeymoon Itineraries | Northwind Kashmir</title>
-    <meta name="description" content="Explore and book our curated Kashmir tour packages. Custom honeymoon escapes, luxury family holidays, and winter adventure itineraries planned by local experts.">
+    <meta name="description"
+        content="Explore and book our curated Kashmir tour packages. Custom honeymoon escapes, luxury family holidays, and winter adventure itineraries planned by local experts.">
     <link rel="canonical" href="https://www.northwindkashmir.com/packages.html">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.northwindkashmir.com/packages.html">
     <meta property="og:title" content="Kashmir Tour Packages & Honeymoon Itineraries | Northwind Kashmir">
-    <meta property="og:description" content="Find the perfect Kashmir holiday package. Tailored itineraries with premium hotel bookings, private transfers, and local guide support.">
+    <meta property="og:description"
+        content="Find the perfect Kashmir holiday package. Tailored itineraries with premium hotel bookings, private transfers, and local guide support.">
     <meta property="og:image" content="https://www.northwindkashmir.com/assets/images/packages/package1.jpg">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Kashmir Tour Packages & Honeymoon Itineraries | Northwind Kashmir">
-    <meta name="twitter:description" content="Find the perfect Kashmir holiday package. Tailored itineraries with premium hotel bookings and direct support.">
+    <meta name="twitter:description"
+        content="Find the perfect Kashmir holiday package. Tailored itineraries with premium hotel bookings and direct support.">
     <meta name="twitter:image" content="https://www.northwindkashmir.com/assets/images/packages/package1.jpg">
 
     <!-- JSON-LD Structured Data -->
@@ -84,7 +87,122 @@
         .package-card {
             opacity: 1;
             transform: scale(1);
-            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease;
+        }
+
+        .package-card>.p-6 {
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+        }
+
+        .package-card>.p-6>.mt-6.flex {
+            align-items: stretch;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: auto;
+            padding-top: 1.5rem;
+        }
+
+        .package-filter-list {
+            scrollbar-width: thin;
+            scrollbar-color: rgba(11, 31, 58, 0.35) transparent;
+        }
+
+        .package-card:hover {
+            box-shadow: 0 24px 55px rgba(11, 31, 58, 0.14);
+            transform: translateY(-4px);
+        }
+
+        .package-card.is-hidden {
+            display: none;
+        }
+
+        .package-card[data-duplicate="true"] {
+            display: none;
+        }
+
+        .package-card-image {
+            aspect-ratio: 16 / 10;
+        }
+
+        .package-card-image img {
+            transition: transform 0.6s ease;
+        }
+
+        .package-card:hover .package-card-image img {
+            transform: scale(1.05);
+        }
+
+        .package-actions {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.65rem;
+            margin-top: 0;
+            width: 100%;
+        }
+
+        .package-secondary-action {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(11, 31, 58, 0.18);
+            border-radius: 999px;
+            padding: 0.75rem 1rem;
+            color: #0B1F3A;
+            font-size: 0.8rem;
+            font-weight: 600;
+            transition: background-color 0.2s ease, border-color 0.2s ease;
+        }
+
+        .package-secondary-action:hover,
+        .package-secondary-action:focus-visible {
+            border-color: #D4AF37;
+            background: #fffaf1;
+        }
+
+        .package-actions .premium-button {
+            padding: 0.75rem 1rem;
+            font-size: 0.8rem;
+        }
+
+        .package-search:focus-visible,
+        .filter-btn:focus-visible,
+        .package-actions a:focus-visible {
+            outline: 3px solid rgba(212, 175, 55, 0.55);
+            outline-offset: 3px;
+        }
+
+        @media (max-width: 420px) {
+            .package-actions {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .package-filter-list {
+                flex-wrap: nowrap;
+                justify-content: flex-start;
+                margin-right: -1rem;
+                overflow-x: auto;
+                padding: 0.2rem 1rem 0.65rem 0.2rem;
+            }
+
+            .package-filter-list .filter-btn {
+                flex: 0 0 auto;
+                min-height: 2.75rem;
+                white-space: nowrap;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            .package-card,
+            .package-card-image img {
+                transition: none;
+            }
         }
     </style>
     <link rel="icon" type="image/png" href="/assets/images/logo/logo.png">
@@ -108,11 +226,9 @@
                         <div class="hidden items-center gap-8 text-sm font-medium md:flex">
                             <a href="/" class="transition hover:text-[#D4AF37]">Home</a>
                             <a href="/about.html" class="transition hover:text-[#D4AF37]">About</a>
-                            <a href="/packages.html" class="transition hover:text-[#D4AF37]">Packages</a>
+                            <a href="/gallery.html" class="transition hover:text-[#D4AF37]">Gallery</a>
                             <a href="/hotels.html" class="transition hover:text-[#D4AF37]">Hotels</a>
                             <a href="/gulmarg-gondola-booking/" class="transition hover:text-[#D4AF37]">Gondola</a>
-                            <a href="/plan-your-trip/" class="transition hover:text-[#D4AF37]">Planner</a>
-                            <a href="/Itanary-bulder/" class="transition hover:text-[#D4AF37]">Admin</a>
                             <a href="/contact.html" class="transition hover:text-[#D4AF37]">Contact</a>
                             <a href="/packages.html"
                                 class="rounded-full bg-[#D4AF37] px-5 py-2 font-semibold text-[#0B1F3A] transition duration-300 hover:bg-yellow-400">
@@ -134,20 +250,14 @@
                             class="mobile-link block py-2 text-sm transition hover:text-[#D4AF37]">Home</a>
                         <a href="/about.html"
                             class="mobile-link block py-2 text-sm transition hover:text-[#D4AF37]">About</a>
-                        <a href="/packages.html"
-                            class="mobile-link block py-2 text-sm transition hover:text-[#D4AF37]">Packages</a>
+                        <a href="/gallery.html"
+                            class="mobile-link block py-2 text-sm transition hover:text-[#D4AF37]">Gallery</a>
                         <a href="/hotels.html"
                             class="mobile-link block py-2 text-sm transition hover:text-[#D4AF37]">Hotels</a>
                         <a href="/gulmarg-gondola-booking/"
                             class="mobile-link block py-2 text-sm transition hover:text-[#D4AF37]">Gondola</a>
-                        <a href="/plan-your-trip/"
-                            class="mobile-link block py-2 text-sm transition hover:text-[#D4AF37]">Planner</a>
-                        <a href="/Itanary-bulder/"
-                            class="mobile-link block py-2 text-sm transition hover:text-[#D4AF37]">Admin</a>
                         <a href="/trip-stories/"
                             class="mobile-link block py-2 text-sm transition hover:text-[#D4AF37]">Trip Stories</a>
-                        <a href="/gallery.html"
-                            class="mobile-link block py-2 text-sm transition hover:text-[#D4AF37]">Gallery</a>
                         <a href="/contact.html"
                             class="mobile-link block py-2 text-sm transition hover:text-[#D4AF37]">Contact</a>
                         <a href="/packages.html"
@@ -159,7 +269,8 @@
 </nav>
 
     <section class="page-top-offset relative overflow-hidden bg-[#0B1F3A] text-white">
-        <div class="absolute inset-0 bg-cover bg-center opacity-20" style="background-image: url('/assets/images/packages/package1.jpg');"></div>
+        <div class="absolute inset-0 bg-cover bg-center opacity-20"
+            style="background-image: url('/assets/images/packages/package1.jpg');"></div>
         <div class="absolute inset-0 bg-gradient-to-br from-black/90 via-[#0B1F3A]/90 to-black/80"></div>
         <div class="section-shell relative py-16 sm:py-20 lg:py-24">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -170,22 +281,24 @@
                         Premium Kashmir Tour Packages & Custom Itineraries
                     </h1>
                     <p class="text-sm sm:text-base leading-relaxed text-slate-200">
-                        Whether you want a romantic escape, a family holiday, or a more adventurous route, each package is designed by local experts to balance comfort, scenic highlights, and smooth on-ground logistics.
+                        Whether you want a romantic escape, a family holiday, or a more adventurous route, each package
+                        is designed by local experts to balance comfort, scenic highlights, and smooth on-ground
+                        logistics.
                     </p>
-                    
+
                     <!-- Stats Grid -->
                     <div class="pt-4 grid gap-4 grid-cols-1 sm:grid-cols-3">
                         <div class="soft-panel bg-white/10 p-4 border border-white/10">
-                            <p class="text-2xl font-bold text-[#D4AF37]">6+</p>
-                            <p class="text-xs text-slate-300 mt-1">Core package styles for different travelers.</p>
+                            <p class="text-2xl font-bold text-[#D4AF37]">12</p>
+                            <p class="text-xs text-slate-300 mt-1">Starting points for different travel styles.</p>
                         </div>
                         <div class="soft-panel bg-white/10 p-4 border border-white/10">
-                            <p class="text-2xl font-bold text-[#D4AF37]">&infin;</p>
-                            <p class="text-xs text-slate-300 mt-1">Customization options for stays and pacing.</p>
+                            <p class="text-2xl font-bold text-[#D4AF37]">Your pace</p>
+                            <p class="text-xs text-slate-300 mt-1">Routes can be shaped around your preferences.</p>
                         </div>
                         <div class="soft-panel bg-white/10 p-4 border border-[#D4AF37]/20">
-                            <p class="text-2xl font-bold text-[#D4AF37]">24/7</p>
-                            <p class="text-xs text-slate-300 mt-1">On-trip coordination and ground support.</p>
+                            <p class="text-2xl font-bold text-[#D4AF37]">Direct</p>
+                            <p class="text-xs text-slate-300 mt-1">WhatsApp conversations for trip planning.</p>
                         </div>
                     </div>
                 </div>
@@ -193,16 +306,21 @@
                 <!-- Right Column: Scenery Showcase Card -->
                 <div class="lg:col-span-5 relative" data-aos="fade-left">
                     <div class="relative rounded-2xl border-2 border-[#D4AF37] overflow-hidden shadow-2xl">
-                        <img src="/assets/images/packages/package1.jpg" alt="Dal Lake Shikhara ride, Srinagar" class="w-full h-80 object-cover hover:scale-105 transition-transform duration-700">
+                        <img src="/assets/images/packages/package1.jpg" alt="Dal Lake Shikhara ride, Srinagar"
+                            class="w-full h-80 object-cover hover:scale-105 transition-transform duration-700">
                         <!-- Gradient Overlay -->
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent">
+                        </div>
                         <!-- Floating Location Label -->
-                        <div class="absolute bottom-4 left-4 right-4 bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-3 flex justify-between items-center">
+                        <div
+                            class="absolute bottom-4 left-4 right-4 bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-3 flex justify-between items-center">
                             <div>
-                                <p class="text-[0.65rem] uppercase tracking-wider text-[#D4AF37] font-semibold">Featured Experience</p>
+                                <p class="text-[0.65rem] uppercase tracking-wider text-[#D4AF37] font-semibold">Featured
+                                    Experience</p>
                                 <p class="text-xs font-bold text-white">Shikhara Ride on Dal Lake, Srinagar</p>
                             </div>
-                            <span class="text-[0.7rem] bg-[#D4AF37] text-[#0B1F3A] font-semibold px-2 py-0.5 rounded-full">Included</span>
+                            <span
+                                class="text-[0.7rem] bg-[#D4AF37] text-[#0B1F3A] font-semibold px-2 py-0.5 rounded-full">Included</span>
                         </div>
                     </div>
                     <!-- Decorative back shadow glow -->
@@ -212,14 +330,31 @@
         </div>
     </section>
 
-    <section class="py-10 sm:py-14">
+    <section class="py-10 sm:py-14" aria-label="Find a package">
         <div class="section-shell">
             <div class="soft-panel p-4 sm:p-5">
-                <div class="flex flex-wrap justify-center gap-2 sm:gap-4">
+                <div class="mb-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                    <div>
+                        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-[#D4AF37]">Browse journeys</p>
+                        <p class="mt-1 text-sm text-gray-600"><span id="package-result-count">12</span> package styles
+                            to
+                            explore</p>
+                    </div>
+                    <label class="relative block sm:w-72">
+                        <span class="sr-only">Search packages or destinations</span>
+                        <i
+                            class="fas fa-search pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-sm text-gray-400"></i>
+                        <input id="package-search"
+                            class="package-search w-full rounded-full border border-[#0B1F3A]/10 bg-white py-3 pl-10 pr-4 text-sm text-[#0B1F3A] outline-none transition placeholder:text-gray-400 focus:border-[#D4AF37] focus:ring-4 focus:ring-[#D4AF37]/15"
+                            type="search" placeholder="Search a destination or style" autocomplete="off">
+                    </label>
+                </div>
+                <div class="package-filter-list flex flex-wrap justify-start gap-2 sm:gap-3" role="group"
+                    aria-label="Filter packages">
                     <button
                         class="filter-btn rounded-full bg-[#0B1F3A] px-4 py-2 text-xs font-semibold text-white transition hover:shadow-md sm:px-5 sm:text-sm"
                         data-filter="all">
-                        All Packages
+                        All
                     </button>
                     <button
                         class="filter-btn rounded-full bg-gray-200 px-4 py-2 text-xs font-semibold text-gray-800 transition hover:bg-[#0B1F3A] hover:text-white sm:px-5 sm:text-sm"
@@ -245,6 +380,21 @@
                         class="filter-btn rounded-full bg-gray-200 px-4 py-2 text-xs font-semibold text-gray-800 transition hover:bg-[#0B1F3A] hover:text-white sm:px-5 sm:text-sm"
                         data-filter="luxury">
                         Luxury
+                    </button>
+                    <button
+                        class="filter-btn rounded-full bg-gray-200 px-4 py-2 text-xs font-semibold text-gray-800 transition hover:bg-[#0B1F3A] hover:text-white sm:px-5 sm:text-sm"
+                        data-filter="group">
+                        Group
+                    </button>
+                    <button
+                        class="filter-btn rounded-full bg-gray-200 px-4 py-2 text-xs font-semibold text-gray-800 transition hover:bg-[#0B1F3A] hover:text-white sm:px-5 sm:text-sm"
+                        data-filter="summer">
+                        Summer
+                    </button>
+                    <button
+                        class="filter-btn rounded-full bg-gray-200 px-4 py-2 text-xs font-semibold text-gray-800 transition hover:bg-[#0B1F3A] hover:text-white sm:px-5 sm:text-sm"
+                        data-filter="destination">
+                        Destinations
                     </button>
                 </div>
             </div>
@@ -278,6 +428,22 @@
                         Package</h3>
                     <p class="mt-3 text-sm leading-relaxed text-slate-200">Discover alpine meadows, gondola rides, and
                         snow-ready luxury in Gulmarg with our curated tours.</p>
+                    <span class="mt-5 inline-flex items-center text-sm font-semibold text-[#D4AF37]">View package
+                        details <i class="fas fa-arrow-right ml-2"></i></span>
+                </a>
+                 <a href="/kashmir-adventure-package/"
+                    class="group rounded-3xl border border-white/10 bg-white/10 p-6 transition hover:-translate-y-1 hover:border-[#D4AF37] hover:bg-white/15">
+                    <h3 class="text-xl font-semibold text-white transition group-hover:text-[#D4AF37]">Gulmarg Winter Advanture
+                        </h3>
+                    <p class="mt-3 text-sm leading-relaxed text-slate-200">Build an adventure holiday around Gulmarg skiing, snowboarding, Gondola views, trekking, and guided outdoor activities.</p>
+                    <span class="mt-5 inline-flex items-center text-sm font-semibold text-[#D4AF37]">View package
+                        details <i class="fas fa-arrow-right ml-2"></i></span>
+                </a>
+                <a href="/kashmir-winter-package/"
+                    class="group rounded-3xl border border-white/10 bg-white/10 p-6 transition hover:-translate-y-1 hover:border-[#D4AF37] hover:bg-white/15">
+                    <h3 class="text-xl font-semibold text-white transition group-hover:text-[#D4AF37]">Kashmir Winter Tour Packages
+                        </h3>
+                    <p class="mt-3 text-sm leading-relaxed text-slate-200">Experience the winter landscape of Kashmir with skiing, sledging, and cozy heated stays.</p>
                     <span class="mt-5 inline-flex items-center text-sm font-semibold text-[#D4AF37]">View package
                         details <i class="fas fa-arrow-right ml-2"></i></span>
                 </a>
@@ -316,9 +482,10 @@
         <div class="section-shell">
             <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
                 <div class="package-card soft-panel overflow-hidden" data-aos="fade-up" data-category="honeymoon">
-                    <a href="/kashmir-honeymoon-package/" class="relative block h-60 overflow-hidden">
-                        <img src="assets/images/packages/package1.jpg" alt="Honeymoon Package"
-                            class="h-full w-full object-cover transition duration-500 hover:scale-105">
+                    <a href="/kashmir-honeymoon-package/" class="package-card-image relative block overflow-hidden">
+                        <img src="assets/images/packages/honeymoon/hero.webp"
+                            alt="Honeymoon journey on Dal Lake and in Kashmir valleys" loading="lazy" width="800"
+                            height="500" class="h-full w-full object-cover">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent"></div>
                         <div class="absolute left-5 top-5 meta-pill border-white/20 bg-white/15 text-white">Romantic
                             Escape</div>
@@ -344,18 +511,21 @@
                                 <p class="text-xs uppercase tracking-[0.22em] text-[#D4AF37]">Starting From</p>
                                 <p class="mt-1 text-2xl font-bold text-[#0B1F3A]">&#8377;15,000</p>
                             </div>
-                            <a href="https://wa.me/919541615419?text=Hello!%20I'm%20interested%20in%20the%20Honeymoon%20Package.%20Duration:%205%20Days%20/%204%20Nights,%20Price:%20Starting%20From%20%E2%82%B915,000"
-                                target="_blank" rel="noopener noreferrer" class="premium-button">
-                                Enquire
-                            </a>
+                            <div class="package-actions">
+                                <a href="/kashmir-honeymoon-package/" class="package-secondary-action">View Details</a>
+                                <a href="https://wa.me/919541615419?text=Hello!%20I'm%20interested%20in%20the%20Honeymoon%20Package.%20Duration:%205%20Days%20/%204%20Nights,%20Price:%20Starting%20From%20%E2%82%B915,000"
+                                    target="_blank" rel="noopener noreferrer" class="premium-button">
+                                    Plan This Trip
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="package-card soft-panel overflow-hidden" data-aos="fade-up" data-category="family">
-                    <a href="/kashmir-family-package/" class="relative block h-60 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944" alt="Family Tour"
-                            class="h-full w-full object-cover transition duration-500 hover:scale-105">
+                    <a href="/kashmir-family-package/" class="package-card-image relative block overflow-hidden">
+                        <img src="assets/images/packages/family/hero.webp" alt="Family holiday scenery in Kashmir"
+                            loading="lazy" width="800" height="500" class="h-full w-full object-cover">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent"></div>
                         <div class="absolute left-5 top-5 meta-pill border-white/20 bg-white/15 text-white">Family
                             Friendly</div>
@@ -382,18 +552,22 @@
                                 <p class="text-xs uppercase tracking-[0.22em] text-[#D4AF37]">Starting From</p>
                                 <p class="mt-1 text-2xl font-bold text-[#0B1F3A]">&#8377;18,000</p>
                             </div>
-                            <a href="https://wa.me/919541615419?text=Hello!%20I'm%20interested%20in%20the%20Family%20Tour.%20Duration:%206%20Days%20/%205%20Nights,%20Price:%20Starting%20From%20%E2%82%B918,000"
-                                target="_blank" rel="noopener noreferrer" class="premium-button">
-                                Enquire
-                            </a>
+                            <div class="package-actions">
+                                <a href="/kashmir-family-package/" class="package-secondary-action">View Details</a>
+                                <a href="https://wa.me/919541615419?text=Hello!%20I'm%20interested%20in%20the%20Family%20Tour.%20Duration:%206%20Days%20/%205%20Nights,%20Price:%20Starting%20From%20%E2%82%B918,000"
+                                    target="_blank" rel="noopener noreferrer" class="premium-button">
+                                    Plan This Trip
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="package-card soft-panel overflow-hidden" data-aos="fade-up" data-category="adventure">
-                    <a href="/kashmir-adventure-package/" class="relative block h-60 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470" alt="Adventure Tour"
-                            class="h-full w-full object-cover transition duration-500 hover:scale-105">
+                    <a href="/kashmir-adventure-package/" class="package-card-image relative block overflow-hidden">
+                        <img src="assets/images/packages/adventure/hero.webp"
+                            alt="Mountain landscape for an adventure tour in Kashmir" loading="lazy" width="800"
+                            height="500" class="h-full w-full object-cover">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent"></div>
                         <div class="absolute left-5 top-5 meta-pill border-white/20 bg-white/15 text-white">Outdoor
                             Focus</div>
@@ -418,18 +592,22 @@
                                 <p class="text-xs uppercase tracking-[0.22em] text-[#D4AF37]">Starting From</p>
                                 <p class="mt-1 text-2xl font-bold text-[#0B1F3A]">&#8377;14,000</p>
                             </div>
-                            <a href="https://wa.me/919541615419?text=Hello!%20I'm%20interested%20in%20the%20Adventure%20Tour.%20Duration:%205%20Days%20/%204%20Nights,%20Price:%20Starting%20From%20%E2%82%B914,000"
-                                target="_blank" rel="noopener noreferrer" class="premium-button">
-                                Enquire
-                            </a>
+                            <div class="package-actions">
+                                <a href="/kashmir-adventure-package/" class="package-secondary-action">View Details</a>
+                                <a href="https://wa.me/919541615419?text=Hello!%20I'm%20interested%20in%20the%20Adventure%20Tour.%20Duration:%205%20Days%20/%204%20Nights,%20Price:%20Starting%20From%20%E2%82%B914,000"
+                                    target="_blank" rel="noopener noreferrer" class="premium-button">
+                                    Plan This Trip
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="package-card soft-panel overflow-hidden" data-aos="fade-up" data-category="winter">
-                    <a href="/kashmir-winter-package/" class="relative block h-60 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1483664852095-d6cc6870702d" alt="Winter Package"
-                            class="h-full w-full object-cover transition duration-500 hover:scale-105">
+                    <a href="/kashmir-winter-package/" class="package-card-image relative block overflow-hidden">
+                        <img src="assets/images/packages/winter/hero.webp"
+                            alt="Snowy Kashmir landscape for a winter package" loading="lazy" width="800" height="500"
+                            class="h-full w-full object-cover">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent"></div>
                         <div class="absolute left-5 top-5 meta-pill border-white/20 bg-white/15 text-white">Snow Season
                         </div>
@@ -456,18 +634,21 @@
                                 <p class="text-xs uppercase tracking-[0.22em] text-[#D4AF37]">Starting From</p>
                                 <p class="mt-1 text-2xl font-bold text-[#0B1F3A]">&#8377;16,000</p>
                             </div>
-                            <a href="https://wa.me/919541615419?text=Hello!%20I'm%20interested%20in%20the%20Winter%20Package.%20Duration:%204%20Days%20/%203%20Nights,%20Price:%20Starting%20From%20%E2%82%B916,000"
-                                target="_blank" rel="noopener noreferrer" class="premium-button">
-                                Enquire
-                            </a>
+                            <div class="package-actions">
+                                <a href="/kashmir-winter-package/" class="package-secondary-action">View Details</a>
+                                <a href="https://wa.me/919541615419?text=Hello!%20I'm%20interested%20in%20the%20Winter%20Package.%20Duration:%204%20Days%20/%203%20Nights,%20Price:%20Starting%20From%20%E2%82%B916,000"
+                                    target="_blank" rel="noopener noreferrer" class="premium-button">
+                                    Plan This Trip
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="package-card soft-panel overflow-hidden" data-aos="fade-up" data-category="luxury">
-                    <a href="/kashmir-luxury-package/" class="relative block h-60 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945" alt="Luxury Retreat"
-                            class="h-full w-full object-cover transition duration-500 hover:scale-105">
+                    <a href="/kashmir-luxury-package/" class="package-card-image relative block overflow-hidden">
+                        <img src="assets/images/packages/luxury/hero.webp" alt="Luxury retreat setting in Kashmir"
+                            loading="lazy" width="800" height="500" class="h-full w-full object-cover">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent"></div>
                         <div class="absolute left-5 top-5 meta-pill border-white/20 bg-white/15 text-white">Premium
                             Comfort</div>
@@ -492,18 +673,21 @@
                                 <p class="text-xs uppercase tracking-[0.22em] text-[#D4AF37]">Starting From</p>
                                 <p class="mt-1 text-2xl font-bold text-[#0B1F3A]">&#8377;25,000</p>
                             </div>
-                            <a href="https://wa.me/919541615419?text=Hello!%20I'm%20interested%20in%20the%20Luxury%20Retreat.%20Duration:%205%20Days%20/%204%20Nights,%20Price:%20Starting%20From%20%E2%82%B925,000"
-                                target="_blank" rel="noopener noreferrer" class="premium-button">
-                                Enquire
-                            </a>
+                            <div class="package-actions">
+                                <a href="/kashmir-luxury-package/" class="package-secondary-action">View Details</a>
+                                <a href="https://wa.me/919541615419?text=Hello!%20I'm%20interested%20in%20the%20Luxury%20Retreat.%20Duration:%205%20Days%20/%204%20Nights,%20Price:%20Starting%20From%20%E2%82%B925,000"
+                                    target="_blank" rel="noopener noreferrer" class="premium-button">
+                                    Plan This Trip
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="package-card soft-panel overflow-hidden" data-aos="fade-up" data-category="luxury">
-                    <a href="/plan-your-trip/" class="relative block h-60 overflow-hidden">
-                        <img src="https://images.pexels.com/photos/21014/pexels-photo.jpg" alt="Custom Tour"
-                            class="h-full w-full object-cover transition duration-500 hover:scale-105">
+                    <a href="/contact.html" class="package-card-image relative block overflow-hidden">
+                        <img src="assets/images/packages/custom/hero.webp" alt="Custom Kashmir trip planning landscape"
+                            loading="lazy" width="800" height="500" class="h-full w-full object-cover">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent"></div>
                         <div class="absolute left-5 top-5 meta-pill border-white/20 bg-white/15 text-white">Fully Custom
                         </div>
@@ -514,7 +698,7 @@
                             <span class="meta-pill">Built Around You</span>
                         </div>
                         <h3 class="mt-4 text-2xl font-bold text-[#0B1F3A] hover:text-[#D4AF37] transition">
-                            <a href="/plan-your-trip/">Custom Tour</a>
+                            <a href="/contact.html">Custom Tour</a>
                         </h3>
                         <p class="mt-3 text-sm leading-relaxed text-gray-600 sm:text-base">
                             Choose your destinations, pace, travel dates, and preferences, and we&apos;ll shape the
@@ -531,14 +715,439 @@
                                 <p class="text-xs uppercase tracking-[0.22em] text-[#D4AF37]">Pricing</p>
                                 <p class="mt-1 text-2xl font-bold text-[#0B1F3A]">On Request</p>
                             </div>
-                            <a href="https://wa.me/919541615419?text=Hello!%20I'm%20interested%20in%20the%20Custom%20Tour.%20I%20would%20like%20to%20design%20my%20own%20itinerary%20with%20personalized%20travel%20planning."
-                                target="_blank" rel="noopener noreferrer" class="premium-button">
-                                Enquire
-                            </a>
+                            <div class="package-actions">
+                                <a href="/contact.html" class="package-secondary-action">Discuss Your Trip</a>
+                                <a href="https://wa.me/919541615419?text=Hello!%20I'm%20interested%20in%20the%20Custom%20Tour.%20I%20would%20like%20to%20design%20my%20own%20itinerary%20with%20personalized%20travel%20planning."
+                                    target="_blank" rel="noopener noreferrer" class="premium-button">
+                                    Plan This Trip
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="package-card soft-panel overflow-hidden" data-aos="fade-up" data-category="group">
+                    <a href="/kashmir-group-tour-package/" class="package-card-image relative block overflow-hidden">
+                        <img src="assets/images/packages/group/hero.webp" alt="Group tour through Kashmir valleys"
+                            loading="lazy" width="800" height="500" class="h-full w-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent">
+                        </div>
+                        <div class="absolute left-5 top-5 meta-pill border-white/20 bg-white/15 text-white">Group
+                            Journey</div>
+                    </a>
+                    <div class="p-6">
+                        <div class="flex flex-wrap gap-2"><span class="meta-pill">Flexible Duration</span><span
+                                class="meta-pill">Shared Planning</span></div>
+                        <h3 class="mt-4 text-2xl font-bold text-[#0B1F3A] hover:text-[#D4AF37] transition"><a
+                                href="/kashmir-group-tour-package/">Group Tour</a></h3>
+                        <p class="mt-3 text-sm leading-relaxed text-gray-600 sm:text-base">Plan a Kashmir holiday
+                            for friends, extended family, or organized groups with a route shaped around your dates.
+                        </p>
+                        <div class="mt-4 grid gap-2 text-sm text-gray-600">
+                            <p><i class="fas fa-check mr-2 text-[#D4AF37]"></i> Designed around group preferences
+                            </p>
+                            <p><i class="fas fa-check mr-2 text-[#D4AF37]"></i> Srinagar, Gulmarg, and valley routes
+                                can be discussed</p>
+                        </div>
+                        <div class="mt-6 flex items-center justify-between">
+                            <div>
+                                <p class="text-xs uppercase tracking-[0.22em] text-[#D4AF37]">Pricing</p>
+                                <p class="mt-1 text-2xl font-bold text-[#0B1F3A]">On Request</p>
+                            </div>
+                            <div class="package-actions"><a href="/kashmir-group-tour-package/"
+                                    class="package-secondary-action">View Details</a><a
+                                    href="https://wa.me/919541615419?text=Hello%20Northwind%20Kashmir%2C%20I%20am%20interested%20in%20the%20Group%20Tour%20package."
+                                    target="_blank" rel="noopener noreferrer" class="premium-button">Plan This
+                                    Trip</a></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="package-card soft-panel overflow-hidden" data-aos="fade-up" data-category="summer">
+                    <a href="/kashmir-summer-package/" class="package-card-image relative block overflow-hidden">
+                        <img src="assets/images/packages/summer/hero.webp" alt="Summer holiday landscape in Kashmir"
+                            loading="lazy" width="800" height="500" class="h-full w-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent">
+                        </div>
+                        <div class="absolute left-5 top-5 meta-pill border-white/20 bg-white/15 text-white">Summer
+                            Escape</div>
+                    </a>
+                    <div class="p-6">
+                        <div class="flex flex-wrap gap-2"><span class="meta-pill">Flexible Duration</span><span
+                                class="meta-pill">Valley Routes</span></div>
+                        <h3 class="mt-4 text-2xl font-bold text-[#0B1F3A] hover:text-[#D4AF37] transition"><a
+                                href="/kashmir-summer-package/">Summer Package</a></h3>
+                        <p class="mt-3 text-sm leading-relaxed text-gray-600 sm:text-base">Build a warm-season
+                            Kashmir escape around scenic valleys, comfortable pacing, and the places you want to
+                            see.</p>
+                        <div class="mt-4 grid gap-2 text-sm text-gray-600">
+                            <p><i class="fas fa-check mr-2 text-[#D4AF37]"></i> Seasonal route planning</p>
+                            <p><i class="fas fa-check mr-2 text-[#D4AF37]"></i> Adjustable duration and destinations
+                            </p>
+                        </div>
+                        <div class="mt-6 flex items-center justify-between">
+                            <div>
+                                <p class="text-xs uppercase tracking-[0.22em] text-[#D4AF37]">Pricing</p>
+                                <p class="mt-1 text-2xl font-bold text-[#0B1F3A]">On Request</p>
+                            </div>
+                            <div class="package-actions"><a href="/kashmir-summer-package/"
+                                    class="package-secondary-action">View Details</a><a
+                                    href="https://wa.me/919541615419?text=Hello%20Northwind%20Kashmir%2C%20I%20am%20interested%20in%20the%20Summer%20Package."
+                                    target="_blank" rel="noopener noreferrer" class="premium-button">Plan This
+                                    Trip</a></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="package-card soft-panel overflow-hidden" data-aos="fade-up" data-category="destination">
+                    <a href="/srinagar-tour-package/" class="package-card-image relative block overflow-hidden">
+                        <img src="assets/images/packages/srinagar/hero.webp" alt="Dal Lake and Srinagar travel package"
+                            loading="lazy" width="800" height="500" class="h-full w-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent">
+                        </div>
+                        <div class="absolute left-5 top-5 meta-pill border-white/20 bg-white/15 text-white">City
+                            &amp; Lake</div>
+                    </a>
+                    <div class="p-6">
+                        <div class="flex flex-wrap gap-2"><span class="meta-pill">Flexible Duration</span><span
+                                class="meta-pill">Srinagar</span></div>
+                        <h3 class="mt-4 text-2xl font-bold text-[#0B1F3A] hover:text-[#D4AF37] transition"><a
+                                href="/srinagar-tour-package/">Srinagar Tour</a></h3>
+                        <p class="mt-3 text-sm leading-relaxed text-gray-600 sm:text-base">Focus your Kashmir
+                            holiday on Srinagar, Dal Lake, local heritage, and a relaxed city-and-lake experience.
+                        </p>
+                        <div class="mt-4 grid gap-2 text-sm text-gray-600">
+                            <p><i class="fas fa-check mr-2 text-[#D4AF37]"></i> City-focused itinerary planning</p>
+                            <p><i class="fas fa-check mr-2 text-[#D4AF37]"></i> Extendable with other Kashmir
+                                destinations</p>
+                        </div>
+                        <div class="mt-6 flex items-center justify-between">
+                            <div>
+                                <p class="text-xs uppercase tracking-[0.22em] text-[#D4AF37]">Pricing</p>
+                                <p class="mt-1 text-2xl font-bold text-[#0B1F3A]">On Request</p>
+                            </div>
+                            <div class="package-actions"><a href="/srinagar-tour-package/"
+                                    class="package-secondary-action">View Details</a><a
+                                    href="https://wa.me/919541615419?text=Hello%20Northwind%20Kashmir%2C%20I%20am%20interested%20in%20the%20Srinagar%20Tour%20package."
+                                    target="_blank" rel="noopener noreferrer" class="premium-button">Plan This
+                                    Trip</a></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="package-card soft-panel overflow-hidden" data-aos="fade-up" data-category="destination">
+                    <a href="/gulmarg-tour-package/" class="package-card-image relative block overflow-hidden"><img
+                            src="assets/images/packages/gulmarg/hero.webp" alt="Gulmarg mountain and meadow tour"
+                            loading="lazy" width="800" height="500" class="h-full w-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent">
+                        </div>
+                        <div class="absolute left-5 top-5 meta-pill border-white/20 bg-white/15 text-white">Mountain
+                            Meadows</div>
+                    </a>
+                    <div class="p-6">
+                        <div class="flex flex-wrap gap-2"><span class="meta-pill">Flexible Duration</span><span
+                                class="meta-pill">Gulmarg</span></div>
+                        <h3 class="mt-4 text-2xl font-bold text-[#0B1F3A] hover:text-[#D4AF37] transition"><a
+                                href="/gulmarg-tour-package/">Gulmarg Tour</a></h3>
+                        <p class="mt-3 text-sm leading-relaxed text-gray-600 sm:text-base">Create a Gulmarg-focused
+                            trip around alpine scenery, seasonal experiences, and time in the meadows.</p>
+                        <div class="mt-4 grid gap-2 text-sm text-gray-600">
+                            <p><i class="fas fa-check mr-2 text-[#D4AF37]"></i> Gulmarg-first travel planning</p>
+                            <p><i class="fas fa-check mr-2 text-[#D4AF37]"></i> Seasonal activities can be discussed
+                            </p>
+                        </div>
+                        <div class="mt-6 flex items-center justify-between">
+                            <div>
+                                <p class="text-xs uppercase tracking-[0.22em] text-[#D4AF37]">Pricing</p>
+                                <p class="mt-1 text-2xl font-bold text-[#0B1F3A]">On Request</p>
+                            </div>
+                            <div class="package-actions"><a href="/gulmarg-tour-package/"
+                                    class="package-secondary-action">View Details</a><a
+                                    href="https://wa.me/919541615419?text=Hello%20Northwind%20Kashmir%2C%20I%20am%20interested%20in%20the%20Gulmarg%20Tour%20package."
+                                    target="_blank" rel="noopener noreferrer" class="premium-button">Plan This
+                                    Trip</a></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="package-card soft-panel overflow-hidden" data-aos="fade-up" data-category="destination">
+                    <a href="/pahalgam-tour-package/" class="package-card-image relative block overflow-hidden"><img
+                            src="assets/images/packages/pahalgam/hero.webp" alt="Pahalgam valley tour in Kashmir"
+                            loading="lazy" width="800" height="500" class="h-full w-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent">
+                        </div>
+                        <div class="absolute left-5 top-5 meta-pill border-white/20 bg-white/15 text-white">Valley
+                            Retreat</div>
+                    </a>
+                    <div class="p-6">
+                        <div class="flex flex-wrap gap-2"><span class="meta-pill">Flexible Duration</span><span
+                                class="meta-pill">Pahalgam</span></div>
+                        <h3 class="mt-4 text-2xl font-bold text-[#0B1F3A] hover:text-[#D4AF37] transition"><a
+                                href="/pahalgam-tour-package/">Pahalgam Tour</a></h3>
+                        <p class="mt-3 text-sm leading-relaxed text-gray-600 sm:text-base">Plan a Pahalgam-centered
+                            escape around pine valleys, river scenery, and a slower Kashmir travel pace.</p>
+                        <div class="mt-4 grid gap-2 text-sm text-gray-600">
+                            <p><i class="fas fa-check mr-2 text-[#D4AF37]"></i> Valley-focused route planning</p>
+                            <p><i class="fas fa-check mr-2 text-[#D4AF37]"></i> Extendable with Srinagar or Gulmarg
+                            </p>
+                        </div>
+                        <div class="mt-6 flex items-center justify-between">
+                            <div>
+                                <p class="text-xs uppercase tracking-[0.22em] text-[#D4AF37]">Pricing</p>
+                                <p class="mt-1 text-2xl font-bold text-[#0B1F3A]">On Request</p>
+                            </div>
+                            <div class="package-actions"><a href="/pahalgam-tour-package/"
+                                    class="package-secondary-action">View Details</a><a
+                                    href="https://wa.me/919541615419?text=Hello%20Northwind%20Kashmir%2C%20I%20am%20interested%20in%20the%20Pahalgam%20Tour%20package."
+                                    target="_blank" rel="noopener noreferrer" class="premium-button">Plan This
+                                    Trip</a></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="package-card soft-panel overflow-hidden" data-aos="fade-up" data-category="destination">
+                    <a href="/sonmarg-tour-package/" class="package-card-image relative block overflow-hidden"><img
+                            src="assets/images/packages/sonmarg/hero.webp" alt="Sonmarg mountain scenery and tour route"
+                            loading="lazy" width="800" height="500" class="h-full w-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent">
+                        </div>
+                        <div class="absolute left-5 top-5 meta-pill border-white/20 bg-white/15 text-white">Highland
+                            Escape</div>
+                    </a>
+                    <div class="p-6">
+                        <div class="flex flex-wrap gap-2"><span class="meta-pill">Flexible Duration</span><span
+                                class="meta-pill">Sonmarg</span></div>
+                        <h3 class="mt-4 text-2xl font-bold text-[#0B1F3A] hover:text-[#D4AF37] transition"><a
+                                href="/sonmarg-tour-package/">Sonmarg Tour</a></h3>
+                        <p class="mt-3 text-sm leading-relaxed text-gray-600 sm:text-base">Add Sonmarg’s mountain
+                            landscapes to a focused route or combine it with a wider Kashmir holiday.</p>
+                        <div class="mt-4 grid gap-2 text-sm text-gray-600">
+                            <p><i class="fas fa-check mr-2 text-[#D4AF37]"></i> Sonmarg-centered planning</p>
+                            <p><i class="fas fa-check mr-2 text-[#D4AF37]"></i> Route options can be tailored to
+                                your dates</p>
+                        </div>
+                        <div class="mt-6 flex items-center justify-between">
+                            <div>
+                                <p class="text-xs uppercase tracking-[0.22em] text-[#D4AF37]">Pricing</p>
+                                <p class="mt-1 text-2xl font-bold text-[#0B1F3A]">On Request</p>
+                            </div>
+                            <div class="package-actions"><a href="/sonmarg-tour-package/"
+                                    class="package-secondary-action">View Details</a><a
+                                    href="https://wa.me/919541615419?text=Hello%20Northwind%20Kashmir%2C%20I%20am%20interested%20in%20the%20Sonmarg%20Tour%20package."
+                                    target="_blank" rel="noopener noreferrer" class="premium-button">Plan This
+                                    Trip</a></div>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <div class="package-card soft-panel overflow-hidden" data-aos="fade-up" data-category="group"
+                data-duplicate="true">
+                <a href="/kashmir-group-tour-package/" class="package-card-image relative block overflow-hidden">
+                    <img src="assets/images/packages/group/hero.webp" alt="Group tour landscape in Kashmir"
+                        loading="lazy" width="800" height="500" class="h-full w-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent"></div>
+                    <div class="absolute left-5 top-5 meta-pill border-white/20 bg-white/15 text-white">Group
+                        Journey</div>
+                </a>
+                <div class="p-6">
+                    <div class="flex flex-wrap gap-2"><span class="meta-pill">Flexible Duration</span><span
+                            class="meta-pill">Shared Planning</span></div>
+                    <h3 class="mt-4 text-2xl font-bold text-[#0B1F3A] hover:text-[#D4AF37] transition"><a
+                            href="/kashmir-group-tour-package/">Kashmir Group Tour</a></h3>
+                    <p class="mt-3 text-sm leading-relaxed text-gray-600 sm:text-base">Plan a Kashmir holiday for
+                        friends, colleagues, or extended groups with a route shaped around your dates.</p>
+                    <div class="mt-4 grid gap-2 text-sm text-gray-600">
+                        <p><i class="fas fa-check mr-2 text-[#D4AF37]"></i> Suitable for group-led planning</p>
+                        <p><i class="fas fa-check mr-2 text-[#D4AF37]"></i> Srinagar, Gulmarg, and Pahalgam routes
+                        </p>
+                    </div>
+                    <div class="mt-6 flex items-center justify-between">
+                        <div>
+                            <p class="text-xs uppercase tracking-[0.22em] text-[#D4AF37]">Pricing</p>
+                            <p class="mt-1 text-2xl font-bold text-[#0B1F3A]">On Request</p>
+                        </div>
+                        <div class="package-actions"><a href="/kashmir-group-tour-package/"
+                                class="package-secondary-action">View Details</a><a
+                                href="https://wa.me/919541615419?text=Hello%20Northwind%20Kashmir%2C%20I%20am%20interested%20in%20the%20Kashmir%20Group%20Tour%20Package."
+                                target="_blank" rel="noopener noreferrer" class="premium-button">Plan This Trip</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="package-card soft-panel overflow-hidden" data-aos="fade-up" data-category="summer"
+                data-duplicate="true">
+                <a href="/kashmir-summer-package/" class="package-card-image relative block overflow-hidden">
+                    <img src="assets/images/packages/summer/hero.webp" alt="Summer travel landscape in Kashmir"
+                        loading="lazy" width="800" height="500" class="h-full w-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent"></div>
+                    <div class="absolute left-5 top-5 meta-pill border-white/20 bg-white/15 text-white">Summer
+                        Escape</div>
+                </a>
+                <div class="p-6">
+                    <div class="flex flex-wrap gap-2"><span class="meta-pill">Seasonal Route</span><span
+                            class="meta-pill">Flexible Duration</span></div>
+                    <h3 class="mt-4 text-2xl font-bold text-[#0B1F3A] hover:text-[#D4AF37] transition"><a
+                            href="/kashmir-summer-package/">Kashmir Summer Package</a></h3>
+                    <p class="mt-3 text-sm leading-relaxed text-gray-600 sm:text-base">Build a warm-season Kashmir
+                        holiday around mountain scenery, valley visits, and a comfortable travel pace.</p>
+                    <div class="mt-4 grid gap-2 text-sm text-gray-600">
+                        <p><i class="fas fa-check mr-2 text-[#D4AF37]"></i> Designed around summer travel dates</p>
+                        <p><i class="fas fa-check mr-2 text-[#D4AF37]"></i> Route and duration can be discussed</p>
+                    </div>
+                    <div class="mt-6 flex items-center justify-between">
+                        <div>
+                            <p class="text-xs uppercase tracking-[0.22em] text-[#D4AF37]">Pricing</p>
+                            <p class="mt-1 text-2xl font-bold text-[#0B1F3A]">On Request</p>
+                        </div>
+                        <div class="package-actions"><a href="/kashmir-summer-package/"
+                                class="package-secondary-action">View Details</a><a
+                                href="https://wa.me/919541615419?text=Hello%20Northwind%20Kashmir%2C%20I%20am%20interested%20in%20the%20Kashmir%20Summer%20Package."
+                                target="_blank" rel="noopener noreferrer" class="premium-button">Plan This Trip</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="package-card soft-panel overflow-hidden" data-aos="fade-up" data-category="destination"
+                data-duplicate="true">
+                <a href="/srinagar-tour-package/" class="package-card-image relative block overflow-hidden">
+                    <img src="assets/images/packages/srinagar/hero.webp" alt="Dal Lake and Srinagar travel experience"
+                        loading="lazy" width="800" height="500" class="h-full w-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent"></div>
+                    <div class="absolute left-5 top-5 meta-pill border-white/20 bg-white/15 text-white">City &amp;
+                        Lake</div>
+                </a>
+                <div class="p-6">
+                    <div class="flex flex-wrap gap-2"><span class="meta-pill">Srinagar</span><span
+                            class="meta-pill">Flexible Duration</span></div>
+                    <h3 class="mt-4 text-2xl font-bold text-[#0B1F3A] hover:text-[#D4AF37] transition"><a
+                            href="/srinagar-tour-package/">Srinagar Tour Package</a></h3>
+                    <p class="mt-3 text-sm leading-relaxed text-gray-600 sm:text-base">Stay close to Srinagar&apos;s
+                        lake, gardens, heritage, and local travel experiences with a focused city itinerary.</p>
+                    <div class="mt-4 grid gap-2 text-sm text-gray-600">
+                        <p><i class="fas fa-check mr-2 text-[#D4AF37]"></i> Focused Srinagar route</p>
+                        <p><i class="fas fa-check mr-2 text-[#D4AF37]"></i> Easy to combine with other valleys</p>
+                    </div>
+                    <div class="mt-6 flex items-center justify-between">
+                        <div>
+                            <p class="text-xs uppercase tracking-[0.22em] text-[#D4AF37]">Pricing</p>
+                            <p class="mt-1 text-2xl font-bold text-[#0B1F3A]">On Request</p>
+                        </div>
+                        <div class="package-actions"><a href="/srinagar-tour-package/"
+                                class="package-secondary-action">View Details</a><a
+                                href="https://wa.me/919541615419?text=Hello%20Northwind%20Kashmir%2C%20I%20am%20interested%20in%20the%20Srinagar%20Tour%20Package."
+                                target="_blank" rel="noopener noreferrer" class="premium-button">Plan This Trip</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="package-card soft-panel overflow-hidden" data-aos="fade-up" data-category="destination"
+                data-duplicate="true">
+                <a href="/gulmarg-tour-package/" class="package-card-image relative block overflow-hidden">
+                    <img src="assets/images/packages/gulmarg/hero.webp" alt="Gulmarg mountain scenery and meadows"
+                        loading="lazy" width="800" height="500" class="h-full w-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent"></div>
+                    <div class="absolute left-5 top-5 meta-pill border-white/20 bg-white/15 text-white">Alpine
+                        Escape</div>
+                </a>
+                <div class="p-6">
+                    <div class="flex flex-wrap gap-2"><span class="meta-pill">Gulmarg</span><span
+                            class="meta-pill">Seasonal Options</span></div>
+                    <h3 class="mt-4 text-2xl font-bold text-[#0B1F3A] hover:text-[#D4AF37] transition"><a
+                            href="/gulmarg-tour-package/">Gulmarg Tour Package</a></h3>
+                    <p class="mt-3 text-sm leading-relaxed text-gray-600 sm:text-base">Plan time in Gulmarg around
+                        meadows, mountain views, snow-season experiences, and the Gondola information you need.</p>
+                    <div class="mt-4 grid gap-2 text-sm text-gray-600">
+                        <p><i class="fas fa-check mr-2 text-[#D4AF37]"></i> Gulmarg-focused travel</p>
+                        <p><i class="fas fa-check mr-2 text-[#D4AF37]"></i> Can be paired with Srinagar or Pahalgam
+                        </p>
+                    </div>
+                    <div class="mt-6 flex items-center justify-between">
+                        <div>
+                            <p class="text-xs uppercase tracking-[0.22em] text-[#D4AF37]">Pricing</p>
+                            <p class="mt-1 text-2xl font-bold text-[#0B1F3A]">On Request</p>
+                        </div>
+                        <div class="package-actions"><a href="/gulmarg-tour-package/"
+                                class="package-secondary-action">View Details</a><a
+                                href="https://wa.me/919541615419?text=Hello%20Northwind%20Kashmir%2C%20I%20am%20interested%20in%20the%20Gulmarg%20Tour%20Package."
+                                target="_blank" rel="noopener noreferrer" class="premium-button">Plan This Trip</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="package-card soft-panel overflow-hidden" data-aos="fade-up" data-category="destination"
+                data-duplicate="true">
+                <a href="/pahalgam-tour-package/" class="package-card-image relative block overflow-hidden">
+                    <img src="assets/images/packages/pahalgam/hero.webp" alt="Pahalgam valley landscape in Kashmir"
+                        loading="lazy" width="800" height="500" class="h-full w-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent"></div>
+                    <div class="absolute left-5 top-5 meta-pill border-white/20 bg-white/15 text-white">Valley
+                        Retreat</div>
+                </a>
+                <div class="p-6">
+                    <div class="flex flex-wrap gap-2"><span class="meta-pill">Pahalgam</span><span
+                            class="meta-pill">Relaxed Pace</span></div>
+                    <h3 class="mt-4 text-2xl font-bold text-[#0B1F3A] hover:text-[#D4AF37] transition"><a
+                            href="/pahalgam-tour-package/">Pahalgam Tour Package</a></h3>
+                    <p class="mt-3 text-sm leading-relaxed text-gray-600 sm:text-base">Create a Pahalgam-led trip
+                        around valley scenery, riverside time, and the destinations you want to include.</p>
+                    <div class="mt-4 grid gap-2 text-sm text-gray-600">
+                        <p><i class="fas fa-check mr-2 text-[#D4AF37]"></i> Pahalgam-focused route</p>
+                        <p><i class="fas fa-check mr-2 text-[#D4AF37]"></i> Flexible additions for a longer holiday
+                        </p>
+                    </div>
+                    <div class="mt-6 flex items-center justify-between">
+                        <div>
+                            <p class="text-xs uppercase tracking-[0.22em] text-[#D4AF37]">Pricing</p>
+                            <p class="mt-1 text-2xl font-bold text-[#0B1F3A]">On Request</p>
+                        </div>
+                        <div class="package-actions"><a href="/pahalgam-tour-package/"
+                                class="package-secondary-action">View Details</a><a
+                                href="https://wa.me/919541615419?text=Hello%20Northwind%20Kashmir%2C%20I%20am%20interested%20in%20the%20Pahalgam%20Tour%20Package."
+                                target="_blank" rel="noopener noreferrer" class="premium-button">Plan This Trip</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="package-card soft-panel overflow-hidden" data-aos="fade-up" data-category="destination"
+                data-duplicate="true">
+                <a href="/sonmarg-tour-package/" class="package-card-image relative block overflow-hidden">
+                    <img src="assets/images/packages/sonmarg/hero.webp" alt="Sonmarg mountain scenery in Kashmir"
+                        loading="lazy" width="800" height="500" class="h-full w-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent"></div>
+                    <div class="absolute left-5 top-5 meta-pill border-white/20 bg-white/15 text-white">Mountain Day
+                        Out</div>
+                </a>
+                <div class="p-6">
+                    <div class="flex flex-wrap gap-2"><span class="meta-pill">Sonmarg</span><span
+                            class="meta-pill">Flexible Duration</span></div>
+                    <h3 class="mt-4 text-2xl font-bold text-[#0B1F3A] hover:text-[#D4AF37] transition"><a
+                            href="/sonmarg-tour-package/">Sonmarg Tour Package</a></h3>
+                    <p class="mt-3 text-sm leading-relaxed text-gray-600 sm:text-base">Add Sonmarg&apos;s mountain
+                        scenery to a focused route or combine it with a wider Kashmir holiday.</p>
+                    <div class="mt-4 grid gap-2 text-sm text-gray-600">
+                        <p><i class="fas fa-check mr-2 text-[#D4AF37]"></i> Sonmarg-focused travel</p>
+                        <p><i class="fas fa-check mr-2 text-[#D4AF37]"></i> Suitable for custom route planning</p>
+                    </div>
+                    <div class="mt-6 flex items-center justify-between">
+                        <div>
+                            <p class="text-xs uppercase tracking-[0.22em] text-[#D4AF37]">Pricing</p>
+                            <p class="mt-1 text-2xl font-bold text-[#0B1F3A]">On Request</p>
+                        </div>
+                        <div class="package-actions"><a href="/sonmarg-tour-package/"
+                                class="package-secondary-action">View Details</a><a
+                                href="https://wa.me/919541615419?text=Hello%20Northwind%20Kashmir%2C%20I%20am%20interested%20in%20the%20Sonmarg%20Tour%20Package."
+                                target="_blank" rel="noopener noreferrer" class="premium-button">Plan This Trip</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         </div>
     </section>
 
@@ -550,8 +1159,19 @@
                     <div>
                         <span class="section-eyebrow border-white/20 bg-white/10 text-[#f5d77f]">Why Book With Us</span>
                         <h2 class="mt-5 font-display text-3xl font-bold sm:text-4xl">
-                            The package is only the start. The real value is in how smoothly the trip runs.
+                            Not sure which package is right for you?
                         </h2>
+                        <p class="mt-4 max-w-xl text-sm leading-relaxed text-slate-200 sm:text-base">
+                            Tell us your dates, group size, and preferences. We&apos;ll help you shape a Kashmir trip
+                            around what matters to you.
+                        </p>
+                        <div class="mt-6 flex flex-wrap gap-3">
+                            <a href="/contact.html" class="premium-button">Plan My Kashmir Trip <i
+                                    class="fas fa-arrow-right ml-2"></i></a>
+                            <a href="https://wa.me/919541615419?text=Hello%20Northwind%20Kashmir%2C%20I%20would%20like%20help%20choosing%20a%20Kashmir%20package."
+                                target="_blank" rel="noopener noreferrer" class="premium-button-outline"><i
+                                    class="fab fa-whatsapp mr-2"></i> Chat on WhatsApp</a>
+                        </div>
                     </div>
                     <div class="grid gap-4 text-sm text-slate-200 sm:text-base">
                         <p><i class="fas fa-check mr-2 text-[#D4AF37]"></i> Clear planning before the trip begins</p>
@@ -589,9 +1209,7 @@
                             <li><a href="/about.html" class="transition hover:text-[#D4AF37]">About</a></li>
                             <li><a href="/gallery.html" class="transition hover:text-[#D4AF37]">Gallery</a></li>
                             <li><a href="/trip-stories/" class="transition hover:text-[#D4AF37]">Trip Stories</a></li>
-                            <li><a href="/plan-your-trip/" class="transition hover:text-[#D4AF37]">Trip Planner</a></li>
                             <li><a href="/kashmir-tour-cost/" class="transition hover:text-[#D4AF37]">Kashmir Tour Cost</a></li>
-                            <li><a href="/kashmir-7-day-itinerary/" class="transition hover:text-[#D4AF37]">7-Day Kashmir Itinerary</a></li>
                             <li><a href="/contact.html" class="transition hover:text-[#D4AF37]">Contact</a></li>
                         </ul>
                         <h4 class="mt-6 mb-4 text-lg font-semibold sm:text-xl">Follow Us</h4>

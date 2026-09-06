@@ -211,21 +211,36 @@ function initLightbox() {
 ========================= */
 function initPackageFilters() {
     const filterButtons = document.querySelectorAll(".filter-btn");
-    const cards = document.querySelectorAll(".package-card");
+    const cards = document.querySelectorAll('.package-card:not([data-duplicate="true"])');
+    const searchInput = document.getElementById("package-search");
+    const resultCount = document.getElementById("package-result-count");
 
     if (filterButtons.length === 0 || cards.length === 0) return;
 
-    // Function to show/hide cards based on filter
-    const applyFilter = (filter) => {
+    // Keep category and text discovery in one filter state.
+    let activeFilter = "all";
+
+    const applyFilter = (filter, query = "") => {
+        const normalizedQuery = query.trim().toLowerCase();
+        let visibleCount = 0;
+
         cards.forEach((card) => {
             const category = card.getAttribute("data-category");
+            const cardText = card.textContent.toLowerCase();
 
-            const visible = filter === "all" || category === filter;
+            const matchesCategory = filter === "all" || category === filter;
+            const matchesQuery = !normalizedQuery || cardText.includes(normalizedQuery);
+            const visible = matchesCategory && matchesQuery;
 
-            card.style.display = visible ? "block" : "none";
+            card.classList.toggle("is-hidden", !visible);
             card.style.opacity = visible ? "1" : "0";
             card.style.transform = visible ? "scale(1)" : "scale(0.95)";
+            card.setAttribute("aria-hidden", visible ? "false" : "true");
+
+            if (visible) visibleCount += 1;
         });
+
+        if (resultCount) resultCount.textContent = visibleCount;
     };
 
     filterButtons.forEach((button, index) => {
@@ -240,7 +255,8 @@ function initPackageFilters() {
             button.classList.remove("bg-gray-200", "text-gray-800");
             button.classList.add("bg-[#0B1F3A]", "text-white");
 
-            applyFilter(button.getAttribute("data-filter"));
+            activeFilter = button.getAttribute("data-filter") || "all";
+            applyFilter(activeFilter, searchInput?.value || "");
         });
 
         // Set first button as active by default
@@ -250,8 +266,12 @@ function initPackageFilters() {
         }
     });
 
+    searchInput?.addEventListener("input", () => {
+        applyFilter(activeFilter, searchInput.value);
+    });
+
     // Default filter
-    applyFilter("all");
+    applyFilter("all", searchInput?.value || "");
 }
 
 
@@ -732,7 +752,7 @@ function initInteractivePlanner() {
         if (stored) {
             const data = JSON.parse(stored);
             const msgText = `Active Alert for ${data.name} on WhatsApp (+${data.phone}) for dates starting ${data.date} (Guests: ${data.guests}).`;
-            
+
             if (alertRegistryStatus && alertRegistryMsg) {
                 alertRegistryMsg.textContent = msgText;
                 alertRegistryStatus.classList.remove("hidden");
