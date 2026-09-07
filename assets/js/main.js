@@ -453,7 +453,7 @@ function initMobileStickyBar() {
             <i class="fab fa-whatsapp text-base"></i>
             <span>WhatsApp</span>
         </a>
-        <a href="/gulmarg-gondola-booking/" class="flex min-w-[64px] flex-col items-center gap-1 px-1 py-0.5 text-[0.68rem] font-medium text-[#D4AF37] transition hover:text-yellow-400">
+        <a href="/gondola/gulmarg-gondola-booking/" class="flex min-w-[64px] flex-col items-center gap-1 px-1 py-0.5 text-[0.68rem] font-medium text-[#D4AF37] transition hover:text-yellow-400">
             <i class="fas fa-ticket text-base"></i>
             <span>Gondola</span>
         </a>

@@ -4,31 +4,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Customer Trip Stories & Kashmir Case Studies | Northwind Kashmir</title>
-    <meta name="description"
-        content="Read real-world trip stories and customer case studies of families, couples, and adventure groups traveling in Kashmir with Northwind Kashmir.">
-    <link rel="canonical" href="https://www.northwindkashmir.com/trip-stories/">
+    <title>${page.title}</title>
+    <meta name="description" content="${page.description}">
+    <link rel="canonical" href="https://www.northwindkashmir.com/${subfolder}/${page.route}/">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.northwindkashmir.com/trip-stories/">
-    <meta property="og:title" content="Customer Trip Stories & Kashmir Case Studies | Northwind Kashmir">
-    <meta property="og:description"
-        content="Read real-world trip stories and customer case studies of families, couples, and adventure groups traveling in Kashmir with Northwind Kashmir.">
+    <meta property="og:url" content="https://www.northwindkashmir.com/${subfolder}/${page.route}/">
+    <meta property="og:title" content="${page.title}">
+    <meta property="og:description" content="${page.description}">
     <meta property="og:image" content="https://www.northwindkashmir.com/assets/images/hero/hero1.jpg">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Customer Trip Stories & Kashmir Case Studies | Northwind Kashmir">
-    <meta name="twitter:description"
-        content="Read real-world trip stories and customer case studies of families, couples, and adventure groups traveling in Kashmir with Northwind Kashmir.">
+    <meta name="twitter:title" content="${page.title}">
+    <meta name="twitter:description" content="${page.description}">
+    <meta name="twitter:image" content="https://www.northwindkashmir.com/assets/images/hero/hero1.jpg">
+    <link rel="icon" type="image/png" href="/assets/images/logo/logo.png">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
 
     <!-- CSS and Icons -->
     <link rel="stylesheet" href="/output.css">
@@ -42,13 +39,13 @@
       "@graph": [
         {
           "@type": "WebPage",
-          "@id": "https://www.northwindkashmir.com/trip-stories/#webpage",
-          "url": "https://www.northwindkashmir.com/trip-stories/",
-          "name": "Customer Trip Stories & Case Studies"
+          "@id": "https://www.northwindkashmir.com/${subfolder}/${page.route}/#webpage",
+          "url": "https://www.northwindkashmir.com/${subfolder}/${page.route}/",
+          "name": "${page.h1}"
         },
         {
           "@type": "BreadcrumbList",
-          "@id": "https://www.northwindkashmir.com/trip-stories/#breadcrumb",
+          "@id": "https://www.northwindkashmir.com/${subfolder}/${page.route}/#breadcrumb",
           "itemListElement": [
             {
               "@type": "ListItem",
@@ -59,19 +56,18 @@
             {
               "@type": "ListItem",
               "position": 2,
-              "name": "Trip Stories",
-              "item": "https://www.northwindkashmir.com/trip-stories/"
+              "name": "${page.h1}",
+              "item": "https://www.northwindkashmir.com/${subfolder}/${page.route}/"
             }
           ]
         }
       ]
     }
     </script>
-    <link rel="icon" type="image/png" href="/assets/images/logo/logo.png">
 </head>
 
 <body class="bg-[#f7f4ec] text-gray-900 font-sans">
-    <div id="app" class="min-h-screen flex flex-col justify-between">
+    <div id="app" class="min-h-screen">
         <nav class="site-nav backdrop-blur-md bg-[#0B1F3A]/90 border-b border-[#D4AF37]/20 shadow-lg">
                 <div class="mx-auto max-w-7xl px-3 sm:px-6 lg:px-12">
                     <div class="flex h-16 items-center justify-between sm:h-20">
@@ -131,179 +127,167 @@
                 </div>
 </nav>
 
-        <!-- Hero -->
+        <!-- Premium Destination/Package Hero -->
         <section class="page-top-offset relative overflow-hidden bg-[#0B1F3A] text-white">
-            <div class="absolute inset-0 bg-cover bg-center opacity-40"
-                style="background-image: url('/assets/images/hero/hero1.jpg');"></div>
+            <div class="absolute inset-0 bg-cover bg-center opacity-40" style="background-image: url('/assets/images/hero/hero1.jpg');"></div>
             <div class="absolute inset-0 bg-gradient-to-br from-black/80 via-[#0B1F3A]/80 to-black/70"></div>
-            <div class="section-shell relative py-16 sm:py-20 md:py-24">
+            <div class="section-shell relative py-20 sm:py-24 md:py-28">
                 <div class="mx-auto max-w-4xl text-center" data-aos="fade-up">
-                    <span class="section-eyebrow border-white/20 bg-white/10 text-[#f5d77f]">real-world
-                        experiences</span>
+                    <span class="section-eyebrow border-white/20 bg-white/10 text-[#f5d77f]">DESTINATION GUIDE</span>
                     <h1 class="mt-6 font-display text-4xl font-bold leading-tight sm:text-5xl md:text-6xl">
-                        Customer Trip Stories
+                        Gurez Valley Tourism Guide
                     </h1>
                     <p class="mx-auto mt-6 max-w-3xl text-base leading-relaxed text-slate-200 sm:text-lg">
-                        Read detailed travel diaries and itineraries of families, couples, and adventure groups who
-                        explored Kashmir with Northwind Kashmir.
+                        Discover Gurez, a high-altitude border valley with unique culture and landscapes.
                     </p>
                 </div>
             </div>
         </section>
 
-        <!-- Stories Grid -->
-        <section class="py-16 sm:py-20 bg-white flex-grow">
-            <div class="section-shell max-w-5xl mx-auto space-y-16">
-
-                <!-- Story 1: Sharma Family -->
-                <div class="grid gap-8 md:grid-cols-12 items-start border-b border-gray-150 pb-12 last:border-0 last:pb-0"
-                    data-aos="fade-up">
-                    <div class="md:col-span-4 space-y-4 flex flex-col items-center md:items-stretch">
-                        <div
-                            class="w-20 h-20 md:w-full md:aspect-square bg-slate-100 border border-gray-200 rounded-full md:rounded-3xl flex items-center justify-center text-2xl md:text-4xl text-gray-400 font-display shrink-0">
-                            SF
-                        </div>
-                        <div class="soft-panel p-4 bg-[#f7f4ec]/50 border border-[#D4AF37]/10 text-xs space-y-2 w-full">
-                            <p><strong>Travelers:</strong> Sharma Family (5 Guests, Delhi)</p>
-                            <p><strong>Season:</strong> Mid-January (Peak Winter)</p>
-                            <p><strong>Stay Level:</strong> Deluxe Room Package</p>
-                            <p><strong>Private Vehicle:</strong> Innova Crysta</p>
-                            <p><strong>Local Guide:</strong> Bashir Bhat</p>
-                        </div>
-                    </div>
-                    <div class="md:col-span-8 space-y-4">
-                        <span class="text-xs font-bold uppercase tracking-wider text-[#D4AF37]">FAMILY VACATION CASE
-                            STUDY</span>
-                        <h2 class="font-display text-2xl font-bold text-[#0B1F3A]">The Sharma Family's Winter Wonderland
-                            Journey</h2>
-                        <p class="text-sm text-gray-700 leading-relaxed sm:text-base">
-                            "Traveling to Gulmarg with my elderly parents (aged 72 & 69) and a 5-year-old child in
-                            mid-January seemed challenging. The main concerns were central heating and safe road
-                            transport during heavy snowfall. Northwind Kashmir arranged a spacious Innova Crysta
-                            equipped with snow chains, and booked us in centrally heated rooms at Pine Spring Resort."
-                        </p>
-                        <p class="text-sm text-gray-700 leading-relaxed sm:text-base">
-                            "Our guide, Bashir Bhat, was incredibly patient. He arranged wheelchairs at the Srinagar
-                            airport and secured Gondola Phase 1 tickets in advance, saving us hours of standing in
-                            queues. We enjoyed snow sledging at Kongdoori, local hot tea, and a cozy houseboat stay on
-                            Nigeen Lake. It was a flawless experience for the entire family."
-                        </p>
-                        <blockquote class="italic text-xs text-gray-500 border-l-2 border-[#D4AF37] pl-3">
-                            "Northwind Kashmir removed all the worry of traveling with seniors in freezing weather." —
-                            Suresh Sharma, Delhi
-                        </blockquote>
-                    </div>
+        <!-- Main Body Guide -->
+        <section class="py-16 sm:py-20 bg-white">
+            <div class="section-shell">
+                <div class="grid gap-12 lg:grid-cols-12">
+                    
+                    <!-- Content Area -->
+                    <div class="lg:col-span-8 space-y-12">
+                        <!-- Primary Content -->
+                        <div>
+                            
+            <div class="space-y-8">
+                <div>
+                    <h2 class="font-display text-3xl font-bold text-[#0B1F3A] mb-4">1. Travel to Gurez Valley</h2>
+                    <p class="text-sm text-gray-700 leading-relaxed sm:text-base">
+                        Gurez Valley, located about 123 km from Srinagar, is a high-altitude border region. It features the Kishan Ganga River and the Habba Khatoon Peak, offering a glimpse into traditional Dardic culture.
+                    </p>
                 </div>
+            </div>
+        
+                        </div>
 
-                <!-- Story 2: Honeymoon Couple -->
-                <div class="grid gap-8 md:grid-cols-12 items-start border-b border-gray-150 pb-12 last:border-0 last:pb-0"
-                    data-aos="fade-up">
-                    <div class="md:col-span-4 space-y-4 flex flex-col items-center md:items-stretch">
-                        <div
-                            class="w-20 h-20 md:w-full md:aspect-square bg-slate-100 border border-gray-200 rounded-full md:rounded-3xl flex items-center justify-center text-2xl md:text-4xl text-gray-400 font-display shrink-0">
-                            AR
+                        <!-- Safety block -->
+                        <div class="border-t border-gray-100 pt-8">
+                            
+        <h3 class="font-display text-2xl font-bold text-[#0B1F3A] mb-4">Safety, Security & Direct Travel Regulations in Kashmir</h3>
+        <p class="text-sm text-gray-700 leading-relaxed sm:text-base mb-4">
+            Safety remains the primary consideration for families and couples planning a vacation to Jammu & Kashmir. The local economy is heavily dependent on tourism, and local residents are renowned for their warm hospitality towards visitors. In recent years, millions of domestic and international travelers have visited the valley without experiencing any safety concerns.
+        </p>
+        <p class="text-sm text-gray-700 leading-relaxed sm:text-base mb-4">
+            Northwind Kashmir is a government-licensed travel agency (License No: JKT-10029-REGD-2022) operating directly from Tangmarg, the gateway to Gulmarg. We provide verified professional drivers, vetted hotel partners, and 24/7 on-ground assistance to ensure a safe and comfortable travel experience.
+        </p>
+        <p class="text-sm text-gray-700 leading-relaxed sm:text-base">
+            For current travel guidelines, tourists should carry valid government-issued photo IDs (Aadhaar Card, Voter ID, or Passport) at all times, as security check-points are standard when entering major airports and highway routes. Additionally, note that postpaid mobile connections from other states work seamlessly in Jammu & Kashmir, whereas prepaid tourist connections are deactivated outside the state, requiring local SIM purchases.
+        </p>
+    
                         </div>
-                        <div class="soft-panel p-4 bg-[#f7f4ec]/50 border border-[#D4AF37]/10 text-xs space-y-2 w-full">
-                            <p><strong>Travelers:</strong> Ananya & Rohit (Mumbai)</p>
-                            <p><strong>Season:</strong> Late April (Spring Tulip Season)</p>
-                            <p><strong>Stay Level:</strong> Bespoke Luxury Package</p>
-                            <p><strong>Private Vehicle:</strong> Innova Crysta</p>
-                            <p><strong>Local Guide:</strong> Altaf Ahmed</p>
+
+                        <!-- Acclimatization block -->
+                        <div class="border-t border-gray-100 pt-8">
+                            
+        <h3 class="font-display text-2xl font-bold text-[#0B1F3A] mb-4">Altitude Acclimatization and Health Advisory</h3>
+        <p class="text-sm text-gray-700 leading-relaxed sm:text-base mb-4">
+            Kashmir features variable high altitudes. Srinagar rests at approximately 5,200 feet (1,585 meters), Pahalgam at 7,200 feet (2,200 meters), Gulmarg at 8,694 feet (2,650 meters), and Phase II of the Gulmarg Gondola at Apharwat Peak ascends to over 13,780 feet (4,200 meters).
+        </p>
+        <p class="text-sm text-gray-700 leading-relaxed sm:text-base mb-4">
+            To prevent Altitude Mountain Sickness (AMS), we suggest a slow pacing strategy: spend the first 24-48 hours relaxing in Srinagar or Pahalgam before visiting high-altitude spots in Gulmarg Phase II. Stay hydrated, avoid heavy physical activities on arrival day, and consult a doctor if you have a history of respiratory or cardiovascular issues.
+        </p>
+    
+                        </div>
+
+                        <!-- Handicraft block -->
+                        <div class="border-t border-gray-100 pt-8">
+                            
+        <h3 class="font-display text-2xl font-bold text-[#0B1F3A] mb-4">Preserving Kashmiri Arts & Handicraft Heritage</h3>
+        <p class="text-sm text-gray-700 leading-relaxed sm:text-base mb-4">
+            Shopping in Kashmir is a cultural experience. The valley is known for its heritage handicrafts:
+        </p>
+        <ul class="space-y-2 text-sm text-gray-650 mb-4">
+            <li><strong>Pashmina Shawls:</strong> Woven from pure Cashmere goat wool, famous for warmth and soft texture.</li>
+            <li><strong>Silk Carpets:</strong> Hand-knotted carpets featuring Persian and local geometric motifs.</li>
+            <li><strong>Paper-Mâché Art:</strong> Decorative boxes, ornaments, and vases hand-painted by local artisans.</li>
+            <li><strong>Walnut Wood Carvings:</strong> Furniture, bowls, and trays carved from seasoned walnut timber.</li>
+        </ul>
+        <p class="text-sm text-gray-700 leading-relaxed sm:text-base">
+            To ensure authenticity, look for the government-approved GI (Geographical Indication) registration label when buying premium items like pure Pashmina.
+        </p>
+    
+                        </div>
+
+                        <!-- Booking Guide -->
+                        <div class="border-t border-gray-100 pt-8">
+                            
+        <h3 class="font-display text-2xl font-bold text-[#0B1F3A] mb-4">How to Plan and Secure Your Kashmir Tour Booking</h3>
+        <p class="text-sm text-gray-700 leading-relaxed sm:text-base mb-4">
+            Planning a trip to Kashmir is straightforward when booked directly with a local operator:
+        </p>
+        <ul class="space-y-3 text-sm text-gray-650 mb-6">
+            <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1"></i> <span><strong>Step 1: Choose Your Travel Season.</strong> Pick spring (April-May) for tulips, summer (June-August) for cool meadows, autumn (September-November) for gold Chinars, or winter (December-February) for snow.</span></li>
+            <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1"></i> <span><strong>Step 2: Share Guest Details.</strong> Provide traveler counts, date options, and preferred stay styles (Standard, Deluxe, or Luxury 5-star alpine resorts).</span></li>
+            <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1"></i> <span><strong>Step 3: Secure Gulmarg Gondola Tickets.</strong> Gondola tickets must be booked online in advance. We assist in reserving tickets for both Phase 1 and Phase 2.</span></li>
+            <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1"></i> <span><strong>Step 4: Receive Custom Quote.</strong> We design a personalized itinerary with hotels, transport, and local guides, delivering a transparent cost breakdown.</span></li>
+        </ul>
+    
                         </div>
                     </div>
-                    <div class="md:col-span-8 space-y-4">
-                        <span class="text-xs font-bold uppercase tracking-wider text-[#D4AF37]">HONEYMOON CASE
-                            STUDY</span>
-                        <h2 class="font-display text-2xl font-bold text-[#0B1F3A]">Ananya & Rohit's Romantic Houseboat
-                            Honeymoon</h2>
-                        <p class="text-sm text-gray-700 leading-relaxed sm:text-base">
-                            "We wanted our honeymoon in Kashmir to be private, scenic, and slow-paced. Northwind Kashmir
-                            designed a 7-day bespoke tour. Our first night was spent on Nigeen Lake in a premium
-                            wood-carved luxury houseboat. When we arrived, the room was beautifully decorated with fresh
-                            flowers, and we went on a private sunset Shikara ride."
-                        </p>
-                        <p class="text-sm text-gray-700 leading-relaxed sm:text-base">
-                            "In Pahalgam, we stayed in a luxury cabin overlooking the Lidder River. Our driver-guide,
-                            Altaf, knew the best spots to avoid crowds, allowing us to take beautiful photographs at Aru
-                            Valley and Shalimar Gardens. The highlight was having hot Kahwa tea on our houseboat balcony
-                            at sunrise. Absolute heaven."
-                        </p>
-                        <blockquote class="italic text-xs text-gray-500 border-l-2 border-[#D4AF37] pl-3">
-                            "The attention to detail on the honeymoon decoration and private Shikara dining was
-                            perfect." — Ananya Sen, Mumbai
-                        </blockquote>
+
+                    <!-- Sidebar Lead Form -->
+                    <div class="lg:col-span-4 space-y-8">
+                        <div class="soft-panel p-6 sm:p-8 bg-[#f7f4ec] border border-[#D4AF37]/20 sticky top-28">
+                            <span class="text-xs uppercase tracking-widest font-semibold text-[#D4AF37]">Direct Booking Desk</span>
+                            <h3 class="mt-2 font-display text-2xl font-bold text-[#0B1F3A]">Request a Custom Quote</h3>
+                            <p class="mt-2 text-xs text-gray-500">Contact our local experts directly to check rates and customized travel itineraries.</p>
+                            
+                            <form id="contact-form" class="mt-6 space-y-4 text-gray-900">
+                                <div>
+                                    <input type="text" id="name" placeholder="Your Full Name" class="form-field w-full bg-white" required>
+                                </div>
+                                <div>
+                                    <input type="tel" id="phone" placeholder="Phone / WhatsApp Number" class="form-field w-full bg-white" required>
+                                </div>
+                                <div>
+                                    <select id="package" class="form-field w-full bg-white" required>
+                                        <option value="Gurez Valley Tourism Guide">Gurez Valley Tourism Guide</option>
+                                        <option value="Custom Itinerary">Custom Itinerary</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <input type="date" id="travel-date" class="form-field w-full bg-white" required>
+                                </div>
+                                <div>
+                                    <textarea id="details" rows="3" placeholder="Travel style, guest count..." class="form-field w-full resize-none bg-white"></textarea>
+                                </div>
+                                <button type="submit" class="inline-flex w-full items-center justify-center rounded-2xl bg-green-500 py-3.5 font-accent font-semibold text-white transition duration-300 hover:bg-green-600">
+                                    <i class="fab fa-whatsapp mr-2 text-xl"></i> Secure Quote
+                                </button>
+                            </form>
+                        </div>
                     </div>
+
                 </div>
-
-                <!-- Story 3: Corporate Group -->
-                <div class="grid gap-8 md:grid-cols-12 items-start" data-aos="fade-up">
-                    <div class="md:col-span-4 space-y-4 flex flex-col items-center md:items-stretch">
-                        <div
-                            class="w-20 h-20 md:w-full md:aspect-square bg-slate-100 border border-gray-200 rounded-full md:rounded-3xl flex items-center justify-center text-2xl md:text-4xl text-gray-400 font-display shrink-0">
-                            CG
-                        </div>
-                        <div class="soft-panel p-4 bg-[#f7f4ec]/50 border border-[#D4AF37]/10 text-xs space-y-2 w-full">
-                            <p><strong>Travelers:</strong> IT Corporate Group (12 Guests, Bangalore)</p>
-                            <p><strong>Season:</strong> September (Autumn Green-Gold transition)</p>
-                            <p><strong>Stay Level:</strong> Group Sharing Package</p>
-                            <p><strong>Private Vehicle:</strong> Tempo Traveler</p>
-                            <p><strong>Local Guide:</strong> Saba Jan</p>
-                        </div>
-                    </div>
-                    <div class="md:col-span-8 space-y-4">
-                        <span class="text-xs font-bold uppercase tracking-wider text-[#D4AF37]">GROUP ADVENTURE CASE
-                            STUDY</span>
-                        <h2 class="font-display text-2xl font-bold text-[#0B1F3A]">A 12-Man Adventure across Sonmarg &
-                            Gurez</h2>
-                        <p class="text-sm text-gray-750 leading-relaxed sm:text-base">
-                            "Our team of 12 from Bangalore wanted an adventure tour in Kashmir. We wanted white-water
-                            rafting, hiking, and camping, but away from the standard crowded tourist trails. Yasir Hamid
-                            planned an offbeat route starting in Sonmarg for rafting on the Sindh River, followed by a
-                            road trip to Gurez Valley near the LOC."
-                        </p>
-                        <p class="text-sm text-gray-750 leading-relaxed sm:text-base">
-                            "Saba Jan, our mountain guide, coordinated the border permits for Gurez Valley smoothly. We
-                            hiked to the base of Habba Khatoon peak, camped by the roaring Kishanganga River, and spent
-                            evenings singing songs around campfires. Northwind Kashmir handled all local taxi union
-                            coordination in Sonmarg and provided excellent trekking gear. Highly recommended for
-                            groups!"
-                        </p>
-                        <blockquote class="italic text-xs text-gray-500 border-l-2 border-[#D4AF37] pl-3">
-                            "Excellent coordination of Gurez border permits and Sindh River rafting gear." — Vikram
-                            Nair, Bangalore
-                        </blockquote>
-                    </div>
-                </div>
-
             </div>
         </section>
 
-        <!-- CTA Desk -->
-        <section class="pb-24 pt-2 sm:pb-20 bg-white">
+        <!-- Upgraded Call to Action -->
+        <section class="pb-24 pt-2 sm:pb-20">
             <div class="section-shell">
-                <div
-                    class="rounded-[2rem] bg-gradient-to-r from-[#0B1F3A] via-[#173755] to-[#0B1F3A] px-6 py-12 text-center text-white shadow-[0_24px_80px_rgba(11,31,58,0.25)] sm:px-10 sm:py-16">
-                    <span class="section-eyebrow border-white/20 bg-white/10 text-[#f5d77f]">Create Your Story</span>
-                    <h2 class="mt-6 font-display text-3xl font-bold sm:text-4xl md:text-5xl">Ready to design your custom
-                        itinerary?</h2>
+                <div class="rounded-[2rem] bg-gradient-to-r from-[#0B1F3A] via-[#173755] to-[#0B1F3A] px-6 py-12 text-center text-white shadow-[0_24px_80px_rgba(11,31,58,0.25)] sm:px-10 sm:py-16">
+                    <span class="section-eyebrow border-white/20 bg-white/10 text-[#f5d77f]">Start Planning</span>
+                    <h2 class="mt-6 font-display text-3xl font-bold sm:text-4xl md:text-5xl">Ready to secure your package?</h2>
                     <p class="mx-auto mt-5 max-w-2xl text-sm leading-relaxed text-slate-200 sm:text-base">
-                        Get in touch with Yasir Hamid and the Northwind team today to plan a safe, secure, and memorable
-                        journey.
+                        Get in touch with Northwind Kashmir for custom-paced routes, boutique hotel stays, and verified mountain guides.
                     </p>
                     <div class="mt-8 flex flex-wrap justify-center gap-4">
-                        <a href="/contact.html" class="premium-button gap-2">
-                            <i class="fas fa-message"></i> Discuss Your Trip
+                        <a href="tel:+919541615419" class="premium-button gap-2">
+                            <i class="fas fa-phone"></i> Call Direct
                         </a>
-                        <a href="https://wa.me/919541615419" target="_blank" rel="noopener noreferrer"
-                            class="inline-flex items-center justify-center rounded-full bg-green-500 px-6 py-3 font-accent font-semibold text-white transition duration-300 hover:bg-green-600">
-                            <i class="fab fa-whatsapp mr-2 text-lg"></i> Discuss on WhatsApp
+                        <a href="https://wa.me/919541615419" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-full bg-green-500 px-6 py-3 font-accent font-semibold text-white transition duration-300 hover:bg-green-600">
+                            <i class="fab fa-whatsapp mr-2 text-lg"></i> WhatsApp Us
                         </a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Footer -->
         <footer class="bg-[#0B1F3A] py-12 text-white sm:py-16 md:py-20">
             <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-12">
                 <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-4">
@@ -389,5 +373,4 @@
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <script src="/assets/js/main.js"></script>
 </body>
-
 </html>

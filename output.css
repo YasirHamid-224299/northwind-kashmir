@@ -1361,10 +1361,6 @@ select option {
   height: 260px;
 }
 
-.h-\[64vh\] {
-  height: 64vh;
-}
-
 .h-full {
   height: 100%;
 }
@@ -1443,10 +1439,6 @@ select option {
 
 .w-full {
   width: 100%;
-}
-
-.min-w-\[520px\] {
-  min-width: 520px;
 }
 
 .min-w-\[64px\] {
@@ -1561,10 +1553,6 @@ select option {
   justify-content: flex-start;
 }
 
-.justify-end {
-  justify-content: flex-end;
-}
-
 .justify-center {
   justify-content: center;
 }
@@ -1645,12 +1633,6 @@ select option {
   --tw-space-y-reverse: 0;
   margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(1rem * var(--tw-space-y-reverse));
-}
-
-.space-y-5 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-y-reverse: 0;
-  margin-top: calc(1.25rem * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(1.25rem * var(--tw-space-y-reverse));
 }
 
 .space-y-6 > :not([hidden]) ~ :not([hidden]) {
@@ -1779,10 +1761,6 @@ select option {
   border-color: rgb(212 175 55 / 0.3);
 }
 
-.border-\[\#D4AF37\]\/40 {
-  border-color: rgb(212 175 55 / 0.4);
-}
-
 .border-blue-500 {
   --tw-border-opacity: 1;
   border-color: rgb(59 130 246 / var(--tw-border-opacity));
@@ -1830,10 +1808,6 @@ select option {
 
 .border-white\/10 {
   border-color: rgb(255 255 255 / 0.1);
-}
-
-.border-white\/15 {
-  border-color: rgb(255 255 255 / 0.15);
 }
 
 .border-white\/20 {
@@ -2104,11 +2078,6 @@ select option {
   --tw-gradient-stops: var(--tw-gradient-from), rgb(0 0 0 / 0.1) var(--tw-gradient-via-position), var(--tw-gradient-to);
 }
 
-.via-black\/25 {
-  --tw-gradient-to: rgb(0 0 0 / 0)  var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from), rgb(0 0 0 / 0.25) var(--tw-gradient-via-position), var(--tw-gradient-to);
-}
-
 .via-transparent {
   --tw-gradient-to: rgb(0 0 0 / 0)  var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), transparent var(--tw-gradient-via-position), var(--tw-gradient-to);
@@ -2120,10 +2089,6 @@ select option {
 
 .to-\[\#f7f4ec\] {
   --tw-gradient-to: #f7f4ec var(--tw-gradient-to-position);
-}
-
-.to-black\/20 {
-  --tw-gradient-to: rgb(0 0 0 / 0.2) var(--tw-gradient-to-position);
 }
 
 .to-black\/70 {
@@ -2340,10 +2305,6 @@ select option {
 
 .pl-4 {
   padding-left: 1rem;
-}
-
-.pl-6 {
-  padding-left: 1.5rem;
 }
 
 .pl-8 {
@@ -2673,16 +2634,8 @@ select option {
   opacity: 0.25;
 }
 
-.opacity-35 {
-  opacity: 0.35;
-}
-
 .opacity-40 {
   opacity: 0.4;
-}
-
-.opacity-70 {
-  opacity: 0.7;
 }
 
 .opacity-75 {
@@ -3035,14 +2988,6 @@ select option {
   --tw-ring-color: rgb(212 175 55 / 0.15);
 }
 
-.group[open] .group-open\:block {
-  display: block;
-}
-
-.group[open] .group-open\:hidden {
-  display: none;
-}
-
 .group[open] .group-open\:opacity-0 {
   opacity: 0;
 }
@@ -3100,10 +3045,6 @@ select option {
     height: 380px;
   }
 
-  .sm\:h-\[72vh\] {
-    height: 72vh;
-  }
-
   .sm\:max-h-\[calc\(100svh-5rem\)\] {
     max-height: calc(100svh - 5rem);
   }
@@ -3152,10 +3093,6 @@ select option {
 
   .sm\:p-10 {
     padding: 2.5rem;
-  }
-
-  .sm\:p-4 {
-    padding: 1rem;
   }
 
   .sm\:p-5 {
@@ -3217,10 +3154,6 @@ select option {
 
   .sm\:pb-20 {
     padding-bottom: 5rem;
-  }
-
-  .sm\:pb-24 {
-    padding-bottom: 6rem;
   }
 
   .sm\:pt-32 {
@@ -3331,10 +3264,6 @@ select option {
 
   .md\:h-\[420px\] {
     height: 420px;
-  }
-
-  .md\:h-\[80vh\] {
-    height: 80vh;
   }
 
   .md\:min-h-screen {
@@ -3486,10 +3415,6 @@ select option {
     grid-template-columns: repeat(12, minmax(0, 1fr));
   }
 
-  .lg\:grid-cols-2 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
   .lg\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -3502,20 +3427,8 @@ select option {
     grid-template-columns: 0.85fr 1.15fr;
   }
 
-  .lg\:grid-cols-\[0\.9fr_1\.1fr\] {
-    grid-template-columns: 0.9fr 1.1fr;
-  }
-
-  .lg\:grid-cols-\[1\.05fr_0\.95fr\] {
-    grid-template-columns: 1.05fr 0.95fr;
-  }
-
   .lg\:grid-cols-\[1\.1fr_0\.9fr\] {
     grid-template-columns: 1.1fr 0.9fr;
-  }
-
-  .lg\:grid-cols-\[1\.2fr_0\.8fr\] {
-    grid-template-columns: 1.2fr 0.8fr;
   }
 
   .lg\:grid-cols-\[1\.3fr_0\.7fr\] {
@@ -3524,10 +3437,6 @@ select option {
 
   .lg\:grid-cols-\[1fr_1\.1fr\] {
     grid-template-columns: 1fr 1.1fr;
-  }
-
-  .lg\:items-start {
-    align-items: flex-start;
   }
 
   .lg\:items-end {

@@ -675,27 +675,27 @@ const PAGES_DATA = [
     }
 ];
 
-const HTML_TEMPLATE = (page) => `<!DOCTYPE html>
+const HTML_TEMPLATE = (page, subfolder) => `<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>${page.title}</title>
-    <meta name="description" content="${page.description}">
-    <link rel="canonical" href="https://www.northwindkashmir.com/${page.route}/">
+    <title>\${page.title}</title>
+    <meta name="description" content="\${page.description}">
+    <link rel="canonical" href="https://www.northwindkashmir.com/\${subfolder}/\${page.route}/">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.northwindkashmir.com/${page.route}/">
-    <meta property="og:title" content="${page.title}">
-    <meta property="og:description" content="${page.description}">
+    <meta property="og:url" content="https://www.northwindkashmir.com/\${subfolder}/\${page.route}/">
+    <meta property="og:title" content="\${page.title}">
+    <meta property="og:description" content="\${page.description}">
     <meta property="og:image" content="https://www.northwindkashmir.com/assets/images/hero/hero1.jpg">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="${page.title}">
-    <meta name="twitter:description" content="${page.description}">
+    <meta name="twitter:title" content="\${page.title}">
+    <meta name="twitter:description" content="\${page.description}">
     <meta name="twitter:image" content="https://www.northwindkashmir.com/assets/images/hero/hero1.jpg">
     <link rel="icon" type="image/png" href="/assets/images/logo/logo.png">
 
@@ -716,13 +716,13 @@ const HTML_TEMPLATE = (page) => `<!DOCTYPE html>
       "@graph": [
         {
           "@type": "WebPage",
-          "@id": "https://www.northwindkashmir.com/${page.route}/#webpage",
-          "url": "https://www.northwindkashmir.com/${page.route}/",
-          "name": "${page.h1}"
+          "@id": "https://www.northwindkashmir.com/\${subfolder}/\${page.route}/#webpage",
+          "url": "https://www.northwindkashmir.com/\${subfolder}/\${page.route}/",
+          "name": "\${page.h1}"
         },
         {
           "@type": "BreadcrumbList",
-          "@id": "https://www.northwindkashmir.com/${page.route}/#breadcrumb",
+          "@id": "https://www.northwindkashmir.com/\${subfolder}/\${page.route}/#breadcrumb",
           "itemListElement": [
             {
               "@type": "ListItem",
@@ -733,8 +733,8 @@ const HTML_TEMPLATE = (page) => `<!DOCTYPE html>
             {
               "@type": "ListItem",
               "position": 2,
-              "name": "${page.h1}",
-              "item": "https://www.northwindkashmir.com/${page.route}/"
+              "name": "\${page.h1}",
+              "item": "https://www.northwindkashmir.com/\${subfolder}/\${page.route}/"
             }
           ]
         }
@@ -870,18 +870,23 @@ const HTML_TEMPLATE = (page) => `<!DOCTYPE html>
 
 // Run page generation
 PAGES_DATA.forEach(page => {
-    const dirPath = path.join(root, page.route);
+    let subfolder = '';
+    if (page.type === 'package') subfolder = 'packages';
+    else if (page.type === 'destination') subfolder = 'destinations';
+    else if (page.type === 'gondola') subfolder = 'gondola';
+
+    const dirPath = path.join(root, subfolder, page.route);
 
     // Ensure directory exists
     if (!fs.existsSync(dirPath)) {
         fs.mkdirSync(dirPath, { recursive: true });
     }
 
-    const htmlContent = HTML_TEMPLATE(page);
+    const htmlContent = HTML_TEMPLATE(page, subfolder);
     const filePath = path.join(dirPath, 'index.html');
 
     fs.writeFileSync(filePath, htmlContent, 'utf-8');
-    console.log(`Generated page: ${page.route}/index.html`);
+    console.log(`Generated page: ${subfolder}/${page.route}/index.html`);
 });
 
 console.log('All 22 cluster pages generated successfully!');

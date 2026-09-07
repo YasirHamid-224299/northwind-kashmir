@@ -38,7 +38,7 @@ fs.readdirSync(root).forEach((file) => {
     if (fs.statSync(fullPath).isFile() && file.endsWith('.html')) {
         fs.copyFileSync(fullPath, path.join(dist, file));
     }
-    if (fs.statSync(fullPath).isDirectory() && fs.existsSync(path.join(fullPath, 'index.html'))) {
+    if (fs.statSync(fullPath).isDirectory() && (fs.existsSync(path.join(fullPath, 'index.html')) || ['packages', 'destinations', 'hotels', 'gondola', 'trip-stories', 'plan-your-trip'].includes(file.toLowerCase()))) {
         copy(fullPath, path.join(dist, file));
     }
 });
