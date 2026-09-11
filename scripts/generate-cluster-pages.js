@@ -210,6 +210,20 @@ const PAGES_DATA = [
                     </p>
                 </div>
 
+                <!-- Family Shikara Image -->
+                <div class="rounded-2xl overflow-hidden shadow-lg">
+                    <img
+                        src="/assets/images/packages/family/family_shikara.jpg"
+                        alt="Family enjoying a Shikara boat ride on Dal Lake, Srinagar"
+                        class="w-full h-72 sm:h-96 object-cover hover:scale-105 transition-transform duration-700"
+                        loading="lazy" width="1200" height="675"
+                    >
+                    <div class="bg-[#0B1F3A] px-5 py-3 flex items-center gap-2">
+                        <i class="fas fa-ship text-[#D4AF37] text-sm"></i>
+                        <p class="text-xs text-slate-300">Family Shikara ride on Dal Lake, Srinagar — a highlight of every Kashmir family tour</p>
+                    </div>
+                </div>
+
                 <div>
                     <h2 class="font-display text-3xl font-bold text-[#0B1F3A] mb-4">2. Top Family-Friendly Activities in Kashmir</h2>
                     <ul class="space-y-3 text-sm text-gray-700">
@@ -218,6 +232,20 @@ const PAGES_DATA = [
                         <li><strong>Pony Rides in Baisaran Meadow:</strong> Baisaran, often called "Mini Switzerland," is a popular spot for horse rides and family picnics.</li>
                         <li><strong>Mughal Garden Explorations:</strong> The wide lawns of Nishat and Shalimar gardens in Srinagar are ideal for relaxing walks.</li>
                     </ul>
+
+                    <!-- Family Meadow Image -->
+                    <div class="mt-6 rounded-2xl overflow-hidden shadow-lg">
+                        <img
+                            src="/assets/images/packages/family/family_meadow.jpg"
+                            alt="Children enjoying pony rides in Baisaran meadow, Pahalgam Kashmir"
+                            class="w-full h-72 sm:h-96 object-cover hover:scale-105 transition-transform duration-700"
+                            loading="lazy" width="900" height="600"
+                        >
+                        <div class="bg-[#0B1F3A] px-5 py-3 flex items-center gap-2">
+                            <i class="fas fa-horse text-[#D4AF37] text-sm"></i>
+                            <p class="text-xs text-slate-300">Pony rides at Baisaran ("Mini Switzerland"), Pahalgam — loved by children of all ages</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         `
@@ -675,7 +703,24 @@ const PAGES_DATA = [
     }
 ];
 
-const HTML_TEMPLATE = (page, subfolder) => `<!DOCTYPE html>
+const HERO_IMAGE_MAP = {
+    'kashmir-tour-packages': '/assets/images/packages/custom/hero.webp',
+    'kashmir-honeymoon-package': '/assets/images/packages/honeymoon/hero.webp',
+    'kashmir-family-package': '/assets/images/packages/family/hero.webp',
+    'kashmir-luxury-package': '/assets/images/packages/luxury/hero.webp',
+    'kashmir-group-tour-package': '/assets/images/packages/group/hero.webp',
+    'kashmir-adventure-package': '/assets/images/packages/adventure/hero.webp',
+    'kashmir-winter-package': '/assets/images/packages/winter/hero.webp',
+    'kashmir-summer-package': '/assets/images/packages/summer/hero.webp',
+    'srinagar-tourism': '/assets/images/packages/srinagar/hero.webp',
+    'gulmarg-tourism': '/assets/images/packages/gulmarg/hero.webp',
+    'pahalgam-tourism': '/assets/images/packages/pahalgam/hero.webp',
+    'sonmarg-tourism': '/assets/images/packages/sonmarg/hero.webp',
+};
+
+const HTML_TEMPLATE = (page, subfolder) => {
+    const heroImage = HERO_IMAGE_MAP[page.route] || page.heroImage || '/assets/images/hero/hero1.jpg';
+    return `<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 
 <head>
@@ -690,13 +735,13 @@ const HTML_TEMPLATE = (page, subfolder) => `<!DOCTYPE html>
     <meta property="og:url" content="https://www.northwindkashmir.com/\${subfolder}/\${page.route}/">
     <meta property="og:title" content="\${page.title}">
     <meta property="og:description" content="\${page.description}">
-    <meta property="og:image" content="https://www.northwindkashmir.com/assets/images/hero/hero1.jpg">
+    <meta property="og:image" content="https://www.northwindkashmir.com${heroImage}">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="\${page.title}">
     <meta name="twitter:description" content="\${page.description}">
-    <meta name="twitter:image" content="https://www.northwindkashmir.com/assets/images/hero/hero1.jpg">
+    <meta name="twitter:image" content="https://www.northwindkashmir.com${heroImage}">
     <link rel="icon" type="image/png" href="/assets/images/logo/logo.png">
 
     <!-- Fonts -->
@@ -751,7 +796,7 @@ const HTML_TEMPLATE = (page, subfolder) => `<!DOCTYPE html>
 
         <!-- Premium Destination/Package Hero -->
         <section class="page-top-offset relative overflow-hidden bg-[#0B1F3A] text-white">
-            <div class="absolute inset-0 bg-cover bg-center opacity-40" style="background-image: url('/assets/images/hero/hero1.jpg');"></div>
+            <div class="absolute inset-0 bg-cover bg-center opacity-40" style="background-image: url('${heroImage}');"></div>
             <div class="absolute inset-0 bg-gradient-to-br from-black/80 via-[#0B1F3A]/80 to-black/70"></div>
             <div class="section-shell relative py-20 sm:py-24 md:py-28">
                 <div class="mx-auto max-w-4xl text-center" data-aos="fade-up">
@@ -867,6 +912,7 @@ const HTML_TEMPLATE = (page, subfolder) => `<!DOCTYPE html>
     <script src="/assets/js/main.js"></script>
 </body>
 </html>`;
+};
 
 // Run page generation
 PAGES_DATA.forEach(page => {

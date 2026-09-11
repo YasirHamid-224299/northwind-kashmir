@@ -1349,6 +1349,10 @@ select option {
   height: 15rem;
 }
 
+.h-72 {
+  height: 18rem;
+}
+
 .h-80 {
   height: 20rem;
 }
@@ -3039,6 +3043,10 @@ select option {
 
   .sm\:h-40 {
     height: 10rem;
+  }
+
+  .sm\:h-96 {
+    height: 24rem;
   }
 
   .sm\:h-\[380px\] {
