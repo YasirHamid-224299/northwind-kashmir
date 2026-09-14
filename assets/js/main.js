@@ -444,6 +444,7 @@ function initMobileStickyBar() {
 
     const bar = document.createElement("div");
     bar.className = "dynamic-sticky-bar fixed bottom-0 left-0 z-45 flex w-full items-center justify-around border-t border-[#D4AF37]/20 bg-[#0B1F3A]/95 backdrop-blur-md px-2 py-2.5 shadow-2xl md:hidden";
+    bar.style.zIndex = "45";
     bar.innerHTML = `
         <a href="tel:+919541615419" class="flex min-w-[64px] flex-col items-center gap-1 px-1 py-0.5 text-[0.68rem] font-medium text-white transition hover:text-[#D4AF37]">
             <i class="fas fa-phone text-base"></i>
@@ -470,6 +471,9 @@ function initMobileStickyBar() {
         @media (max-width: 767px) {
             body {
                 padding-bottom: 65px !important;
+            }
+            .dynamic-sticky-bar {
+                z-index: 45 !important;
             }
         }
     `;

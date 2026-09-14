@@ -154,3 +154,8 @@
     background-color: #D4AF37;
 }
 
+/* Dynamic Sticky Bottom Bar */
+.dynamic-sticky-bar {
+    z-index: 45 !important;
+}
+

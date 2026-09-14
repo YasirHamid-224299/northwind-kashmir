@@ -10,6 +10,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      zIndex: {
+        '45': '45',
+      },
       fontFamily: {
         display: ['Playfair Display', 'serif'],
         sans: ['Inter', 'sans-serif'],

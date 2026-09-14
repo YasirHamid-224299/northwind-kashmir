@@ -1157,6 +1157,10 @@ select option {
   z-index: 10;
 }
 
+.z-45 {
+  z-index: 45;
+}
+
 .z-50 {
   z-index: 50;
 }
@@ -2816,6 +2820,12 @@ select option {
 
 .bg-gold {
   background-color: #D4AF37;
+}
+
+/* Dynamic Sticky Bottom Bar */
+
+.dynamic-sticky-bar {
+  z-index: 45 !important;
 }
 
 .placeholder\:text-gray-400::-moz-placeholder {
