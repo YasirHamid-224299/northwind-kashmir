@@ -884,8 +884,8 @@ html, body {
 
 .site-menu-button {
   display: flex;
-  height: 2.5rem;
-  width: 2.5rem;
+  height: 2.75rem;
+  width: 2.75rem;
   flex-shrink: 0;
   cursor: pointer;
   flex-direction: column;
@@ -894,8 +894,8 @@ html, body {
   gap: 5px;
   border-radius: 9999px;
   border-width: 1px;
-  border-color: rgb(255 255 255 / 0.15);
-  background-color: rgb(255 255 255 / 0.05);
+  border-color: rgb(255 255 255 / 0.2);
+  background-color: rgb(255 255 255 / 0.1);
   padding: 0px;
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -903,8 +903,8 @@ html, body {
 }
 
 .site-menu-button:hover {
-  border-color: rgb(212 175 55 / 0.5);
-  background-color: rgb(212 175 55 / 0.1);
+  border-color: rgb(212 175 55 / 0.8);
+  background-color: rgb(212 175 55 / 0.2);
 }
 
 .site-menu-button:focus {
@@ -916,29 +916,29 @@ html, body {
   --tw-ring-color: rgb(212 175 55 / 0.6);
 }
 
-@media (min-width: 640px) {
-  .site-menu-button {
-    height: 2.75rem;
-    width: 2.75rem;
-  }
+.site-menu-button {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .site-menu-button.is-active {
-  border-color: rgb(212 175 55 / 0.6);
-  background-color: rgb(212 175 55 / 0.15);
+  --tw-border-opacity: 1;
+  border-color: rgb(212 175 55 / var(--tw-border-opacity));
+  background-color: rgb(212 175 55 / 0.2);
+  --tw-shadow: 0 0 12px rgba(212,175,55,0.4);
+  --tw-shadow-colored: 0 0 12px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
 .hamburger-line {
   display: block;
-  height: 2px;
-  width: 18px;
+  width: 22px;
+  height: 2.5px;
+  background-color: #ffffff;
   border-radius: 9999px;
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-  transition-property: all;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 300ms;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s ease, background-color 0.3s ease;
   transform-origin: center;
+  pointer-events: none;
 }
 
 .site-menu-button.is-active .hamburger-line {
@@ -946,7 +946,7 @@ html, body {
 }
 
 .site-menu-button.is-active .top-line {
-  transform: translateY(7px) rotate(45deg);
+  transform: translateY(7.5px) rotate(45deg);
 }
 
 .site-menu-button.is-active .mid-line {
@@ -955,7 +955,7 @@ html, body {
 }
 
 .site-menu-button.is-active .bot-line {
-  transform: translateY(-7px) rotate(-45deg);
+  transform: translateY(-7.5px) rotate(-45deg);
 }
 
 .mobile-drawer {

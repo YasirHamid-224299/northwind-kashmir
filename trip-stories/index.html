@@ -73,6 +73,57 @@
 <body class="bg-[#f7f4ec] text-gray-900 font-sans">
     <div id="app" class="min-h-screen flex flex-col justify-between">
         <nav class="site-nav backdrop-blur-md bg-[#0B1F3A]/90 border-b border-[#D4AF37]/20 shadow-lg">
+                <style>
+                    .site-menu-button {
+                        display: flex !important;
+                        flex-direction: column !important;
+                        align-items: center !important;
+                        justify-content: center !important;
+                        gap: 5px !important;
+                        width: 44px !important;
+                        height: 44px !important;
+                        border-radius: 9999px !important;
+                        border: 1.5px solid rgba(212, 175, 55, 0.4) !important;
+                        background: rgba(255, 255, 255, 0.08) !important;
+                        cursor: pointer !important;
+                        padding: 0 !important;
+                        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+                        touch-action: manipulation !important;
+                        -webkit-tap-highlight-color: transparent !important;
+                    }
+                    .site-menu-button:hover {
+                        border-color: rgba(212, 175, 55, 0.8) !important;
+                        background: rgba(212, 175, 55, 0.15) !important;
+                    }
+                    .site-menu-button .hamburger-line {
+                        display: block !important;
+                        width: 22px !important;
+                        height: 2.5px !important;
+                        background-color: #ffffff !important;
+                        border-radius: 9999px !important;
+                        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s ease, background-color 0.3s ease !important;
+                        transform-origin: center !important;
+                        pointer-events: none !important;
+                    }
+                    .site-menu-button.is-active {
+                        border-color: #D4AF37 !important;
+                        background-color: rgba(212, 175, 55, 0.2) !important;
+                        box-shadow: 0 0 12px rgba(212, 175, 55, 0.4) !important;
+                    }
+                    .site-menu-button.is-active .hamburger-line {
+                        background-color: #D4AF37 !important;
+                    }
+                    .site-menu-button.is-active .top-line {
+                        transform: translateY(7.5px) rotate(45deg) !important;
+                    }
+                    .site-menu-button.is-active .mid-line {
+                        opacity: 0 !important;
+                        transform: scaleX(0) !important;
+                    }
+                    .site-menu-button.is-active .bot-line {
+                        transform: translateY(-7.5px) rotate(-45deg) !important;
+                    }
+                </style>
                 <div class="mx-auto max-w-7xl px-3 sm:px-6 lg:px-12">
                     <div class="flex h-16 items-center justify-between sm:h-20">
                         <div class="flex items-center gap-3 sm:gap-4">
