@@ -28,6 +28,15 @@ function initMobileMenu() {
     // Exit if required elements are missing
     if (!menuBtn || !mobileMenu) return;
 
+    // Ensure 3 animated lines are inside the button
+    if (!menuBtn.querySelector(".hamburger-line")) {
+        menuBtn.innerHTML = `
+            <span class="hamburger-line top-line"></span>
+            <span class="hamburger-line mid-line"></span>
+            <span class="hamburger-line bot-line"></span>
+        `;
+    }
+
     let isOpen = false;
 
     // Accessibility attribute
@@ -35,6 +44,9 @@ function initMobileMenu() {
 
     // Function to toggle menu state
     const setMenuState = (open) => {
+        // Toggle is-active class for 3 lines -> X morph animation
+        menuBtn.classList.toggle("is-active", open);
+
         // Toggle height and visibility classes
         mobileMenu.classList.toggle("max-h-0", !open);
         mobileMenu.classList.toggle("opacity-0", !open);
@@ -47,6 +59,7 @@ function initMobileMenu() {
 
         // Update accessibility state
         menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+        menuBtn.setAttribute("aria-label", open ? "Close menu" : "Open menu");
 
         isOpen = open;
     };
@@ -443,8 +456,8 @@ function initMobileStickyBar() {
     }
 
     const bar = document.createElement("div");
-    bar.className = "dynamic-sticky-bar fixed bottom-0 left-0 z-45 flex w-full items-center justify-around border-t border-[#D4AF37]/20 bg-[#0B1F3A]/95 backdrop-blur-md px-2 py-2.5 shadow-2xl md:hidden";
-    bar.style.zIndex = "45";
+    bar.className = "dynamic-sticky-bar fixed bottom-0 left-0 z-50 flex w-full items-center justify-around border-t border-[#D4AF37]/20 bg-[#0B1F3A]/95 backdrop-blur-md px-2 py-2.5 shadow-2xl md:hidden";
+    bar.style.zIndex = "9999";
     bar.innerHTML = `
         <a href="tel:+919541615419" class="flex min-w-[64px] flex-col items-center gap-1 px-1 py-0.5 text-[0.68rem] font-medium text-white transition hover:text-[#D4AF37]">
             <i class="fas fa-phone text-base"></i>
@@ -465,7 +478,7 @@ function initMobileStickyBar() {
     `;
     document.body.appendChild(bar);
 
-    // Add extra padding to body bottom on mobile
+    // Add extra padding to body bottom on mobile so content isn't obscured
     const style = document.createElement("style");
     style.innerHTML = `
         @media (max-width: 767px) {
@@ -473,7 +486,7 @@ function initMobileStickyBar() {
                 padding-bottom: 65px !important;
             }
             .dynamic-sticky-bar {
-                z-index: 45 !important;
+                z-index: 9999 !important;
             }
         }
     `;

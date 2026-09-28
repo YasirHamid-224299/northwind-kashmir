@@ -39,9 +39,16 @@ const urls = publicPages.map((relativePath) => {
     return {
         loc: url,
         lastmod,
-        changefreq: 'weekly',
+        changefreq: relativePath === 'index.html' ? 'daily' : 'weekly',
         priority,
     };
+});
+
+// Ensure homepage is always the first URL in the sitemap
+urls.sort((a, b) => {
+    if (a.loc === `${siteUrl}/`) return -1;
+    if (b.loc === `${siteUrl}/`) return 1;
+    return 0;
 });
 
 const xml = [
