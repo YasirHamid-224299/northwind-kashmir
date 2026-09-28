@@ -884,10 +884,11 @@ html, body {
 
 .site-menu-button {
   display: flex;
-  flex-direction: column;
   height: 2.5rem;
   width: 2.5rem;
   flex-shrink: 0;
+  cursor: pointer;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 5px;
@@ -895,24 +896,48 @@ html, body {
   border-width: 1px;
   border-color: rgb(255 255 255 / 0.15);
   background-color: rgb(255 255 255 / 0.05);
-  cursor: pointer;
-  padding: 0;
-  transition: all 0.3s ease;
+  padding: 0px;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
 }
 
-.site-menu-button:hover,
+.site-menu-button:hover {
+  border-color: rgb(212 175 55 / 0.5);
+  background-color: rgb(212 175 55 / 0.1);
+}
+
+.site-menu-button:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+  --tw-ring-color: rgb(212 175 55 / 0.6);
+}
+
+@media (min-width: 640px) {
+  .site-menu-button {
+    height: 2.75rem;
+    width: 2.75rem;
+  }
+}
+
 .site-menu-button.is-active {
-  border-color: rgba(212, 175, 55, 0.5);
-  background-color: rgba(212, 175, 55, 0.12);
+  border-color: rgb(212 175 55 / 0.6);
+  background-color: rgb(212 175 55 / 0.15);
 }
 
 .hamburger-line {
   display: block;
-  width: 18px;
   height: 2px;
-  background-color: #ffffff;
+  width: 18px;
   border-radius: 9999px;
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s ease, background-color 0.3s ease;
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
   transform-origin: center;
 }
 
@@ -931,22 +956,6 @@ html, body {
 
 .site-menu-button.is-active .bot-line {
   transform: translateY(-7px) rotate(-45deg);
-}
-
-.site-menu-button:focus {
-  outline: 2px solid transparent;
-  outline-offset: 2px;
-  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
-  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
-  --tw-ring-color: rgb(212 175 55 / 0.6);
-}
-
-@media (min-width: 640px) {
-  .site-menu-button {
-    height: 2.75rem;
-    width: 2.75rem;
-  }
 }
 
 .mobile-drawer {
@@ -1187,10 +1196,6 @@ select option {
 
 .z-10 {
   z-index: 10;
-}
-
-.z-45 {
-  z-index: 45;
 }
 
 .z-50 {
@@ -1561,6 +1566,16 @@ select option {
   animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
 }
 
+@keyframes pulse {
+  50% {
+    opacity: .5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
 .cursor-pointer {
   cursor: pointer;
 }
@@ -1801,6 +1816,10 @@ select option {
   border-color: rgb(212 175 55 / 0.3);
 }
 
+.border-\[\#D4AF37\]\/80 {
+  border-color: rgb(212 175 55 / 0.8);
+}
+
 .border-blue-500 {
   --tw-border-opacity: 1;
   border-color: rgb(59 130 246 / var(--tw-border-opacity));
@@ -1883,6 +1902,10 @@ select option {
 
 .bg-\[\#D4AF37\]\/10 {
   background-color: rgb(212 175 55 / 0.1);
+}
+
+.bg-\[\#D4AF37\]\/15 {
+  background-color: rgb(212 175 55 / 0.15);
 }
 
 .bg-\[\#D4AF37\]\/20 {
