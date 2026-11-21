@@ -1411,8 +1411,8 @@ select option {
   height: 1rem;
 }
 
-.h-44 {
-  height: 11rem;
+.h-40 {
+  height: 10rem;
 }
 
 .h-60 {
@@ -1527,10 +1527,6 @@ select option {
   min-width: 64px;
 }
 
-.min-w-\[85\%\] {
-  min-width: 85%;
-}
-
 .max-w-2xl {
   max-width: 42rem;
 }
@@ -1569,6 +1565,10 @@ select option {
 
 .flex-grow {
   flex-grow: 1;
+}
+
+.basis-\[88\%\] {
+  flex-basis: 88%;
 }
 
 .border-collapse {
@@ -2880,6 +2880,23 @@ select option {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* Homepage package slider sizing */
+
+@media (max-width: 639px) {
+  #package-slider {
+    margin-right: -1rem;
+    padding-right: 1rem;
+  }
+
+  .package-slide-card {
+    max-width: 88%;
+  }
+
+  .package-slide-card .p-5 {
+    padding: 1rem;
+  }
+}
+
 /* Prevent AOS fade-left and fade-right from causing horizontal overflow on mobile/tablet viewports */
 
 @media (max-width: 1023px) {
@@ -3269,6 +3286,10 @@ select option {
     height: 10rem;
   }
 
+  .sm\:h-44 {
+    height: 11rem;
+  }
+
   .sm\:h-96 {
     height: 24rem;
   }
@@ -3289,8 +3310,8 @@ select option {
     width: 18rem;
   }
 
-  .sm\:min-w-\[48\%\] {
-    min-width: 48%;
+  .sm\:basis-\[48\%\] {
+    flex-basis: 48%;
   }
 
   .sm\:grid-cols-2 {
@@ -3655,8 +3676,8 @@ select option {
     min-height: 450px;
   }
 
-  .lg\:min-w-\[31\%\] {
-    min-width: 31%;
+  .lg\:basis-\[31\%\] {
+    flex-basis: 31%;
   }
 
   .lg\:grid-cols-12 {

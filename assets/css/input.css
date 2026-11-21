@@ -173,6 +173,22 @@
     }
 }
 
+/* Homepage package slider sizing */
+@media (max-width: 639px) {
+    #package-slider {
+        margin-right: -1rem;
+        padding-right: 1rem;
+    }
+
+    .package-slide-card {
+        max-width: 88%;
+    }
+
+    .package-slide-card .p-5 {
+        padding: 1rem;
+    }
+}
+
 /* Prevent AOS fade-left and fade-right from causing horizontal overflow on mobile/tablet viewports */
 @media (max-width: 1023px) {
     [data-aos="fade-left"] {
