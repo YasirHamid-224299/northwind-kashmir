@@ -33,7 +33,7 @@ const TEXT_MODULES = {
         </p>
         <ul class="space-y-3 text-sm text-gray-650 mb-6">
             <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1"></i> <span><strong>Step 1: Choose Your Travel Season.</strong> Pick spring (April-May) for tulips, summer (June-August) for cool meadows, autumn (September-November) for gold Chinars, or winter (December-February) for snow.</span></li>
-            <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1"></i> <span><strong>Step 2: Share Guest Details.</strong> Provide traveler counts, date options, and preferred stay styles (Standard, Deluxe, or Luxury 5-star alpine resorts).</span></li>
+            <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1"></i> <span><strong>Step 2: Share Guest Details.</strong> Provide traveler counts, date options, and preferred stay categories. Final hotel availability and facilities must be confirmed.</span></li>
             <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1"></i> <span><strong>Step 3: Check Gulmarg Gondola Tickets.</strong> Gondola tickets must be booked through the authorized Jammu and Kashmir Cable Car Corporation portal. Availability and operating conditions are controlled by the official operator.</span></li>
             <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1"></i> <span><strong>Step 4: Receive Custom Quote.</strong> We design a personalized itinerary with hotels, transport, and local guides, delivering a transparent cost breakdown.</span></li>
         </ul>
@@ -227,7 +227,7 @@ const PAGES_DATA = [
                 <div>
                     <h2 class="font-display text-3xl font-bold text-[#0B1F3A] mb-4">2. Top Family-Friendly Activities in Kashmir</h2>
                     <ul class="space-y-3 text-sm text-gray-700">
-                        <li><strong>Gulmarg Gondola Ride:</strong> Asia's highest cable car is a key attraction for families, offering views of the Pir Panjal range.</li>
+                        <li><strong>Gulmarg Gondola Ride:</strong> The Gulmarg Gondola is a popular mountain attraction, subject to official tickets, weather and operating conditions.</li>
                         <li><strong>Shikara Rides & Houseboat Stays:</strong> Staying in traditional houseboats on Nigeen or Dal Lake provides a unique experience.</li>
                         <li><strong>Pony Rides in Baisaran Meadow:</strong> Baisaran, often called "Mini Switzerland," is a popular spot for horse rides and family picnics.</li>
                         <li><strong>Mughal Garden Explorations:</strong> The wide lawns of Nishat and Shalimar gardens in Srinagar are ideal for relaxing walks.</li>

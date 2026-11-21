@@ -48,6 +48,18 @@ const faq = `
                         <summary class="flex items-center justify-between gap-1.5 text-[#0B1F3A]"><h3 class="font-display text-lg font-bold">8. What is the cancellation policy?</h3><span class="text-[#D4AF37]"><i class="fas fa-plus group-open:hidden"></i><i class="fas fa-minus hidden group-open:inline"></i></span></summary>
                         <p class="mt-4 text-sm leading-relaxed text-gray-600">Cancellation and refund terms vary by hotel, transport provider, Gondola ticket and package. They are shared with the booking confirmation; ask for the applicable terms before paying.</p>
                     </details>
+                    <details class="group soft-panel p-6 [&_summary::-webkit-details-marker]:hidden cursor-pointer bg-white transition duration-300 hover:shadow-lg" data-aos="fade-up">
+                        <summary class="flex items-center justify-between gap-1.5 text-[#0B1F3A]"><h3 class="font-display text-lg font-bold">9. How much travel time should I allow between destinations?</h3><span class="text-[#D4AF37]"><i class="fas fa-plus group-open:hidden"></i><i class="fas fa-minus hidden group-open:inline"></i></span></summary>
+                        <p class="mt-4 text-sm leading-relaxed text-gray-600">Travel time depends on the route, traffic and road conditions. Allow rest breaks and avoid an itinerary that spends most of the day driving.</p>
+                    </details>
+                    <details class="group soft-panel p-6 [&_summary::-webkit-details-marker]:hidden cursor-pointer bg-white transition duration-300 hover:shadow-lg" data-aos="fade-up">
+                        <summary class="flex items-center justify-between gap-1.5 text-[#0B1F3A]"><h3 class="font-display text-lg font-bold">10. What details are included in the final quotation?</h3><span class="text-[#D4AF37]"><i class="fas fa-plus group-open:hidden"></i><i class="fas fa-minus hidden group-open:inline"></i></span></summary>
+                        <p class="mt-4 text-sm leading-relaxed text-gray-600">A final quotation should state duration, occupancy, hotel category, meal plan, transport, listed sightseeing, excluded activities, taxes where known and applicable cancellation terms.</p>
+                    </details>
+                    <details class="group soft-panel p-6 [&_summary::-webkit-details-marker]:hidden cursor-pointer bg-white transition duration-300 hover:shadow-lg" data-aos="fade-up">
+                        <summary class="flex items-center justify-between gap-1.5 text-[#0B1F3A]"><h3 class="font-display text-lg font-bold">11. Is an itinerary suitable for children or older travellers?</h3><span class="text-[#D4AF37]"><i class="fas fa-plus group-open:hidden"></i><i class="fas fa-minus hidden group-open:inline"></i></span></summary>
+                        <p class="mt-4 text-sm leading-relaxed text-gray-600">Family itineraries can be paced around age and mobility, but high-altitude destinations may require additional caution. Discuss medical considerations and travel comfort before booking.</p>
+                    </details>
                 </div>`;
 
 const routeCorrections = [
@@ -188,6 +200,8 @@ for (const file of getHtmlFiles(root)) {
         .replace(/\*\*Dal Lake vs Nigeen Lake\*\*/g, 'Dal Lake vs Nigeen Lake')
         .replace(/How to Plan and Secure Your Kashmir Tour Booking/g, 'How to Plan Your Kashmir Tour')
         .replace(/Ready to secure your package\?/g, 'Ready to plan your package?')
+        .replace(/Discover the Meadow of Flowers, home to Asia's highest cable car and winter snow sports\./g, 'Discover Gulmarg meadows, the Gondola cable car system and seasonal snow sports.')
+        .replace(/Asia's highest cable car is a key attraction for families, offering views of the Pir Panjal range\./g, 'The Gulmarg Gondola is a popular mountain attraction, subject to official tickets, weather and operating conditions.')
         .replace(/Secure your cable car tickets for Phase 1 and Phase 2 online\./g, 'Check official cable car ticket information for Phase 1 and Phase 2.')
         .replace(/[ \t]+\n/g, '\n');
     fs.writeFileSync(file, html);

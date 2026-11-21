@@ -14,6 +14,8 @@ document.addEventListener("DOMContentLoaded", () => {
     initExitIntent();       // Exit-intent conversion popup
     initMobileStickyBar();  // Mobile sticky bottom action bar
     initInteractivePlanner(); // Kashmir travel calculator, AI itinerary, Gondola alert
+    initHomeTripFinder();   // Quick Kashmir trip preference form
+    initPackageSlider();    // Homepage featured package carousel
 });
 
 
@@ -291,6 +293,81 @@ function initPackageFilters() {
 /* =========================
    CONTACT FORM + WHATSAPP
 ========================= */
+function initPackageSlider() {
+    const slider = document.getElementById("package-slider");
+    const previousButton = document.getElementById("package-slider-prev");
+    const nextButton = document.getElementById("package-slider-next");
+    if (!slider) return;
+
+    const scrollByCard = (direction) => {
+        const card = slider.querySelector("article");
+        if (!card) return;
+        const gap = parseFloat(window.getComputedStyle(slider).columnGap) || 16;
+        slider.scrollBy({
+            left: direction * (card.getBoundingClientRect().width + gap),
+            behavior: "smooth",
+        });
+    };
+
+    previousButton?.addEventListener("click", () => scrollByCard(-1));
+    nextButton?.addEventListener("click", () => scrollByCard(1));
+}
+
+function initHomeTripFinder() {
+    const form = document.getElementById("home-trip-finder");
+    if (!form) return;
+
+    const arrivalInput = document.getElementById("finder-arrival");
+    if (arrivalInput) {
+        const today = new Date();
+        const year = today.getFullYear();
+        const month = String(today.getMonth() + 1).padStart(2, "0");
+        const day = String(today.getDate()).padStart(2, "0");
+        arrivalInput.min = `${year}-${month}-${day}`;
+    }
+
+    form.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        const style = document.getElementById("finder-style")?.value;
+        const days = document.getElementById("finder-days")?.value;
+        const nights = document.getElementById("finder-nights")?.value;
+        const travellers = document.getElementById("finder-travelers")?.value;
+        const arrival = document.getElementById("finder-arrival")?.value;
+        const destinations = Array.from(
+            form.querySelectorAll('input[name="finder-destination"]:checked')
+        ).map(input => input.value).join(", ");
+
+        if (!style || !days || nights === "" || !travellers || !arrival || !destinations) {
+            window.alert("Please complete all trip preference fields.");
+            return;
+        }
+
+        const arrivalDate = new Date(`${arrival}T00:00:00`);
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+        if (arrivalDate < today) {
+            window.alert("Please choose an arrival date from today onward.");
+            return;
+        }
+
+        const message = [
+            "Hello Northwind Kashmir, please suggest a Kashmir itinerary.",
+            "",
+            `Travel style: ${style}`,
+            `Trip length: ${days} days / ${nights} nights`,
+            `Number of travellers: ${travellers}`,
+            `Arrival date: ${arrival}`,
+            `Preferred destinations: ${destinations}`,
+            "",
+            "Please share suitable routes and a quotation based on availability.",
+        ].join("\n");
+
+        window.open(`https://wa.me/919541615419?text=${encodeURIComponent(message)}`, "_blank");
+        form.reset();
+    });
+}
+
 function initContactForm() {
     const form = document.getElementById("contact-form");
     if (!form) return;
@@ -368,15 +445,15 @@ function initExitIntent() {
                     <i class="fas fa-times text-xl"></i>
                 </button>
                 <div class="text-center">
-                    <span class="inline-block rounded-full bg-[#D4AF37]/10 px-4 py-1 text-xs font-bold uppercase tracking-wider text-[#D4AF37]">Exclusive Offer</span>
-                    <h3 class="mt-4 font-display text-2xl font-bold text-[#0B1F3A] sm:text-3xl">Free Kashmir Guide & Custom Quote</h3>
-                    <p class="mt-2 text-sm text-gray-600">Enter your contact details to receive our premium curated travel guide and get a custom itinerary designed by local experts in 5 minutes!</p>
+                    <span class="inline-block rounded-full bg-[#D4AF37]/10 px-4 py-1 text-xs font-bold uppercase tracking-wider text-[#D4AF37]">Trip Planning</span>
+                    <h3 class="mt-4 font-display text-2xl font-bold text-[#0B1F3A] sm:text-3xl">Request Kashmir Trip Suggestions</h3>
+                    <p class="mt-2 text-sm text-gray-600">Share your name and WhatsApp number to discuss routes, travel dates and a quotation based on availability.</p>
                 </div>
                 <form id="exit-popup-form" class="mt-6 space-y-4">
                     <input type="text" id="exit-name" placeholder="Your Name" class="w-full rounded-xl border border-gray-200 px-4 py-3 text-sm focus:border-[#D4AF37] focus:outline-none text-black" required>
                     <input type="tel" id="exit-phone" placeholder="WhatsApp Number" class="w-full rounded-xl border border-gray-200 px-4 py-3 text-sm focus:border-[#D4AF37] focus:outline-none text-black" required>
                     <button type="submit" class="w-full rounded-xl bg-green-500 py-3 font-semibold text-white transition hover:bg-green-600 flex items-center justify-center gap-2">
-                        <i class="fab fa-whatsapp text-lg"></i> Get Free Guide on WhatsApp
+                        <i class="fab fa-whatsapp text-lg"></i> Continue on WhatsApp
                     </button>
                 </form>
             </div>
@@ -437,7 +514,7 @@ function initExitIntent() {
             const name = document.getElementById("exit-name").value.trim();
             const phone = document.getElementById("exit-phone").value.trim();
 
-            const message = `Hello Northwind Kashmir, I want to get the Free Kashmir Travel Guide and a custom itinerary.\n\nName: ${name}\nWhatsApp: ${phone}`;
+            const message = `Hello Northwind Kashmir, I want suggestions for a Kashmir itinerary.\n\nName: ${name}\nWhatsApp: ${phone}`;
             window.open(`https://wa.me/919541615419?text=${encodeURIComponent(message)}`, "_blank");
             hidePopup();
             form.reset();
@@ -650,7 +727,7 @@ function initInteractivePlanner() {
             { day: 2, title: "Royal Mughal Gardens Sightseeing", desc: "Explore the terraced Shalimar Bagh, Nishat Bagh, and the natural spring-fed Chashme Shahi. Enjoy a romantic candlelit Wazwan dinner at a local heritage restaurant." },
             { day: 3, title: "Scenic Drive to Pahalgam & Lidder Strolls", desc: "Travel to Pahalgam (140 km) through Pampore saffron fields. Check-in to a cozy riverside resort. Take a slow evening stroll along the banks of the rushing Lidder River." },
             { day: 4, title: "Romantic Valleys of Betaab & Aru", desc: "Sightsee the movie-famous Betaab Valley and Aru Valley in local union taxis. Capture memories in traditional Kashmiri outfits, and return to Srinagar for stay." },
-            { day: 5, title: "Alpine Escape to Gulmarg & Gondola Ride", desc: "Drive to Gulmarg. Ride the Gulmarg Gondola (Asia's highest cable car) through Phase 1 & Phase 2 up to Apharwat Peak. Overnight stay in a cozy heated room." },
+            { day: 5, title: "Alpine Escape to Gulmarg & Gondola Planning", desc: "Drive to Gulmarg. Phase 1 and Phase 2 Gondola travel depends on official tickets, weather and operating conditions. Overnight arrangements should be confirmed for the dates." },
             { day: 6, title: "Meadow Strolls & Return to Srinagar", desc: "Scenic walks around Gulmarg golf course. Transfer back to Srinagar for carpet & souvenir shopping at Lal Chowk." },
             { day: 7, title: "Old Srinagar Bridges Walk & Shikara Shopping", desc: "Take a historical walk around the old city wooden bridges, visit Jamia Masjid, and enjoy tea on a floating lake shop." },
             { day: 8, title: "Bid Farewell to the Valleys", desc: "Enjoy your morning lake views and Shikara breakfast. Pack bags for airport transfers." }
@@ -768,7 +845,7 @@ function initInteractivePlanner() {
         const stored = localStorage.getItem("gondola_alert_reg");
         if (stored) {
             const data = JSON.parse(stored);
-            const msgText = `Active Alert for ${data.name} on WhatsApp (+${data.phone}) for dates starting ${data.date} (Guests: ${data.guests}).`;
+            const msgText = `Saved enquiry details for ${data.name} on WhatsApp (+${data.phone}) for dates starting ${data.date} (Guests: ${data.guests}). This does not register an automatic alert.`;
 
             if (alertRegistryStatus && alertRegistryMsg) {
                 alertRegistryMsg.textContent = msgText;
@@ -801,7 +878,7 @@ function initInteractivePlanner() {
 
         // WhatsApp confirmation redirect
         const msg = [
-            "Hi Northwind Kashmir, I registered a Gondola Slot Availability Alert on your website:",
+            "Hi Northwind Kashmir, I want assistance checking Gulmarg Gondola ticket information:",
             "",
             `Name: ${name}`,
             `Email: ${email}`,
@@ -809,7 +886,7 @@ function initInteractivePlanner() {
             `Preferred Date: ${date}`,
             `Number of Guests: ${guests}`,
             "",
-            "Please notify me the moment Gulmarg Gondola slot booking windows open."
+            "Please help me understand current official availability for my preferred date."
         ].join("\n");
 
         window.open(`https://wa.me/919541615419?text=${encodeURIComponent(msg)}`, "_blank");
