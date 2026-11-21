@@ -1382,10 +1382,6 @@ select option {
   height: 1rem;
 }
 
-.h-5 {
-  height: 1.25rem;
-}
-
 .h-60 {
   height: 15rem;
 }
@@ -2667,11 +2663,6 @@ select option {
   color: rgb(250 204 21 / var(--tw-text-opacity));
 }
 
-.text-yellow-500 {
-  --tw-text-opacity: 1;
-  color: rgb(234 179 8 / var(--tw-text-opacity));
-}
-
 .text-yellow-600 {
   --tw-text-opacity: 1;
   color: rgb(202 138 4 / var(--tw-text-opacity));
@@ -3057,12 +3048,12 @@ select option {
   --tw-ring-color: rgb(212 175 55 / 0.15);
 }
 
-.group[open] .group-open\:opacity-0 {
-  opacity: 0;
+.group[open] .group-open\:inline {
+  display: inline;
 }
 
-.group[open] .group-open\:opacity-100 {
-  opacity: 1;
+.group[open] .group-open\:hidden {
+  display: none;
 }
 
 .group:hover .group-hover\:scale-105 {

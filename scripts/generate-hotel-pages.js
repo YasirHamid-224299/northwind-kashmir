@@ -8,13 +8,13 @@ const SHARED_TEXT = {
     safety: `
         <h3 class="font-display text-2xl font-bold text-[#0B1F3A] mb-4">Safety, Security & Direct Travel Regulations in Kashmir</h3>
         <p class="text-sm text-gray-700 leading-relaxed sm:text-base mb-4">
-            Safety remains the primary consideration for families and couples planning a vacation to Jammu & Kashmir. The local economy is heavily dependent on tourism, and local residents are renowned for their warm hospitality towards visitors. In recent years, millions of domestic and international travelers have visited the valley without experiencing any safety concerns.
+            Safety remains the primary consideration for families and couples planning a vacation to Jammu & Kashmir. The local economy is heavily dependent on tourism, and local residents are renowned for their warm hospitality towards visitors.             Travel conditions can vary by destination and season. Visitors should follow current local and government travel guidance.
         </p>
         <p class="text-sm text-gray-700 leading-relaxed sm:text-base mb-4">
-            Northwind Kashmir is a government-licensed travel agency (License No: JKT-10029-REGD-2022) operating directly from Tangmarg, the gateway to Gulmarg. We provide verified professional drivers, vetted hotel partners, and 24/7 on-ground assistance to ensure a safe and comfortable travel experience.
+            Northwind Kashmir plans Kashmir trips from Chandilora, Tangmarg. We help coordinate transport, stays and local travel arrangements, subject to availability and confirmation.
         </p>
         <p class="text-sm text-gray-700 leading-relaxed sm:text-base">
-            For current travel guidelines, tourists should carry valid government-issued photo IDs (Aadhaar Card, Voter ID, or Passport) at all times, as security check-points are standard when entering major airports and highway routes. Additionally, note that postpaid mobile connections from other states work seamlessly in Jammu & Kashmir, whereas prepaid tourist connections are deactivated outside the state, requiring local SIM purchases.
+            Carry valid government-issued photo identification where required and check current travel guidance before departure. Road conditions, access restrictions and mobile connectivity can vary by route.
         </p>
     `,
     acclimatization: `
@@ -512,10 +512,24 @@ HOTELS_DATA.forEach(page => {
         fs.mkdirSync(dirPath, { recursive: true });
     }
 
-    const htmlContent = HTML_TEMPLATE(page, subfolder);
+    const htmlContent = HTML_TEMPLATE(page, subfolder)
+        .replace(/\$\{page\.title\}/g, page.title)
+        .replace(/\$\{page\.description\}/g, page.description)
+        .replace(/\$\{page\.h1\}/g, page.h1)
+        .replace(/\$\{page\.route\}/g, page.route)
+        .replace(/\$\{subfolder\}/g, subfolder)
+        .replace(/\$\{JSON\.stringify\(faqSchemaData\)\}/g, JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: page.faqs.map(faq => ({
+                '@type': 'Question',
+                name: faq.q,
+                acceptedAnswer: { '@type': 'Answer', text: faq.a }
+            }))
+        }));
     const filePath = path.join(dirPath, 'index.html');
     fs.writeFileSync(filePath, htmlContent, 'utf-8');
-    console.log(`Generated hotel page: \${subfolder}/\${page.route}/index.html`);
+    console.log(`Generated hotel page: ${subfolder}/${page.route}/index.html`);
 });
 
 console.log('All 4 Hotel Authority pages generated successfully!');

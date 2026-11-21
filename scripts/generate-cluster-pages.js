@@ -8,13 +8,13 @@ const TEXT_MODULES = {
     safety: `
         <h3 class="font-display text-2xl font-bold text-[#0B1F3A] mb-4">Safety, Security & Direct Travel Regulations in Kashmir</h3>
         <p class="text-sm text-gray-700 leading-relaxed sm:text-base mb-4">
-            Safety remains the primary consideration for families and couples planning a vacation to Jammu & Kashmir. The local economy is heavily dependent on tourism, and local residents are renowned for their warm hospitality towards visitors. In recent years, millions of domestic and international travelers have visited the valley without experiencing any safety concerns.
+            Safety remains the primary consideration for families and couples planning a vacation to Jammu & Kashmir. The local economy is heavily dependent on tourism, and local residents are renowned for their warm hospitality towards visitors.             Travel conditions can vary by destination and season. Visitors should follow current local and government travel guidance.
         </p>
         <p class="text-sm text-gray-700 leading-relaxed sm:text-base mb-4">
-            Northwind Kashmir is a government-licensed travel agency (License No: JKT-10029-REGD-2022) operating directly from Tangmarg, the gateway to Gulmarg. We provide verified professional drivers, vetted hotel partners, and 24/7 on-ground assistance to ensure a safe and comfortable travel experience.
+            Northwind Kashmir plans Kashmir trips from Chandilora, Tangmarg. We help coordinate transport, stays and local travel arrangements, subject to availability and confirmation.
         </p>
         <p class="text-sm text-gray-700 leading-relaxed sm:text-base">
-            For current travel guidelines, tourists should carry valid government-issued photo IDs (Aadhaar Card, Voter ID, or Passport) at all times, as security check-points are standard when entering major airports and highway routes. Additionally, note that postpaid mobile connections from other states work seamlessly in Jammu & Kashmir, whereas prepaid tourist connections are deactivated outside the state, requiring local SIM purchases.
+            Carry valid government-issued photo identification where required and check current travel guidance before departure. Road conditions, access restrictions and mobile connectivity can vary by route.
         </p>
     `,
     acclimatization: `
@@ -726,21 +726,21 @@ const HTML_TEMPLATE = (page, subfolder) => {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>\${page.title}</title>
-    <meta name="description" content="\${page.description}">
-    <link rel="canonical" href="https://www.northwindkashmir.com/\${subfolder}/\${page.route}/">
+    <title>${page.title}</title>
+    <meta name="description" content="${page.description}">
+    <link rel="canonical" href="https://www.northwindkashmir.com/${subfolder}/${page.route}/">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.northwindkashmir.com/\${subfolder}/\${page.route}/">
-    <meta property="og:title" content="\${page.title}">
-    <meta property="og:description" content="\${page.description}">
+    <meta property="og:url" content="https://www.northwindkashmir.com/${subfolder}/${page.route}/">
+    <meta property="og:title" content="${page.title}">
+    <meta property="og:description" content="${page.description}">
     <meta property="og:image" content="https://www.northwindkashmir.com${heroImage}">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="\${page.title}">
-    <meta name="twitter:description" content="\${page.description}">
+    <meta name="twitter:title" content="${page.title}">
+    <meta name="twitter:description" content="${page.description}">
     <meta name="twitter:image" content="https://www.northwindkashmir.com${heroImage}">
     <link rel="icon" type="image/png" href="/assets/images/logo/logo.png">
 
@@ -761,13 +761,13 @@ const HTML_TEMPLATE = (page, subfolder) => {
       "@graph": [
         {
           "@type": "WebPage",
-          "@id": "https://www.northwindkashmir.com/\${subfolder}/\${page.route}/#webpage",
-          "url": "https://www.northwindkashmir.com/\${subfolder}/\${page.route}/",
-          "name": "\${page.h1}"
+          "@id": "https://www.northwindkashmir.com/${subfolder}/${page.route}/#webpage",
+          "url": "https://www.northwindkashmir.com/${subfolder}/${page.route}/",
+          "name": "${page.h1}"
         },
         {
           "@type": "BreadcrumbList",
-          "@id": "https://www.northwindkashmir.com/\${subfolder}/\${page.route}/#breadcrumb",
+          "@id": "https://www.northwindkashmir.com/${subfolder}/${page.route}/#breadcrumb",
           "itemListElement": [
             {
               "@type": "ListItem",
@@ -778,8 +778,8 @@ const HTML_TEMPLATE = (page, subfolder) => {
             {
               "@type": "ListItem",
               "position": 2,
-              "name": "\${page.h1}",
-              "item": "https://www.northwindkashmir.com/\${subfolder}/\${page.route}/"
+              "name": "${page.h1}",
+              "item": "https://www.northwindkashmir.com/${subfolder}/${page.route}/"
             }
           ]
         }
