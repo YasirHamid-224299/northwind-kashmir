@@ -144,12 +144,16 @@ for (const file of getHtmlFiles(root)) {
     if (relative.startsWith(`hotels${path.sep}`)) {
         html = html.replace(/<div class="pt-2 border-t border-gray-150 text-xs text-gray-500">[\s\S]*?<\/div>/g, '<div class="pt-2 border-t border-gray-150 text-xs text-gray-500"><strong>Facilities:</strong> Confirm heating, pool, spa, dining, parking and internet availability directly with the property.</div>');
         html = html.replace(/Standard houseboats start around[^<]*|Yes, houseboats are safe and hospitable[^<]*24\/7\./g, 'Houseboat rates and facilities vary by property and season. Please request a confirmed quotation and amenities list.');
-        html = html.replace(/<\/body>/, '<div class="mx-auto max-w-5xl px-4 pb-12 text-center text-sm text-gray-600"><strong>Rates and availability note:</strong> Hotel rates and availability may vary depending on travel dates, occupancy and season. Please contact us for the latest quotation. Rates are indicative per room per night and taxes and meal inclusions must be confirmed in writing.</div>\n</body>');
+        html = html.replace(/<div class="mx-auto max-w-5xl px-4 pb-12 text-center text-sm text-gray-600"><strong>Rates and availability note:<\/strong>[\s\S]*?<\/div>\s*/g, '');
+        html = html.replace(/<\/body>/, '<div class="mx-auto max-w-5xl px-4 pb-12 text-center text-sm text-gray-600"><strong>Rates and availability note:</strong> Hotel rates are indicative and may vary depending on travel dates, occupancy, availability and season. Contact Northwind Kashmir for the latest quotation.</div>\n</body>');
     }
     if (relative.startsWith(`packages${path.sep}`)) {
+        html = html.replace(/<div class="mx-auto max-w-5xl px-4 pb-12 text-center text-sm text-gray-600"><strong>Package pricing note:<\/strong>[\s\S]*?<\/div>\s*/g, '');
         html = html.replace(/<\/body>/, '<div class="mx-auto max-w-5xl px-4 pb-12 text-center text-sm text-gray-600"><strong>Package pricing note:</strong> Package prices are indicative and may vary depending on travel dates, hotel availability, occupancy and seasonal demand. Contact us for a customized quotation. Inclusions and cancellation terms are confirmed with the final itinerary.</div>\n</body>');
+        html = html.replace(/We assist in reserving tickets for both Phase 1 and Phase 2\.?/gi, 'Gondola tickets must be arranged through the official Jammu and Kashmir Cable Car Corporation portal. We can assist with itinerary and transport planning.');
     }
     if (relative === 'hotels.html') {
+        html = html.replace(/<div class="mx-auto max-w-5xl px-4 pb-12 text-center text-sm text-gray-600"><strong>Rates and availability note:<\/strong>[\s\S]*?<\/div>\s*/g, '');
         html = html.replace(/&#8377;(?:\d{1,3}(?:,\d{3})+)/g, 'Custom quote')
             .replace(/Starting From/g, 'Indicative per room/night')
             .replace(/Starting Price:%20%E2%82%B925,000\/night/g, 'Starting%20Price:%20Custom%20quotation')
@@ -159,9 +163,10 @@ for (const file of getHtmlFiles(root)) {
             .replace(/<span class="text-sm font-normal text-gray-500">\/night<\/span>/g, '<span class="text-sm font-normal text-gray-500"> per room/night, confirmed on quote</span>')
             .replace(/Guaranteed best dynamic corporate rates/g, 'Rates confirmed for the requested dates')
             .replace(/Free shikara rides on premium Srinagar package stays/gi, 'Shikara inclusion only when confirmed in the itinerary')
-            .replace(/<\/body>/, '<div class="mx-auto max-w-5xl px-4 pb-12 text-center text-sm text-gray-600"><strong>Rates and availability note:</strong> Hotel rates are indicative, per room per night, and vary by season, occupancy, taxes and meal inclusions. Please contact us for a confirmed written quotation.</div>\n</body>');
+            .replace(/<\/body>/, '<div class="mx-auto max-w-5xl px-4 pb-12 text-center text-sm text-gray-600"><strong>Rates and availability note:</strong> Hotel rates are indicative and may vary depending on travel dates, occupancy, availability and season. Contact Northwind Kashmir for the latest quotation.</div>\n</body>');
     }
     if (relative === 'packages.html') {
+        html = html.replace(/<div class="mx-auto max-w-5xl px-4 pb-12 text-center text-sm text-gray-600"><strong>Package pricing note:<\/strong>[\s\S]*?<\/div>\s*/g, '');
         html = html.replace(/&#8377;(?:14,000|15,000|16,000|18,000|25,000)/g, 'Custom quote')
             .replace(/Starting From/g, 'Indicative package quote')
             .replace(/Starting%20From%20%E2%82%B915,000/g, 'Custom%20quotation')
@@ -170,13 +175,21 @@ for (const file of getHtmlFiles(root)) {
     }
     if (relative === 'gondola.html') {
         html = html.replace(/Verified Booking Desk/g, 'Gondola Travel Assistance Desk')
-            .replace(/Book via WhatsApp/g, 'Request Planning Assistance');
+            .replace(/Book via WhatsApp/g, 'Request Planning Assistance')
+            .replace(/Skip the long ticket queue and secure your boarding slots[\s\S]*?authorized booking portal\./g, 'Planning to experience the Gulmarg Gondola? Northwind Kashmir provides assistance with understanding the official booking process, checking available information and arranging your Gulmarg travel. Official Gondola tickets must be booked through the Jammu and Kashmir Cable Car Corporation\'s authorized booking portal.')
+            .replace(/Instant Processing/g, 'Official Booking Process')
+            .replace(/panoramic views of K2/g, 'wide mountain scenery');
     }
     if (relative === path.join('gondola', 'gulmarg-gondola-booking', 'index.html')) {
         html = html.replace(/Submit your details below to request ticket booking assistance and package customization via WhatsApp\./, 'Use the official J&amp;K Cable Car Corporation portal for Gondola tickets. Northwind Kashmir can assist with transport and itinerary planning; it does not own or operate the government Gondola service.');
     }
 
-    html = html.replace(/[ \t]+\n/g, '\n');
+    html = html
+        .replace(/\*\*Dal Lake vs Nigeen Lake\*\*/g, 'Dal Lake vs Nigeen Lake')
+        .replace(/How to Plan and Secure Your Kashmir Tour Booking/g, 'How to Plan Your Kashmir Tour')
+        .replace(/Ready to secure your package\?/g, 'Ready to plan your package?')
+        .replace(/Secure your cable car tickets for Phase 1 and Phase 2 online\./g, 'Check official cable car ticket information for Phase 1 and Phase 2.')
+        .replace(/[ \t]+\n/g, '\n');
     fs.writeFileSync(file, html);
 }
 

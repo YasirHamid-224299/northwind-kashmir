@@ -27,14 +27,14 @@ const TEXT_MODULES = {
         </p>
     `,
     bookingGuide: `
-        <h3 class="font-display text-2xl font-bold text-[#0B1F3A] mb-4">How to Plan and Secure Your Kashmir Tour Booking</h3>
+        <h3 class="font-display text-2xl font-bold text-[#0B1F3A] mb-4">How to Plan Your Kashmir Tour</h3>
         <p class="text-sm text-gray-700 leading-relaxed sm:text-base mb-4">
             Planning a trip to Kashmir is straightforward when booked directly with a local operator:
         </p>
         <ul class="space-y-3 text-sm text-gray-650 mb-6">
             <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1"></i> <span><strong>Step 1: Choose Your Travel Season.</strong> Pick spring (April-May) for tulips, summer (June-August) for cool meadows, autumn (September-November) for gold Chinars, or winter (December-February) for snow.</span></li>
             <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1"></i> <span><strong>Step 2: Share Guest Details.</strong> Provide traveler counts, date options, and preferred stay styles (Standard, Deluxe, or Luxury 5-star alpine resorts).</span></li>
-            <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1"></i> <span><strong>Step 3: Secure Gulmarg Gondola Tickets.</strong> Gondola tickets must be booked online in advance. We assist in reserving tickets for both Phase 1 and Phase 2.</span></li>
+            <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1"></i> <span><strong>Step 3: Check Gulmarg Gondola Tickets.</strong> Gondola tickets must be booked through the authorized Jammu and Kashmir Cable Car Corporation portal. Availability and operating conditions are controlled by the official operator.</span></li>
             <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1"></i> <span><strong>Step 4: Receive Custom Quote.</strong> We design a personalized itinerary with hotels, transport, and local guides, delivering a transparent cost breakdown.</span></li>
         </ul>
     `,
@@ -107,7 +107,7 @@ const PAGES_DATA = [
                         We offer three tiers of package customization to align with your travel style and budget:
                     </p>
                     <div class="overflow-x-auto">
-                        <table class="w-full text-left border-collapse border border-gray-200 text-sm">
+                        <table class="responsive-table w-full text-left border-collapse border border-gray-200 text-sm">
                             <thead>
                                 <tr class="bg-[#0B1F3A] text-white">
                                     <th class="p-3 border border-gray-200">Feature</th>
