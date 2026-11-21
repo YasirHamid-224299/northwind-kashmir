@@ -47,7 +47,7 @@ const HOTELS_DATA = [
                 tier: 'Luxury / 5-Star Stays',
                 name: 'Radisson Blu Srinagar',
                 desc: 'Located in the city center, this modern luxury hotel offers premium amenities, multi-cuisine dining options, and easy access to local markets like Lal Chowk.',
-                amenities: 'Heated Pool, Fitness Center, 24/7 Room Service, Complimentary Buffet, Valet Parking'
+                amenities: 'Confirm pool, fitness centre, dining and parking directly with the property'
             },
             {
                 tier: 'Deluxe / Premium Stays',
@@ -79,11 +79,11 @@ const HOTELS_DATA = [
         faqs: [
             {
                 q: 'What is the average cost of a houseboat stay in Srinagar?',
-                a: 'Standard houseboats start around ₹3,000 per night, premium deluxe boats on Dal Lake cost between ₹6,000 to ₹10,000, and ultra-luxury heritage boats on Nigeen Lake can range from ₹15,000 to ₹35,000 per night.'
+                a: 'Houseboat rates vary by property, season, room type and occupancy. Request a written, per-room-per-night quotation with applicable taxes and meal inclusions.'
             },
             {
                 q: 'Are houseboats in Srinagar safe for families?',
-                a: 'Yes, houseboats are safe and hospitable. They are anchored securely to the lake bed and have dedicated caretakers residing in adjacent quarters to assist guests 24/7.'
+                a: 'Houseboat suitability varies by property and guest needs. Confirm safety arrangements, staff availability, accessibility and your preferred facilities directly before booking.'
             }
         ]
     },
@@ -175,7 +175,7 @@ const HOTELS_DATA = [
                 tier: 'Deluxe / Premium Stays',
                 name: 'Hotel Mountview Pahalgam',
                 desc: 'A long-standing deluxe hotel offering views of the Lidder River, situated close to the Betaab Valley local taxi union stand.',
-                amenities: 'Centrally Heated, Riverfront Lounge, In-house Restaurant, 24/7 Hot Water'
+                amenities: 'Confirm heating, hot water, dining and riverfront facilities directly with the property'
             },
             {
                 tier: 'Standard / Budget Stays',
@@ -284,21 +284,22 @@ const HTML_TEMPLATE = (page, subfolder) => {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>\${page.title}</title>
-    <meta name="description" content="\${page.description}">
-    <link rel="canonical" href="https://www.northwindkashmir.com/\${subfolder}/\${page.route}/">
+    <meta name="robots" content="index, follow">
+    <title>${page.title}</title>
+    <meta name="description" content="${page.description}">
+    <link rel="canonical" href="https://www.northwindkashmir.com/${subfolder}/${page.route}/">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.northwindkashmir.com/\${subfolder}/\${page.route}/">
-    <meta property="og:title" content="\${page.title}">
-    <meta property="og:description" content="\${page.description}">
+    <meta property="og:url" content="https://www.northwindkashmir.com/${subfolder}/${page.route}/">
+    <meta property="og:title" content="${page.title}">
+    <meta property="og:description" content="${page.description}">
     <meta property="og:image" content="https://www.northwindkashmir.com/assets/images/hero/hero1.jpg">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="\${page.title}">
-    <meta name="twitter:description" content="\${page.description}">
+    <meta name="twitter:title" content="${page.title}">
+    <meta name="twitter:description" content="${page.description}">
     <meta name="twitter:image" content="https://www.northwindkashmir.com/assets/images/hero/hero1.jpg">
     <link rel="icon" type="image/png" href="/assets/images/logo/logo.png">
 
@@ -319,13 +320,13 @@ const HTML_TEMPLATE = (page, subfolder) => {
       "@graph": [
         {
           "@type": "WebPage",
-          "@id": "https://www.northwindkashmir.com/\${subfolder}/\${page.route}/#webpage",
-          "url": "https://www.northwindkashmir.com/\${subfolder}/\${page.route}/",
-          "name": "\${page.h1}"
+          "@id": "https://www.northwindkashmir.com/${subfolder}/${page.route}/#webpage",
+          "url": "https://www.northwindkashmir.com/${subfolder}/${page.route}/",
+          "name": "${page.h1}"
         },
         {
           "@type": "BreadcrumbList",
-          "@id": "https://www.northwindkashmir.com/\${subfolder}/\${page.route}/#breadcrumb",
+          "@id": "https://www.northwindkashmir.com/${subfolder}/${page.route}/#breadcrumb",
           "itemListElement": [
             {
               "@type": "ListItem",
@@ -336,12 +337,12 @@ const HTML_TEMPLATE = (page, subfolder) => {
             {
               "@type": "ListItem",
               "position": 2,
-              "name": "\${page.h1}",
-              "item": "https://www.northwindkashmir.com/\${subfolder}/\${page.route}/"
+              "name": "${page.h1}",
+              "item": "https://www.northwindkashmir.com/${subfolder}/${page.route}/"
             }
           ]
         },
-        \${JSON.stringify(faqSchemaData)}
+        ${JSON.stringify(faqSchemaData)}
       ]
     }
     </script>
@@ -479,7 +480,7 @@ const HTML_TEMPLATE = (page, subfolder) => {
                     <span class="section-eyebrow border-white/20 bg-white/10 text-[#f5d77f]">Start Planning</span>
                     <h2 class="mt-6 font-display text-3xl font-bold sm:text-4xl md:text-5xl">Ready to secure your package?</h2>
                     <p class="mx-auto mt-5 max-w-2xl text-sm leading-relaxed text-slate-200 sm:text-base">
-                        Get in touch with Northwind Kashmir for custom-paced routes, boutique hotel stays, and verified mountain guides.
+                        Get in touch with Northwind Kashmir for custom-paced routes and hotel and transport options confirmed for your travel dates.
                     </p>
                     <div class="mt-8 flex flex-wrap justify-center gap-4">
                         <a href="tel:+919541615419" class="premium-button gap-2">

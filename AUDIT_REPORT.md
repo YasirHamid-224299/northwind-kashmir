@@ -65,3 +65,54 @@ Run `npm run build`, inspect the generated `dist/` tree, and search generated
 HTML for removed claims, literal template placeholders, the unverified GSTIN,
 and contradictory proprietor names. Validate that canonical URLs, sitemap
 entries, and shared navigation remain present.
+
+## Second correction round
+
+### Completed corrections
+
+- Fixed the hotel generator's escaped metadata interpolation by rendering
+  page titles, descriptions, canonicals, Open Graph fields and JSON-LD values
+  with the real hotel page data.
+- Added `index, follow` robots directives to every generated and root HTML page.
+- Confirmed package, destination and Gondola cluster titles and metadata are
+  rendered from their individual page records.
+- Removed or replaced unsupported 12+ experience, 5.0 rating, 24/7 assistance,
+  government-guide, guaranteed-rate and free-Shikara claims.
+- Removed public postal-code and fixed office-hours claims until confirmed.
+- Standardized the address on homepage, About, Contact, author and footer
+  surfaces to Chandilora, Tangmarg, Baramulla, Jammu and Kashmir, India.
+- Replaced the railway section with current USBRL and Katra–Srinagar context and
+  added checks for Indian Railways schedules and connections.
+- Replaced hotel starting prices with clearly labeled custom quotations and
+  per-room/per-night confirmation language.
+- Replaced package fixed visible prices with indicative custom quotation labels.
+- Removed unsupported hotel amenity claims and required property confirmation.
+- Repositioned the booking page around official Gondola ticket booking,
+  Phase 1/Phase 2 guidance, advance booking, weather and cancellation notices.
+- Removed the shared handicraft block from Gondola pages while retaining it on
+  relevant destination pages.
+
+### Automated verification completed
+
+- `npm run build` completed successfully.
+- Checked all 35 HTML pages for title, description, canonical, robots,
+  Open Graph title and Open Graph description.
+- Checked all 35 pages for unresolved `${page...}` or `${subfolder}` template
+  placeholders.
+- Checked every local HTML link: no missing routes or links were found.
+- Checked every `/assets/` reference: no missing local assets were found.
+- Parsed every JSON-LD block: no invalid JSON-LD was found.
+- Scanned HTML for the listed unsupported numerical, 24/7, guaranteed-rate,
+  free-Shikara, 5.0 rating and government-guide claims.
+
+### Unresolved owner-confirmation items
+
+- Live Google review rating/review count and Google Business Profile details.
+- Confirmed office postal address and published office opening hours.
+- Hotel classifications, heating, pools, spas, dining, parking, Wi-Fi, taxes,
+  meal plans and seasonal availability.
+- Confirmed per-room/per-night or per-person package prices and occupancy.
+- Package inclusions, exclusions, booking and cancellation terms.
+- Gondola fares, closure dates, maintenance notices, cancellation/refund rules
+  and official operator notices.
+- Current railway departures, connections and schedules.

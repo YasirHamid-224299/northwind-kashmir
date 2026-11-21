@@ -275,7 +275,7 @@ const PAGES_DATA = [
                         <li><strong>5-Star Resorts:</strong> Stay in alpine properties featuring central heating, spas, and views of snow-clad mountains.</li>
                         <li><strong>Bespoke Houseboats:</strong> Traditional houseboats featuring historic cedar wood carvings, antique furnishings, and private chefs.</li>
                         <li><strong>Private Transport:</strong> Late-model Innova Crysta or luxury SUVs with dedicated local drivers.</li>
-                        <li><strong>Concierge Service:</strong> 24/7 on-ground assistance and local support from our Tangmarg office.</li>
+                        <li><strong>Local Assistance:</strong> Travel support and local guidance are available during confirmed arrangements; operating availability should be discussed before booking.</li>
                     </ul>
                 </div>
             </div>
@@ -596,16 +596,24 @@ const PAGES_DATA = [
     {
         route: 'gulmarg-gondola-booking',
         type: 'gondola',
-        title: 'Gulmarg Gondola Ride Booking | WhatsApp Reservation Desk',
-        description: 'Request Gulmarg Gondola bookings via our local travel desk. Direct booking assistance for Phase 1, Phase 2, and customized packages.',
-        h1: 'Gulmarg Gondola Ride Booking',
-        subtitle: 'Book your tickets and customize your tour with our local travel desk.',
+        title: 'Gulmarg Gondola Booking | Official Tickets & Travel Assistance',
+        description: 'Learn official Gulmarg Gondola booking steps for Phase 1 and Phase 2. Contact Northwind Kashmir for itinerary and transport assistance only.',
+        h1: 'Gulmarg Gondola Booking Assistance',
+        subtitle: 'Official ticket guidance plus local transport and itinerary planning assistance.',
         content: `
             <div class="space-y-8">
                 <div>
-                    <h2 class="font-display text-3xl font-bold text-[#0B1F3A] mb-4">1. Booking Assistance</h2>
+                    <h2 class="font-display text-3xl font-bold text-[#0B1F3A] mb-4">1. Official Ticket Booking</h2>
                     <p class="text-sm text-gray-700 leading-relaxed sm:text-base">
-                        Submit your details below to request ticket booking assistance and package customization via WhatsApp.
+                        Book tickets through the official Jammu and Kashmir Cable Car Corporation portal. Check availability, operating status, weather interruptions and maintenance closures before travel.
+                    </p>
+                    <h2 class="font-display text-3xl font-bold text-[#0B1F3A] mb-4 mt-8">2. Phase 1 and Phase 2</h2>
+                    <p class="text-sm text-gray-700 leading-relaxed sm:text-base">
+                        Phase 1 runs from Gulmarg to Kongdoori. Phase 2 continues from Kongdoori toward Apharwat Peak. Each phase requires a valid ticket for the selected service; confirm current fares and availability officially.
+                    </p>
+                    <h2 class="font-display text-3xl font-bold text-[#0B1F3A] mb-4 mt-8">3. Northwind Kashmir Assistance</h2>
+                    <p class="text-sm text-gray-700 leading-relaxed sm:text-base">
+                        Northwind Kashmir does not operate or issue Gondola tickets. We may assist with itinerary planning and transport arrangements only. Cancellation and refund rules are governed by the official operator.
                     </p>
                 </div>
             </div>
@@ -726,6 +734,7 @@ const HTML_TEMPLATE = (page, subfolder) => {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
     <title>${page.title}</title>
     <meta name="description" content="${page.description}">
     <link rel="canonical" href="https://www.northwindkashmir.com/${subfolder}/${page.route}/">
@@ -833,10 +842,11 @@ const HTML_TEMPLATE = (page, subfolder) => {
                             ${TEXT_MODULES.acclimatization}
                         </div>
 
+                        ${page.type === 'gondola' ? '' : `
                         <!-- Handicraft block -->
                         <div class="border-t border-gray-100 pt-8">
                             ${TEXT_MODULES.handicrafts}
-                        </div>
+                        </div>`}
 
                         <!-- Booking Guide -->
                         <div class="border-t border-gray-100 pt-8">
@@ -888,7 +898,7 @@ const HTML_TEMPLATE = (page, subfolder) => {
                     <span class="section-eyebrow border-white/20 bg-white/10 text-[#f5d77f]">Start Planning</span>
                     <h2 class="mt-6 font-display text-3xl font-bold sm:text-4xl md:text-5xl">Ready to secure your package?</h2>
                     <p class="mx-auto mt-5 max-w-2xl text-sm leading-relaxed text-slate-200 sm:text-base">
-                        Get in touch with Northwind Kashmir for custom-paced routes, boutique hotel stays, and verified mountain guides.
+                        Get in touch with Northwind Kashmir for custom-paced routes and hotel and transport options confirmed for your travel dates.
                     </p>
                     <div class="mt-8 flex flex-wrap justify-center gap-4">
                         <a href="tel:+919541615419" class="premium-button gap-2">
